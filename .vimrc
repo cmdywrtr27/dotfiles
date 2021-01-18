@@ -19,7 +19,7 @@ call vundle#end()
 filetype plugin indent on
 
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'deus',
       \ }
 
 let g:lightline = {
@@ -49,7 +49,7 @@ let g:lightline = {
       \ },
       \ }
 
-colorscheme cobalt
+colorscheme deus
 set background=dark
 
 let mapleader = " "
