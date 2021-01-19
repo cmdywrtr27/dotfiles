@@ -14,155 +14,112 @@ URxvt*boldFont:       xft:JetBrainsMonoMedium Nerd Font:style=Medium,Regular:pix
 URxvt*italicFont:     xft:JetBrainsMonoMedium Nerd Font:style=Medium,Regular:pixelsize=14, xft:Hack Nerd Font Mono:style=Regular:pixelsize=16, xft:Font Awesome:pixelsize=16, xft:Noto Color Emoji:style=Regular:pixelsize=16
 URxvt*bolditalicFont: xft:JetBrainsMonoMedium Nerd Font:style=Medium,Regular:pixelsize=14, xft:Hack Nerd Font Mono:style=Regular:pixelsize=16, xft:Font Awesome:pixelsize=16, xft:Noto Color Emoji:style=Regular:pixelsize=16
 
-;URxvt*letterSpace:    0
-;URxvt*font:           xft:Inconsolata Nerd Font Mono:style=Regular:pixelsize=16, xft:Font Awesome:pixelsize=18, xft:Hack Nerd Font:style=Regular:pixelsize=18
-;URxvt*boldFont:       xft:Inconsolata Nerd Font Mono:style=Regular:pixelsize=16, xft:Font Awesome:pixelsize=18, xft:Hack Nerd Font:style=Regular:pixelsize=18
-;URxvt*italicFont:     xft:Inconsolata Nerd Font Mono:style=Regular:pixelsize=16, xft:Font Awesome:pixelsize=18, xft:Hack Nerd Font:style=Regular:pixelsize=18
-;URxvt*bolditalicFont: xft:Inconsolata Nerd Font Mono:style=Regular:pixelsize=16, xft:Font Awesome:pixelsize=18, xft:Hack Nerd Font:style=Regular:pixelsize=18
+!URxvt*letterSpace:    0
+!URxvt*font:           xft:Inconsolata Nerd Font Mono:style=Regular:pixelsize=16, xft:Font Awesome:pixelsize=18, xft:Hack Nerd Font:style=Regular:pixelsize=18
+!URxvt*boldFont:       xft:Inconsolata Nerd Font Mono:style=Regular:pixelsize=16, xft:Font Awesome:pixelsize=18, xft:Hack Nerd Font:style=Regular:pixelsize=18
+!URxvt*italicFont:     xft:Inconsolata Nerd Font Mono:style=Regular:pixelsize=16, xft:Font Awesome:pixelsize=18, xft:Hack Nerd Font:style=Regular:pixelsize=18
+!URxvt*bolditalicFont: xft:Inconsolata Nerd Font Mono:style=Regular:pixelsize=16, xft:Font Awesome:pixelsize=18, xft:Hack Nerd Font:style=Regular:pixelsize=18
 
 ! Color -------------------------------------------
-
-URxvt*foreground:  #ffffff
-URxvt*background:  #323232
-URxvt*cursorColor: #ffffff
 
 ! Tartan
 
 ! special
-!*.foreground:  #dedede
-!*.background:  #2b2b2b
-!*.cursorColor: #dedede
+!URxvt*.foreground:  #dedede
+!URxvt*.background:  #2b2b2b
+!URxvt*.cursorColor: #dedede
 
 ! black
-!*.color0:      #000000
-!*.color8:      #555753
+!*.color0:  #000000
+!*.color8:  #555753
 
 ! red
-!*.color1:      #cc0000
-!*.color9:      #ef2929
+!*.color1:  #cc0000
+!*.color9:  #ef2929
 
 ! green
-!*.color2:      #4e9a06
-!*.color10:     #8ae234
+!*.color2:  #4e9a06
+!*.color10: #8ae234
 
 ! yellow
-!*.color3:      #c4a000
-!*.color11:     #fce94f
+!*.color3:  #c4a000
+!*.color11: #fce94f
 
 ! blue
-!*.color4:      #3465a4
-!*.color12:     #729fcf
+!*.color4:  #3465a4
+!*.color12: #729fcf
 
 ! magenta
-!*.color5:      #75507b
-!*.color13:     #ad7fa8
+!*.color5:  #75507b
+!*.color13: #ad7fa8
 
 ! cyan
-!*.color6:      #06989a
-!*.color14:     #34e2e2
+!*.color6:  #06989a
+!*.color14: #34e2e2
 
 ! white
-!*.color7:      #d3d7cf
-!*.color15:     #eeeeec
-
-! ONEDARK
+!*.color7:  #d3d7cf
+!*.color15: #eeeeec
 
 ! special
-*.foreground:  #ffffff
-*.background:  #000000
-*.cursorColor: #ffffff
+URxvt*.foreground:  #ffffff
+URxvt*.background:  #222222
+URxvt*.cursorColor: #ffffff
 
 ! black
-*.color0:      #282c34
-*.color8:      #282c34
+*.color0: #000000
+*.color8: #323232
 
 ! red
-*.color1:      #e06c75
-*.color9:      #e06c75
+*.color1:  #ff4242
+*.color9:  #f56262
 
 ! green
-*.color2:      #98c379
-*.color10:     #98c379
+*.color2:  #7fe173
+*.color10: #9dff91
 
 ! yellow
-*.color3:      #e5c07b
-*.color11:     #e5c07b
+*.color3:  #ffc66d
+*.color11: #ffe48b
 
 ! blue
-*.color4:      #61afef
-*.color12:     #61afef
+*.color4:  #4099ff
+*.color12: #5eb7f7
 
 ! magenta
-*.color5:      #c678dd
-*.color13:     #c678dd
+*.color5:  #f680ff
+*.color13: #ff9dff
 
 ! cyan
-*.color6:      #56b6c2
-*.color14:     #56b6c2
+*.color6:  #85ffd8
+*.color14: #c1f7e8
 
 ! white
-*.color7:      #abb2bf
-*.color15:     #abb2bf
-
-
-! NRMLCLRS
-
-! special
-!*.foreground:  #ffffff
-!*.background:  #000000
-!*.cursorColor: #ffffff
-
-! black
-!*.color0:      #000000
-!*.color8:      #323232
-
-! red
-!*.color1:      #ff4242
-!*.color9:      #f56262
-
-! green
-!*.color2:      #7fe173
-!*.color10:     #9dff91
-
-! yellow
-!*.color3:      #ffc66d
-!*.color11:     #ffe48b
-
-! blue
-!*.color4:      #4099ff
-!*.color12:     #5eb7f7
-
-! magenta
-!*.color5:      #f680ff
-!*.color13:     #ff9dff
-
-! cyan
-!*.color6:      #85ffd8
-!*.color14:     #c1f7e8
-
-! white
-!*.color7:      #eeeeec
-!*.color15:     #ffffff
+*.color7:  #eeeeec
+*.color15: #ffffff
 
 ! Settings -----------------------------------
 
-URxvt*iconFile:             /usr/share/icons/Fluentwin/scalable/apps/terminal.svg
+URxvt*iconFile:             /usr/share/icons/Papirus/32x32/apps/Terminal.svg
 !URxvt*backgroundPixmap:     /home/josh/.urxvt/borders/18.png
 URxvt*windowName:           urxvt
 !URxvt*borderLess:           true
 !URxvt*internalBorder:       25
 !URxvt*externalBorder:       5
-!URxvt*skipBuiltinGlyphs:    true
+URxvt*skipBuiltinGlyphs:    false
+URxvt*scrollTtyKeypress:    true
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     true
 URxvt*scrollstyle:          plain
-URxvt*scrollBar:            false
+URxvt*scrollBar:            floating
 URxvt*urgentOnBell:         true
 URxvt*visualBell:           true
 URxvt*saveLines:            10000
 URxvt*mouseWheelScrollPage: false
 URxvt*cursorBlink:          true
 !URxvt*inheritPixmap:        false
-URxvt*transparent:          true
-URxvt*shading:              10
+URxvt*transparent:          false
+!URxvt*shading:              10
 URxvt*depth:                32
 URxvt*iso14755:             false
 URxvt*iso14755_52:          false
@@ -176,12 +133,17 @@ URxvt*keysym.Control-plus:     resize-font:bigger
 URxvt*keysym.Control-equal:    resize-font:reset
 URxvt*keysym.Control-question: resize-font:show
 
+! Copy/Paste
+URxvt*keysym.Control-Meta-c:  builtin-string:
+URxvt*keysym.Control-Meta-v:  builtin-string:
+URxvt*keysym.Shift-Control-V: eval:paste_clipboard
+URxvt*keysym.Shift-Control-C: eval:selection_to_clipboard
+
 ! Clipboard [Ctr+Shift+C/V]
-URxvt*keysym.Shift-Control-V: perl:clipboard:paste
-URxvt*clipboard.autocopy:     true
-URxvt*keysym.C-S-C:           perl:clipboard:copy
-URxvt*keysym.C-S-V:           perl:clipboard:paste
-URxvt*keysym.C-S-W:           perl:clipboard:paste_escaped
+!URxvt*clipboard.autocopy:     true
+!URxvt*keysym.C-S-C:           perl:clipboard:copy
+!URxvt*keysym.C-S-V:           perl:clipboard:paste
+!URxvt*keysym.C-S-W:           perl:clipboard:paste_escaped
 
 ! Keyboard-select
 URxvt*keysym.C-Escape: perl:keyboard-select:activate
@@ -191,5 +153,5 @@ URxvt*keysym.C-S-S:    perl:keyboard-select:search
 URxvt*keysym.C-S-U:         perl:url-select:select_next
 URxvt*url-select.autocopy:  true
 URxvt*url-select.button:    1
-URxvt*url-select.launcher:  /usr/bin/firefox
+URxvt*url-select.launcher:  /usr/bin/chromium
 URxvt*url-select.underline: true
