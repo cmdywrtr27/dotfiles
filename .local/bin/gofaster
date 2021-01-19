@@ -1,0 +1,10 @@
+#!/bin/sh
+# Accelerates the speed of the cursor when pressed.
+
+xset r rate 300 50
+
+setxkbmap -option caps:super -variant altgr-intl
+
+killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape'
+
+xmodmap -e 'keycode 135 = Super_R'
