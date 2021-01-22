@@ -1,7 +1,8 @@
 [colors]	
-	background = "#2e3440"
-    frame = "#3b4252"
-	#foreground = "#e5e9f0"
+    background = "#282C34"
+    #background = "#2e3440"
+    frame = "#039BE5"
+    foreground = "#ffffff"
 
 [global]
     ### Display ###
@@ -9,16 +10,18 @@
     monitor = 0
     follow = mouse
 
-    geometry = "800x4-14+66"    
+    #geometry = "262x5-829-46"
+    #geometry = "262x3-14+46"
+    geometry = "800x5-5+66"    
     indicate_hidden = yes
     shrink = true
     transparency = 0
     notification_height = 0
     separator_height = 2
-    padding = 44
-    horizontal_padding = 44
-    frame_width = 3
-    corner_radius = 12
+    padding = 5
+    horizontal_padding = 25
+    frame_width = 2
+    corner_radius = 8
 
     #frame_color = 
     separator_color = auto
@@ -26,7 +29,7 @@
     idle_threshold = 120
 
     ### Text ###
-    font = Hack Nerd Font, Font Awesome 5 Free Solid 9
+    font = NotoSansMono Nerd Font Regular 11, Font Awesome 5 Free Solid 11
     line_height = 0
 
     markup = full
@@ -53,7 +56,7 @@
 
     ### Icons ###
     icon_position = left
-    max_icon_size = 128
+    max_icon_size = 48
     icon_path = /usr/share/icons/Nord-Icon/48x48/status/:/usr/share/icons/Nord-Icon/48x48/devices/:/usr/share/icons/Nord-Icon/48x48/apps
 
     ### History ###
@@ -71,9 +74,6 @@
 
 [experimental]
     per_monitor_dpi = false
-
-[logger]
-    script = ~/.local/bin/dunst_logger.sh
 
 [dunst_icon]
     appname = dunst
