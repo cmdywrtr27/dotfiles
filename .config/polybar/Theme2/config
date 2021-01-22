@@ -9,9 +9,9 @@ margin-top = 0
 ;; File Inclusion
 ; include an external file, like module file, etc.
 
-include-file = ~/.config/polybar/Theme8/colors
-include-file = ~/.config/polybar/Theme8/modules
-include-file = ~/.config/polybar/Theme8/bars
+include-file = ~/.config/polybar/Theme2/colors
+include-file = ~/.config/polybar/Theme2/modules
+include-file = ~/.config/polybar/Theme2/bars
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
