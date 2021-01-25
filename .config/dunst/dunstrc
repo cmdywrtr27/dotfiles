@@ -1,18 +1,17 @@
 [colors]	
-    background = "#282C34"
+    background = "#222222"
     #background = "#2e3440"
     frame = "#039BE5"
     foreground = "#ffffff"
 
 [global]
     ### Display ###
-
     monitor = 0
-    follow = mouse
-
+    follow = none
     #geometry = "262x5-829-46"
     #geometry = "262x3-14+46"
-    geometry = "800x5-5+66"    
+    #geometry = "800x5-5+66"
+    geometry = "0x0-9+30"
     indicate_hidden = yes
     shrink = true
     transparency = 0
@@ -21,18 +20,16 @@
     padding = 5
     horizontal_padding = 25
     frame_width = 2
-    corner_radius = 8
-
-    #frame_color = 
+    corner_radius = 8 
     separator_color = auto
     sort = yes
-    idle_threshold = 120
+    idle_threshold = 60
 
     ### Text ###
-    font = NotoSansMono Nerd Font Regular 11, Font Awesome 5 Free Solid 11
+    font = Hack Nerd Font 11
     line_height = 0
 
-    markup = full
+    markup = yes
 
     # The format of the message.  Possible variables are:
     #   %a  appname
@@ -44,7 +41,8 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%a</b>\n%s\n%b"
+    #format = "<b>%a</b>\n%s\n%b"
+    format = "%s %p\n%b"
     alignment = left
     show_age_threshold = 60
     word_wrap = true
@@ -57,27 +55,28 @@
     ### Icons ###
     icon_position = left
     max_icon_size = 48
-    icon_path = /usr/share/icons/Nord-Icon/48x48/status/:/usr/share/icons/Nord-Icon/48x48/devices/:/usr/share/icons/Nord-Icon/48x48/apps
+    icon_path = /usr/share/icons/Papirus/48x48/status/:/usr/share/icons/Papirus/48x48/devices/:/usr/share/icons/Papirus/48x48/apps/
 
     ### History ###
     sticky_history = yes
     history_length = 20
 
     ### Misc/Advanced ###
-    dmenu = /usr/bin/urxvt -e fzf:
+    dmenu = /usr/bin/dmenu
     browser = /usr/bin/chromium
     always_run_script = false
     title = Dunst
     class = Dunst
-    startup_notification = true
+    startup_notification = false
     force_xinerama = false
 
 [experimental]
     per_monitor_dpi = false
 
-[dunst_icon]
+[logs]
+    script = ~/.local/bin/dunst_logs.sh
     appname = dunst
-    new_icon = /usr/share/icons/Nord-Icon/48x48/apps/bell.svg
+    new_icon = /usr/share/icons/Papirus/48x48/apps/bell.svg
 
 [shortcuts]
     close = ctrl+space
@@ -86,21 +85,21 @@
     history = ctrl+grave
 
 [urgency_low]
-    background = colors.background
-    foreground = "#81a1c1"
-    frame_color = "#3b4252"
+    background = "#282c34"
+    foreground = "#ffffff"
+    frame_color = "#039be5"
     timeout = 5
 
 [urgency_normal]
-    background = colors.background
-    foreground = "#e5e9f0"
-    frame_color = "#3b4252"
+    background = "#282c34"
+    foreground = "#ffffff"
+    frame_color = "#039be5"
     timeout = 5
 
 [urgency_critical]
-    background = colors.background
-    foreground = "#bf616a"
-    frame_color = "#3b4252"
+    background = "#282c34"
+    foreground = "#ffffff"
+    frame_color = "#039be5"
     timeout = 0
 
 # vim: ft=conf
