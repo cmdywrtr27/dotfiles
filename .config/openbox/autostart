@@ -31,9 +31,8 @@ picom --experimental-backend --config ~/.config/picom/picom.conf &
 sleep 3s
 
 # Panel
-~/.local/bin/bars.openbox
-#tint2 -c ~/.config/tint2/tint2rc &
-#polybar -c ~/.config/polybar/Theme1/launch.openbox.sh
+tint2 -c ~/.config/tint2/tint2rc &
+polybar --config=~/.config/polybar/Theme1/launch.openbox.sh
 
 # MPD
 mpd &
