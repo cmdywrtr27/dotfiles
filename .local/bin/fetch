@@ -1,0 +1,69 @@
+#!/bin/bash
+##This is a modified version of the ufetch script
+## Get system info
+user="${USER}"
+distro='Arch Linux'
+kernel="$(uname -sr | sed 's/-.*//')"
+#uptime="$(uptime -p | sed 's/up //')"
+#packages="$(dpkg -l | wc -l)"
+shell="$(basename ${SHELL})"
+
+if [ -z "${WM}" ]; then
+		envtype='WM'
+		WM="Openbox"
+fi
+
+## Define Colours
+if [[ $1 = "--red" ]]; then
+    bgaccent="$(tput setab 1)"
+    accent="$(tput setaf 1)"
+elif [[ $1 = "--green" ]]; then
+    bgaccent="$(tput setab 2)"
+    accent="$(tput setaf 2)"
+elif [[ $1 = "--yellow" ]]; then
+    bgaccent="$(tput setab 3)"
+    accent="$(tput setaf 3)"
+elif [[ $1 = "--blue" ]]; then
+    bgaccent="$(tput setab 4)"
+    accent="$(tput setaf 4)"
+elif [[ $1 = "--magenta" ]]; then
+    bgaccent="$(tput setab 5)"
+    accent="$(tput setaf 5)"
+elif [[ $1 = "--cyan" ]]; then
+    bgaccent="$(tput setab 6)"
+    accent="$(tput setaf 6)"
+else
+    bgaccent="$(tput setab 1)"
+    accent="$(tput setaf 1)"
+fi
+
+bold="$(tput bold)"
+white="$(tput setaf 7)"
+yellow="$(tput setaf 3)"
+red="$(tput setaf 1)"
+blue="$(tput setaf 4)"
+green="$(tput setaf 2)"
+orange="$(tput setaf 1)"
+violet="$(tput setaf 5)"
+cyan="$(tput setaf 6)"
+reset="$(tput sgr0)"
+cbg="${reset}${bold}${bgaccent}${white}"
+cr="${reset}"
+c0="${reset}${bold}"
+c1="${reset}${accent}"
+
+## Output
+
+cat <<EOF
+
+  USER       ${c0}${blue}${user}${reset}
+  DISTRO     ${c0}${orange}${distro}${reset}
+  KERNEL     ${c0}${yellow}${kernel}${reset}
+  ${envtype}         ${c0}${violet}${WM}${reset}
+  SHELL      ${c0}${green}${shell}${reset}
+EOF
+
+source /home/josh/.local/bin/color_scripts/blocks
+
+#pcs() { for i in {0..7}; do echo -en "\e[${1}$((30+$i))m \u2588\u2588 \e[0m"; done; }
+#printf "\n %s\n %s\n\n" "$(pcs)" "$(pcs '1;')"
