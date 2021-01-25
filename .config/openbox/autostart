@@ -1,0 +1,62 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+
+# If you want to use GNOME config tools...
+#
+#if test -x /usr/lib/openbox/gnome-settings-daemon >/dev/null; then
+#  /usr/lib/openbox/gnome-settings-daemon &
+#elif which gnome-settings-daemon >/dev/null 2>&1; then
+#  gnome-settings-daemon &
+#fi
+
+# If you want to use XFCE config tools...
+#
+#xfce-mcs-manager &
+
+# Gnome PolicyKit Authentication
+/usr/lib/polkit-1/polkitd --no-debug &
+
+# Dual Display
+~/.screenlayout/dual.sh &
+
+# Wallpaper
+nitrogen --restore &
+
+# Compositor
+picom --experimental-backend --config ~/.config/picom/picom.conf &
+
+sleep 3s
+
+# Panel
+~/.local/bin/bars.openbox
+#tint2 -c ~/.config/tint2/tint2rc &
+#polybar -c ~/.config/polybar/Theme1/launch.openbox.sh
+
+# MPD
+mpd &
+
+# Notifications
+dunst &
+
+# System Beep
+xset b off &
+
+# Power Manager
+xfce4-power-manager &
+
+# Clipboard Manager
+xfce4-clipman &
+
+# Settings
+xfsettingsd &
+
+sleep 2s
+
+# Conky
+#conky -c ~/.conkyrc
+
+# Faster cursor
+sh ~/.local/bin/gofaster
