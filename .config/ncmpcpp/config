@@ -1,47 +1,96 @@
-[mpd]
+#% egrep -v '^#' ~/.config/ncmpcpp/config
 mpd_music_dir = "/home/josh/Music/"
 mpd_host = "127.0.0.1"
 mpd_port = "6600"
 
-[visualizer]
-visualizer_fifo_path = "/tmp/mpd.fifo"
+mouse_list_scroll_whole_page = "yes"
+lines_scrolled = "1"
+
 visualizer_in_stereo = "no"
-visualizer_type = "spectrum"
+visualizer_fifo_path = "/tmp/mpd.fifo"
 visualizer_output_name = "my_fifo"
-visualizer_look = "●┃"
-visualizer_color = "white"
+visualizer_sync_interval = "10"
+visualizer_type = "spectrum"
+visualizer_look = "▋▋"
 
-[header]
-header_visibility = "no"
-header_window_color = "default"
+message_delay_time = "3"
 playlist_shorten_total_times = "yes"
-volume_color = "white"
-state_line_color = "black"
-
-[playlist]
 playlist_display_mode = "classic"
-song_list_format = "                         {{$2%a - $5%t}|{%f}}{$R$4%l}"
-now_playing_prefix = "$b$5"
-now_playing_suffix = "$/b$9"
-
-[statusbar]
-# progressbar_look = "─╼ "
-progressbar_look = "━━━"
-progressbar_color = "black"
-statusbar_visibility = "no"
-statusbar_color = "white"
-#song_status_format = "{{%a{ - %t}}|{ - %f}{ - %b{ (%y)}}}"
-
-[library]
-song_library_format = "{{$2%a - $5%t}|{%f}}{$R$4%l}"
-song_status_format = "$b$7♫ $2%a $4⟫$3⟫ $8%t $4⟫$3⟫ $5%b "
-media_library_primary_tag = album_artist
-empty_tag_color = "black"
-
-[global]
-colors_enabled = "yes"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+playlist_editor_display_mode = "columns"
+autocenter_mode = "yes"
 centered_cursor = "yes"
+user_interface = "classic"
+follow_now_playing_lyrics = "yes"
+locked_screen_width_part = "60"
+display_bitrate = "no"
+external_editor = "nano"
+
+progressbar_elapsed_color = "white"
+progressbar_color = "black"
+
+progressbar_look = "▃▃▃"
+#progressbar_look = "─⊙ "
+
+mouse_support = "yes"
+header_visibility = "no"
+statusbar_visibility = "no"
+connected_message_on_startup = "no"
+statusbar_color = "white"
+visualizer_color = "white"
+titles_visibility = "no"
 enable_window_title = "yes"
-external_editor = "vim"
-execute_on_song_change = "/home/josh/.config/ncmpcpp/art.sh"
-follow_now_playing_lyrics = yes
+
+now_playing_prefix = "$b"
+now_playing_suffix = " $8$/b$9$8♫ $9"
+
+#now_playing_prefix = "$u$2"
+#now_playing_suffix = "$2$/u$2"
+
+song_columns_list_format = "(6)[]{} (23)[red]{a} (26)[yellow]{t|f} (40)[green]{b} (4)[blue]{l}"
+
+color1 = "white"
+color2 = "black"
+
+#song_list_format = " $7%l  $2%t $R$5%a "
+
+#uncomment both statement's below if you want to display the albumart
+
+execute_on_song_change = "/home/josh/.config/ncmpcpp/cover.sh"
+#song_list_format = "                  $2%a $R$5%t "
+#song_list_format = "{{$2%a$9 - $4%t$9}|{$5%f$9}}{$3%l$9}                "
+#song_list_format = "                            $2%a$9 $5%t$9 $3$R(%l)$9"
+song_list_format = "                           $5%t$9 $7$R%a$9"
+
+song_status_format = "$b$7♫ $2%a $4⟫$3⟫ $8%t $4⟫$3⟫ $5%b "
+song_window_title_format = " {%a} - {%t}"
+
+# %l - length
+# %f - filename
+# %D - directory
+# %a - artist
+# %A - album artist
+# %t - title
+# %b - album
+# %y - date
+# %n - track number (01/12 -> 01)
+# %N - full track info (01/12 -> 01/12)
+# %g - genre
+# %c - composer
+# %p - performer
+# %d - disc
+# %C - comment
+# %P - priority
+# $R - begin right alignment
+
+# 0 - default window color (discards all other colors)
+# 1 - black
+# 2 - red
+# 3 - green
+# 4 - yellow
+# 5 - blue
+# 6 - magenta
+# 7 - cyan
+# 8 - white
+# 9 - end of current color
