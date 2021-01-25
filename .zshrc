@@ -1,17 +1,16 @@
-#    _______ _  _ ___  ___  
-#   |_  / __| || | _ \/ __| 
-#  _ / /\__ \ __ |   / (__  
+#    ______ _  _ ___  ___
+#   |_  / __| || | _ \/ __|
+#  _ / /\__ \ __ |   / (__
 # (_)___|___/_||_|_|_\\___|
 
-export TERM=screen-256color
+export TERM=rxvt-unicode
 export LANG=en_US.UTF-8
 export SUDO_EDITOR=vim
 export EDITOR=vim
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+#export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export PAGER="less"
 export PATH="/home/josh/.cargo/bin:$PATH"
 export PATH="/home/josh/.local/bin:$PATH"
-export PATH=$HOME/bin:/usr/local/bin:$PATH
 source ~/.zsh_aliases
 source ~/.git.sh
 
@@ -105,6 +104,22 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[Down]}"     ]]  && bindkey  "${key[Down]}"     history-beginning-search-forward
 
 autoload -U colors && colors
+
+function ranger {
+    local IFS=$'\t\n'
+    local tempfile="$(mktemp -t tmp.XXXXXX)"
+    local ranger_cmd=(
+        command
+        ranger
+        --cmd="map Q chain shell echo %d > "$tempfile"; quitall"
+    )
+
+    ${ranger_cmd[@]} "$@"
+    if [[ -f "$tempfile" ]] && [[ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]]; then
+        cd -- "$(cat "$tempfile")" || return
+    fi
+    command rm -f -- "$tempfile" 2>/dev/null
+}
 
 # Prompt Options
 
