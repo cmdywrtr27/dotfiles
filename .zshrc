@@ -12,7 +12,7 @@ export PAGER="less"
 export PATH="/home/josh/.cargo/bin:$PATH"
 export PATH="/home/josh/.local/bin:$PATH"
 source ~/.zsh_aliases
-source ~/.git.sh
+source ~/.git.zsh
 
 ###################################################################
 
