@@ -23,7 +23,7 @@
     corner_radius = 8 
     separator_color = auto
     sort = yes
-    idle_threshold = 60
+    idle_threshold = 0
 
     ### Text ###
     font = Hack Nerd Font 11
