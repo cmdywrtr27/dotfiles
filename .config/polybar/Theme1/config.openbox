@@ -95,7 +95,7 @@ font-4 = "Material Design Icons Desktop:style=Regular;1"
 
 modules-left = arch xwindow
 modules-center = 
-modules-right = arrow1 wireless-network arrow2 memory2 arrow3 cpu2 arrow2 filesystem arrow3 pulseaudio arrow2 date
+modules-right = arrow1 wireless-network vpn arrow2 memory2 arrow3 cpu2 arrow2 filesystem arrow3 pulseaudio arrow2 date
 
 separator = 
 
@@ -143,7 +143,7 @@ bottom = false
 monitor = VGA-1
 modules-left = arch xwindow
 module-center = 
-modules-right = arrow1 wireless-network arrow2 memory2 arrow3 cpu2 arrow2 filesystem arrow3 pulseaudio arrow2 date
+modules-right = arrow1 wireless-network vpn arrow2 memory2 arrow3 cpu2 arrow2 filesystem arrow3 pulseaudio arrow2 date
 enable-ipc = true
 
 ################################################################################
@@ -273,6 +273,16 @@ content = "     "
 content-font = 2
 content-foreground = #039BE5
 click-left = /home/josh/.local/bin/powermenu-openbox-left
+
+[module/vpn]
+type = custom/script
+exec = ~/.config/polybar/scripts/vpn.sh
+interval = 10
+content-foreground = #FFFFFF
+content-background = #039BE5
+format-foreground = #FFFFFF
+format-background = #039BE5
+click-left = exec tilix -e nmtui
 
 [module/workspaces]
 
@@ -1196,6 +1206,7 @@ ramp-signal-6 = ▇
 ramp-signal-7 = █
 ramp-signal-foreground = #7e52c6
 click-left = ~/.config/rofi/applets/applets/network.rasi
+click-right = exec urxvt -e nmtui
 
 [module/workspaces-xmonad]
 type = custom/script
