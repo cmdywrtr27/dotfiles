@@ -130,5 +130,6 @@ source ~/.prompt3.zsh
 #source ~/.prompt5.zsh
 #source ~/.prompt6.zsh
 #source ~/.prompt7.zsh
+#source ~/.prompt8.zsh
 
 autoload -U compinit && compinit -u
