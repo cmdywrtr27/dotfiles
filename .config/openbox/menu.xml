@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://openbox.org/">
+  <menu id="root-menu" label="Applications">
+    <item label="Files" icon="/home/josh/.config/obmenu-generator/icons/1dee5da96d0f0ea55dd25b4d24642eed.png"><action name="Execute"><command><![CDATA[nautilus]]></command></action></item>
+    <item label="URxvt" icon="/home/josh/.config/obmenu-generator/icons/c4103164d9a3432f7d57dfe77d99545e.png"><action name="Execute"><command><![CDATA[urxvt]]></command></action></item>
+    <item label="Chromium" icon="/home/josh/.config/obmenu-generator/icons/dd08eb884943ba6ffa96bff2366e0b40.png"><action name="Execute"><command><![CDATA[chromium]]></command></action></item>
+  <separator label="OPENBOX MENU"/>
+  <menu id="0.820620144092576" icon="/home/josh/.config/obmenu-generator/icons/31643ff91c9388921823807f94df951c.png" label="Accessories">
+    <item label="About Xfce" icon="/home/josh/.config/obmenu-generator/icons/7a43c9e343d3f165c8d38c642ed9246d.png"><action name="Execute"><command><![CDATA[xfce4-about]]></command></action></item>
+    <item label="balenaEtcher" icon="/home/josh/.config/obmenu-generator/icons/47f4bc24eca99b3d1b3e49b7d5582328.png"><action name="Execute"><command><![CDATA[/opt/balenaEtcher/balena-etcher-electron]]></command></action></item>
+    <item label="Bulk Rename" icon="/home/josh/.config/obmenu-generator/icons/fdd7a46c1beba5a279c3b93f184b9fd9.png"><action name="Execute"><command><![CDATA[thunar --bulk-rename]]></command></action></item>
+    <item label="Character Map" icon="/home/josh/.config/obmenu-generator/icons/d894bfe6ebaec05d03de064ff8f6da7a.png"><action name="Execute"><command><![CDATA[gucharmap]]></command></action></item>
+    <item label="Clipboard Manager" icon="/home/josh/.config/obmenu-generator/icons/9cadeaa20db6851876638d72c2fef649.png"><action name="Execute"><command><![CDATA[xfce4-clipman]]></command></action></item>
+    <item label="compton" icon="/home/josh/.config/obmenu-generator/icons/9087491eb7144692fbebf79c7e648406.png"><action name="Execute"><command><![CDATA[compton]]></command></action></item>
+    <item label="Disks" icon="/home/josh/.config/obmenu-generator/icons/967dda2dd89af2587b1323836d0266fa.png"><action name="Execute"><command><![CDATA[gnome-disks]]></command></action></item>
+    <item label="Files" icon="/home/josh/.config/obmenu-generator/icons/f0ccffb6891da9dd557e134e1a36671c.png"><action name="Execute"><command><![CDATA[nautilus --new-window]]></command></action></item>
+    <item label="Kvantum Manager" icon="/home/josh/.config/obmenu-generator/icons/0bf2f4829835e209a17b259f945ce917.png"><action name="Execute"><command><![CDATA[kvantummanager]]></command></action></item>
+    <item label="LightDM GTK+ Greeter settings" icon="/home/josh/.config/obmenu-generator/icons/1c6409200a67086699a5c3b62fe1141e.png"><action name="Execute"><command><![CDATA[lightdm-gtk-greeter-settings-pkexec]]></command></action></item>
+    <item label="Nextcloud desktop sync client" icon="/home/josh/.config/obmenu-generator/icons/2028337747a6abe9058a3c5943736628.png"><action name="Execute"><command><![CDATA[nextcloud]]></command></action></item>
+    <item label="nitrogen" icon="/home/josh/.config/obmenu-generator/icons/5b03182ee8857045f7c3ba879738f674.png"><action name="Execute"><command><![CDATA[nitrogen]]></command></action></item>
+    <item label="picom"><action name="Execute"><command><![CDATA[picom]]></command></action></item>
+    <item label="Thunar File Manager" icon="/home/josh/.config/obmenu-generator/icons/fdd7a46c1beba5a279c3b93f184b9fd9.png"><action name="Execute"><command><![CDATA[thunar]]></command></action></item>
+    <item label="Vim" icon="/home/josh/.config/obmenu-generator/icons/987ef92ba8a80daaf3d745e0d7495618.png"><action name="Execute"><command><![CDATA[urxvt -e 'vim']]></command></action></item>
+    <item label="Visual Studio Code" icon="/home/josh/.config/obmenu-generator/icons/0775ff53e06b1f6a59278fd96a372bcc.png"><action name="Execute"><command><![CDATA[/opt/visual-studio-code/code --no-sandbox --unity-launch]]></command></action></item>
+    <item label="Xarchiver" icon="/home/josh/.config/obmenu-generator/icons/1e3436b7723f06cfacd64a19b01c0d6d.png"><action name="Execute"><command><![CDATA[xarchiver]]></command></action></item>
+  </menu>
+  <menu id="0.648998948370235" icon="/home/josh/.config/obmenu-generator/icons/dcffb3b53473da4e549363c79ef3e5a9.png" label="Graphics">
+    <item label="Color Picker" icon="/home/josh/.config/obmenu-generator/icons/1238510a94ab293adb50238dc147e4d3.png"><action name="Execute"><command><![CDATA[gcolor3]]></command></action></item>
+    <item label="GNU Image Manipulation Program" icon="/home/josh/.config/obmenu-generator/icons/3045f9cde37e3971b818e1b7362c3888.png"><action name="Execute"><command><![CDATA[gimp-2.10]]></command></action></item>
+    <item label="Inkscape" icon="/home/josh/.config/obmenu-generator/icons/b03d257a08670471c16bc8fa997cdaf6.png"><action name="Execute"><command><![CDATA[inkscape]]></command></action></item>
+    <item label="LibreOffice Draw" icon="/home/josh/.config/obmenu-generator/icons/94939be887e39fa89727cfa922449085.png"><action name="Execute"><command><![CDATA[libreoffice --draw]]></command></action></item>
+    <item label="PhotoCollage" icon="/home/josh/.config/obmenu-generator/icons/caa449d674922f80442c6e70c249409f.png"><action name="Execute"><command><![CDATA[photocollage]]></command></action></item>
+    <item label="Ristretto Image Viewer" icon="/home/josh/.config/obmenu-generator/icons/3770851e43ae5b48d17f695905a6505e.png"><action name="Execute"><command><![CDATA[ristretto]]></command></action></item>
+  </menu>
+  <menu id="0.38950740782651" icon="/home/josh/.config/obmenu-generator/icons/9b6b51736fa80f6e4ea743e9a18b2df9.png" label="Multimedia">
+    <item label="DeaDBeeF" icon="/home/josh/.config/obmenu-generator/icons/bc0e86e2615fb8a1ebeed93547600e4d.png"><action name="Execute"><command><![CDATA[deadbeef]]></command></action></item>
+    <item label="Kdenlive" icon="/home/josh/.config/obmenu-generator/icons/486b2cc322b59bd3148327bdd6a10954.png"><action name="Execute"><command><![CDATA[kdenlive]]></command></action></item>
+    <item label="Kid3-qt" icon="/home/josh/.config/obmenu-generator/icons/857f0c33ce3b926cd543e33d0aaca281.png"><action name="Execute"><command><![CDATA[kid3-qt]]></command></action></item>
+    <item label="mpv Media Player" icon="/home/josh/.config/obmenu-generator/icons/b12b16c5cf112d711905ed135db65e74.png"><action name="Execute"><command><![CDATA[mpv --player-operation-mode=pseudo-gui --]]></command></action></item>
+    <item label="MusicBrainz Picard" icon="/home/josh/.config/obmenu-generator/icons/0539a84c6638658f0dca2f9d2f673f34.png"><action name="Execute"><command><![CDATA[picard]]></command></action></item>
+    <item label="OBS Studio" icon="/home/josh/.config/obmenu-generator/icons/9d1ea1219d86fe7d080a7126d442f1bc.png"><action name="Execute"><command><![CDATA[obs]]></command></action></item>
+    <item label="PulseAudio Volume Control" icon="/home/josh/.config/obmenu-generator/icons/69444a851b20aad47731d8338679c90f.png"><action name="Execute"><command><![CDATA[pavucontrol]]></command></action></item>
+    <item label="Qt V4L2 test Utility" icon="/home/josh/.config/obmenu-generator/icons/6305212b18732a416bbd53041bff3dbd.png"><action name="Execute"><command><![CDATA[qv4l2]]></command></action></item>
+    <item label="Qt V4L2 video capture utility" icon="/home/josh/.config/obmenu-generator/icons/e893e8e1054bf804a2b03b2f7c6cf7b3.png"><action name="Execute"><command><![CDATA[qvidcap]]></command></action></item>
+    <item label="SimpleScreenRecorder" icon="/home/josh/.config/obmenu-generator/icons/2eedad168b05684f40be4bb6f8b6086f.png"><action name="Execute"><command><![CDATA[simplescreenrecorder --logfile]]></command></action></item>
+    <item label="Video Trimmer" icon="/home/josh/.config/obmenu-generator/icons/d47fd2367fd7e6ad7dd9dab2671653dd.png"><action name="Execute"><command><![CDATA[video-trimmer]]></command></action></item>
+    <item label="VLC media player" icon="/home/josh/.config/obmenu-generator/icons/b62593f8f06c479dced575daa47f6ea5.png"><action name="Execute"><command><![CDATA[/usr/bin/vlc --started-from-file]]></command></action></item>
+  </menu>
+  <menu id="0.30519323502353" icon="/home/josh/.config/obmenu-generator/icons/a385f6600381fb279df73f1189481ca2.png" label="Network">
+    <item label="Avahi SSH Server Browser" icon="/home/josh/.config/obmenu-generator/icons/1be588c8d58263b210606a8bc5a67831.png"><action name="Execute"><command><![CDATA[/usr/bin/bssh]]></command></action></item>
+    <item label="Avahi VNC Server Browser" icon="/home/josh/.config/obmenu-generator/icons/1be588c8d58263b210606a8bc5a67831.png"><action name="Execute"><command><![CDATA[/usr/bin/bvnc]]></command></action></item>
+    <item label="Chromium" icon="/home/josh/.config/obmenu-generator/icons/57528592280d9c67d1de21c7f37b2bf1.png"><action name="Execute"><command><![CDATA[/usr/bin/chromium]]></command></action></item>
+    <item label="FileZilla" icon="/home/josh/.config/obmenu-generator/icons/46cf6d043671d83398d1042763b4a53c.png"><action name="Execute"><command><![CDATA[filezilla]]></command></action></item>
+    <item label="Google Chrome" icon="/home/josh/.config/obmenu-generator/icons/bcf3c3cb360f1e07d9abb9b5049f31a0.png"><action name="Execute"><command><![CDATA[/usr/bin/google-chrome-stable]]></command></action></item>
+    <item label="Syncthing GTK" icon="/home/josh/.config/obmenu-generator/icons/df94dd1dbec75fa7961ce9b1762b7041.png"><action name="Execute"><command><![CDATA[syncthing-gtk]]></command></action></item>
+    <item label="TigerVNC Viewer" icon="/home/josh/.config/obmenu-generator/icons/ded5c7e7bb908ad217bcae70594a5f2f.png"><action name="Execute"><command><![CDATA[/usr/bin/vncviewer]]></command></action></item>
+    <item label="X11VNC Server" icon="/home/josh/.config/obmenu-generator/icons/1e79fc190623fec5805bc0c8882559fe.png"><action name="Execute"><command><![CDATA[x11vnc -gui tray=setpass -rfbport PROMPT -bg -o]]></command></action></item>
+  </menu>
+  <menu id="0.236719846388116" icon="/home/josh/.config/obmenu-generator/icons/0b82a46b62fcd3afe7908b39cfd0d580.png" label="Office">
+    <item label="LibreOffice Base" icon="/home/josh/.config/obmenu-generator/icons/e1270e7eac4a2d08fc2fb175940c3667.png"><action name="Execute"><command><![CDATA[libreoffice --base]]></command></action></item>
+    <item label="LibreOffice Calc" icon="/home/josh/.config/obmenu-generator/icons/39879f3daf3c5b10b1abd66c109213d5.png"><action name="Execute"><command><![CDATA[libreoffice --calc]]></command></action></item>
+    <item label="LibreOffice Draw" icon="/home/josh/.config/obmenu-generator/icons/94939be887e39fa89727cfa922449085.png"><action name="Execute"><command><![CDATA[libreoffice --draw]]></command></action></item>
+    <item label="LibreOffice Impress" icon="/home/josh/.config/obmenu-generator/icons/dc4a9a18ce7c58092658990b7dc46a24.png"><action name="Execute"><command><![CDATA[libreoffice --impress]]></command></action></item>
+    <item label="LibreOffice Math" icon="/home/josh/.config/obmenu-generator/icons/9a3c79b033bbc5e04d6ac5654cbc9467.png"><action name="Execute"><command><![CDATA[libreoffice --math]]></command></action></item>
+    <item label="LibreOffice Writer" icon="/home/josh/.config/obmenu-generator/icons/44ec5c9bf8435675b27f109373f8b2bf.png"><action name="Execute"><command><![CDATA[libreoffice --writer]]></command></action></item>
+    <item label="LibreOffice" icon="/home/josh/.config/obmenu-generator/icons/0b172528677a57fff0c7ebe828916771.png"><action name="Execute"><command><![CDATA[libreoffice]]></command></action></item>
+    <item label="Standard Notes" icon="/home/josh/.config/obmenu-generator/icons/3270c3782e00d6d8ba2d720e1fc545fd.png"><action name="Execute"><command><![CDATA[env DESKTOPINTEGRATION=false /usr/bin/standard-notes]]></command></action></item>
+    <item label="Xpdf" icon="/home/josh/.config/obmenu-generator/icons/9456b6d974c2b17628b7fba29a4370cc.png"><action name="Execute"><command><![CDATA[xpdf]]></command></action></item>
+  </menu>
+  <menu id="0.923342913141809" icon="/home/josh/.config/obmenu-generator/icons/61546f99819827f01c3496e4739ac9b8.png" label="Settings">
+    <item label="Advanced Network Configuration" icon="/home/josh/.config/obmenu-generator/icons/1be588c8d58263b210606a8bc5a67831.png"><action name="Execute"><command><![CDATA[nm-connection-editor]]></command></action></item>
+    <item label="ARandR" icon="/home/josh/.config/obmenu-generator/icons/1e79fc190623fec5805bc0c8882559fe.png"><action name="Execute"><command><![CDATA[arandr]]></command></action></item>
+    <item label="Clipboard Manager Settings" icon="/home/josh/.config/obmenu-generator/icons/9cadeaa20db6851876638d72c2fef649.png"><action name="Execute"><command><![CDATA[xfce4-clipman-settings]]></command></action></item>
+    <item label="Customize Look and Feel" icon="/home/josh/.config/obmenu-generator/icons/0dd68bbb35c85975ca801fd9aa136eb7.png"><action name="Execute"><command><![CDATA[lxappearance]]></command></action></item>
+    <item label="File Manager Settings" icon="/home/josh/.config/obmenu-generator/icons/fdd7a46c1beba5a279c3b93f184b9fd9.png"><action name="Execute"><command><![CDATA[thunar-settings]]></command></action></item>
+    <item label="Grub Customizer" icon="/home/josh/.config/obmenu-generator/icons/e2a9b36b3c622f00e74d64c883f68be9.png"><action name="Execute"><command><![CDATA[grub-customizer]]></command></action></item>
+    <item label="Kvantum Manager" icon="/home/josh/.config/obmenu-generator/icons/0bf2f4829835e209a17b259f945ce917.png"><action name="Execute"><command><![CDATA[kvantummanager]]></command></action></item>
+    <item label="LightDM GTK+ Greeter settings" icon="/home/josh/.config/obmenu-generator/icons/1c6409200a67086699a5c3b62fe1141e.png"><action name="Execute"><command><![CDATA[lightdm-gtk-greeter-settings-pkexec]]></command></action></item>
+    <item label="Notifications" icon="/home/josh/.config/obmenu-generator/icons/eeb089ba62191336f0f0788d2fbe3e9d.png"><action name="Execute"><command><![CDATA[xfce4-notifyd-config]]></command></action></item>
+    <item label="Openbox Configuration Manager" icon="/home/josh/.config/obmenu-generator/icons/0476ece428f10447c407d0cc404807fd.png"><action name="Execute"><command><![CDATA[obconf]]></command></action></item>
+    <item label="Panel" icon="/home/josh/.config/obmenu-generator/icons/a8e043e750aab4414f3a0370b65921e0.png"><action name="Execute"><command><![CDATA[xfce4-panel --preferences]]></command></action></item>
+    <item label="Power Manager" icon="/home/josh/.config/obmenu-generator/icons/652a00891eac179acfaafc7767ef43a2.png"><action name="Execute"><command><![CDATA[xfce4-power-manager-settings]]></command></action></item>
+    <item label="Preferred Applications" icon="/home/josh/.config/obmenu-generator/icons/e5cbb79be8f87ca4a404075a3750b2a4.png"><action name="Execute"><command><![CDATA[libfm-pref-apps]]></command></action></item>
+    <item label="Qt5 Settings" icon="/home/josh/.config/obmenu-generator/icons/0dd68bbb35c85975ca801fd9aa136eb7.png"><action name="Execute"><command><![CDATA[qt5ct]]></command></action></item>
+    <item label="Removable Drives and Media" icon="/home/josh/.config/obmenu-generator/icons/c5489a507574a5078102c94d42960b23.png"><action name="Execute"><command><![CDATA[thunar-volman-settings]]></command></action></item>
+    <item label="Themix/Oomox theme designer" icon="/home/josh/.config/obmenu-generator/icons/71c2e97e701299e4559087401004305f.png"><action name="Execute"><command><![CDATA[oomox-gui]]></command></action></item>
+    <item label="Tint2 Settings" icon="/home/josh/.config/obmenu-generator/icons/a8e043e750aab4414f3a0370b65921e0.png"><action name="Execute"><command><![CDATA[tint2conf]]></command></action></item>
+  </menu>
+  <menu id="0.313594637575388" icon="/home/josh/.config/obmenu-generator/icons/685caf8c514845bba6047ad5ebea0f54.png" label="System">
+    <item label="Avahi Zeroconf Browser" icon="/home/josh/.config/obmenu-generator/icons/1be588c8d58263b210606a8bc5a67831.png"><action name="Execute"><command><![CDATA[/usr/bin/avahi-discover]]></command></action></item>
+    <item label="BleachBit" icon="/home/josh/.config/obmenu-generator/icons/b11c50b686a765e4a72404155b7f9246.png"><action name="Execute"><command><![CDATA[bleachbit]]></command></action></item>
+    <item label="Bulk Rename" icon="/home/josh/.config/obmenu-generator/icons/fdd7a46c1beba5a279c3b93f184b9fd9.png"><action name="Execute"><command><![CDATA[thunar --bulk-rename]]></command></action></item>
+    <item label="conky" icon="/home/josh/.config/obmenu-generator/icons/4705528b90b1145ae98bad6e3b0c8a23.png"><action name="Execute"><command><![CDATA[conky --daemonize --pause=1]]></command></action></item>
+    <item label="dconf Editor" icon="/home/josh/.config/obmenu-generator/icons/c3c1a08cd8558f737ec5ba71d9044cdb.png"><action name="Execute"><command><![CDATA[dconf-editor]]></command></action></item>
+    <item label="GParted" icon="/home/josh/.config/obmenu-generator/icons/233c13d564c57f29207594f77e05f710.png"><action name="Execute"><command><![CDATA[/usr/bin/gparted]]></command></action></item>
+    <item label="Grub Customizer" icon="/home/josh/.config/obmenu-generator/icons/e2a9b36b3c622f00e74d64c883f68be9.png"><action name="Execute"><command><![CDATA[grub-customizer]]></command></action></item>
+    <item label="Hardware Locality lstopo"><action name="Execute"><command><![CDATA[lstopo]]></command></action></item>
+    <item label="LightDM GTK+ Greeter settings" icon="/home/josh/.config/obmenu-generator/icons/1c6409200a67086699a5c3b62fe1141e.png"><action name="Execute"><command><![CDATA[lightdm-gtk-greeter-settings-pkexec]]></command></action></item>
+    <item label="Oracle VM VirtualBox" icon="/home/josh/.config/obmenu-generator/icons/16f87e838fb5d260ad05d54d193f648e.png"><action name="Execute"><command><![CDATA[VirtualBox]]></command></action></item>
+    <item label="ranger" icon="/home/josh/.config/obmenu-generator/icons/c4103164d9a3432f7d57dfe77d99545e.png"><action name="Execute"><command><![CDATA[urxvt -e 'ranger']]></command></action></item>
+    <item label="Thunar File Manager" icon="/home/josh/.config/obmenu-generator/icons/fdd7a46c1beba5a279c3b93f184b9fd9.png"><action name="Execute"><command><![CDATA[thunar]]></command></action></item>
+    <item label="Tilix" icon="/home/josh/.config/obmenu-generator/icons/3e40797f591d087fe31b33beb504b5f7.png"><action name="Execute"><command><![CDATA[tilix]]></command></action></item>
+    <item label="Tint2" icon="/home/josh/.config/obmenu-generator/icons/a8e043e750aab4414f3a0370b65921e0.png"><action name="Execute"><command><![CDATA[tint2]]></command></action></item>
+    <item label="urxvt (client)" icon="/home/josh/.config/obmenu-generator/icons/c4103164d9a3432f7d57dfe77d99545e.png"><action name="Execute"><command><![CDATA[urxvtc]]></command></action></item>
+    <item label="urxvt (tabbed)" icon="/home/josh/.config/obmenu-generator/icons/c4103164d9a3432f7d57dfe77d99545e.png"><action name="Execute"><command><![CDATA[urxvt-tabbed]]></command></action></item>
+    <item label="urxvt" icon="/home/josh/.config/obmenu-generator/icons/c4103164d9a3432f7d57dfe77d99545e.png"><action name="Execute"><command><![CDATA[urxvt]]></command></action></item>
+  </menu>
+  <separator/>
+  <menu id="0.349851078860489" icon="/home/josh/.config/obmenu-generator/icons/c4103164d9a3432f7d57dfe77d99545e.png" label="Configs">
+    <item label=".Xresources" icon="/home/josh/.config/obmenu-generator/icons/a03ff664a373a1a68651467cd9fd0c39.png"><action name="Execute"><command><![CDATA[ /home/josh/.Xresources]]></command></action></item>
+    <item label=".vimrc" icon="/home/josh/.config/obmenu-generator/icons/a03ff664a373a1a68651467cd9fd0c39.png"><action name="Execute"><command><![CDATA[ ~/.vimrc]]></command></action></item>
+    <item label=".zshrc" icon="/home/josh/.config/obmenu-generator/icons/a03ff664a373a1a68651467cd9fd0c39.png"><action name="Execute"><command><![CDATA[ ~/.zshrc]]></command></action></item>
+    <item label="Reconfigure Openbox" icon="/home/josh/.config/obmenu-generator/icons/656a22bf79405665197c1c6f4d9c8134.png"><action name="Execute"><command><![CDATA[openbox --reconfigure]]></command></action></item>
+  </menu>
+  <separator/>
+  <menu id="0.726018466745163" icon="/home/josh/.config/obmenu-generator/icons/650264e194bc63011e030589e23a528b.png" label="Exit">
+    <item label="Logout" icon="/home/josh/.config/obmenu-generator/icons/2fa5481c428dbcdf9edd8e0611c84d48.png"><action name="Execute"><command><![CDATA[openbox --exit]]></command></action></item>
+    <item label="Reboot" icon="/home/josh/.config/obmenu-generator/icons/9304e7894db14d6723201b28b77c486e.png"><action name="Execute"><command><![CDATA[systemctl reboot]]></command></action></item>
+    <item label="Shutdown" icon="/home/josh/.config/obmenu-generator/icons/650264e194bc63011e030589e23a528b.png"><action name="Execute"><command><![CDATA[systemctl -i poweroff]]></command></action></item>
+  </menu>
+</openbox_menu>
