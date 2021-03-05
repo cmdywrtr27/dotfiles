@@ -206,7 +206,7 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Disable highlight when <leader>h is pressed
+" Disable highlight when <leader><cr> is pressed
 noremap <leader>h :noh<CR>
 
 " Smart way to move between windows
@@ -268,26 +268,25 @@ let g:airline_detect_whitespace=0
 "function! AirlineInit()
     let g:airline_section_a = airline#section#create(['mode','branch'])
     let g:airline_section_b = airline#section#create_left(['%F'])
+    let g:airline_section_c = airline#section#create(['%m'])
     "let g:airline_section_c = airline#section#create(['filetype'])
-    let g:airline_section_c = airline#section#create(['branch'])
     "let g:airline_section_x = airline#section#create(['%B'])
-    "let g:airline_section_x = airline#section#create(['filetype'])
     let g:airline_section_x = airline#section#create(['filetype'])
-    "let g:airline_section_y = airline#section#create(['%P'])
+    let g:airline_section_y = airline#section#create(['%P'])
     "let g:airline_section_y = airline#section#create([' '])
-    let g:airline_section_z = airline#section#create_right(['Line %l of %L'])
+    let g:airline_section_z = airline#section#create_right(['Line %l/%L'])
 "endfunction
 "autocmd VimEnter * call AirlineInit()
 
 "if !exists('g:airline_symbols')
-    "\ let g:airline_symbols = {
-    "\ let g:airline_left_sep = ''
-    "\ let g:airline_left_alt_sep = ''
-    "\ let g:airline_right_sep = ''
-    "\ let g:airline_right_alt_sep = ''
-    "\ let g:airline_symbols.branch = ''
-    "\ let g:airline_symbols.readonly = ''
-    "\ let g:airline_symbols.linenr = '⭡'
+    "let g:airline_symbols = {
+    let g:airline_left_sep = ''
+    let g:airline_left_alt_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_right_alt_sep = ''
+    let g:airline_symbols.branch = ''
+    let g:airline_symbols.readonly = ''
+    let g:airline_symbols.linenr = '⭡'
     "\ }
 "endif
 
@@ -331,7 +330,6 @@ set modelines=0
 "set statusline+=%#CursorLineNr#
 "set statusline+=\ %F
 "set statusline+=%= "Right side settings
-"set statusline+=%#Search#
 "set statusline+=\ %l/%L
 "set statusline+=\ [%c]
 
