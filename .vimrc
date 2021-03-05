@@ -21,6 +21,17 @@ Plugin 'tpope/vim-commentary'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'mileszs/ack.vim'
 Plugin 'preservim/nerdcommenter'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vifm/vifm.vim'
+Plugin 'vimwiki/vimwiki'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'frazrepo/vim-rainbow'
+Plugin 'vim-python/python-syntax'
+Plugin 'powerline/powerline'
+Plugin 'powerline/powerline-fonts'
+Plugin 'ryanoasis/powerline-extra-symbols'
 
 call vundle#end()
 
@@ -46,7 +57,7 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set 10 lines to the cursor - when moving vertically using j/k
-set so=10
+set scrolloff=10
 
 " Avoid garbled characters in Chinese language windows OS
 let $LANG='en'
@@ -66,13 +77,20 @@ else
 endif
 
 "Always show current position
-set ruler
+set noruler
 
 " Height of the command bar
 set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
-set hid
+set hidden
+
+set list
+set listchars=tab:\|\
+set matchpairs+=<:>
+
+" Add g flag to search/replace
+set gdefault
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -114,10 +132,6 @@ set novisualbell
 set t_vb=
 set tm=500
 
-" Properly disable sound on errors on MacVim
-if has("gui_macvim")
-    autocmd GUIEnter * set vb t_vb=
-endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -125,16 +139,7 @@ endif
 " Enable syntax highlighting
 syntax enable
 
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
-
-try
-    colorscheme thegoodluck
-catch
-endtry
-
+colorscheme thegoodluck
 set background=dark
 
 " Set extra options when running in GUI mode
@@ -144,6 +149,8 @@ set background=dark
 "    set t_Co=256
 "    set guitablabel=%M\ %t
 "endif
+
+set guifont=Hack
 
 set t_Co=256
 
@@ -181,8 +188,10 @@ set tabstop=4
 set lbr
 set tw=500
 
-"set ai "Auto indent
-"set si "Smart indent
+set autoindent "Auto indent
+
+set smartindent "Smart indent
+
 set wrap "Wrap lines
 
 """"""""""""""""""""""""""""""
@@ -196,12 +205,9 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-"map <space> /
-map <C-space> ?
 
-" Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :noh<cr>
+" Disable highlight when <leader>h is pressed
+noremap <leader>h :noh<CR>
 
 " Smart way to move between windows
 map <C-j> <C-W>j
@@ -248,29 +254,90 @@ endtry
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 """"""""""""""""""""""""""""""
+" => Airline
+""""""""""""""""""""""""""""""
+let g:airline_theme='understated'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+let g:airline_detect_whitespace=0
+
+"function! AirlineInit()
+    let g:airline_section_a = airline#section#create(['mode','branch'])
+    let g:airline_section_b = airline#section#create_left(['%F'])
+    "let g:airline_section_c = airline#section#create(['filetype'])
+    let g:airline_section_c = airline#section#create(['branch'])
+    "let g:airline_section_x = airline#section#create(['%B'])
+    "let g:airline_section_x = airline#section#create(['filetype'])
+    let g:airline_section_x = airline#section#create(['filetype'])
+    "let g:airline_section_y = airline#section#create(['%P'])
+    "let g:airline_section_y = airline#section#create([' '])
+    let g:airline_section_z = airline#section#create_right(['Line %l of %L'])
+"endfunction
+"autocmd VimEnter * call AirlineInit()
+
+"if !exists('g:airline_symbols')
+    "\ let g:airline_symbols = {
+    "\ let g:airline_left_sep = ''
+    "\ let g:airline_left_alt_sep = ''
+    "\ let g:airline_right_sep = ''
+    "\ let g:airline_right_alt_sep = ''
+    "\ let g:airline_symbols.branch = ''
+    "\ let g:airline_symbols.readonly = ''
+    "\ let g:airline_symbols.linenr = '⭡'
+    "\ }
+"endif
+
+""""""""""""""""""""""""""""""
+" => Syntastic
+""""""""""""""""""""""""""""""
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+let g:syntastic_phpcs_disable = 1
+let g:syntastic_phpmd_disable = 1
+let g:syntastic_php_checkers = ['php']
+let g:syntastic_quiet_messages = { "type": "style" }
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_auto_jump = 2
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+""""""""""""""""""""""""""""""
 " => Status line
 """"""""""""""""""""""""""""""
+
 " Always show the status line
 set laststatus=2
 
 " So it doesn't show 'INSERT' twice
-set nomodeline
+set noshowmode
 
 " Show command in status line
 set showcmd
 
-" Format the status line
-set statusline=
-set statusline+=%#IncSearch#
-set statusline+=\ %y
-set statusline+=\ %r
-set statusline+=%#CursorLineNr#
-set statusline+=\ %F
-set statusline+=%= "Right side settings
-set statusline+=%#Search#
-set statusline+=\ %l/%L
-set statusline+=\ [%c]
+set modelines=0
 
+" Format the status line
+"set statusline=
+"set statusline+=%#IncSearch#
+"set statusline+=\ %y
+"set statusline+=\ %r
+"set statusline+=%#CursorLineNr#
+"set statusline+=\ %F
+"set statusline+=%= "Right side settings
+"set statusline+=%#Search#
+"set statusline+=\ %l/%L
+"set statusline+=\ [%c]
+
+"set statusline=%1*\ file\ %3*\ %f\ %4*\
+"set statusline+=%=\
+"set statusline+=%3*\ %l\ of\ %L\ %2*\ line\
 
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
@@ -328,6 +395,18 @@ map <leader>s? z=
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Hit <TAB> to auto-complete
+set wildchar=<TAB>
+
+set wildmode=longest,list,full
+
+" Show all changes
+set report=0
+
+set splitright
+
+set splitbelow
+
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
@@ -342,11 +421,12 @@ map <leader>pp :setlocal paste!<cr>
 
 "  Use clipboard
 let g:clipbrdDefaultReg = '+'
+set clipboard=unnamedplus
 
 " Show line numbers
-"set number relativenumber
+set number relativenumber
 
-set nu rnu
+set complete+=kspell
 
 " Get out of INSERT MODE!
 :imap jj <Esc>
@@ -362,6 +442,13 @@ noremap <C-q> :confirm qall<CR>
 
 " Nerd Tree
 map <C-n> :NERDTreeToggle<CR>
+
+" Show dotfiles in Nerd Tree
+let NERDTreeShowHidden=1
+
+" YCM logs
+let g:ycm_keep_logfiles = 1
+let g:ycm_log_level = 'debug'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
