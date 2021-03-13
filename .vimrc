@@ -1,41 +1,48 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/autoload/plug.vim
 
-call vundle#begin()
+call plug#begin()
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'ap/vim-css-color'
-Plugin 'tpope/vim-surround'
-Plugin 'itchyny/vim-gitbranch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'w0rp/ale'
-Plugin 'tpope/vim-commentary'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'mileszs/ack.vim'
-Plugin 'preservim/nerdcommenter'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vifm/vifm.vim'
-Plugin 'vimwiki/vimwiki'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plugin 'frazrepo/vim-rainbow'
-Plugin 'vim-python/python-syntax'
-Plugin 'powerline/powerline'
-Plugin 'powerline/powerline-fonts'
-Plugin 'ryanoasis/powerline-extra-symbols'
+Plug 'junegunn/vim-plug'
+Plug 'scrooloose/nerdtree'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'ap/vim-css-color'
+Plug 'tpope/vim-surround'
+Plug 'itchyny/vim-gitbranch'
+Plug 'tpope/vim-fugitive'
+Plug 'itchyny/lightline.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'godlygeek/tabular'
+Plug 'vifm/vifm.vim'
+Plug 'vimwiki/vimwiki'
+Plug 'airblade/vim-gitgutter'
+Plug 'frazrepo/vim-rainbow'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'vim-python/python-syntax'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'plasticboy/vim-markdown'
+Plug 'w0rp/ale'
+Plug 'tpope/vim-commentary'
+Plug 'vim-syntastic/syntastic'
+Plug 'mileszs/ack.vim'
+Plug 'preservim/nerdcommenter'
+Plug 'neoclide/coc-git'
+Plug 'jacoborus/tender.vim'
+Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimshell.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/powerline-extra-symbols'
+Plug 'powerline/powerline-fonts'
 
-call vundle#end()
+call plug#end()
 
-set history=1000
+set history=500
 
 " Enable filetype plugins
 filetype plugin on
@@ -49,15 +56,36 @@ au FocusGained,BufEnter * checktime
 " like <leader>w saves the current file
 let mapleader = " "
 
+" Get out of INSERT MODE!
+:imap jj <Esc>
+
+" Quick save
+noremap <C-w> :w!<CR>
+
+" Quick reload
+"noremap <leader>r :so %<CR>
+noremap <C-r> :source ~/.vimrc<CR>
+
+" Gotta run!
+noremap <C-q> :confirm qall<CR>
+
+" Nerd Tree
+map <C-n> :NERDTreeToggle<CR>
+
+let NERDTreeShowHidden=1
+
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+"cnoremap w!! w !sudo tee % > /dev/null
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set 10 lines to the cursor - when moving vertically using j/k
-set scrolloff=10
+" Set 7 lines to the cursor - when moving vertically using j/k
+set so=10
+
+set mouse=a
 
 " Avoid garbled characters in Chinese language windows OS
 let $LANG='en'
@@ -84,13 +112,6 @@ set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
 set hidden
-
-set list
-set listchars=tab:\|\
-set matchpairs+=<:>
-
-" Add g flag to search/replace
-set gdefault
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -120,18 +141,16 @@ set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
-" Enable mouse
-set mouse=nicra
-
-" Before you do something stupid
-set confirm
-
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
 
+" Properly disable sound on errors on MacVim
+if has("gui_macvim")
+    autocmd GUIEnter * set vb t_vb=
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -139,28 +158,39 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
-colorscheme thegoodluck
+" Enable 256 colors palette in Gnome Terminal
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
+
+try
+    colorscheme hybrid
+catch
+endtry
+
 set background=dark
 
+highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
+highlight SignColumn guibg=#222222
+highlight SignColumn ctermbg=8
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+
 " Set extra options when running in GUI mode
-"if has("gui_running")
-"    set guioptions-=T
-"    set guioptions-=e
-"    set t_Co=256
-"    set guitablabel=%M\ %t
-"endif
-
-set guifont=Hack
-
-set t_Co=256
+if has("gui_running")
+    set guioptions-=T
+    set guioptions-=e
+    set t_Co=256
+    set guitablabel=%M\ %t
+endif
 
 " Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf-8
+set encoding=utf8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
+set noshowmode
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -173,7 +203,6 @@ set noswapfile
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Use spaces instead of tabs
 set expandtab
 
@@ -188,10 +217,8 @@ set tabstop=4
 set lbr
 set tw=500
 
-set autoindent "Auto indent
-
-set smartindent "Smart indent
-
+set ai "Auto indent
+set si "Smart indent
 set wrap "Wrap lines
 
 """"""""""""""""""""""""""""""
@@ -205,6 +232,9 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+"map <space> /
+"map <C-space> ?
 
 " Disable highlight when <leader><cr> is pressed
 noremap <leader>h :noh<CR>
@@ -215,14 +245,16 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
 " Close all the buffers
 map <leader>ba :bufdo bd<cr>
-
-map <leader>l :bnext<cr>
-map <leader>h :bprevious<cr>
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
@@ -254,96 +286,17 @@ endtry
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 """"""""""""""""""""""""""""""
-" => Airline
-""""""""""""""""""""""""""""""
-let g:airline_theme='understated'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#whitespace#enabled = 1
-let g:airline#extensions#hunks#non_zero_only = 1
-let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
-let g:airline_detect_whitespace=0
-
-"function! AirlineInit()
-    let g:airline_section_a = airline#section#create(['mode','branch'])
-    let g:airline_section_b = airline#section#create_left(['%F'])
-    let g:airline_section_c = airline#section#create(['%m'])
-    "let g:airline_section_c = airline#section#create(['filetype'])
-    "let g:airline_section_x = airline#section#create(['%B'])
-    let g:airline_section_x = airline#section#create(['filetype'])
-    let g:airline_section_y = airline#section#create(['%P'])
-    "let g:airline_section_y = airline#section#create([' '])
-    let g:airline_section_z = airline#section#create_right(['Line %l/%L'])
-"endfunction
-"autocmd VimEnter * call AirlineInit()
-
-"if !exists('g:airline_symbols')
-    "let g:airline_symbols = {
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-    let g:airline_symbols.branch = ''
-    let g:airline_symbols.readonly = ''
-    let g:airline_symbols.linenr = '⭡'
-    "\ }
-"endif
-
-""""""""""""""""""""""""""""""
-" => Syntastic
-""""""""""""""""""""""""""""""
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-let g:syntastic_phpcs_disable = 1
-let g:syntastic_phpmd_disable = 1
-let g:syntastic_php_checkers = ['php']
-let g:syntastic_quiet_messages = { "type": "style" }
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_auto_jump = 2
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-""""""""""""""""""""""""""""""
 " => Status line
 """"""""""""""""""""""""""""""
-
 " Always show the status line
 set laststatus=2
 
-" So it doesn't show 'INSERT' twice
-set noshowmode
-
-" Show command in status line
-set showcmd
-
-set modelines=0
-
 " Format the status line
-"set statusline=
-"set statusline+=%#IncSearch#
-"set statusline+=\ %y
-"set statusline+=\ %r
-"set statusline+=%#CursorLineNr#
-"set statusline+=\ %F
-"set statusline+=%= "Right side settings
-"set statusline+=\ %l/%L
-"set statusline+=\ [%c]
-
-"set statusline=%1*\ file\ %3*\ %f\ %4*\
-"set statusline+=%=\
-"set statusline+=%3*\ %l\ of\ %L\ %2*\ line\
-
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
-"set statusline=%<\ %n\ %F\ %m%r%y%=\ Line:\ \%l\/\%L\ Column:\ \%c\
+"set statusline=\ %{HasPaste()}%<%F%m%r%=%b\ %w\ \ %P \ %l/%L:%c
 
-"set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-
-"set statusline=%<%F%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
+"set statusline=%<%F\ %h%m%r%=%-14.(%l/%L:%c%V%)\ %P
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
@@ -380,7 +333,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pressing <leader>ss will toggle and untoggle spell checking
+" Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
 " Shortcuts using <leader>
@@ -392,19 +345,6 @@ map <leader>s? z=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Hit <TAB> to auto-complete
-set wildchar=<TAB>
-
-set wildmode=longest,list,full
-
-" Show all changes
-set report=0
-
-set splitright
-
-set splitbelow
-
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
@@ -424,29 +364,9 @@ set clipboard=unnamedplus
 " Show line numbers
 set number relativenumber
 
-set complete+=kspell
+set confirm
 
-" Get out of INSERT MODE!
-:imap jj <Esc>
-
-" Quick save
-noremap <C-w> :w<CR>
-
-" Quick reload
-noremap <C-r> :so %<CR>
-
-" Gotta run!
-noremap <C-q> :confirm qall<CR>
-
-" Nerd Tree
-map <C-n> :NERDTreeToggle<CR>
-
-" Show dotfiles in Nerd Tree
-let NERDTreeShowHidden=1
-
-" YCM logs
-let g:ycm_keep_logfiles = 1
-let g:ycm_log_level = 'debug'
+set matchpairs+=<:>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
@@ -499,4 +419,92 @@ function! VisualSelection(direction, extra_filter) range
 
     let @/ = l:pattern
     let @" = l:saved_reg
+endfunction
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:lightline = {
+        \ 'colorscheme': 'deus',
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'absolutepath' ], [ 'readonly', 'modified', 'ctrlpmark' ] ],
+        \   'right': [ [ 'syntastic', 'lineinfo' ], [ 'percent' ], [ 'filetype' ] ]
+        \ },
+        \ 'component_function': {
+        \   'gitbranch': 'gitbranch#name',
+        \   'readonly': 'LightLineReadonly',
+        \   'filename': 'LightLineFilename',
+        \   'fileformat': 'LightLineFileformat',
+        \   'filetype': 'LightLineFiletype',
+        \   'fileencoding': 'LightLineFileencoding',
+        \   'mode': 'LightLineMode',
+        \   'ctrlpmark': 'CtrlPMark'
+        \ },
+        \ 'component': {
+        \   'readonly': '%{&filetype=="help"?"":&readonly?"":""}',
+        \   'modified': '%{&filetype=="help"?"":&modified?"[+]":&modifiable?"":"[-]"}',
+        \   'lineinfo': '%3l/%L:%-2c',
+        \   'percent': '%P',
+        \   'paste': '%{&paste?"PASTE":""}',
+        \ },
+        \ 'component_expand': {
+        \   'syntastic': 'SyntasticStatuslineFlag',
+        \   'buffers': 'lightline#bufferline#buffers'
+        \ },
+        \ 'component_type': {
+        \   'syntastic': 'error',
+        \   'buffers': 'tabsel'
+        \ },
+        \ 'tabline': {
+        \   'left': [ [ 'tabs' ] ],
+        \   'right': [ [ 'close' ] ]
+        \ },
+        \ 'separator': { 'left': '', 'right': '' },
+        \ 'subseparator': { 'left': '', 'right': '' }
+        \ }
+
+let g:lightline.tab = {
+        \ 'active': [ 'tabnum', 'filename', 'modified' ],
+        \ 'inactive': [ 'tabnum', 'filename', 'modified' ]
+        \ }
+
+function! LightLineModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! LightLineReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
+endfunction
+
+function! LightLineFilename()
+  return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+endfunction
+
+function! LightLineFugitive()
+  if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? ''._ : ''
+  endif
+  return ''
+endfunction
+
+function! LightLineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightLineFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+
+function! LightLineFileencoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+function! LightLineMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
