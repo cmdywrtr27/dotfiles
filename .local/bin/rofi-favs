@@ -1,0 +1,31 @@
+#!/bin/sh
+
+DIALOG_RESULT=$(echo -e 'Firefox\nFilezilla\nFile Manager\nTerminal\nCustomize Look & Feel\nVirtual Box' | rofi -dmenu -i -p "Favorites" -xoffset -400 -yoffset -270 -hide-scrollbar -tokenize -lines 6 -eh 1 -width 40 -padding 5 -show-icons -drun-icon-theme "Obsidian" -font "JetBrainsMono Nerd Font 10")
+
+echo "This result is:$DIALOG_RESULT"
+sleep 1;
+
+if [ "$DIALOG_RESULT" = "Firefox" ];
+then
+    exec firefox
+
+elif [ "DIALOG_RESULT" = "Filezilla" ];
+then
+    exec filezilla
+
+elif [ "$DIALOG_RESULT" = "File Manager" ];
+then
+    exec thunar
+
+elif [ "$DIALOG_RESULT" = "Terminal" ];
+then
+    exec tilix
+
+elif [ "$DIALOG_RESULT" = "Customize Look & Feel" ];
+then
+    exec lxappearance
+
+elif [ "$DIALOG_RESULT" = "Virtual Box" ];
+then
+    exec virtualbox
+fi

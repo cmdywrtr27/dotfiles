@@ -1,3 +1,3 @@
 #!/bin/bash
 
-scrot -u 'Screenshot%m-%d-%Y-%H:%M%p.png' -e 'mv $f /home/$USER/Pictures/Screenshots' && notify-send -i /usr/share/icons/Papirus/symbolic/screenshot.png 'Screenshot sent to ~/Pictures/Screenshots'
+scrot -u 'Screenshot%m-%d-%Y-%H:%M%p.png' -e 'mv $f /home/josh/Pictures/Screenshots' && notify-send -i /usr/share/icons/Papirus/symbolic/screenshot2.png 'Screenshot sent to ~/Pictures/Screenshots'

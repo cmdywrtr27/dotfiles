@@ -1,0 +1,7 @@
+#!/bin/bash
+
+DATE=`date +%m-%d-%Y\ %l:%M`
+import -window root "$HOME/Pictures/Screenshots $DATE.png"
+
+#scrot -u 'Screenshot%m-%d-%Y-%H:%M%p.png' -e 'mv $f /home/josh/Pictures/Screenshots
+

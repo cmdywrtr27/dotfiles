@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# A simple script to display clock
+# 'clock -i' = with icon, 'clock' = text only
+
+CLOCK=$(LANG=en_US.utf8 LC_TIME=en_US.utf8 date +"%A, %B %d, %Y  | %l:%M %P")
+
+	if  [[ $1 = "-i" ]]; then
+    echo "  ${CLOCK}"
+	else
+    echo "${CLOCK}"
+    fi
