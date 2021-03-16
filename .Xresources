@@ -1,73 +1,86 @@
 ! Font ----------------------------------------------
 
-Xft*dpi:       96
-Xft*antialias: true
-Xft*rgba:      rgb
-Xft*autohint:  false
-Xft*lcdfilter: lcddefault
-Xft*hinting:   true
-Xft*hintstyle: hintslight
+Xft*dpi:           96
+Xft*antialias:     true
+Xft*rgba:          rgb
+Xft*autohint:      true
+Xft*lcdfilter:     lcddefault
+Xft*hinting:       true
+Xft*hintstyle:     hintfull
+URxvt*letterSpace: 0
 
-URxvt*letterSpace:    0
-URxvt*font:           xft:JetBrainsMono Nerd Font Mono:style=Regular:pixelsize=16:antialias=true:hinting=true, xft:NotoMono Nerd Font:style=Book:antialias=true:hinting=true, xft:Hack Nerd Font:style=Regular:pixelsize=16:antialias=true:hinting=true, xft:Font Awesome:pixelsize=16, xft:Noto Color Emoji:style=Regular:pixelsize=16
-URxvt*boldFont:       xft:JetBrainsMono Nerd Font Mono:style=Bold:pixelsize=16:antialias=true:hinting=true, xft:NotoMono Nerd Font:style=Book:antialias=true:hinting=true, xft:Hack Nerd Font Mono:style=Bold:pixelsize=16:antialias=true:hinting=true, xft:Font Awesome:pixelsize=16, xft:Noto Color Emoji:style=Regular:pixelsize=16
-URxvt*italicFont:     xft:JetBrainsMono Nerd Font Mono:style=Italic:pixelsize=16:antialias=true:hinting=true, xft:NotoMono Nerd Font:style=Book:antialias=true:hinting=true, xft:Hack Nerd Font Mono:style=Italic:pixelsize=16:antialias=true:hinting=true, xft:Font Awesome:pixelsize=16, xft:Noto Color Emoji:style=Regular:pixelsize=16
-URxvt*bolditalicFont: xft:JetBrainsMono Nerd Font Mono:style=Bold Italic:pixelsize=16:antialias=true:hinting=true, xft:NotoMono Nerd Font:style=Book:antialias=true:hinting=true, xft:Hack Nerd Font Mono:style=Bold Italic:pixelsize=16:antialias=true:hinting=true, xft:Font Awesome:pixelsize=16, xft:Noto Color Emoji:style=Regular:pixelsize=16
 
-!URxvt*letterSpace:    0
-!URxvt*font:           xft:Inconsolata Nerd Font:style=Regular:pixelsize=16:antialias=true:hinting=true, xft:Font Awesome:pixelsize=18:antialias=true:hinting=true, xft:Hack Nerd Font:style=Regular:pixelsize=18:antialias=true:hinting=true
-!URxvt*boldFont:       xft:Inconsolata Nerd Font:style=Bold:pixelsize=16:antialias=true:hinting=true, xft:Font Awesome:pixelsize=18:antialias=true:hinting=true, xft:Hack Nerd Font:style=Bold:pixelsize=18:antialias=true:hinting=true
-!URxvt*italicFont:     xft:Inconsolata Nerd Font:style=Italic:pixelsize=16:antialias=true:hinting=true, xft:Font Awesome:pixelsize=18:antialias=true:hinting=true, xft:Hack Nerd Font:style=Italic:pixelsize=18:antialias=true:hinting=true
-!URxvt*bolditalicFont: xft:Inconsolata Nerd Font:style=Bold Italic:pixelsize=16:antialias=true:hinting=true, xft:Font Awesome:pixelsize=18:antialias=true:hinting=true, xft:Hack Nerd Font:style=Bold Italic:pixelsize=18:antialias=true:hinting=true
+#define FONT JetBrainsMono Nerd Font Mono
+#define ICON Font Awesome 5 Free Solid
+#define EMOJI Noto Color Emoji
+#define NERD_FONT Hack Nerd Font
+#define FONT_SIZE 12
+#define ICON_SIZE 16
+#define EMOJI_SIZE 16
+#define NERD_SIZE 16
+URxvt*font: xft:FONT:style=Medium:size=FONT_SIZE:antialias=true, xft:ICON:size=ICON_SIZE:antialias=true, xft:NERD_FONT:size=NERD_SIZE:antialias=true, xft:EMOJI:size=EMOJI_SIZE:antialias=true
+URxvt*boldFont: xft:FONT:style=Bold:size=FONT_SIZE:antialias=true, xft:ICON:size=ICON_SIZE:antialias=true, xft:NERD_FONT:size=NERD_SIZE:antialias=true, xft:EMOJI:size=EMOJI_SIZE:antialias=true
+URxvt*italicFont: xft:FONT:style=Italic:size=FONT_SIZE:antialias=true, xft:ICON:size=ICON_SIZE:antialias=true, xft:NERD_FONT:size=NERD_SIZE:antialias=true, xft:EMOJI:size=EMOJI_SIZE:antialias=true
+URxvt*boldItalicFont: xft:FONT:style=Bold Italic:size=FONT_SIZE:antialias=true, xft:ICON:size=ICON_SIZE:antialias=true, xft:NERD_FONT:size=NERD_SIZE:antialias=true, xft:EMOJI:size=EMOJI_SIZE:antialias=true
+
+
+!URxvt*font:           xft:RobotoMono Nerd Font:style=Regular:pixelsize=16:antialias=true:hinting=true, xft:JetBrainsMono Nerd Font Mono:style=Regular:pixelsize=16:antialias=true:hinting=true, xft:NotoMono Nerd Font:style=Book:antialias=true:hinting=true, xft:Hack Nerd Font:style=Regular:pixelsize=16:antialias=true:hinting=true, xft:Font Awesome:pixelsize=16, xft:Noto Color Emoji:style=Regular:pixelsize=16
+!URxvt*boldFont:       xft:RobotoMono Nerd Font:style=Bold:pixelsize=16:antialias=true:hinting=true, xft:JetBrainsMono Nerd Font Mono:style=Bold:pixelsize=16:antialias=true:hinting=true, xft:NotoMono Nerd Font:style=Book:antialias=true:hinting=true, xft:Hack Nerd Font Mono:style=Bold:pixelsize=16:antialias=true:hinting=true, xft:Font Awesome:pixelsize=16, xft:Noto Color Emoji:style=Regular:pixelsize=16
+!URxvt*italicFont:     xft:RobotoMono Nerd Font:style=Italic:pixelsize=16:antialias=true:hinting=true, xft:JetBrainsMono Nerd Font Mono:style=Italic:pixelsize=16:antialias=true:hinting=true, xft:NotoMono Nerd Font:style=Book:antialias=true:hinting=true, xft:Hack Nerd Font Mono:style=Italic:pixelsize=16:antialias=true:hinting=true, xft:Font Awesome:pixelsize=16, xft:Noto Color Emoji:style=Regular:pixelsize=16
+!URxvt*bolditalicFont: xft:RobotoMono Nerd Font:style=Bold Italic:pixelsize=16:antialias=true:hinting=true, xft:JetBrainsMono Nerd Font Mono:style=Bold Italic:pixelsize=16:antialias=true:hinting=true, xft:NotoMono Nerd Font:style=Book:antialias=true:hinting=true, xft:Hack Nerd Font Mono:style=Bold Italic:pixelsize=16:antialias=true:hinting=true, xft:Font Awesome:pixelsize=16, xft:Noto Color Emoji:style=Regular:pixelsize=16
 
 ! Color -------------------------------------------
 
-URxvt*.foreground: #ffffff
-URxvt*.background: #222222
-URxvt*.cursorColor: #ffffff
+#include "/home/josh/.urxvt/idle_toes.Xresources"
 
-! black
-*.color0: #000000
-*.color8: #323232
-
-! red
-*.color1:  #ff4242
-*.color9:  #f56262
-
-! green
-*.color2:  #7fe173
-*.color10: #9dff91
-
-! yellow
-*.color3:  #ffc66d
-*.color11: #ffe48b
-
-! blue
-*.color4:  #4099ff
-*.color12: #5eb7f7
-
-! magenta
-*.color5:  #f680ff
-*.color13: #ff9dff
-
-! cyan
-*.color6:  #85ffd8
-*.color14: #c1f7e8
-
-! white
-*.color7:  #eeeeec
-*.color15: #ffffff
+!URxvt*.foreground: #ffffff
+!URxvt*.background: #222222
+!URxvt*.cursorColor: #ffffff
+!
+!! idle_toes
+!
+!! black
+!*.color0:      #323232
+!*.color8:      #535353
+!
+!! red
+!*.color1:      #d25252
+!*.color9:      #f07070
+!
+!! green
+!*.color2:      #7fe173
+!*.color10:     #9dff91
+!
+!! yellow
+!*.color3:      #ffc66d
+!*.color11:     #ffe48b
+!
+!! blue
+!*.color4:      #4099ff
+!*.color12:     #5eb7f7
+!
+!! magenta
+!*.color5:      #f680ff
+!*.color13:     #ff9dff
+!
+!! cyan
+!*.color6:      #bed6ff
+!*.color14:     #dcf4ff
+!
+!! white
+!*.color7:      #eeeeec
+!*.color15:     #ffffff
 
 ! Settings -----------------------------------
 
 URxvt*iconFile:             /usr/share/icons/Papirus/32x32/apps/Terminal.svg
-!URxvt*backgroundPixmap:     /home/josh/.urxvt/borders/diamond.jpeg
+!URxvt*backgroundPixmap:     /home/josh/.urxvt/borders/blah.jpeg
 URxvt*windowName:           urxvt
 URxvt*windowTitle:          urxvt
 URxvt*termName:             rxvt-256color
 !URxvt*borderLess:           true
 !URxvt*internalBorder:       10
-!URxvt*externalBorder:       5
+!URxvt*externalBorder:       25
 !URxvt*geometry:             136x38
 URxvt*skipBuiltinGlyphs:    false
 URxvt*scrollTtyKeypress:    true
@@ -84,6 +97,8 @@ URxvt*cursorBlink:          true
 URxvt*transparent:          false
 URxvt*shading:              0
 URxvt*depth:                32
+URxvt*secondaryScreen:      1
+URxvt*secondaryScroll:      0
 URxvt*iso14755:             false
 URxvt*iso14755_52:          false
 
@@ -102,12 +117,19 @@ URxvt*keysym.C-S-C:       perl:clipboard:copy
 URxvt*keysym.C-S-V:       perl:clipboard:paste
 
 ! Keyboard-select
-URxvt*keysym.C-Escape: perl:keyboard-select:activate
-URxvt*keysym.C-S-S:    perl:keyboard-select:search
+URxvt*keysym.C-Escape:           perl:keyboard-select:activate
+URxvt*keysym.C-S-S:              perl:keyboard-select:search
+URxvt*keyboard-select.clipboard: true
 
 ! Url-select
-URxvt*keysym.C-S-U:         perl:url-select:select_next
+URxvt*keysym.C-S-N:         perl:url-select:select_next
 URxvt*url-select.autocopy:  true
 URxvt*url-select.button:    1
 URxvt*url-select.launcher:  brave-bin
 URxvt*url-select.underline: true
+
+! Tabbed
+!URxvt*tabbed.tabbar-fg: 7
+!URxvt*tabbed.tabbar-bg: 8
+!URxvt*tabbed.tab-fg:    7
+!URxvt*tabbed.tab-bg:    8
