@@ -1,26 +1,27 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/autoload/plug.vim
+"set rtp+=~/.vim/autoload/plug.vim
 
-call plug#begin()
+call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-plug'
-Plug 'scrooloose/nerdtree'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'ap/vim-css-color'
+Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/vim-gitbranch'
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
+Plug 'jiangmiao/auto-pairs'
 Plug 'vifm/vifm.vim'
 Plug 'vimwiki/vimwiki'
-Plug 'airblade/vim-gitgutter'
 Plug 'frazrepo/vim-rainbow'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'vim-python/python-syntax'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -31,22 +32,27 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-syntastic/syntastic'
 Plug 'mileszs/ack.vim'
 Plug 'preservim/nerdcommenter'
+Plug 'jremmen/vim-ripgrep'
+Plug 'leafgarland/typescript-vim'
+Plug 'mbbill/undotree'
 Plug 'neoclide/coc-git'
 Plug 'jacoborus/tender.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimshell.vim'
+Plug 'junegunn/vim-emoji'
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'kovetskiy/sxhkd-vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'ryanoasis/powerline-extra-symbols'
-Plug 'powerline/powerline-fonts'
 
 call plug#end()
 
-set history=500
+set history=1000
 
 " Enable filetype plugins
-filetype plugin on
-filetype indent on
+filetype plugin indent on
+
+set path+=**
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -71,8 +77,16 @@ noremap <C-q> :confirm qall<CR>
 
 " Nerd Tree
 map <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>u :UndotreeShow<CR>
+let g:NERDTreeDirArrowExpandable = 'ﰲ'
+let g:NERDTreeDirArrowCollapsible = 'ﰬ'
+let g:NERDTreeWinSize = 25
+let NERDTreeShowHidden = 1
+let NERDTreeMinimalUI = 1
 
-let NERDTreeShowHidden=1
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'r'
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
@@ -82,10 +96,15 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set 7 lines to the cursor - when moving vertically using j/k
-set so=10
+" Set 10 lines to the cursor - when moving vertically using j/k
+set scrolloff=10
+set sidescrolloff=5
 
-set mouse=a
+" Vertical windows split to right and horizontal windows split below
+set splitright
+set splitbelow
+
+set mouse=nicra
 
 " Avoid garbled characters in Chinese language windows OS
 let $LANG='en'
@@ -95,6 +114,8 @@ source $VIMRUNTIME/menu.vim
 
 " Turn on the Wild menu
 set wildmenu
+set wildmode=longest,list,full
+set wildchar=<TAB>
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -108,6 +129,7 @@ endif
 set noruler
 
 " Height of the command bar
+set showcmd
 set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
@@ -125,6 +147,13 @@ set smartcase
 
 " Highlight search results
 set hlsearch
+
+" Turn off highlights after search is complete
+augroup vimrc-incsearch-highlight
+      autocmd!
+      autocmd CmdlineEnter /,\? :set hlsearch
+      autocmd CmdlineLeave /,\? :set nohlsearch
+augroup END
 
 " Makes search act like search in modern browsers
 set incsearch
@@ -147,42 +176,20 @@ set novisualbell
 set t_vb=
 set tm=500
 
-" Properly disable sound on errors on MacVim
-if has("gui_macvim")
-    autocmd GUIEnter * set vb t_vb=
-endif
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
 
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
+" Only set if terminal has 256 colors (ie. xterm-256color)
+"set t_Co=256
+let g:rehash256 = 1
 
-try
-    colorscheme hybrid
-catch
-endtry
-
+colorscheme vydark
 set background=dark
 
-highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
-highlight SignColumn guibg=#222222
-highlight SignColumn ctermbg=8
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions-=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
+let g:rainbow_active = 1
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -190,7 +197,14 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
+" Don't show 'insert' twice
 set noshowmode
+
+" Disable highlight when <leader>h is pressed
+noremap <leader>h :noh<CR>
+
+"set termguicolors
+set nohlsearch
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -199,6 +213,8 @@ set noshowmode
 set nobackup
 set nowb
 set noswapfile
+set undodir=~/.vim/undodir
+set undofile
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -209,17 +225,20 @@ set expandtab
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
+" 1 tab = 4 spaces
 set shiftwidth=4
 set tabstop=4
 
+" GUI Font
+set guifont=JetBrainsMono\ Nerd\ Font\ 14
+
 " Linebreak on 500 characters
-set lbr
+set linebreak
 set tw=500
 
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
+set autoindent "Auto indent
+set smartindent "Smart indent
+set nowrap "Wrap lines
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -232,13 +251,6 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-"map <space> /
-"map <C-space> ?
-
-" Disable highlight when <leader><cr> is pressed
-noremap <leader>h :noh<CR>
-
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -310,13 +322,6 @@ nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
-if has("mac") || has("macunix")
-  nmap <D-j> <M-j>
-  nmap <D-k> <M-k>
-  vmap <D-j> <M-j>
-  vmap <D-k> <M-k>
-endif
-
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
     let save_cursor = getpos(".")
@@ -334,7 +339,7 @@ endif
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+map <leader>ss :setlocal spell!<CR>
 
 " Shortcuts using <leader>
 map <leader>sn ]s
@@ -346,16 +351,16 @@ map <leader>s? z=
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+noremap <Leader>m mmHmt:%s/<C-V><CR>//ge<CR>'tzt'm
 
 " Quickly open a buffer for scribble
-map <leader>q :e ~/buffer<cr>
+map <leader>q :e ~/buffer<CR>
 
 " Quickly open a markdown buffer for scribble
-map <leader>x :e ~/buffer.md<cr>
+map <leader>x :e ~/buffer.md<CR>
 
 " Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
+map <leader>pp :setlocal paste!<CR>
 
 "  Use clipboard
 let g:clipbrdDefaultReg = '+'
@@ -364,9 +369,17 @@ set clipboard=unnamedplus
 " Show line numbers
 set number relativenumber
 
+" So you don't do anything stupid
 set confirm
 
 set matchpairs+=<:>
+
+" Set global for search/replace
+set gdefault
+
+set viminfo='100,<9999,s100
+
+nmap <C-s> <Plug>MarkdownPreview
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
@@ -421,52 +434,151 @@ function! VisualSelection(direction, extra_filter) range
     let @" = l:saved_reg
 endfunction
 
+function! ClipboardYank()
+	call system('xclip -i -selection clipboard', @@)
+endfunction
+function! ClipboardPaste()
+	let @@ = system('xclip -o -selection clipboard')
+endfunction
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
 
+vnoremap <silent><leader>y y:call ClipboardYank()<CR>
+vnoremap <silent><leader>d d:call ClipboardYank()<CR>
+nnoremap <silent><leader>p :call ClipboardPaste()<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Airline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Format the status line
+"set statusline=
+"set statusline+=\ %mode
+"set statusline+=\ %y
+"set statusline+=\ %r
+"set statusline+=%#CursorLineNr#
+"set statusline+=\ %F
+"set statusline+=%= "Right side settings
+"set statusline+=%#Search#
+"set statusline+=\ %l/%L
+"set statusline+=\ [%c]
+
+"set statusline=%<\ %{HasPaste()}%F%m%r\ \%=\ %y\ \%P\ \%l/%L:%c
+
+"set statusline=%<\ %F\ \%m%r%y%=\ Line:\ \%l\/\%L\ Column:\ \%c\
+
+"set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
+"set statusline=%<%F%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
+
+"let g:airline_theme='deus'
+"let g:airline_powerline_fonts = 1
+"let g:Powerline_symbols = 'fancy'
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#branch#enabled = 1
+"let g:airline#extensions#whitespace#enabled = 0
+"let g:airline#extensions#hunks#non_zero_only = 0
+""let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+"let g:airline_detect_whitespace=0
+
+"let g:airline_section_a = airline#section#create(['mode','paste','branch'])
+"let g:airline_section_b = airline#section#create(['%F'])
+"let g:airline_section_c = airline#section#create(['%m','%r'])
+"let g:airline_section_x = airline#section#create(['filetype'])
+"let g:airline_section_y = airline#section#create(['%P'])
+"let g:airline_section_z = airline#section#create(['%l/%L:%c'])
+
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+""let g:airline_symbols.branch = ''
+""let g:airline_symbols.readonly = ''
+""let g:airline_symbols.linenr = '⭡'
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Lightline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-        \ 'colorscheme': 'deus',
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'absolutepath' ], [ 'readonly', 'modified', 'ctrlpmark' ] ],
-        \   'right': [ [ 'syntastic', 'lineinfo' ], [ 'percent' ], [ 'filetype' ] ]
-        \ },
-        \ 'component_function': {
-        \   'gitbranch': 'gitbranch#name',
-        \   'readonly': 'LightLineReadonly',
-        \   'filename': 'LightLineFilename',
-        \   'fileformat': 'LightLineFileformat',
-        \   'filetype': 'LightLineFiletype',
-        \   'fileencoding': 'LightLineFileencoding',
-        \   'mode': 'LightLineMode',
-        \   'ctrlpmark': 'CtrlPMark'
-        \ },
-        \ 'component': {
-        \   'readonly': '%{&filetype=="help"?"":&readonly?"":""}',
-        \   'modified': '%{&filetype=="help"?"":&modified?"[+]":&modifiable?"":"[-]"}',
-        \   'lineinfo': '%3l/%L:%-2c',
-        \   'percent': '%P',
-        \   'paste': '%{&paste?"PASTE":""}',
-        \ },
-        \ 'component_expand': {
-        \   'syntastic': 'SyntasticStatuslineFlag',
-        \   'buffers': 'lightline#bufferline#buffers'
-        \ },
-        \ 'component_type': {
-        \   'syntastic': 'error',
-        \   'buffers': 'tabsel'
-        \ },
-        \ 'tabline': {
-        \   'left': [ [ 'tabs' ] ],
-        \   'right': [ [ 'close' ] ]
-        \ },
-        \ 'separator': { 'left': '', 'right': '' },
-        \ 'subseparator': { 'left': '', 'right': '' }
-        \ }
+       \ 'colorscheme': 'wombat',
+       \ 'mode_map': { 'c': 'NORMAL' },
+       \ 'active': {
+       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'absolutepath' ], [ 'readonly', 'modified', 'ctrlpmark' ] ],
+       \   'right': [ [ 'syntastic', 'percent', 'lineinfo' ], [ 'filetype' ] ]
+       \ },
+       \ 'component_function': {
+       \   'fugitive': 'LightLineFugitive',
+       \   'gitbranch': 'branch#name',
+       \   'readonly': 'LightLineReadonly',
+       \   'filename': 'LightLineFilename',
+       \   'fileformat': 'MyFileformat',
+       \   'filetype': 'MyFiletype',
+       \   'fileencoding': 'MyFileencoding',
+       \   'mode': 'LightLineMode',
+       \   'ctrlpmark': 'CtrlPMark',
+       \ },
+       \ 'component': {
+       \   'readonly': '%{&filetype=="help"?"":&readonly?"":""}',
+       \   'modified': '%{&filetype=="help"?"":&modified?"[+]":&modifiable?"":"[-]"}',
+       \   'lineinfo': ' %l/%L:%c',
+       \   'percent': ' %P',
+       \   'paste': '%{&paste?"PASTE":""}',
+       \ },
+       \ 'component_expand': {
+       \   'syntastic': 'SyntasticStatuslineFlag',
+       \ },
+       \ 'component_type': {
+       \   'syntastic': 'error',
+       \   'tabs': 'tabsel',
+       \ },
+       \ 'tabline': {
+       \   'left': [ [ 'tabs' ] ],
+       \   'right': [ [ 'close' ] ],
+       \ },
+       \ 'separator': { 'left': '', 'right': '' },
+       \ 'subseparator': { 'left': '', 'right': '' },
+       \ }
 
 let g:lightline.tab = {
-        \ 'active': [ 'tabnum', 'filename', 'modified' ],
-        \ 'inactive': [ 'tabnum', 'filename', 'modified' ]
-        \ }
+       \ 'active': [ 'tabnum', 'filename', 'modified' ],
+       \ 'inactive': [ 'tabnum', 'filename', 'modified' ],
+       \ }
+
+let g:syntastic_phpcs_disable = 1
+let g:syntastic_phpmd_disable = 1
+let g:syntastic_php_checkers = ['php']
+let g:syntastic_quiet_messages = { "type": "style" }
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_auto_jump = 2
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 0
+let g:Powerline_symbols = 'fancy'
+let g:lightline#bufferline#show_number = 2
+let g:unite_force_overwrite_statusline = 0
+let g:vimfiler_force_overwrite_statusline = 0
+let g:vimshell_force_overwrite_statusline = 0
+let g:webdevicons_enable_lightline_statusline = 1
+"let g:lightline_symbols.branch = ''
+"let g:lightline_symbols.readonly = ''
+"let g:lightline_symbols.linenr = '⭡'
+
+augroup AutoSyntastic
+    autocmd!
+    autocmd BufWritePost *.c,*.cpp call s:syntastic()
+augroup END
+
+function! s:syntastic()
+    SyntasticCheck
+    call lightline#update()
+endfunction
 
 function! LightLineModified()
   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
@@ -486,19 +598,35 @@ function! LightLineFilename()
 endfunction
 
 function! LightLineFugitive()
-  if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
-    let _ = fugitive#head()
-    return strlen(_) ? ''._ : ''
-  endif
+  try
+	if expand('%:t') !~? 'Tagbar\|Gundo\|NERD' && &ft !~? 'vimfiler' && exists('*FugitiveHead')
+	  let mark = ' '  " edit here for cool mark
+	  let branch = FugitiveHead()
+	  return branch !=# '' ? mark.branch : ''
+	endif
+  catch
+  endtry
   return ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
 
 function! LightLineFileformat()
   return winwidth(0) > 70 ? &fileformat : ''
 endfunction
 
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
 function! LightLineFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+
+function! MyFileencoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc . ' ' . WebDevIconsGetFileEncodingSymbol()) : ''
 endfunction
 
 function! LightLineFileencoding()
@@ -507,4 +635,58 @@ endfunction
 
 function! LightLineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
-endfunction
+endfunction"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" 0=blk 1=red 2=grn 3=ylw 4=bl 5=mag 6=cyn 7=wht 8=gry
+
+"highlight Normal           ctermbg=none
+"highlight search           ctermbg=8
+"highlight NonText          ctermfg=none    ctermbg=none
+"highlight matchparen       ctermfg=5       ctermbg=8
+"highlight LineNr           ctermfg=7       ctermbg=none    cterm=none
+"highlight CursorLineNr     ctermfg=7       ctermbg=8       cterm=none
+"highlight VertSplit        ctermfg=0       ctermbg=8       cterm=none
+"highlight Statement        ctermfg=2       ctermbg=none    cterm=none
+"highlight Directory        ctermfg=4       ctermbg=none    cterm=none
+"highlight StatusLine       ctermfg=7       ctermbg=8       cterm=none
+"highlight StatusLineNC     ctermfg=7       ctermbg=8       cterm=none
+"highlight NERDTreeClosable ctermfg=8
+"highlight NERDTreeOpenable ctermfg=8
+"highlight Comment          ctermfg=4       ctermbg=none    cterm=italic
+"highlight Constant         ctermfg=12      ctermbg=none    cterm=none
+"highlight Special          ctermfg=4       ctermbg=none    cterm=none
+"highlight Identifier       ctermfg=6       ctermbg=none    cterm=none
+"highlight PreProc          ctermfg=5       ctermbg=none    cterm=none
+"highlight String           ctermfg=12      ctermbg=none    cterm=none
+"highlight Number           ctermfg=1       ctermbg=none    cterm=none
+"highlight Function         ctermfg=1       ctermbg=none    cterm=none
+"highlight WildMenu         ctermfg=4       ctermbg=80      cterm=none
+"highlight Folded           ctermfg=103     ctermbg=234     cterm=none
+"highlight FoldColumn       ctermfg=103     ctermbg=234     cterm=none
+"highlight DiffAdd          ctermfg=none    ctermbg=23      cterm=none
+"highlight DiffChange       ctermfg=none    ctermbg=56      cterm=none
+"highlight DiffDelete       ctermfg=168     ctermbg=96      cterm=none
+"highlight DiffText         ctermfg=0       ctermbg=80      cterm=none
+"highlight SignColumn       ctermfg=244     ctermbg=235     cterm=none
+"highlight Conceal          ctermfg=251     ctermbg=none    cterm=none
+"highlight SpellBad         ctermfg=168     ctermbg=none    cterm=underline
+"highlight SpellCap         ctermfg=80      ctermbg=none    cterm=underline
+"highlight SpellRare        ctermfg=121     ctermbg=none    cterm=underline
+"highlight SpellLocal       ctermfg=186     ctermbg=none    cterm=underline
+"highlight Pmenu            ctermfg=251     ctermbg=234     cterm=none
+"highlight PmenuSel         ctermfg=4       ctermbg=111     cterm=none
+"highlight PmenuSbar        ctermfg=206     ctermbg=235     cterm=none
+"highlight PmenuThumb       ctermfg=235     ctermbg=206     cterm=none
+"highlight TabLine          ctermfg=244     ctermbg=234     cterm=none
+"highlight TablineSel       ctermfg=0       ctermbg=247     cterm=none
+"highlight TablineFill      ctermfg=244     ctermbg=234     cterm=none
+"highlight CursorColumn     ctermfg=none    ctermbg=236     cterm=none
+"highlight CursorLine       ctermfg=none    ctermbg=236     cterm=none
+"highlight ColorColumn      ctermfg=none    ctermbg=236     cterm=none
+"highlight Cursor           ctermfg=7       ctermbg=5       cterm=none
+"highlight htmlEndTag       ctermfg=114     ctermbg=none    cterm=none
+"highlight xmlEndTag        ctermfg=114     ctermbg=none    cterm=none
