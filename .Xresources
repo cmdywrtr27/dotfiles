@@ -1,3 +1,8 @@
+!   __  _____ ___ ___  ___  _   _ ___  ___ ___ ___ 
+!   \ \/ / _ \ __/ __|/ _ \| | | | _ \/ __| __/ __|
+!  _ >  <|   / _|\__ \ (_) | |_| |   / (__| _|\__ \
+! (_)_/\_\_|_\___|___/\___/ \___/|_|_\\___|___|___/
+
 ! Font ----------------------------------------------
 
 Xft*dpi:           96
@@ -9,7 +14,6 @@ Xft*hinting:       true
 Xft*hintstyle:     hintfull
 URxvt*letterSpace: 0
 
-
 #define FONT JetBrainsMono Nerd Font Mono
 #define ICON Font Awesome 5 Free Solid
 #define EMOJI Noto Color Emoji
@@ -18,16 +22,11 @@ URxvt*letterSpace: 0
 #define ICON_SIZE 16
 #define EMOJI_SIZE 16
 #define NERD_SIZE 16
+
 URxvt*font: xft:FONT:style=Medium:size=FONT_SIZE:antialias=true, xft:ICON:size=ICON_SIZE:antialias=true, xft:NERD_FONT:size=NERD_SIZE:antialias=true, xft:EMOJI:size=EMOJI_SIZE:antialias=true
 URxvt*boldFont: xft:FONT:style=Bold:size=FONT_SIZE:antialias=true, xft:ICON:size=ICON_SIZE:antialias=true, xft:NERD_FONT:size=NERD_SIZE:antialias=true, xft:EMOJI:size=EMOJI_SIZE:antialias=true
 URxvt*italicFont: xft:FONT:style=Italic:size=FONT_SIZE:antialias=true, xft:ICON:size=ICON_SIZE:antialias=true, xft:NERD_FONT:size=NERD_SIZE:antialias=true, xft:EMOJI:size=EMOJI_SIZE:antialias=true
 URxvt*boldItalicFont: xft:FONT:style=Bold Italic:size=FONT_SIZE:antialias=true, xft:ICON:size=ICON_SIZE:antialias=true, xft:NERD_FONT:size=NERD_SIZE:antialias=true, xft:EMOJI:size=EMOJI_SIZE:antialias=true
-
-
-!URxvt*font:           xft:RobotoMono Nerd Font:style=Regular:pixelsize=16:antialias=true:hinting=true, xft:JetBrainsMono Nerd Font Mono:style=Regular:pixelsize=16:antialias=true:hinting=true, xft:NotoMono Nerd Font:style=Book:antialias=true:hinting=true, xft:Hack Nerd Font:style=Regular:pixelsize=16:antialias=true:hinting=true, xft:Font Awesome:pixelsize=16, xft:Noto Color Emoji:style=Regular:pixelsize=16
-!URxvt*boldFont:       xft:RobotoMono Nerd Font:style=Bold:pixelsize=16:antialias=true:hinting=true, xft:JetBrainsMono Nerd Font Mono:style=Bold:pixelsize=16:antialias=true:hinting=true, xft:NotoMono Nerd Font:style=Book:antialias=true:hinting=true, xft:Hack Nerd Font Mono:style=Bold:pixelsize=16:antialias=true:hinting=true, xft:Font Awesome:pixelsize=16, xft:Noto Color Emoji:style=Regular:pixelsize=16
-!URxvt*italicFont:     xft:RobotoMono Nerd Font:style=Italic:pixelsize=16:antialias=true:hinting=true, xft:JetBrainsMono Nerd Font Mono:style=Italic:pixelsize=16:antialias=true:hinting=true, xft:NotoMono Nerd Font:style=Book:antialias=true:hinting=true, xft:Hack Nerd Font Mono:style=Italic:pixelsize=16:antialias=true:hinting=true, xft:Font Awesome:pixelsize=16, xft:Noto Color Emoji:style=Regular:pixelsize=16
-!URxvt*bolditalicFont: xft:RobotoMono Nerd Font:style=Bold Italic:pixelsize=16:antialias=true:hinting=true, xft:JetBrainsMono Nerd Font Mono:style=Bold Italic:pixelsize=16:antialias=true:hinting=true, xft:NotoMono Nerd Font:style=Book:antialias=true:hinting=true, xft:Hack Nerd Font Mono:style=Bold Italic:pixelsize=16:antialias=true:hinting=true, xft:Font Awesome:pixelsize=16, xft:Noto Color Emoji:style=Regular:pixelsize=16
 
 ! Color -------------------------------------------
 
@@ -36,40 +35,40 @@ URxvt*boldItalicFont: xft:FONT:style=Bold Italic:size=FONT_SIZE:antialias=true, 
 !URxvt*.foreground: #ffffff
 !URxvt*.background: #222222
 !URxvt*.cursorColor: #ffffff
-!
-!! idle_toes
-!
-!! black
-!*.color0:      #323232
-!*.color8:      #535353
-!
-!! red
-!*.color1:      #d25252
-!*.color9:      #f07070
-!
-!! green
-!*.color2:      #7fe173
-!*.color10:     #9dff91
-!
-!! yellow
-!*.color3:      #ffc66d
-!*.color11:     #ffe48b
-!
-!! blue
-!*.color4:      #4099ff
-!*.color12:     #5eb7f7
-!
-!! magenta
-!*.color5:      #f680ff
-!*.color13:     #ff9dff
-!
-!! cyan
-!*.color6:      #bed6ff
-!*.color14:     #dcf4ff
-!
-!! white
-!*.color7:      #eeeeec
-!*.color15:     #ffffff
+
+! idle_toes
+
+! black
+!*.color0:  #323232
+!*.color8:  #535353
+
+! red
+!*.color1:  #d25252
+!*.color9:  #f07070
+
+! green
+!*.color2:  #7fe173
+!*.color10: #9dff91
+
+! yellow
+!*.color3:  #ffc66d
+!*.color11: #ffe48b
+
+! blue
+!*.color4:  #4099ff
+!*.color12: #5eb7f7
+
+! magenta
+!*.color5:  #f680ff
+!*.color13: #ff9dff
+
+! cyan
+!*.color6:  #bed6ff
+!*.color14: #dcf4ff
+
+! white
+!*.color7:  #eeeeec
+!*.color15: #ffffff
 
 ! Settings -----------------------------------
 
@@ -104,11 +103,6 @@ URxvt*iso14755_52:          false
 
 ! Extensions [/usr/lib/urxvt/perl]
 URxvt*perl-ext-common: default,clipboard,keyboard-select,url-select
-
-! Clipboard [Ctr+Shift+C/V]
-!URxvt*clipboard.autocopy: true
-!URxvt*keysym.C-S-C:       perl:clipboard:copy
-!URxvt*keysym.C-S-V:       perl:clipboard:paste
 
 ! Clipboard [Ctrl+Shift+C/V]
 URxvt*clipboard.copycmd:  xclip -i -selection clipboard
