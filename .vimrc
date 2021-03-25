@@ -1,8 +1,6 @@
 set nocompatible
 filetype off
 
-"set rtp+=~/.vim/autoload/plug.vim
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-plug'
@@ -13,16 +11,13 @@ Plug 'tpope/vim-surround'
 Plug 'itchyny/vim-gitbranch'
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'easymotion/vim-easymotion'
-Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vifm/vifm.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'frazrepo/vim-rainbow'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-python/python-syntax'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
@@ -33,10 +28,11 @@ Plug 'vim-syntastic/syntastic'
 Plug 'mileszs/ack.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'jremmen/vim-ripgrep'
-Plug 'leafgarland/typescript-vim'
 Plug 'mbbill/undotree'
-Plug 'neoclide/coc-git'
+Plug 'neoclide/coc-git', {'branch': 'release'}
 Plug 'jacoborus/tender.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'NovaDev94/lightline-onedark'
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimshell.vim'
@@ -47,12 +43,14 @@ Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
+:set formatoptions-=cro
+
 set history=1000
 
 " Enable filetype plugins
 filetype plugin indent on
 
-set path+=**
+set path+=,,**
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -78,8 +76,8 @@ noremap <C-q> :confirm qall<CR>
 " Nerd Tree
 map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>u :UndotreeShow<CR>
-let g:NERDTreeDirArrowExpandable = 'ﰲ'
-let g:NERDTreeDirArrowCollapsible = 'ﰬ'
+"let g:NERDTreeDirArrowExpandable = '▸'
+"let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeWinSize = 25
 let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
@@ -179,20 +177,34 @@ set tm=500
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
 " Enable syntax highlighting
+syntax on
 syntax enable
+
+"set guifont=JetBrainsMono\ Nerd\ Font\ 14
 
 " Only set if terminal has 256 colors (ie. xterm-256color)
 "set t_Co=256
-let g:rehash256 = 1
+"let g:rehash256 = 1
 
-colorscheme vydark
+colorscheme onedark
 set background=dark
 
 let g:rainbow_active = 1
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
+set fileencoding=utf8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -229,9 +241,6 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-" GUI Font
-set guifont=JetBrainsMono\ Nerd\ Font\ 14
-
 " Linebreak on 500 characters
 set linebreak
 set tw=500
@@ -263,15 +272,15 @@ nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
 " Close the current buffer
-map <leader>bd :Bclose<cr>:tabclose<cr>gT
+map <leader>bd :Bclose<CR>:tabclose<CR>gT
 
 " Close all the buffers
-map <leader>ba :bufdo bd<cr>
+map <leader>ba :bufdo bd<CR>
 
 " Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
+map <leader>tn :tabnew<CR>
+map <leader>to :tabonly<CR>
+map <leader>tc :tabclose<CR>
 map <leader>tm :tabmove
 map <leader>t<leader> :tabnext
 
@@ -282,10 +291,10 @@ au TabLeave * let g:lasttab = tabpagenr()
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
-map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
+map <leader>te :tabedit <C-r>=expand("%:p:h")<CR>/
 
 " Switch CWD to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
+map <leader>cd :cd %:p:h<cr>:pwd<CR>
 
 " Specify the behavior when switching between buffers
 try
@@ -317,10 +326,10 @@ set laststatus=2
 map 0 ^
 
 " Move a line of text using ALT+[jk] or Command+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+nmap <M-j> mz:m+<CR>`z
+nmap <M-k> mz:m-2<CR>`z
+vmap <M-j> :m'>+<CR>`<my`>mzgv`yo`z
+vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
 
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
@@ -367,7 +376,8 @@ let g:clipbrdDefaultReg = '+'
 set clipboard=unnamedplus
 
 " Show line numbers
-set number relativenumber
+set number
+set relativenumber
 
 " So you don't do anything stupid
 set confirm
@@ -378,8 +388,6 @@ set matchpairs+=<:>
 set gdefault
 
 set viminfo='100,<9999,s100
-
-nmap <C-s> <Plug>MarkdownPreview
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
@@ -451,102 +459,91 @@ vnoremap <silent><leader>d d:call ClipboardYank()<CR>
 nnoremap <silent><leader>p :call ClipboardPaste()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Airline
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Format the status line
-"set statusline=
-"set statusline+=\ %mode
-"set statusline+=\ %y
-"set statusline+=\ %r
-"set statusline+=%#CursorLineNr#
-"set statusline+=\ %F
-"set statusline+=%= "Right side settings
-"set statusline+=%#Search#
-"set statusline+=\ %l/%L
-"set statusline+=\ [%c]
-
-"set statusline=%<\ %{HasPaste()}%F%m%r\ \%=\ %y\ \%P\ \%l/%L:%c
-
-"set statusline=%<\ %F\ \%m%r%y%=\ Line:\ \%l\/\%L\ Column:\ \%c\
-
-"set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-
-"set statusline=%<%F%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
-
-"let g:airline_theme='deus'
-"let g:airline_powerline_fonts = 1
-"let g:Powerline_symbols = 'fancy'
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#branch#enabled = 1
-"let g:airline#extensions#whitespace#enabled = 0
-"let g:airline#extensions#hunks#non_zero_only = 0
-""let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
-"let g:airline_detect_whitespace=0
-
-"let g:airline_section_a = airline#section#create(['mode','paste','branch'])
-"let g:airline_section_b = airline#section#create(['%F'])
-"let g:airline_section_c = airline#section#create(['%m','%r'])
-"let g:airline_section_x = airline#section#create(['filetype'])
-"let g:airline_section_y = airline#section#create(['%P'])
-"let g:airline_section_z = airline#section#create(['%l/%L:%c'])
-
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
-""let g:airline_symbols.branch = ''
-""let g:airline_symbols.readonly = ''
-""let g:airline_symbols.linenr = '⭡'
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Lightline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-       \ 'colorscheme': 'wombat',
-       \ 'mode_map': { 'c': 'NORMAL' },
-       \ 'active': {
-       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'absolutepath' ], [ 'readonly', 'modified', 'ctrlpmark' ] ],
-       \   'right': [ [ 'syntastic', 'percent', 'lineinfo' ], [ 'filetype' ] ]
-       \ },
-       \ 'component_function': {
-       \   'fugitive': 'LightLineFugitive',
-       \   'gitbranch': 'branch#name',
-       \   'readonly': 'LightLineReadonly',
-       \   'filename': 'LightLineFilename',
-       \   'fileformat': 'MyFileformat',
-       \   'filetype': 'MyFiletype',
-       \   'fileencoding': 'MyFileencoding',
-       \   'mode': 'LightLineMode',
-       \   'ctrlpmark': 'CtrlPMark',
-       \ },
-       \ 'component': {
-       \   'readonly': '%{&filetype=="help"?"":&readonly?"":""}',
-       \   'modified': '%{&filetype=="help"?"":&modified?"[+]":&modifiable?"":"[-]"}',
-       \   'lineinfo': ' %l/%L:%c',
-       \   'percent': ' %P',
-       \   'paste': '%{&paste?"PASTE":""}',
-       \ },
-       \ 'component_expand': {
-       \   'syntastic': 'SyntasticStatuslineFlag',
-       \ },
-       \ 'component_type': {
-       \   'syntastic': 'error',
-       \   'tabs': 'tabsel',
-       \ },
-       \ 'tabline': {
-       \   'left': [ [ 'tabs' ] ],
-       \   'right': [ [ 'close' ] ],
-       \ },
-       \ 'separator': { 'left': '', 'right': '' },
-       \ 'subseparator': { 'left': '', 'right': '' },
-       \ }
+      \ 'colorscheme': 'onedark',
+      \ 'mode_map': { 'c': 'NORMAL' },
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'absolutepath' ], [ 'readonly', 'modified', 'ctrlpmark' ] ],
+      \   'right': [ [ 'syntastic', 'percent', 'lineinfo' ], [ 'filetype' ] ],
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'LightLineFugitive',
+      \   'gitbranch': 'branch#name',
+      \   'readonly': 'LightLineReadonly',
+      \   'filename': 'LightLineFilename',
+      \   'fileformat': 'MyFileformat',
+      \   'filetype': 'MyFiletype',
+      \   'fileencoding': 'MyFileencoding',
+      \   'mode': 'LightLineMode',
+      \   'ctrlpmark': 'CtrlPMark',
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"[+]":&modifiable?"":"[-]"}',
+      \   'lineinfo': ' %l/%L:%c',
+      \   'percent': ' %P',
+      \   'paste': '%{&paste?"PASTE":""}',
+      \ },
+      \ 'component_expand': {
+      \   'syntastic': 'SyntasticStatuslineFlag',
+      \   'buffers': 'lightline#bufferline#buffers',
+      \ },
+      \ 'component_type': {
+      \   'syntastic': 'error',
+      \   'tabs': 'tabsel',
+      \   'buffers': 'tabsel',
+      \ },
+      \ 'tabline': {
+      \   'left': [ [ 'buffers' ] ],
+      \   'right': [ [ 'folder' ] ],
+      \ },
+      \ 'separator': { 'left': '▓░', 'right': '░▓'  },
+      \ 'subseparator': { 'left': '▓░', 'right': '░▓'  }
+      \ }
 
-let g:lightline.tab = {
-       \ 'active': [ 'tabnum', 'filename', 'modified' ],
-       \ 'inactive': [ 'tabnum', 'filename', 'modified' ],
-       \ }
+"      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2"  },
+"      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3"  }
+"      \ }
+
+"      \ 'separator': { 'left': '', 'right': '' },
+"      \ 'subseparator': { 'left': '', 'right': '' },
+
+"let g:lightline.tab = {
+"       \ 'active': [ 'tabnum', 'filename' ],
+"       \ 'inactive': [ 'tabnum', 'filename' ],
+"       \ }
+
+"let g:lightline#bufferline#composed_number_map = {
+"    \ 1:  '➊', 2:  '➋', 3:  '➌', 4:  '➍', 5:  '➎',
+"    \ 6:  '➏', 7:  '➐', 8:  '➑', 9:  '➒', 10: '➓ ',
+"    \ }
+
+"let g:lightline#bufferline#number_map = {
+"    \ 0: '₀', 1: '₁', 2: '₂', 3: '₃', 4: '₄',
+"    \ 5: '₅', 6: '₆', 7: '₇', 8: '₈', 9: '₉',
+"    \ }
+
+nmap <Leader>1 <Plug>lightline#bufferline#go(1)
+nmap <Leader>2 <Plug>lightline#bufferline#go(2)
+nmap <Leader>3 <Plug>lightline#bufferline#go(3)
+nmap <Leader>4 <Plug>lightline#bufferline#go(4)
+nmap <Leader>5 <Plug>lightline#bufferline#go(5)
+nmap <Leader>6 <Plug>lightline#bufferline#go(6)
+nmap <Leader>7 <Plug>lightline#bufferline#go(7)
+nmap <Leader>8 <Plug>lightline#bufferline#go(8)
+nmap <Leader>9 <Plug>lightline#bufferline#go(9)
+
+nmap <Leader>d1 <Plug>lightline#bufferline#delete(1)
+nmap <Leader>d2 <Plug>lightline#bufferline#delete(2)
+nmap <Leader>d3 <Plug>lightline#bufferline#delete(3)
+nmap <Leader>d4 <Plug>lightline#bufferline#delete(4)
+nmap <Leader>d5 <Plug>lightline#bufferline#delete(5)
+nmap <Leader>d6 <Plug>lightline#bufferline#delete(6)
+nmap <Leader>d7 <Plug>lightline#bufferline#delete(7)
+nmap <Leader>d8 <Plug>lightline#bufferline#delete(8)
+nmap <Leader>d9 <Plug>lightline#bufferline#delete(9)
 
 let g:syntastic_phpcs_disable = 1
 let g:syntastic_phpmd_disable = 1
@@ -556,16 +553,22 @@ let g:syntastic_aggregate_errors = 1
 let g:syntastic_auto_jump = 2
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
 
-let g:WebDevIconsUnicodeGlyphDoubleWidth = 0
 let g:Powerline_symbols = 'fancy'
-let g:lightline#bufferline#show_number = 2
+let g:lightline#bufferline#show_number = 0
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 let g:webdevicons_enable_lightline_statusline = 1
+let g:lightline#bufferline#enable_devicons = 1
+let g:lightline#bufferline#enable_nerdfont = 1
+let g:lightline#bufferline#unnamed = '[No Name]'
+"let g:lightline#bufferline#number_separator = '|'
+let g:lightline#bufferline#more_buffers = '...'
+let g:lightline#bufferline#modified = ' [+]'
+let g:lightline#bufferline#read_only = ' '
 "let g:lightline_symbols.branch = ''
 "let g:lightline_symbols.readonly = ''
 "let g:lightline_symbols.linenr = '⭡'
@@ -645,8 +648,11 @@ endfunction"
 
 "highlight Normal           ctermbg=none
 "highlight search           ctermbg=8
+"highlight NERDTreeClosable ctermfg=8
+"highlight NERDTreeOpenable ctermfg=8
 "highlight NonText          ctermfg=none    ctermbg=none
-"highlight matchparen       ctermfg=5       ctermbg=8
+"highlight matchparen       ctermfg=6       ctermbg=0
+"highlight Comment          ctermfg=4       ctermbg=none    cterm=italic
 "highlight LineNr           ctermfg=7       ctermbg=none    cterm=none
 "highlight CursorLineNr     ctermfg=7       ctermbg=8       cterm=none
 "highlight VertSplit        ctermfg=0       ctermbg=8       cterm=none
@@ -654,9 +660,6 @@ endfunction"
 "highlight Directory        ctermfg=4       ctermbg=none    cterm=none
 "highlight StatusLine       ctermfg=7       ctermbg=8       cterm=none
 "highlight StatusLineNC     ctermfg=7       ctermbg=8       cterm=none
-"highlight NERDTreeClosable ctermfg=8
-"highlight NERDTreeOpenable ctermfg=8
-"highlight Comment          ctermfg=4       ctermbg=none    cterm=italic
 "highlight Constant         ctermfg=12      ctermbg=none    cterm=none
 "highlight Special          ctermfg=4       ctermbg=none    cterm=none
 "highlight Identifier       ctermfg=6       ctermbg=none    cterm=none
