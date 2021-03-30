@@ -1,18 +1,10 @@
 #!/bin/bash
 
-# I take this script from Anachron's i3blocks
-# I only slightly modify this script to add an option to show icon
-# I also remove the i3blocks specify script
-# To make this works with tint2 executor, polybar custom script, dzen2 feeder, conkybar, lemonbar feeder, dunst notify, etc.
-# 'weather -i' = with icon, 'weather' = text only
-# Cheers!
-# Addy
-
 # Open Weather Map API code, register to http://openweathermap.org to get one ;)
-API_KEY="994f8162aa28ab78c7c441c33654f69d"
+API_KEY=""
 
 # Check on http://openweathermap.org/find
-CITY_ID="5308480"
+CITY_ID=""
 
 ICON_SUNNY="  Clear"
 ICON_CLOUDY="  Cloudy"
@@ -30,7 +22,7 @@ TEXT_SNOW="Snow"
 TEXT_FOG="Fog"
 
 SYMBOL_CELSIUS="˚C"
-SYMBOL_FAHRENHEIT="℉ "
+SYMBOL_FAHRENHEIT="℉"
 
 WEATHER_URL="http://api.openweathermap.org/data/2.5/weather?id=${CITY_ID}&appid=${API_KEY}&units=imperial"
 
