@@ -22,11 +22,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'plasticboy/vim-markdown'
-Plug 'w0rp/ale'
-Plug 'tpope/vim-commentary'
 Plug 'vim-syntastic/syntastic'
-Plug 'mileszs/ack.vim'
-Plug 'preservim/nerdcommenter'
 Plug 'jremmen/vim-ripgrep'
 Plug 'mbbill/undotree'
 Plug 'neoclide/coc-git', {'branch': 'release'}
@@ -163,7 +159,7 @@ set lazyredraw
 set magic
 
 " Show matching brackets when text indicator is over them
-set showmatch
+set noshowmatch
 
 " How many tenths of a second to blink when matching brackets
 set mat=2
@@ -178,14 +174,16 @@ set tm=500
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-if (empty($TMUX))
-  if (has("nvim"))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
+"if (empty($TMUX))
+"  if (has("nvim"))
+"    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"  endif
+"  if (has("termguicolors"))
+"    set termguicolors
+"  endif
+"endif
+
+"set termguicolors
 
 " Enable syntax highlighting
 syntax on
@@ -194,10 +192,10 @@ syntax enable
 "set guifont=JetBrainsMono\ Nerd\ Font\ 14
 
 " Only set if terminal has 256 colors (ie. xterm-256color)
-"set t_Co=256
-"let g:rehash256 = 1
+set t_Co=256
+let g:rehash256 = 1
 
-colorscheme onedark
+colorscheme srcery-drk
 set background=dark
 
 let g:rainbow_active = 1
@@ -311,6 +309,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 """"""""""""""""""""""""""""""
 " Always show the status line
 set laststatus=2
+set showtabline=2
 
 " Format the status line
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
@@ -462,7 +461,7 @@ nnoremap <silent><leader>p :call ClipboardPaste()<CR>
 " => Lightline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
+      \ 'colorscheme': 'selenized_dark',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'absolutepath' ], [ 'readonly', 'modified', 'ctrlpmark' ] ],
@@ -497,7 +496,7 @@ let g:lightline = {
       \ },
       \ 'tabline': {
       \   'left': [ [ 'buffers' ] ],
-      \   'right': [ [ 'folder' ] ],
+      \   'right': [ [ 'close' ] ],
       \ },
       \ 'separator': { 'left': '▓░', 'right': '░▓'  },
       \ 'subseparator': { 'left': '▓░', 'right': '░▓'  }
@@ -557,11 +556,11 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 
 let g:Powerline_symbols = 'fancy'
-let g:lightline#bufferline#show_number = 0
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 let g:webdevicons_enable_lightline_statusline = 1
+let g:lightline#bufferline#show_number = 0
 let g:lightline#bufferline#enable_devicons = 1
 let g:lightline#bufferline#enable_nerdfont = 1
 let g:lightline#bufferline#unnamed = '[No Name]'
@@ -652,8 +651,8 @@ endfunction"
 "highlight NERDTreeOpenable ctermfg=8
 "highlight NonText          ctermfg=none    ctermbg=none
 "highlight matchparen       ctermfg=6       ctermbg=0
-"highlight Comment          ctermfg=4       ctermbg=none    cterm=italic
-"highlight LineNr           ctermfg=7       ctermbg=none    cterm=none
+"highlight Comment          ctermfg=8       ctermbg=none    cterm=italic
+"highlight LineNr           ctermfg=3       ctermbg=none    cterm=none
 "highlight CursorLineNr     ctermfg=7       ctermbg=8       cterm=none
 "highlight VertSplit        ctermfg=0       ctermbg=8       cterm=none
 "highlight Statement        ctermfg=2       ctermbg=none    cterm=none
