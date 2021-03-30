@@ -3,16 +3,18 @@
 #  _ / /\__ \ __ |   / (__
 # (_)___|___/_||_|_|_\\___|
 
-export TERM=rxvt-unicode
+export TERM=xterm-256color
+export BROWSER=brave
 export LANG=en_US.UTF-8
 export SUDO_EDITOR=vim
 export EDITOR=vim
-#export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export PAGER="less"
+export MANPAGER='/bin/zsh -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
 export PATH="/home/josh/.cargo/bin:$PATH"
 export PATH="/home/josh/.local/bin:$PATH"
+
 source ~/.zsh_aliases
 source ~/.git.zsh
+source ~/.fzf.zsh
 
 ###################################################################
 
@@ -43,12 +45,12 @@ zstyle ':completion:*' substitute 1
 zstyle ':completion:*' verbose true
 
 zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:*' get-revision true
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr    "${FMT_UNSTAGED}"
-zstyle ':vcs_info:*' stagedstr      "${FMT_STAGED}"
-zstyle ':vcs_info:*' actionformats  "${FMT_VCS_STATUS} ${FMT_ACTION}"
-zstyle ':vcs_info:*' formats        "${FMT_VCS_STATUS}"
-zstyle ':vcs_info:*' nvcsformats    ""
+zstyle ':vcs_info:*' stagedstr '✚'
+zstyle ':vcs_info:*' unstagedstr '±'
+zstyle ':vcs_info:*' formats ' %u%c'
+zstyle ':vcs_info:*' actionformats ' %u%c'
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
 zstyle :compinstall filename '/home/josh/.zshrc'
@@ -81,55 +83,22 @@ setopt PROMPT_SUBST
 
 typeset -A key
 
-key[Home]=${terminfo[khome]}
-key[End]=${terminfo[kend]}
-key[Insert]=${terminfo[kich1]}
-key[Delete]=${terminfo[kdch1]}
-key[Up]=${terminfo[kcuu1]}
-key[Down]=${terminfo[kcud1]}
-key[Left]=${terminfo[kcub1]}
-key[Right]=${terminfo[kcuf1]}
-key[PageUp]=${terminfo[kpp]}
-key[PageDown]=${terminfo[knp]}
-
-[[ -n "${key[Home]}"     ]]  && bindkey  "${key[Home]}"     beginning-of-line
-[[ -n "${key[End]}"      ]]  && bindkey  "${key[End]}"      end-of-line
-[[ -n "${key[Insert]}"   ]]  && bindkey  "${key[Insert]}"   overwrite-mode
-[[ -n "${key[Delete]}"   ]]  && bindkey  "${key[Delete]}"   delete-char
-[[ -n "${key[Left]}"     ]]  && bindkey  "${key[Left]}"     backward-char
-[[ -n "${key[Right]}"    ]]  && bindkey  "${key[Right]}"    forward-char
-[[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"   beginning-of-buffer-or-history
-[[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" end-of-buffer-or-history
-[[ -n "${key[Up]}"       ]]  && bindkey  "${key[Up]}"       history-beginning-search-backward
-[[ -n "${key[Down]}"     ]]  && bindkey  "${key[Down]}"     history-beginning-search-forward
-
 autoload -U colors && colors
-
-function ranger {
-    local IFS=$'\t\n'
-    local tempfile="$(mktemp -t tmp.XXXXXX)"
-    local ranger_cmd=(
-        command
-        ranger
-        --cmd="map Q chain shell echo %d > "$tempfile"; quitall"
-    )
-
-    ${ranger_cmd[@]} "$@"
-    if [[ -f "$tempfile" ]] && [[ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]]; then
-        cd -- "$(cat "$tempfile")" || return
-    fi
-    command rm -f -- "$tempfile" 2>/dev/null
-}
 
 # Prompt Options
 
 #source ~/.prompt1.zsh
 #source ~/.prompt2.zsh
-source ~/.prompt3.zsh
+#source ~/.prompt3.zsh
 #source ~/.prompt4.zsh
 #source ~/.prompt5.zsh
 #source ~/.prompt6.zsh
 #source ~/.prompt7.zsh
 #source ~/.prompt8.zsh
+#source ~/.prompt9.zsh
+#source ~/.prompt10.zsh
+#source ~/.prompt11.zsh
+#source ~/.prompt12.zsh
+source ~/.prompt13.zsh
 
 autoload -U compinit && compinit -u
