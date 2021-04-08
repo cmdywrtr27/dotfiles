@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# Defining the text editor to use.
+
+DMEDITOR="alacritty -e vim"
+
+# An array of options to choose.
+# You can edit this list to add/remove config files.
+
+declare -A options
+
+options[alacritty]="$HOME/.config/alacritty/alacritty.yml"
+options[awesome]="$HOME/.config/awesome/rc.lua"
+options[bash]="$HOME/.bashrc"
+options[bspwm]="$HOME/.config/bspwm/bspwmrc"
+options[dunst]="$HOME/.config/dunst/dunstrc"
+options[i3]="$HOME/.config/i3/config"
+options[picom]="$HOME/.config/picom/picom.conf"
+options[polybar]="$HOME/.config/polybar/config"
+options[sxhkd]="$HOME/.config/sxhkd/sxhkdrc"
+options[vim]="$HOME/.vimrc"
+options[xresources]="$HOME/.Xresources"
+options[zsh]="$HOME/.zshrc"
+
+# Piping the above array into dmenu.
+# We use "printf '%s\n'" to format the array one item to a line.
+
+choice=$(printf '%s\n' "${!options[@]}" | rofi -dmenu -i -p 'Which config are you going to break this time?' "$@")
+cfg=$(printf '%s\n' "${options["${choice}"]}")
+
+# What to do when/if we choose a file to edit.
+if [ "$choice"  ]; then
+    $DMEDITOR "$cfg"
+
+# What to do if we just escape without choosing anything.
+else
+    echo "If it ain't broke, don't fix it." && exit 0
+fi
