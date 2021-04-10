@@ -42,10 +42,10 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>OBNodokaMidnight</name>
+    <name>Box-Dark</name>
     <cornerRadius>4</cornerRadius>
     <cornerRadius menu="yes">4</cornerRadius>
-    <titleLayout>LIMC</titleLayout>
+    <titleLayout>IMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -59,8 +59,8 @@
     <keepBorder>no</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>Hack Nerd Font</name>
-      <size>11</size>
+      <name>BlexMono Nerd Font Medium</name>
+      <size>10</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -68,8 +68,8 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>Hack Nerd Font</name>
-      <size>11</size>
+      <name>BlexMono Nerd Font Medium</name>
+      <size>10</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -77,8 +77,8 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>Hack Nerd Font</name>
-      <size>11</size>
+      <name>BlexMono Nerd Font</name>
+      <size>12</size>
       <!-- font size in points -->
       <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
@@ -86,16 +86,16 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>Hack Nerd Font</name>
+      <name>BlexMono Nerd Font Medium</name>
       <size>10</size>
       <!-- font size in points -->
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Hack Nerd Font</name>
+      <name>BlexMono Nerd Font Medium</name>
       <size>10</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -104,7 +104,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Hack Nerd Font</name>
+      <name>BlexMono Nerd Font Medium</name>
       <size>10</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -182,7 +182,7 @@
     <keybind key="W-t">
       <action name="ToggleDecorations"/>
     </keybind>
-    <keybind key="W-S-BackSpace">
+    <keybind key="W-S-R">
       <action name="Execute">
         <command>openbox --reconfigure</command>
       </action>
@@ -269,12 +269,17 @@
     </keybind>
     <keybind key="W-d">
       <action name="Execute">
-        <command>/home/josh/.config/rofi/launchers/colorful/launcher2.sh</command>
+        <command>/home/josh/.config/rofi/launchers/colorful/launcher.sh</command>
       </action>
     </keybind>
     <keybind key="W-S-d">
       <action name="Execute">
-        <command>/home/josh/.config/rofi/launchers/colorful/launcher.sh</command>
+        <command>/home/josh/.config/rofi/launchers/colorful/launcher2.sh</command>
+      </action>
+    </keybind>
+    <keybind key="W-c">
+      <action name="Execute">
+        <command>~/.local/bin/config.sh</command>
       </action>
     </keybind>
     <!-- Keybindings for windows -->
@@ -386,22 +391,37 @@
     <!-- Keybindings for running applications -->
     <keybind key="W-p">
       <action name="Execute">
-        <command>nautilus</command>
+        <command>pcmanfm</command>
+      </action>
+    </keybind>
+    <keybind key="W-g">
+      <action name="Execute">
+        <command>~/.local/bin/drawterm</command>
       </action>
     </keybind>
     <keybind key="W-Return">
       <action name="Execute">
-        <command>urxvt</command>
+        <command>alacritty</command>
+      </action>
+    </keybind>
+    <keybind key="C-S-C">
+      <action name="Execute">
+        <command>~/.local/bin/copy</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-X">
+      <action name="Execute">
+        <command>xrdb ~/.Xresources</command>
       </action>
     </keybind>
     <keybind key="W-S-Return">
       <action name="Execute">
-        <command>tilix</command>
+        <command>urxvt</command>
       </action>
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>chromium</command>
+        <command>brave</command>
       </action>
     </keybind>
     <keybind key="W-Escape">
@@ -438,25 +458,25 @@
     <keybind key="W-Right">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
-        <x>-2/120</x>
+        <x>-1/120</x>
         <y>1/100</y>
-        <width>48/100</width>
+        <width>49/100</width>
         <height>98/100</height>
       </action>
     </keybind>
     <keybind key="W-Left">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
-        <x>+2/120</x>
+        <x>+1/120</x>
         <y>+1/100</y>
-        <width>48/100</width>
+        <width>49/100</width>
         <height>98/100</height>
       </action>
     </keybind>
     <keybind key="W-Up">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
-        <width>95/100</width>
+        <width>97/100</width>
         <height>95/100</height>
       </action>
       <action name="MoveToCenter"/>
@@ -464,8 +484,8 @@
     <keybind key="W-Down">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
-        <width>70/100</width>
-        <height>70/100</height>
+        <width>60/100</width>
+        <height>60/100</height>
       </action>
       <action name="MoveToCenter"/>
     </keybind>
@@ -848,7 +868,7 @@
   #    or desktop
   # when multiple rules match a window, they will all be applied, in the
   # order that they appear in this list
-    # each rule element can be left out or set to 'default' to specify to not 
+    # each rule element can be left out or set to 'default' to specify to not
     # change that attribute of the window
     <decor>yes</decor>
     # enable or disable window decorations
