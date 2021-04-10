@@ -25,7 +25,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'vim-syntastic/syntastic'
 Plug 'jremmen/vim-ripgrep'
 Plug 'mbbill/undotree'
-Plug 'neoclide/coc-git', {'branch': 'release'}
 Plug 'jacoborus/tender.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'NovaDev94/lightline-onedark'
@@ -33,13 +32,11 @@ Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimshell.vim'
 Plug 'junegunn/vim-emoji'
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'kovetskiy/sxhkd-vim'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
-:set formatoptions-=cro
+set formatoptions-=cro
 
 set history=1000
 
@@ -53,8 +50,8 @@ set autoread
 au FocusGained,BufEnter * checktime
 
 " With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
 let mapleader = " "
+set modifiable
 
 " Get out of INSERT MODE!
 :imap jj <Esc>
@@ -63,7 +60,6 @@ let mapleader = " "
 noremap <C-w> :w!<CR>
 
 " Quick reload
-"noremap <leader>r :so %<CR>
 noremap <C-r> :source ~/.vimrc<CR>
 
 " Gotta run!
@@ -71,7 +67,8 @@ noremap <C-q> :confirm qall<CR>
 
 " Nerd Tree
 map <C-n> :NERDTreeToggle<CR>
-nnoremap <leader>u :UndotreeShow<CR>
+"nnoremap <leader>u :UndotreeToggle<CR>
+map <leader>u :UndotreeToggle<CR>
 "let g:NERDTreeDirArrowExpandable = '▸'
 "let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeWinSize = 25
@@ -85,7 +82,6 @@ let g:ctrlp_working_path_mode = 'r'
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
-"cnoremap w!! w !sudo tee % > /dev/null
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -98,7 +94,7 @@ set sidescrolloff=5
 set splitright
 set splitbelow
 
-set mouse=nicra
+set mouse=:a
 
 " Avoid garbled characters in Chinese language windows OS
 let $LANG='en'
@@ -120,7 +116,7 @@ else
 endif
 
 "Always show current position
-set noruler
+set ruler
 
 " Height of the command bar
 set showcmd
@@ -140,7 +136,7 @@ set ignorecase
 set smartcase
 
 " Highlight search results
-set hlsearch
+"set hlsearch
 
 " Turn off highlights after search is complete
 augroup vimrc-incsearch-highlight
@@ -159,14 +155,14 @@ set lazyredraw
 set magic
 
 " Show matching brackets when text indicator is over them
-set noshowmatch
+set showmatch
 
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
 " No annoying sound on errors
 set noerrorbells
-set novisualbell
+set visualbell
 set t_vb=
 set tm=500
 
@@ -174,16 +170,14 @@ set tm=500
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"if (empty($TMUX))
-"  if (has("nvim"))
-"    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"  endif
-"  if (has("termguicolors"))
-"    set termguicolors
-"  endif
-"endif
-
-"set termguicolors
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
 
 " Enable syntax highlighting
 syntax on
@@ -195,10 +189,14 @@ syntax enable
 set t_Co=256
 let g:rehash256 = 1
 
-colorscheme srcery-drk
+"colorscheme onedark
+"colorscheme wombat
+colorscheme SlateDark
 set background=dark
 
-let g:rainbow_active = 1
+let g:rainbow_active = 1 "Alternating color of brackets etc.
+highlight Pmenu ctermfg=15 ctermbg=8 guifg=#000000 guibg=#DAD7DA
+highlight Comment ctermfg=3 ctermbg=none cterm=italic
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -213,11 +211,10 @@ set noshowmode
 " Disable highlight when <leader>h is pressed
 noremap <leader>h :noh<CR>
 
-"set termguicolors
 set nohlsearch
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups and undo
+" => The "Save your ASS" section
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git etc. anyway...
 set nobackup
@@ -245,7 +242,7 @@ set tw=500
 
 set autoindent "Auto indent
 set smartindent "Smart indent
-set nowrap "Wrap lines
+set nowrap "Wrap lines, or not
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -310,6 +307,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " Always show the status line
 set laststatus=2
 set showtabline=2
+set guioptions-=e
 
 " Format the status line
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
@@ -461,10 +459,10 @@ nnoremap <silent><leader>p :call ClipboardPaste()<CR>
 " => Lightline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'selenized_dark',
+      \ 'colorscheme': 'deus',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'absolutepath' ], [ 'readonly', 'modified', 'ctrlpmark' ] ],
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'absolutepath' ], [ 'readonly', 'modified', 'ctrlpmark' ] ] ,
       \   'right': [ [ 'syntastic', 'percent', 'lineinfo' ], [ 'filetype' ] ],
       \ },
       \ 'component_function': {
@@ -481,8 +479,9 @@ let g:lightline = {
       \ 'component': {
       \   'readonly': '%{&filetype=="help"?"":&readonly?"":""}',
       \   'modified': '%{&filetype=="help"?"":&modified?"[+]":&modifiable?"":"[-]"}',
+      \   'absolutepath': '%F',
       \   'lineinfo': ' %l/%L:%c',
-      \   'percent': ' %P',
+      \   'percent': 'Ξ %P',
       \   'paste': '%{&paste?"PASTE":""}',
       \ },
       \ 'component_expand': {
@@ -499,50 +498,35 @@ let g:lightline = {
       \   'right': [ [ 'close' ] ],
       \ },
       \ 'separator': { 'left': '▓░', 'right': '░▓'  },
-      \ 'subseparator': { 'left': '▓░', 'right': '░▓'  }
+      \ 'subseparator': { 'left': '▓░', 'right': '░▓'  },
       \ }
 
 "      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2"  },
-"      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3"  }
+"      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3"  },
 "      \ }
-
 "      \ 'separator': { 'left': '', 'right': '' },
 "      \ 'subseparator': { 'left': '', 'right': '' },
+"      \ }
 
 "let g:lightline.tab = {
 "       \ 'active': [ 'tabnum', 'filename' ],
 "       \ 'inactive': [ 'tabnum', 'filename' ],
 "       \ }
 
+"let g:lightline.tabline = {
+"        \   'left': [ [ 'buffers' ] ],
+"        \   'right': [ [ 'string1' ], [ 'string2' ] ],
+"        \ }
+
 "let g:lightline#bufferline#composed_number_map = {
-"    \ 1:  '➊', 2:  '➋', 3:  '➌', 4:  '➍', 5:  '➎',
-"    \ 6:  '➏', 7:  '➐', 8:  '➑', 9:  '➒', 10: '➓ ',
+"    \ 1: '➊', 2: '➋', 3: '➌', 4: '➍', 5: '➎',
+"    \ 6: '➏', 7: '➐', 8: '➑', 9: '➒', 10: '➓ ',
 "    \ }
 
 "let g:lightline#bufferline#number_map = {
 "    \ 0: '₀', 1: '₁', 2: '₂', 3: '₃', 4: '₄',
 "    \ 5: '₅', 6: '₆', 7: '₇', 8: '₈', 9: '₉',
 "    \ }
-
-nmap <Leader>1 <Plug>lightline#bufferline#go(1)
-nmap <Leader>2 <Plug>lightline#bufferline#go(2)
-nmap <Leader>3 <Plug>lightline#bufferline#go(3)
-nmap <Leader>4 <Plug>lightline#bufferline#go(4)
-nmap <Leader>5 <Plug>lightline#bufferline#go(5)
-nmap <Leader>6 <Plug>lightline#bufferline#go(6)
-nmap <Leader>7 <Plug>lightline#bufferline#go(7)
-nmap <Leader>8 <Plug>lightline#bufferline#go(8)
-nmap <Leader>9 <Plug>lightline#bufferline#go(9)
-
-nmap <Leader>d1 <Plug>lightline#bufferline#delete(1)
-nmap <Leader>d2 <Plug>lightline#bufferline#delete(2)
-nmap <Leader>d3 <Plug>lightline#bufferline#delete(3)
-nmap <Leader>d4 <Plug>lightline#bufferline#delete(4)
-nmap <Leader>d5 <Plug>lightline#bufferline#delete(5)
-nmap <Leader>d6 <Plug>lightline#bufferline#delete(6)
-nmap <Leader>d7 <Plug>lightline#bufferline#delete(7)
-nmap <Leader>d8 <Plug>lightline#bufferline#delete(8)
-nmap <Leader>d9 <Plug>lightline#bufferline#delete(9)
 
 let g:syntastic_phpcs_disable = 1
 let g:syntastic_phpmd_disable = 1
@@ -561,16 +545,14 @@ let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 let g:webdevicons_enable_lightline_statusline = 1
 let g:lightline#bufferline#show_number = 0
+let g:lightline#bufferline#unicode_symbols = 1
 let g:lightline#bufferline#enable_devicons = 1
 let g:lightline#bufferline#enable_nerdfont = 1
 let g:lightline#bufferline#unnamed = '[No Name]'
-"let g:lightline#bufferline#number_separator = '|'
+let g:lightline#bufferline#number_separator = ' '
 let g:lightline#bufferline#more_buffers = '...'
 let g:lightline#bufferline#modified = ' [+]'
 let g:lightline#bufferline#read_only = ' '
-"let g:lightline_symbols.branch = ''
-"let g:lightline_symbols.readonly = ''
-"let g:lightline_symbols.linenr = '⭡'
 
 augroup AutoSyntastic
     autocmd!
@@ -638,57 +620,3 @@ endfunction
 function! LightLineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction"
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" 0=blk 1=red 2=grn 3=ylw 4=bl 5=mag 6=cyn 7=wht 8=gry
-
-"highlight Normal           ctermbg=none
-"highlight search           ctermbg=8
-"highlight NERDTreeClosable ctermfg=8
-"highlight NERDTreeOpenable ctermfg=8
-"highlight NonText          ctermfg=none    ctermbg=none
-"highlight matchparen       ctermfg=6       ctermbg=0
-"highlight Comment          ctermfg=8       ctermbg=none    cterm=italic
-"highlight LineNr           ctermfg=3       ctermbg=none    cterm=none
-"highlight CursorLineNr     ctermfg=7       ctermbg=8       cterm=none
-"highlight VertSplit        ctermfg=0       ctermbg=8       cterm=none
-"highlight Statement        ctermfg=2       ctermbg=none    cterm=none
-"highlight Directory        ctermfg=4       ctermbg=none    cterm=none
-"highlight StatusLine       ctermfg=7       ctermbg=8       cterm=none
-"highlight StatusLineNC     ctermfg=7       ctermbg=8       cterm=none
-"highlight Constant         ctermfg=12      ctermbg=none    cterm=none
-"highlight Special          ctermfg=4       ctermbg=none    cterm=none
-"highlight Identifier       ctermfg=6       ctermbg=none    cterm=none
-"highlight PreProc          ctermfg=5       ctermbg=none    cterm=none
-"highlight String           ctermfg=12      ctermbg=none    cterm=none
-"highlight Number           ctermfg=1       ctermbg=none    cterm=none
-"highlight Function         ctermfg=1       ctermbg=none    cterm=none
-"highlight WildMenu         ctermfg=4       ctermbg=80      cterm=none
-"highlight Folded           ctermfg=103     ctermbg=234     cterm=none
-"highlight FoldColumn       ctermfg=103     ctermbg=234     cterm=none
-"highlight DiffAdd          ctermfg=none    ctermbg=23      cterm=none
-"highlight DiffChange       ctermfg=none    ctermbg=56      cterm=none
-"highlight DiffDelete       ctermfg=168     ctermbg=96      cterm=none
-"highlight DiffText         ctermfg=0       ctermbg=80      cterm=none
-"highlight SignColumn       ctermfg=244     ctermbg=235     cterm=none
-"highlight Conceal          ctermfg=251     ctermbg=none    cterm=none
-"highlight SpellBad         ctermfg=168     ctermbg=none    cterm=underline
-"highlight SpellCap         ctermfg=80      ctermbg=none    cterm=underline
-"highlight SpellRare        ctermfg=121     ctermbg=none    cterm=underline
-"highlight SpellLocal       ctermfg=186     ctermbg=none    cterm=underline
-"highlight Pmenu            ctermfg=251     ctermbg=234     cterm=none
-"highlight PmenuSel         ctermfg=4       ctermbg=111     cterm=none
-"highlight PmenuSbar        ctermfg=206     ctermbg=235     cterm=none
-"highlight PmenuThumb       ctermfg=235     ctermbg=206     cterm=none
-"highlight TabLine          ctermfg=244     ctermbg=234     cterm=none
-"highlight TablineSel       ctermfg=0       ctermbg=247     cterm=none
-"highlight TablineFill      ctermfg=244     ctermbg=234     cterm=none
-"highlight CursorColumn     ctermfg=none    ctermbg=236     cterm=none
-"highlight CursorLine       ctermfg=none    ctermbg=236     cterm=none
-"highlight ColorColumn      ctermfg=none    ctermbg=236     cterm=none
-"highlight Cursor           ctermfg=7       ctermbg=5       cterm=none
-"highlight htmlEndTag       ctermfg=114     ctermbg=none    cterm=none
-"highlight xmlEndTag        ctermfg=114     ctermbg=none    cterm=none
