@@ -30,9 +30,9 @@ my $editor = $CONFIG->{vim};
 our $SCHEMA = [
 
     #          COMMAND                 LABEL              ICON
-    {item => ['nautilus',       'Files', '/usr/share/icons/Papirus/16x16/places/folder-blue.svg']},
-    {item => ['urxvt',            'URxvt',     'utilities-terminal']},
-    {item => ['chromium', 'Chromium',  '/usr/share/icons/Papirus/16x16/apps/chromium.svg']},
+    {item => ['pcmanfm',       'Files', '/usr/share/icons/Papirus/16x16/places/folder-blue.svg']},
+    {item => ['alacritty',            'Terminal',     '/usr/share/icons/Papirus/16x16/apps/terminal.svg']},
+    {item => ['brave', 'Browser',  '/usr/share/icons/Papirus/16x16/apps/brave-browser.svg']},
 ##    {item => ['gmrun',            'Run command',  'system-run']},
 
     {sep => 'OPENBOX MENU'},
@@ -84,16 +84,17 @@ our $SCHEMA = [
 ##        {item => ['obmenu-generator -p -i',    'Generate a dynamic menu with icons', 'accessories-text-editor']},
         {sep  => undef},
 
+        {item => ['openbox --reconfigure',               'Reconfigure Openbox', '/usr/share/icons/Papirus/16x16/emblems/emblem-rabbitvcs-calculating.svg']},
 ##        {item => ['obmenu-generator -d', 'Refresh cache', 'view-refresh']},
 ##      {end => undef},
 
       # Openbox category
-      {beg => ['Configs', 'utilities-terminal']},
-        {item => ["$editor ~/.Xresources", '.Xresources',   'text-x-generic']},
-        {item => ["$editor ~/.vimrc",    '.vimrc',          'text-x-generic']},
-        {item => ["$editor ~/.zshrc",  '.zshrc',        'text-x-generic']},
-        {item => ['openbox --reconfigure',               'Reconfigure Openbox', '/usr/share/icons/Papirus/16x16/emblems/emblem-rabbitvcs-calculating.svg']},
-        {end => undef},
+      ##{beg => ['Configs', '/usr/share/icons/Soda/16x16/places/folder-script.svg']},
+      ##{item => ["$editor /home/josh/.Xresources", '.Xresources',   'text-x-generic']},
+      ##{item => ["$editor ~/.vimrc",    '.vimrc',          'text-x-generic']},
+      ##{item => ["$editor ~/.zshrc",  '.zshrc',        'text-x-generic']},
+      ##{item => ['openbox --reconfigure',               'Reconfigure Openbox', '/usr/share/icons/Papirus/16x16/emblems/emblem-rabbitvcs-calculating.svg']},
+      ## {end => undef},
         {sep => undef},
       {beg => ['Exit', '/usr/share/icons/Papirus/16x16/apps/gnome-session-halt.svg']},
 #        {item => [
@@ -104,10 +105,11 @@ our $SCHEMA = [
 ##    {item => ['xscreensaver-command -lock', 'Lock', 'system-lock-screen']},
     ## This option uses the default Openbox's "Exit" action
     #{exit => ['Logout', 'application-exit']},
-       
+
         {item => ['openbox --exit', 'Logout', '/usr/share/icons/Papirus/16x16/apps/system-config-users.svg']},
         {item => ['systemctl reboot', 'Reboot', '/usr/share/icons/Papirus/16x16/apps/system-reboot.svg']},
         {item => ['systemctl -i poweroff', 'Shutdown', '/usr/share/icons/Papirus/16x16/apps/gnome-session-halt.svg']},
 
+      {end => undef},
     ## This uses the 'oblogout' menu
 ]
