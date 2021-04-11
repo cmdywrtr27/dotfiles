@@ -52,7 +52,7 @@ window.active.button.*.hover.bg: flat solid
 window.active.button.*.hover.bg: parentrelative
 window.active.button.*.hover.image.color: #5c6780
 window.active.button.*.hover.bg.color: #3b4252
-window.active.button.*.pressed.image.color: #89ccf7
+window.active.button.*.pressed.image.color: #ffffff
 window.active.button.*.pressed.bg.color: #3b4252
 window.active.button.toggled.hover.image.color: #5c6780
 window.active.button.toggled.image.color: #d8a6f4
@@ -74,7 +74,7 @@ window.inactive.button.disabled.image.color: #5c6780
 ## Close Button
 #window.active.button.close.unpressed.image.color: #fc0a0e
 window.active.button.close.unpressed.image.color: #ffffff
-window.active.button.close.pressed.image.color: #fc0a0e
+window.active.button.close.pressed.image.color: #ffffff
 #window.active.button.close.pressed.bg.color: #434c5e
 #window.inactive.button.close.unpressed.image.color: #5c6780
 window.inactive.button.close.unpressed.image.color: #363D4C
@@ -84,8 +84,8 @@ window.inactive.button.close.pressed.bg.color: #434c5e
 ## Maximize Button
 #window.active.button.max.unpressed.image.color: #35f44f
 window.active.button.max.unpressed.image.color: #ffffff
-window.active.button.max.pressed.image.color: #35f44f
-#window.active.button.max.pressed.bg.color: #434c5e
+window.active.button.max.pressed.image.color: #ffffff
+window.active.button.max.pressed.bg.color: #434c5e
 #window.inactive.button.max.unpressed.image.color: #5c6780
 window.inactive.button.max.unpressed.image.color: #363D4C
 window.inactive.button.max.pressed.image.color: #5c6780
@@ -94,7 +94,7 @@ window.inactive.button.max.pressed.bg.color: #434c5e
 ## Iconify Button (Minimize)
 #window.active.button.iconify.unpressed.image.color: #ffed30
 window.active.button.iconify.unpressed.image.color: #ffffff
-window.active.button.iconify.pressed.image.color: #ffed30
+window.active.button.iconify.pressed.image.color: #ffffff
 #window.active.button.iconify.pressed.bg.color: #434c5e
 #window.inactive.button.iconify.unpressed.image.color: #5c6780
 window.inactive.button.iconify.unpressed.image.color: #363D4C
@@ -149,9 +149,9 @@ menu.items.active.bg.color: #232730
 menu.items.active.bg.colorTo: #337acc
 menu.items.active.text.color: #ffffff
 
-## New (not sure if these lines belong)
+## New (not sure if it belongs)
 window.active.button.unpressed.image.color: #b8c1c6
-window.active.button.hover.image.color: #4dd0e1
+window.active.button.hover.image.color: #4dd0e1 11
 window.active.button.pressed.image.color: #ec407a
 window.active.button.toggled.bg: flat solid
 window.active.button.toggled.bg.color: #222d32
@@ -167,6 +167,8 @@ window.inactive.button.toggled.bg.color: #434c5e
 window.inactive.button.toggled.image.color: #434c5e
 window.inactive.button.toggled.hover.image.color: #434c5e
 window.inactive.button.disabled.image.color: #434c5e
+
+window.active.button.*.image.color: #ffffff
 
 # --------------------------------------------------------
 
