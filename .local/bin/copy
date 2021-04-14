@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xsel -i && notify-send -i ~/.icons/copy7.png 'copied to clipboard!'
