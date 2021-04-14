@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
 
 # Defining the text editor to use.
-
 DMEDITOR="alacritty -e vim"
+THEME="/$HOME/.config/rofi/launchers/colorful/style_71.rasi"
 
 # An array of options to choose.
 # You can edit this list to add/remove config files.
-
 declare -A options
-
 options[alacritty]="$HOME/.config/alacritty/alacritty.yml"
 options[awesome]="$HOME/.config/awesome/rc.lua"
 options[bash]="$HOME/.bashrc"
@@ -24,8 +22,7 @@ options[zsh]="$HOME/.zshrc"
 
 # Piping the above array into dmenu.
 # We use "printf '%s\n'" to format the array one item to a line.
-
-choice=$(printf '%s\n' "${!options[@]}" | rofi -dmenu -i -p 'Which config are you going to break this time?' "$@")
+choice=$(printf '%s\n' "${!options[@]}" | rofi -theme $THEME -dmenu -i -p 'Which config would you like to break today?' "$@")
 cfg=$(printf '%s\n' "${options["${choice}"]}")
 
 # What to do when/if we choose a file to edit.
@@ -34,5 +31,5 @@ if [ "$choice"  ]; then
 
 # What to do if we just escape without choosing anything.
 else
-    echo "If it ain't broke, don't fix it." && exit 0
+    echo "Program terminated." && exit 0
 fi
