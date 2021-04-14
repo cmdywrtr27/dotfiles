@@ -1,17 +1,5 @@
 #!/bin/bash
 
-# NAME: hotplug-hdmi
-# PATH: /home/josh/.local/bin
-# DESC: Update pulseaudio output device when HDMI TV plugged / unplugged
-# CALL: called from /etc/udev/rules.d/99-hotplugtv.rules 
-#       and /home/$USER/bin/lock-screen-timer
-# DATE: Created Nov 26, 2016.
-# NOTE: logs output using log-file
-# UPDT: Dec 14, 2016 - Sometimes /sys/class/drm/card0 & sometimes /sys/class/drm/card1
-#       so use /sys/class/dmcard* instead.
-#       Dec 21, 2016 - Relocated to /home/$USER/bin for calling by lock-screen-timer
-#       Aug 06, 2017 - Convert from home grown log-file to universal logger command.
-
 if [[ $(cat /sys/class/drm/card*-HDMI-A-1/status | grep -Ec "^connected") -eq 1 ]]; then
         logger -t /home/josh/bin/log-hotplug-hdmi "HDMI TV connected"
         /bin/sleep 2;
