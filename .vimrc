@@ -5,7 +5,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-plug'
 Plug 'ycm-core/YouCompleteMe'
-Plug 'ap/vim-css-color'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/vim-gitbranch'
@@ -27,7 +26,9 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'mbbill/undotree'
 Plug 'jacoborus/tender.vim'
 Plug 'joshdick/onedark.vim'
+Plug 'gko/vim-coloresque'
 Plug 'NovaDev94/lightline-onedark'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimshell.vim'
@@ -36,7 +37,7 @@ Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
-set formatoptions-=cro
+:set formatoptions-=cro
 
 set history=1000
 
@@ -94,7 +95,7 @@ set sidescrolloff=5
 set splitright
 set splitbelow
 
-set mouse=:a
+set mouse=nicra
 
 " Avoid garbled characters in Chinese language windows OS
 let $LANG='en'
@@ -116,7 +117,7 @@ else
 endif
 
 "Always show current position
-set ruler
+set noruler
 
 " Height of the command bar
 set showcmd
@@ -136,7 +137,7 @@ set ignorecase
 set smartcase
 
 " Highlight search results
-"set hlsearch
+set hlsearch
 
 " Turn off highlights after search is complete
 augroup vimrc-incsearch-highlight
@@ -155,7 +156,7 @@ set lazyredraw
 set magic
 
 " Show matching brackets when text indicator is over them
-set showmatch
+set noshowmatch
 
 " How many tenths of a second to blink when matching brackets
 set mat=2
@@ -170,14 +171,7 @@ set tm=500
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-if (empty($TMUX))
-  if (has("nvim"))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
+let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 
 " Enable syntax highlighting
 syntax on
@@ -187,16 +181,14 @@ syntax enable
 
 " Only set if terminal has 256 colors (ie. xterm-256color)
 set t_Co=256
-let g:rehash256 = 1
 
-"colorscheme onedark
+colorscheme onedark
 "colorscheme wombat
-colorscheme SlateDark
+"colorscheme SlateDark
 set background=dark
 
-let g:rainbow_active = 1 "Alternating color of brackets etc.
-highlight Pmenu ctermfg=15 ctermbg=8 guifg=#000000 guibg=#DAD7DA
-highlight Comment ctermfg=3 ctermbg=none cterm=italic
+let g:rainbow_active = 1
+let g:rehash256 = 1
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -211,10 +203,23 @@ set noshowmode
 " Disable highlight when <leader>h is pressed
 noremap <leader>h :noh<CR>
 
+"set termguicolors
 set nohlsearch
 
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
+highlight Comment ctermfg=3 cterm=italic
+highlight Pmenu ctermfg=15 ctermbg=8 guifg=#000000 guibg=#DAD7DA
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => The "Save your ASS" section
+" => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git etc. anyway...
 set nobackup
@@ -242,7 +247,7 @@ set tw=500
 
 set autoindent "Auto indent
 set smartindent "Smart indent
-set nowrap "Wrap lines, or not
+set nowrap "Wrap lines
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -497,10 +502,13 @@ let g:lightline = {
       \   'left': [ [ 'buffers' ] ],
       \   'right': [ [ 'close' ] ],
       \ },
-      \ 'separator': { 'left': '▓░', 'right': '░▓'  },
-      \ 'subseparator': { 'left': '▓░', 'right': '░▓'  },
+      \ 'separator': { 'left': '▒░', 'right': '░▒'  },
+      \ 'subseparator': { 'left': '▒░', 'right': '░▒'  },
       \ }
 
+"      \ 'separator': { 'left': '▓░', 'right': '░▓'  },
+"      \ 'subseparator': { 'left': '▓░', 'right': '░▓'  },
+"      \ }
 "      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2"  },
 "      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3"  },
 "      \ }
@@ -553,6 +561,9 @@ let g:lightline#bufferline#number_separator = ' '
 let g:lightline#bufferline#more_buffers = '...'
 let g:lightline#bufferline#modified = ' [+]'
 let g:lightline#bufferline#read_only = ' '
+"let g:lightline_symbols.branch = ''
+"let g:lightline_symbols.readonly = ''
+"let g:lightline_symbols.linenr = '⭡'
 
 augroup AutoSyntastic
     autocmd!
