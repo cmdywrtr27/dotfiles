@@ -63,7 +63,7 @@ cat <<EOF
   SHELL      ${c0}${green}${shell}${reset}
 EOF
 
-source /home/josh/.local/bin/color_scripts/blocks
+source /home/josh/.local/bin/color_scripts/panes
 
 #pcs() { for i in {0..7}; do echo -en "\e[${1}$((30+$i))m \u2588\u2588 \e[0m"; done; }
 #printf "\n %s\n %s\n\n" "$(pcs)" "$(pcs '1;')"
