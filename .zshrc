@@ -4,6 +4,7 @@
 # (_)___|___/_||_|_|_\\___|
 
 export TERM=xterm-256color
+export TERMINAL=alacritty
 export BROWSER=brave
 export LANG=en_US.UTF-8
 export SUDO_EDITOR=vim
@@ -11,7 +12,6 @@ export EDITOR=vim
 export MANPAGER='/bin/zsh -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
 export PATH="/home/josh/.cargo/bin:$PATH"
 export PATH="/home/josh/.local/bin:$PATH"
-
 source ~/.zsh_aliases
 source ~/.git.zsh
 source ~/.fzf.zsh
@@ -52,6 +52,15 @@ zstyle ':vcs_info:*' unstagedstr '±'
 zstyle ':vcs_info:*' formats ' %u%c'
 zstyle ':vcs_info:*' actionformats ' %u%c'
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
+
+#zstyle ':vcs_info:*' enable git svn
+#zstyle ':vcs_info:*' check-for-changes true
+#zstyle ':vcs_info:*' unstagedstr    "${FMT_UNSTAGED}"
+#zstyle ':vcs_info:*' stagedstr      "${FMT_STAGED}"
+#zstyle ':vcs_info:*' actionformats  "${FMT_VCS_STATUS} ${FMT_ACTION}"
+#zstyle ':vcs_info:*' formats        "${FMT_VCS_STATUS}"
+#zstyle ':vcs_info:*' nvcsformats    ""
+#zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
 zstyle :compinstall filename '/home/josh/.zshrc'
 
@@ -102,3 +111,5 @@ autoload -U colors && colors
 source ~/.prompt13.zsh
 
 autoload -U compinit && compinit -u
+
+jfetch
