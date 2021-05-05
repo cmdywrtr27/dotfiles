@@ -4,11 +4,11 @@ padding.height: 5
 
 ## Titlebar
 window.active.title.bg: flat gradient horizontal
-window.active.title.bg.color: #434c5e
-window.active.title.bg.colorTo: #5B8ACE
+window.active.title.bg.color: #052560
+window.active.title.bg.colorTo: #6CA9EF
 window.inactive.title.bg: flat gradient horizontal
-window.inactive.title.bg.color: #434c5e
-window.inactive.title.bg.colorTo: #5B8ACE
+window.inactive.title.bg.color: #052560
+window.inactive.title.bg.colorTo: #6CA9EF
 
 ## Titlebar Text
 window.label.text.justify: center
@@ -149,7 +149,7 @@ menu.items.active.bg.color: #232730
 menu.items.active.bg.colorTo: #337acc
 menu.items.active.text.color: #ffffff
 
-## New
+## Active Window Buttons
 window.active.button.unpressed.image.color: #b8c1c6
 window.active.button.hover.image.color: #4dd0e1 11
 window.active.button.pressed.image.color: #ec407a
@@ -159,6 +159,7 @@ window.active.button.toggled.image.color: #ffffff
 window.active.button.toggled.hover.image.color: #4dd0e1
 window.active.button.disabled.image.color: #434c5e
 
+## Inactive Window Buttons
 window.inactive.button.unpressed.image.color: #677277
 window.inactive.button.hover.image.color: #434c5e
 window.inactive.button.pressed.image.color: #434c5e
