@@ -5,6 +5,7 @@ case ${SOLARIZED_THEME:-dark} in
     *)     CURRENT_FG='black';;
 esac
 
+
 # Special Powerline characters
 
 () {
@@ -55,7 +56,13 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)%n@%m"
+    prompt_segment blue black "%(!.%{%F{yellow}%}.) "
+  fi
+}
+
+prompt_context2() {
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    prompt_segment white black "%(!.%{%F{yellow}%}.)%n@%m"
   fi
 }
 
@@ -70,7 +77,7 @@ prompt_git() {
     local LC_ALL="" LC_CTYPE="en_US.UTF-8"
     PL_BRANCH_CHAR=$'\ue0a0'         # 
   }
-  local ref dirty mode repo_path
+  local ref mode repo_path
 
    if [[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]]; then
     repo_path=$(git rev-parse --git-dir 2>/dev/null)
@@ -170,14 +177,21 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment blue $CURRENT_FG ' %~'
+    if [[ "$PWD" = "$HOME" ]];then
+      prompt_segment magenta $CURRENT_FG '  %~'
+    else
+      prompt_segment magenta $CURRENT_FG 'ﱮ  %~'
+    fi
 }
+
+#  prompt_segment magenta $CURRENT_FG ' %~'
+#}
 
 # Virtualenv: current working virtualenv
 prompt_virtualenv() {
   local virtualenv_path="$VIRTUAL_ENV"
   if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
-    prompt_segment blue black "(`basename $virtualenv_path`)"
+    prompt_segment magenta black "(`basename $virtualenv_path`)"
   fi
 }
 
@@ -211,10 +225,11 @@ prompt_aws() {
 ## Main prompt
 build_prompt() {
   RETVAL=$?
-  prompt_status
+#  prompt_status
   prompt_virtualenv
   prompt_aws
   prompt_context
+  prompt_context2
   prompt_dir
   prompt_git
   prompt_bzr
