@@ -1,7 +1,32 @@
-PROMPT=$'
-%{\e[0;34m%}┌─[%{\e[0m%}%{\e[0;31m%}%n%{\e[0;33m%}@%{\e[0m%}%{\e[0;36m%}%m%{\e[0;34m%}]%{\e[0m%}%{\e[0;34m%} ♰ %{\e[0m%}%b%{\e[0;34m%}[%{\e[0;35m%}%~%{\e[0;34m%}]
-%{\e[0;34m%}└─⊳%{\e[0m%} '
+if [[ "$USER" == "root" ]]; then
 
-PS2=$' \e[0;34m%}>%{\e[0m%} '
+  PROMPT='
+%{$fg[cyan]%}%~%{$reset_color%}  $(git_prompt_info)'
 
-RPROMPT='${return_code} $(git_prompt_info) %{$reset_color%}'
+  PROMPT+="
+%(?:%{$fg_bold[red]%}❯%{$fg_bold[yellow]%}❯%{$fg_bold[red]%}❯ :%{$fg_bold[red]%}❯❯❯ )%{$reset_color%}"
+
+else
+
+#  PROMPT='
+#%{$fg[cyan]%}  %~%{$reset_color%}  $(git_prompt_info)'
+
+#  PROMPT+="
+#%(?:%{$fg_bold[red]%}❯%{$fg_bold[green]%}❯%{$fg_bold[yellow]%}❯ :%{$fg_bold[red]%}❯❯❯ )%{$reset_color%}"
+
+#  RPROMPT='$(git_prompt_info)' 
+
+  PROMPT='
+%{$fg[cyan]%}%~%{$reset_color%}  $(git_prompt_info)'
+
+  PROMPT+="
+%(?:%{$fg[red]%}▶%{$fg[green]%}▶%{$fg[yellow]%}▶ :%{$fg[red]%}▶▶▶ )%{$reset_color%}"
+
+fi
+
+#RPROMPT='%{%F{cyan}%} $(git_prompt_info) %{$reset_color%}'
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[magenta]%} %{$fg[cyan]%}("
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[cyan]%}) %{$fg[yellow]%}✖"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[cyan]%})"
