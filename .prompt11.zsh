@@ -1,41 +1,77 @@
-typeset +H _current_dir="%{$fg_bold[blue]%}%3~%{$reset_color%} "
-typeset +H _return_status="%{$fg_bold[red]%}%(?..⍉)%{$reset_color%}"
-typeset +H _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
+function calculate_width {
+    temp=" ${USER} _ ${HOST} _  _"
+    dir_actual=$PWD
 
-PROMPT='
-$(_user_host)${_current_dir} $(git_prompt_info) $(git_prompt_status)
-%{%(!.${fg[red]}.${fg[white]})%}%{$reset_color%} '
+    if [[ "$dir_actual[0,${#HOME}]" == "$HOME" ]]
+    then
+        dir_actual="~$dir_actual[$((${#HOME}+1)),-1]"
+    fi
 
-PROMPT2='%{%(!.${fg[red]}.${fg[white]})%}◀%{$reset_color%} '
-
-RPROMPT='${_return_status}'
-
-function _user_host() {
-  local me
-  if [[ -n $SSH_CONNECTION ]]; then
-    me="%n@%m"
-  elif [[ $LOGNAME != $USER ]]; then
-    me="%n"
-  fi
-  if [[ -n $me ]]; then
-    echo "%{$fg[cyan]%}$me%{$reset_color%}:"
-  fi
+    let remaining=${COLUMNS}-${#temp}
+    dir_length=${#dir_actual}
+    if [[ "$dir_length" -gt "$remaining" ]]
+    then
+        dir_actual="...${dir_actual:$(($dir_length-$remaining+3))}"
+    fi
 }
 
-MODE_INDICATOR="%{$fg_bold[yellow]%}❮%{$reset_color%}%{$fg[yellow]%}❮❮%{$reset_color%}"
+reload () {
+    exec "${SHELL}" "$@"
+}
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
+case $TERM in
+    termite|*xterm*|rxvt|rxvt-unicode|rxvt-256color|rxvt-unicode-256color|(dt|k|E)term)
+        separator1=
+        separator2=
+        separator3=
+        precmd () {
+            print -Pn "\e]0;%n@%M: %1~ \a"
+            calculate_width
+        }
+        preexec () {
+            print -Pn "\e]0;%n@%M %1~ ($1)\a"
+        }
+        ;;
+    screen|screen-256color)
+        separator1=
+        separator2=
+        separator3=
+        precmd () {
+            print -Pn "\e]83;title \"$1\"\a"
+            print -Pn "\e]0;TMUX - %n@%M %1~\a"
+            calculate_width
+        }
+        preexec () {
+            print -Pn "\e]83;title \"$1\"\a"
+            print -Pn "\e]0;TMUX - %n@%M %# %1~ ($1)\a"
+        }
+        ;;
+    *)
+        separator1=▒
+        separator2=│
+        separator3=▒
+        precmd () {
+            calculate_width
+        }
+        ;;
+esac
+
+local return_code="%(?..%{$fg[red]%} %? %{$reset_color%})"
+
+zsh_prompt_home_indicator() {
+    if [[ "$PWD" = "$HOME" ]];then
+      echo " "
+    else
+      echo "ﱮ "
+fi
+}
+
+PROMPT='
+%{%K{white}%0F%}   %{%K{blue}%F{blue}%}$separator1%{%0F%} $(zsh_prompt_home_indicator) $dir_actual %{%k%F{blue}%}$separator1%{%k$reset_color%} '
+
+RPROMPT='${return_code} $(git_prompt_info) %{$reset_color%}'
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[magenta]%} %{$fg[cyan]%}("
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}✗%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}✔%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%}✚ "
-ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%}⚑ "
-ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}✖ "
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%}▴ "
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[cyan]%}§ "
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[white]%}? "
-
-ZSH_THEME_GIT_TIME_SINCE_COMMIT_SHORT="%{$fg[green]%}"
-ZSH_THEME_GIT_TIME_SHORT_COMMIT_MEDIUM="%{$fg[yellow]%}"
-ZSH_THEME_GIT_TIME_SINCE_COMMIT_LONG="%{$fg[red]%}"
-ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL="%{$fg[white]%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[cyan]%}) %{$fg[yellow]%}✖"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[cyan]%})"
