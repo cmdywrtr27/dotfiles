@@ -1,14 +1,22 @@
 # Menu
 menu.border.width: 10
-menu.overlap.x: -20
-menu.overlap.y: -20
+menu.overlap.x: -12
+menu.overlap.y: 0
 
 menu.border.color: #353944
 
-menu.title.bg: raised solid
-menu.title.bg.color: #353944
+#menu.title.bg: raised solid
+#menu.title.bg.color: #353944
+#menu.title.text.color: #ffffff
+#menu.title.text.justify: center
+
+menu.title.bg: raised splitvertical gradient
+menu.title.bg.color: #656B7D
+menu.title.bg.color.splitTo: #353944
+menu.title.bg.colorTo: #656B7D
+menu.title.bg.colorTo.splitTo: #353944
 menu.title.text.color: #ffffff
-menu.title.text.justify: center
+
 
 menu.items.bg: flat solid
 menu.items.bg.color: #353944
@@ -18,7 +26,7 @@ menu.items.disabled.text.color: #777777
 
 menu.items.active.bg: flat gradient horizontal
 menu.items.active.bg.color: #353944
-menu.items.active.bg.colorTo: #61AFEF
+menu.items.active.bg.colorTo: #656B7D
 menu.items.active.text.color: #ffffff
 
 # Active Window
