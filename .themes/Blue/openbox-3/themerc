@@ -22,15 +22,15 @@ menu.items.active.bg.colorTo: #61AFEF
 menu.items.active.text.color: #ffffff
 
 # Active Window
+window.active.text.justify: left
 window.active.border.color: #61AFEF
+window.active.title.separator.color: #61AFEF
 
 window.active.title.bg: solid flat
 window.active.title.bg.color: #61AFEF
-window.active.title.separator.color: #61AFEF
-window.active.text.justify: left
 
 window.active.label.bg: parentrelative
-window.active.label.text.color: #2F343F
+window.active.label.text.color: #2f343f
 
 window.active.handle.bg: flat solid
 window.active.handle.bg.color: #61AFEF
@@ -80,12 +80,12 @@ window.active.button.toggled.bg: parentrelative
 window.active.button.toggled.image.color: #ffffff
 
 # Inactive Window
+window.inactive.text.justify: left
 window.inactive.border.color: #2f343f
+window.inactive.title.separator.color: #2f343f
 
 window.inactive.title.bg: flat solid
 window.inactive.title.bg.color: #2f343f
-window.inactive.title.separator.color: #2f343f
-window.inactive.text.justify: center
 
 window.inactive.label.bg: parentrelative
 window.inactive.label.text.color: #61AFEF
@@ -129,13 +129,15 @@ window.inactive.button.desk.hover.image.color: #88C0D0
 
 window.inactive.button.pressed.bg: flat solid
 window.inactive.button.pressed.bg.color: #2f343f
+window.inactive.button.pressed.image.color: #444A57
 
 window.inactive.button.disabled.bg: flat solid
 window.inactive.button.disabled.bg.color: #2f343f
 window.inactive.button.disabled.image.color: #444A57
 
-window.inactive.button.toggled.bg: parentrelative
-window.inactive.button.toggled.image.color: #2F343F
+window.inactive.button.toggled.bg: flat solid
+window.inactive.button.toggled.bg.color: #2f343f
+window.inactive.button.toggled.image.color: #444A57
 
 # On-Screen Display
 osd.border.width: 4
@@ -143,9 +145,10 @@ osd.border.color: #2F343F
 
 osd.bg: flat solid
 osd.bg.color: #2F343F
+
 osd.label.bg: flat solid
 osd.label.bg.color: #2F343F
-osd.label.text.color: #61AFEF
+osd.label.text.color: #ffffff
 
 osd.hilight.bg: flat solid
 osd.hilight.bg.color: #61AFEF
