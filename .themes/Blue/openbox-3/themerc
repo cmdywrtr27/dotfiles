@@ -17,7 +17,6 @@ menu.title.bg.colorTo: #656B7D
 menu.title.bg.colorTo.splitTo: #353944
 menu.title.text.color: #ffffff
 
-
 menu.items.bg: flat solid
 menu.items.bg.color: #353944
 
