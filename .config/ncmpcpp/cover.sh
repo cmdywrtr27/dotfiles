@@ -40,7 +40,8 @@ function reset_background
         # Resize the image's width to 64px
         convert "$src" -resize 64x "$COVER"
         if [[ -f "$COVER" ]] ; then
-            notify-send -u low -i ${COVER} " Now Playing" "`mpc current`"
+            notify-send -u low --icon=~/.config/ncmpcpp/music.png "$(mpc current)"
+            #notify-send -u low -i ${COVER} " Now Playing" "`mpc current`"
         fi
     fi
 } &
