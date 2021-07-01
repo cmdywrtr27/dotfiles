@@ -24,7 +24,6 @@ alias exe='sudo chmod +x '
 alias x='exit'
 alias bk='cd "$OLDPWD"'
 
-# List Files with color labels
 #alias l='els --els-icons=fontawesome'
 #alias l='els -1h --els-icons=fontawesome'
 #alias ll='els -hsrpA --els-icons=fontawesome'
@@ -39,28 +38,25 @@ alias llm='exa -lbGd --sort=modified'
 alias la='exa -albigmhHS --icons --color=automatic'
 alias lx='exa -albigmhrHS --icons --color=automatic'
 
-# Specialty Views
 alias lS='exa -1 --icons --color=automatic'
 alias lt='exa --tree --level=2'
 
-# File Management
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 alias font='fc-cache -f -v'
-#alias vi="vim "
-alias pgrep="ps aux | grep"
-alias grep="grep --color=auto"
-alias mkdir="mkdir -pv"
+#alias vi='vim'
+alias pgrep='ps aux | grep'
+alias grep='grep --color=auto'
+alias mkdir='mkdir -pv'
 alias cp='cp -iv -r'
-alias mv="mv -iv"
-alias rm="rm -Iv"
+alias mv='mv -iv'
+alias rm='rm -Iv'
 alias enable_vbox='sudo modprobe vboxdrv vboxnetadp vboxnetflt vboxpci'
 alias disable_vbox='sudo modprobe -r vboxdrv vboxnetadp vboxnetflt vboxpci'
 alias speed_test='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 alias mpd_start='systemctl start mpd.service mpdscribble.service --user'
 alias mpd_stop='systemctl stop mpd.service mpdscribble.service --user'
 
-# Terminal Programs
-alias ym="youtube-dl xic --audio-format mp3 --add-metadata "
-alias yt="youtube-dl xic --add-metadata "
-alias pingg="hostname -I && curl ipinfo.io/ip && ping -c 5 -q google.com"
-alias xclip="xclip -selection clipboard"
+alias ym='youtube-dl xic --audio-format mp3 --add-metadata'
+alias yt='youtube-dl xic --add-metadata'
+alias pingg='hostname -I && curl ipinfo.io/ip && ping -c 5 -q google.com'
+alias xclip='xclip -selection clipboard'
