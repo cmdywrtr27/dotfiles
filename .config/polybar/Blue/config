@@ -1,0 +1,479 @@
+[bar/main]
+bottom = false
+monitor = HDMI1
+fixed-center = true
+width = 100%
+height = 19
+offset-x = 0
+offset-y = 0
+underline-size = 0
+overline-size = 0
+background = ${colors.bg}
+foreground = ${colors.blue}
+;padding = 1
+module-margin = 0
+;font-0 = Iosevka Nerd Font:size=12;2
+;font-1 = WeatherIcons:size=11;2
+;font-2 = MaterialIcons:size=12;2
+;font-3 = Iosevka Nerd Font:size=6;3
+modules-left = sep1 launcher sep2 sep3 workspaces3 sep3 sep1 mpd2 sep2
+modules-center = title
+modules-right = sep1 pulseaudio2 sep2 sep1 filesystem sep2 sep1 wifi sep2 sep1 temperature sep2 sep1 cpu sep2 sep1 memory sep2 sep1 powermenu sep2
+locale = en_US.UTF-8
+include-file = ~/.config/polybar/Theme40/font2
+include-file = ~/.config/polybar/Theme40/colors
+
+[bar/second]
+inherit = bar/main
+;bottom = false
+monitor = HDMI2
+;fixed-center = true
+;width = 100%
+;height = 30
+;offset-x = 0
+;offset-y = 0
+;underline-size = 4
+;overline-size = 4
+;background = ${colors.bg}
+;foreground = ${colors.blue}
+;padding = 1
+;module-margin = 0
+;font-0 = Iosevka Nerd Font:size=12;2
+;font-1 = WeatherIcons:size=11;2
+;font-2 = MaterialIcons:size=12;2
+;font-3 = Iosevka Nerd Font:size=13;3
+modules-left = sep1 launcher sep2 workspaces3 sep1 mpd2 sep2
+modules-center = title
+modules-right = sep1 pulseaudio2 sep2 sep1 filesystem sep2 sep1 wifi sep2 sep1 temperature sep2 sep1 cpu sep2 sep1 memory sep2 sep1 powermenu sep2
+;locale = en_US.UTF-8
+;include-file = ~/.config/polybar/Theme40/font3
+;include-file = ~/.config/polybar/Theme40/colors
+
+[module/mpd2]
+type = internal/mpd
+
+; Host where mpd is running (either ip or domain name)
+; Can also be the full path to a unix socket where mpd is running.
+host = 127.0.0.1
+port = 6600
+;;password = mysecretpassword
+
+; Seconds to sleep between progressbar/song timer sync
+; Default: 1
+interval = 1
+
+; Available tags:
+;   <label-song> (default)
+;   <label-time>
+;   <bar-progress>
+;   <toggle> - gets replaced with <icon-(pause|play)>
+;   <toggle-stop> - gets replaced with <icon-(stop|play)>
+;   <icon-random>
+;   <icon-repeat>
+;   <icon-repeatone> (deprecated)
+;   <icon-single> - Toggle playing only a single song. Replaces <icon-repeatone>
+;   <icon-consume>
+;   <icon-prev>
+;   <icon-stop>
+;   <icon-play>
+;   <icon-pause>
+;   <icon-next>
+;   <icon-seekb>
+;   <icon-seekf>
+format-online =   <label-song>  <icon-prev>  <toggle>  <icon-next>
+format-online-background = ${colors.mb}
+format-online-foreground = ${colors.mf}
+label-song-foreground = ${colors.white}
+;format-online-padding = ${layout.module-padding}
+;format-playing = ${self.format-online}
+;format-paused = ${self.format-online}
+;format-stopped = ${self.format-online}
+
+; Available tags:
+;   <label-offline>
+;format-offline = <label-offline>
+
+; Available tokens:
+;   %artist%
+;   %album-artist%
+;   %album%
+;   %date%
+;   %title%
+; Default: %artist% - %title%
+label-song = "%artist% - %title%"
+label-song-maxlen = 60
+label-song-ellipsis = true
+
+; Available tokens:
+;   %elapsed%
+;   %total%
+; Default: %elapsed% / %total%
+label-time = %elapsed% / %total%
+
+; Available tokens:
+;   None
+label-offline = "MPD is offline"
+
+; Only applies if <icon-X> is used
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+
+[module/pulseaudio2]
+type = internal/pulseaudio
+use-ui-max = false
+
+format-volume = <label-volume>
+;format-volume-padding = 1
+format-volume-prefix = %{T2} %{T-}
+format-volume-prefix-foreground = ${colors.mf}
+format-volume-prefix-background = ${colors.mb}
+label-volume = %{T1}%percentage%%%{T-}
+label-volume-foreground = ${colors.white}
+label-volume-background = ${colors.mb}
+;label-volume-padding = 1
+
+format-muted = <label-muted>
+format-muted-foreground = ${colors.grey}
+;format-muted-padding = 1
+format-muted-prefix = %{T2}婢 %{T-}
+format-muted-prefix-foreground = ${colors.grey}
+format-muted-prefix-background = ${colors.mb}
+label-muted = %{T1}muted%{T-}
+label-muted-foreground = ${colors.grey}
+label-muted-background = ${colors.mb}
+;label-muted-padding = 1
+
+click-right = pavucontrol&
+
+[module/temperature]
+type = internal/temperature
+interval = 1
+thermal-zone = 0
+warn-temperature = 60
+units = true
+
+format = <ramp>  <label>
+format-background = ${colors.mb}
+format-foreground = ${colors.mf}
+;format-padding = 1
+
+format-warn = <ramp>  <label-warn>
+format-warn-background = ${colors.mb}
+format-warn-foreground = ${colors.red}
+;format-warn-padding = 1
+
+label = "%temperature-f%"
+label-foreground = ${colors.white}
+label-background = ${colors.mb}
+
+label-warn = "%temperature-f%"
+label-warn-foreground = ${colors.red}
+label-warn-background = ${colors.mb}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-foreground = ${colors.mf}
+
+[module/wifi]
+type = internal/network
+interface = wlp0s26u1u1
+interval = 2
+;format-connected = <ramp-signal> <label-connected>
+;format-connected = <label-connected>
+;format-connected-padding = 2
+;format-disconnected = <label-disconnected>
+;format-disconnected-padding = 2
+;format-packetloss = <animation-packetloss> <label-connected>
+;format-packetloss-padding = 2
+
+format-connected-prefix =  
+format-connected = <label-connected>
+label-connected = " %essid%  (%signal%%)"
+format-connected-prefix-foreground = ${colors.mf}
+format-connected-prefix-background = ${colors.mb}
+label-connected-foreground = ${colors.white}
+label-connected-background = ${colors.mb}
+format-connected-prefix-padding = 1
+
+format-disconnected-prefix = 睊
+format-disconnected = <label-disconnected>
+label-disconnected = No Wi-Fi
+format-disconnected-prefix-foreground = ${colors.mf}
+format-disconnected-prefix-background = ${colors.mb}
+label-disconnected-foreground = ${colors.white}
+label-disconnected-background = ${colors.bg}
+;format-disconnected-prefix-padding = 1
+
+;label-connected = %essid% : %downspeed%
+;label-connected =   %essid% (%signal%%)
+;label-connected-foreground = ${colors.mf}
+;label-disconnected =   No Wi-Fi
+;label-disconnected-foreground = ${colors.mf}
+;label-packetloss = %essid%
+;label-packetloss-foreground = ${colors.red}
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-5 = 
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = ${colors.red}
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${colors.red}
+animation-packetloss-framerate = 500
+click-right = exec tilix -e nmtui
+
+[module/date]
+type = internal/date
+date =  %l:%M %P
+date-alt =  %A, %B %e, %Y
+format-foreground = ${colors.blue}
+format-background = ${colors.mb}
+;format-underline = ${colors.bg}
+;format-overline = ${colors.bg}
+;format-padding = 1
+
+[module/title]
+type = internal/xwindow
+format = <label>
+format-padding = 1
+label = %{T1}%title%%{T-}
+label-maxlen = 60
+format-foreground = ${colors.white}
+format-background = ${colors.bg}
+
+[module/filesystem]
+type = internal/fs
+mount-0 = /home
+interval = 10
+fixed-values = true
+spacing = 1
+
+format-mounted = <label-mounted>
+format-mounted-prefix =  
+format-mounted-prefix-foreground = ${colors.mf}
+format-mounted-prefix-background = ${colors.mb}
+;format-mounted-prefix-padding = 1
+
+format-unmounted = <label-unmounted>
+format-unmounted-prefix =  
+format-unmounted-prefix-foreground = ${colors.mf}
+format-unmounted-prefix-background = ${colors.mb}
+;format-unmounted-prefix-padding = 1
+
+label-mounted = "  %percentage_used%%  full"
+label-mounted-foreground = ${colors.white}
+label-mounted-background = ${colors.mb}
+
+label-unmounted = "  HDD not mounted"
+label-unmounted-foreground = ${colors.white}
+label-unmounted-background = ${colors.mb}
+
+[module/sep3]
+type = custom/text
+content = "  "
+content-foreground = ${colors.cyan}
+content-background = ${colors.bg}
+
+[module/memory]
+type = internal/memory
+interval = 1
+format = <label>
+;format-padding = 1
+format-prefix = %{T1} %{T-}
+format-prefix-foreground = ${colors.mf}
+label = %{T1}%percentage_used%%%{T-}
+label-foreground = ${colors.white}
+format-prefix-background = ${colors.mb}
+label-background = ${colors.mb}
+;format-underline = ${colors.bg}
+;format-overline = ${colors.bg}
+;label-padding = 1
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+format = <label>
+;format-padding = 1
+format-prefix = %{T1}  %{T-}
+format-prefix-background = ${colors.mb}
+format-prefix-foreground = ${colors.mf}
+label = %{T1}%percentage%%%{T-}
+label-foreground = ${colors.white}
+label-background = ${colors.mb}
+;label-padding = 1
+;format-foreground = ${colors.mf}
+;format-background = ${colors.mb}
+;format-underline = ${colors.bg}
+;format-overline = ${colors.bg}
+
+[module/workspaces3]
+type = internal/xworkspaces
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = false
+
+; Create click handler used to focus desktop
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle desktops
+; Default: true
+enable-scroll = true
+
+; icon-[0-9]+ = <desktop-name>;<icon>
+; NOTE: The desktop name needs to match the name configured by the WM
+; You can get a list of the defined desktops using:
+; $ xprop -root _NET_DESKTOP_NAMES
+
+icon-0 = 0;⓿
+icon-1 = 1;①
+icon-2 = 2;②
+icon-3 = 3;③
+icon-4 = 4;④
+icon-5 = 5;❺
+icon-6 = 6;❻
+icon-7 = 7;❼
+icon-8 = 8;❽
+icon-9 = 9;❾
+icon-10 = 10;❿
+
+;icon-0 = 0;⊗
+;icon-1 = 1;➊
+;icon-2 = 2;➋
+;icon-3 = 3;➌
+;icon-4 = 4;➍
+
+;icon-0 = 0;⓿
+;icon-1 = 1;❶
+;icon-2 = 2;❷
+;icon-3 = 3;❸
+;icon-4 = 4;➍
+;icon-5 = 5;❺
+;icon-6 = 6;❻
+;icon-7 = 7;❼
+;icon-8 = 8;❽
+;icon-9 = 9;❾
+;icon-10 = 10;❿
+;icon-default = ◯
+
+; Available tags:
+;   <label-monitor>
+;   <label-state> - gets replaced with <label-(active|urgent|occupied|empty)>
+; Default: <label-state>
+format = <label-state>
+format-padding = 1
+
+; Available tokens:
+;   %name%
+; Default: %name%
+label-monitor = %name%
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-active = %icon%
+label-active-foreground = ${colors.white}
+label-active-background = ${colors.bg}
+;label-active-overline = ${colors.ac}
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-occupied = %icon%
+label-occupied-background = ${colors.bg}
+label-occupied-foreground = ${colors.white}
+;;label-occupied-overline = ${colors.fg}
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-urgent = %icon%
+label-urgent-foreground = ${colors.white}
+label-urgent-background = ${colors.bg}
+;;label-urgent-overline = ${colors.red}
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-empty = %icon%
+label-empty-foreground = ${colors.grey}
+label-empty-background = ${colors.bg}
+
+label-active-padding = 1
+label-urgent-padding = 1
+label-occupied-padding = 1
+label-empty-padding = 1
+
+[module/sep1]
+type = custom/text
+content-font = 3
+content = " "
+content-foreground = ${colors.mb}
+content-underline = ${colors.bg}
+content-overline = ${colors.bg}
+
+[module/sep2]
+type = custom/text
+content-foreground = ${colors.mb}
+content-font = 3
+content = " "
+content-underline = ${colors.bg}
+content-overline = ${colors.bg}
+
+[module/vpn]
+type = custom/script
+exec = ~/.config/polybar/scripts/vpn.sh
+interval = 10
+content-foreground = ${colors.yellow}
+content-background = ${colors.mb}
+;format-foreground = ${colors.yellow}
+;format-background = ${colors.mb}
+click-left = exec alacritty -e nmtui
+
+[module/powermenu]
+type = custom/text
+content = ""
+click-left = ~/.local/bin/powermenu-openbox
+;click-right = ~/.local/bin/logoff
+interval = 10
+;content-font = 3
+content-padding = 1
+tail = true
+;format-foreground = ${colors.red}
+;format-background = ${colors.mb}
+content-foreground = ${colors.mf}
+content-background = ${colors.mb}
+
+[module/launcher]
+type = custom/text
+;content = " "
+content = ""
+click-left = ~/.config/rofi/launchers/colorful/launcher2.sh
+;click-right = ~/.local/bin/rofi-favs
+interval = 10
+;content-padding = 1
+content-font = 2
+tail = true
+content-foreground = ${colors.mf}
+content-background = ${colors.mb}
