@@ -12,42 +12,20 @@ background = ${colors.bg}
 foreground = ${colors.blue}
 ;padding = 1
 module-margin = 0
-;font-0 = Iosevka Nerd Font:size=12;2
-;font-1 = WeatherIcons:size=11;2
-;font-2 = MaterialIcons:size=12;2
-;font-3 = Iosevka Nerd Font:size=6;3
 modules-left = sep1 launcher sep2 sep3 workspaces3 sep3 sep1 mpd2 sep2
 modules-center = title
 modules-right = sep1 pulseaudio2 sep2 sep1 filesystem sep2 sep1 wifi sep2 sep1 temperature sep2 sep1 cpu sep2 sep1 memory sep2 sep1 powermenu sep2
 locale = en_US.UTF-8
-include-file = ~/.config/polybar/Theme40/font2
+include-file = ~/.config/polybar/Theme40/font
 include-file = ~/.config/polybar/Theme40/colors
 
 [bar/second]
 inherit = bar/main
 ;bottom = false
 monitor = HDMI2
-;fixed-center = true
-;width = 100%
-;height = 30
-;offset-x = 0
-;offset-y = 0
-;underline-size = 4
-;overline-size = 4
-;background = ${colors.bg}
-;foreground = ${colors.blue}
-;padding = 1
-;module-margin = 0
-;font-0 = Iosevka Nerd Font:size=12;2
-;font-1 = WeatherIcons:size=11;2
-;font-2 = MaterialIcons:size=12;2
-;font-3 = Iosevka Nerd Font:size=13;3
 modules-left = sep1 launcher sep2 workspaces3 sep1 mpd2 sep2
 modules-center = title
 modules-right = sep1 pulseaudio2 sep2 sep1 filesystem sep2 sep1 wifi sep2 sep1 temperature sep2 sep1 cpu sep2 sep1 memory sep2 sep1 powermenu sep2
-;locale = en_US.UTF-8
-;include-file = ~/.config/polybar/Theme40/font3
-;include-file = ~/.config/polybar/Theme40/colors
 
 [module/mpd2]
 type = internal/mpd
