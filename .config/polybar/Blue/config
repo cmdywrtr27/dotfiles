@@ -16,8 +16,8 @@ modules-left = sep1 launcher sep2 sep3 workspaces3 sep3 sep1 mpd2 sep2
 modules-center = title
 modules-right = sep1 pulseaudio2 sep2 sep1 filesystem sep2 sep1 wifi sep2 sep1 temperature sep2 sep1 cpu sep2 sep1 memory sep2 sep1 powermenu sep2
 locale = en_US.UTF-8
-include-file = ~/.config/polybar/Theme40/font
-include-file = ~/.config/polybar/Theme40/colors
+include-file = ~/.config/polybar/Blue/font
+include-file = ~/.config/polybar/Blue/colors
 
 [bar/second]
 inherit = bar/main
@@ -316,36 +316,11 @@ enable-scroll = true
 ; You can get a list of the defined desktops using:
 ; $ xprop -root _NET_DESKTOP_NAMES
 
-icon-0 = 0;⓿
+icon-0 = 0;0
 icon-1 = 1;①
 icon-2 = 2;②
 icon-3 = 3;③
 icon-4 = 4;④
-icon-5 = 5;❺
-icon-6 = 6;❻
-icon-7 = 7;❼
-icon-8 = 8;❽
-icon-9 = 9;❾
-icon-10 = 10;❿
-
-;icon-0 = 0;⊗
-;icon-1 = 1;➊
-;icon-2 = 2;➋
-;icon-3 = 3;➌
-;icon-4 = 4;➍
-
-;icon-0 = 0;⓿
-;icon-1 = 1;❶
-;icon-2 = 2;❷
-;icon-3 = 3;❸
-;icon-4 = 4;➍
-;icon-5 = 5;❺
-;icon-6 = 6;❻
-;icon-7 = 7;❼
-;icon-8 = 8;❽
-;icon-9 = 9;❾
-;icon-10 = 10;❿
-;icon-default = ◯
 
 ; Available tags:
 ;   <label-monitor>
@@ -418,16 +393,6 @@ content-font = 3
 content = " "
 content-underline = ${colors.bg}
 content-overline = ${colors.bg}
-
-[module/vpn]
-type = custom/script
-exec = ~/.config/polybar/scripts/vpn.sh
-interval = 10
-content-foreground = ${colors.yellow}
-content-background = ${colors.mb}
-;format-foreground = ${colors.yellow}
-;format-background = ${colors.mb}
-click-left = exec alacritty -e nmtui
 
 [module/powermenu]
 type = custom/text
