@@ -1,4 +1,4 @@
-#% egrep -v '^#' /home/josh/.config/ncmpcpp/config
+% egrep -v '^#' /home/josh/.config/ncmpcpp/config
 mpd_music_dir = "/home/josh/Music/"
 mpd_host = "127.0.0.1"
 mpd_port = "6600"
@@ -39,11 +39,11 @@ statusbar_visibility = "no"
 connected_message_on_startup = "no"
 statusbar_color = "white"
 visualizer_color = "white"
-titles_visibility = "no"
+titles_visibility = "yes"
 enable_window_title = "yes"
 
 now_playing_prefix = "$b"
-now_playing_suffix = " $8$/b$9$8♫ $9"
+now_playing_suffix = " $8$/b$9$6♫ $9"
 
 #now_playing_prefix = "$u$2"
 #now_playing_suffix = "$2$/u$2"
@@ -59,7 +59,37 @@ execute_on_song_change = "/home/josh/.config/ncmpcpp/cover.sh"
 #song_list_format = "                  $2%a $R$5%t "
 #song_list_format = "{{$2%a$9 - $4%t$9}|{$5%f$9}}{$3%l$9}                "
 #song_list_format = "                            $2%a$9 $5%t$9 $3$R(%l)$9"
-song_list_format = "                           $5%t$9 $7$R%a$9"
+#song_list_format = "                            $8│ $5%t$9 $7$R%a$9"
+song_list_format = "                              $5%t$9 $7$R%a$9"
 
 song_status_format = "$b$7♫ $2%a $4⟫$3⟫ $8%t $4⟫$3⟫ $5%b "
 song_window_title_format = " {%a} - {%t}"
+
+# %l - length
+# %f - filename
+# %D - directory
+# %a - artist
+# %A - album artist
+# %t - title
+# %b - album
+# %y - date
+# %n - track number (01/12 -> 01)
+# %N - full track info (01/12 -> 01/12)
+# %g - genre
+# %c - composer
+# %p - performer
+# %d - disc
+# %C - comment
+# %P - priority
+# $R - begin right alignment
+
+# 0 - default window color (discards all other colors)
+# 1 - black
+# 2 - red
+# 3 - green
+# 4 - yellow
+# 5 - blue
+# 6 - magenta
+# 7 - cyan
+# 8 - white
+# 9 - end of current color
