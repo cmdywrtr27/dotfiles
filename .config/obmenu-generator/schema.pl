@@ -28,15 +28,13 @@ require "$ENV{HOME}/.config/obmenu-generator/config.pl";
 my $editor = $CONFIG->{vim};
 
 our $SCHEMA = [
-
     #          COMMAND                 LABEL              ICON
-    {item => ['pcmanfm',       'Files', '/usr/share/icons/Papirus/16x16/places/folder-blue.svg']},
-    {item => ['alacritty',            'Terminal',     '/usr/share/icons/Papirus/16x16/apps/terminal.svg']},
-    {item => ['brave', 'Browser',  '/usr/share/icons/Papirus/16x16/apps/brave-browser.svg']},
+#    {item => ['pcmanfm',       'Files', '/usr/share/icons/Papirus/16x16/places/folder-blue.svg']},
+#    {item => ['tilix',            'Terminal',     '/usr/share/icons/Papirus/16x16/apps/terminal.svg']},
+#    {item => ['google-chrome-stable', 'Browser',  '/usr/share/icons/Papirus/16x16/apps/google-chrome.svg']},
 ##    {item => ['gmrun',            'Run command',  'system-run']},
-
-    {sep => 'OPENBOX MENU'},
-
+    #{sep => 'MENU'},
+      {sep  => undef},
     #          NAME            LABEL                ICON
     {cat => ['utility',     'Accessories', 'applications-utilities']},
     ##    {cat => ['development', 'Development', 'applications-development']},
@@ -82,9 +80,9 @@ our $SCHEMA = [
 ##        {sep  => undef},
 ##        {item => ['obmenu-generator -p',       'Generate a dynamic menu',            'accessories-text-editor']},
 ##        {item => ['obmenu-generator -p -i',    'Generate a dynamic menu with icons', 'accessories-text-editor']},
-        {sep  => undef},
+      {sep  => undef},
 
-        {item => ['openbox --reconfigure',               'Reconfigure Openbox', '/usr/share/icons/Papirus/16x16/emblems/emblem-rabbitvcs-calculating.svg']},
+      # {item => ['openbox --reconfigure',               'Reconfigure Openbox', '/usr/share/icons/Papirus/16x16/emblems/emblem-rabbitvcs-calculating.svg']},
 ##        {item => ['obmenu-generator -d', 'Refresh cache', 'view-refresh']},
 ##      {end => undef},
 
@@ -95,7 +93,7 @@ our $SCHEMA = [
       ##{item => ["$editor ~/.zshrc",  '.zshrc',        'text-x-generic']},
       ##{item => ['openbox --reconfigure',               'Reconfigure Openbox', '/usr/share/icons/Papirus/16x16/emblems/emblem-rabbitvcs-calculating.svg']},
       ## {end => undef},
-        {sep => undef},
+      #  {sep => undef},
       {beg => ['Exit', '/usr/share/icons/Papirus/16x16/apps/gnome-session-halt.svg']},
 #        {item => [
 

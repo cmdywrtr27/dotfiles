@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	alacritty
+	tilix
 
 # program launcher
 super + d
@@ -13,6 +13,14 @@ super + d
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+# browser
+super + w
+    google-chrome-stable
+
+# file manager
+super + p
+	pcmanfm
 
 #
 # bspwm hotkeys
@@ -51,11 +59,6 @@ XF86AudioLowerVolume
 # Mute Volume
 XF86AudioMute
   amixer -q sset Master toggle
-
-
-# File Manager
-super + p
-	thunar
 
 #
 # state/flags
