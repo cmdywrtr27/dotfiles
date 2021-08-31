@@ -20,7 +20,7 @@
 /usr/lib/polkit-1/polkitd --no-debug &
 
 # Dual Display
-~/.screenlayout/dual.sh &
+~/.screenlayout/openbox.sh &
 
 # Wallpaper
 nitrogen --restore &
@@ -31,8 +31,9 @@ picom --experimental-backend --config ~/.config/picom/picom.conf &
 sleep 3s
 
 # Panel
-tint2 -c ~/.config/tint2/tint2rc &
-polybar --config=~/.config/polybar/Theme1/launch.openbox.sh
+#tint2 -c ~/.config/tint2/tint2rc &
+#polybar --config=~/.config/polybar/Theme1/launch.openbox.sh
+~/.local/bin/autostart.openbox &
 
 # MPD
 mpd &
@@ -45,17 +46,3 @@ xset b off &
 
 # Power Manager
 xfce4-power-manager &
-
-# Clipboard Manager
-xfce4-clipman &
-
-# Settings
-xfsettingsd &
-
-sleep 2s
-
-# Conky
-#conky -c ~/.conkyrc
-
-# Faster cursor
-sh ~/.local/bin/gofaster

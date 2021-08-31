@@ -9,10 +9,11 @@ dunst &
 mpd &
 ~/.config/polybar/Theme31/launch.sh &
 ~/.local/bin/gofaster &
+~/.config/bspwm/borders &
 
 # Monitor Setup
-bspc monitor HDMI-2 -d I II III IV V
-bspc monitor VGA-1 -d VI VII VIII IX
+bspc monitor HDMI-1 -d I II III IV V
+bspc monitor HDMI-2 -d VI VII VIII IX X
 
 # Settings
 bspc config border_width          2
@@ -30,4 +31,5 @@ bspc config focus_follows_pointer true
 bspc config border_radius         6
 
 # Application Rules
-bspc rule -a Brave-browser desktop='^1'
+#bspc rule -a Brave-browser desktop='^1'
+bash /home/josh/.config/bspwm/bspwm_colors.sh &

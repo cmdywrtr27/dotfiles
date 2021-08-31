@@ -8,12 +8,12 @@
 		</item>
 		<item label="Browser">
 			<action name="Execute">
-				<execute>firefox</execute>
+				<execute>google-chrome-stable</execute>
 			</action>
 		</item>
 		<item label="File Manager">
 			<action name="Execute">
-				<execute>thunar</execute>
+				<execute>pcmanfm</execute>
 			</action>
 		</item>
 		<separator/>

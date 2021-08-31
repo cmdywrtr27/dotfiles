@@ -1,17 +1,15 @@
-[colors]	
-    background = "#222222"
-    #background = "#2e3440"
-    frame = "#039BE5"
-    foreground = "#ffffff"
+[colors]
+	background = "#2e3440"
+	foreground = "#dbd3e3"
+    frame =      "#8A7BC9"
 
 [global]
     ### Display ###
+
     monitor = 0
     follow = none
-    #geometry = "262x5-829-46"
-    #geometry = "262x3-14+46"
-    #geometry = "800x5-5+66"
-    geometry = "0x0-9+30"
+
+    geometry = "0x0-10+40"
     indicate_hidden = yes
     shrink = true
     transparency = 0
@@ -19,14 +17,15 @@
     separator_height = 2
     padding = 5
     horizontal_padding = 25
-    frame_width = 2
-    corner_radius = 8 
+    frame_width = 3
+
+    frame_color = "#8A7BC9"
     separator_color = auto
     sort = yes
     idle_threshold = 0
 
     ### Text ###
-    font = Hack Nerd Font 11
+    font = InconsolataLGC Nerd Font 12
     line_height = 0
 
     markup = yes
@@ -41,7 +40,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    #format = "<b>%a</b>\n%s\n%b"
+    #format = "<b>%s </b>\n%b"
     format = "%s %p\n%b"
     alignment = left
     show_age_threshold = 60
@@ -54,16 +53,17 @@
 
     ### Icons ###
     icon_position = left
-    max_icon_size = 48
-    icon_path = /usr/share/icons/Papirus/48x48/status/:/usr/share/icons/Papirus/48x48/devices/:/usr/share/icons/Papirus/48x48/apps/
+    max_icon_size = 64
+    #icon_path = /usr/share/icons/Papirus/48x48/status/:/usr/share/icons/Papirus/48x48/devices/:/usr/share/icons/Papirus/48x48/apps/
+    icon_path = .icons/flattrcolor/status/24:.icons/flattrcolor/devices/48:.icons/flattrcolor/apps/scalable:.icons/flattrcolor/actions/scalable
 
     ### History ###
     sticky_history = yes
     history_length = 20
 
     ### Misc/Advanced ###
-    dmenu = /usr/bin/dmenu
-    browser = /usr/bin/chromium
+    dmenu = /usr/bin/rofi -show run -p dunst:
+    browser = /usr/bin/google-chrome-stable
     always_run_script = false
     title = Dunst
     class = Dunst
@@ -73,33 +73,23 @@
 [experimental]
     per_monitor_dpi = false
 
-[logs]
-    script = ~/.local/bin/dunst_logs.sh
-    appname = dunst
-    new_icon = /usr/share/icons/Papirus/48x48/apps/bell.svg
-
 [shortcuts]
     close = ctrl+space
     close_all = ctrl+shift+space
-    #context = ctrl+shift+period
-    history = ctrl+grave
+    context = ctrl+shift+period
 
 [urgency_low]
-    background = "#282c34"
-    foreground = "#ffffff"
-    frame_color = "#039be5"
-    timeout = 5
+    background = "#2e3440"
+    foreground = "#dbd3e3"
+    timeout = 10
 
 [urgency_normal]
-    background = "#282c34"
-    foreground = "#ffffff"
-    frame_color = "#039be5"
-    timeout = 5
+    background = "#2e3440"
+    foreground = "#dbd3e3"
+    timeout = 10
 
 [urgency_critical]
-    background = "#282c34"
-    foreground = "#ffffff"
-    frame_color = "#039be5"
+    background = "#2e3440"
+    foreground = "#dbd3e3"
+    frame_color = "#48438F"
     timeout = 0
-
-# vim: ft=conf
