@@ -1,129 +1,145 @@
-!   __  _____ ___ ___  ___  _   _ ___  ___ ___ ___ 
+!   __  _____ ___ ___  ___  _   _ ___  ___ ___ ___
 !   \ \/ / _ \ __/ __|/ _ \| | | | _ \/ __| __/ __|
 !  _ >  <|   / _|\__ \ (_) | |_| |   / (__| _|\__ \
 ! (_)_/\_\_|_\___|___/\___/ \___/|_|_\\___|___|___/
 
 ! Font ----------------------------------------------
 
-Xft*dpi:           96
-Xft*antialias:     true
-Xft*rgba:          rgb
-Xft*autohint:      true
-Xft*lcdfilter:     lcddefault
-Xft*hinting:       true
-Xft*hintstyle:     hintfull
-URxvt*letterSpace: 0
+Xft.dpi:           96
+Xft.antialias:     true
+Xft.rgba:          rgb
+Xft.autohint:      true
+Xft.lcdfilter:     lcddefault
+Xft.hinting:       true
+Xft.hintstyle:     hintfull
+URxvt.letterSpace: 0
 
-#define FONT JetBrainsMono Nerd Font Mono
+!#define FONT NotoSansMono Nerd Font
+!#define FONT Inconsolata Nerd Font Mono
+!#define FONT JetBrainsMono Nerd Font Mono
+!#define FONT DroidSansMono Nerd Font Mono
+#define FONT RobotoMono Nerd Font
+!#define FONT SauceCodePro Nerd Font
 #define ICON Font Awesome 5 Free Solid
 #define EMOJI Noto Color Emoji
-#define NERD_FONT Hack Nerd Font
+#define NERD_FONT BitstreamVeraSansMono Nerd Font Mono
+!#define NERD_FONT LiterationMono Nerd Font Mono
+!#define NERD_FONT DejaVuSansMono Nerd Font Mono
+!#define NERD_FONT JetBrainsMono Nerd Font
 #define FONT_SIZE 12
 #define ICON_SIZE 16
 #define EMOJI_SIZE 16
 #define NERD_SIZE 16
 
-URxvt*font: xft:FONT:style=Medium:size=FONT_SIZE:antialias=true, xft:ICON:size=ICON_SIZE:antialias=true, xft:NERD_FONT:size=NERD_SIZE:antialias=true, xft:EMOJI:size=EMOJI_SIZE:antialias=true
-URxvt*boldFont: xft:FONT:style=Bold:size=FONT_SIZE:antialias=true, xft:ICON:size=ICON_SIZE:antialias=true, xft:NERD_FONT:size=NERD_SIZE:antialias=true, xft:EMOJI:size=EMOJI_SIZE:antialias=true
-URxvt*italicFont: xft:FONT:style=Italic:size=FONT_SIZE:antialias=true, xft:ICON:size=ICON_SIZE:antialias=true, xft:NERD_FONT:size=NERD_SIZE:antialias=true, xft:EMOJI:size=EMOJI_SIZE:antialias=true
-URxvt*boldItalicFont: xft:FONT:style=Bold Italic:size=FONT_SIZE:antialias=true, xft:ICON:size=ICON_SIZE:antialias=true, xft:NERD_FONT:size=NERD_SIZE:antialias=true, xft:EMOJI:size=EMOJI_SIZE:antialias=true
+URxvt.font: xft:FONT:style=Book:size=FONT_SIZE:antialias=true:hinting=true, xft:ICON:style=Regular:size=ICON_SIZE:antialias=true:hinting=true, xft:NERD_FONT:style=Roman:size=NERD_SIZE:antialias=true:hinting=true, xft:EMOJI:style=Regular:size=EMOJI_SIZE:antialias=true:hinting=true
+URxvt.boldFont: xft:FONT:style=Bold:size=FONT_SIZE:antialias=true:hinting=true, xft:ICON:style=Regular:size=ICON_SIZE:antialias=true:hinting=true, xft:NERD_FONT:style=Roman:size=NERD_SIZE:antialias=true:hinting=true, xft:EMOJI:style=Regular:size=EMOJI_SIZE:antialias=true:hinting=true
+URxvt.italicFont: xft:FONT:style=Italic:size=FONT_SIZE:antialias=true:hinting=true, xft:ICON:style=Regular:size=ICON_SIZE:antialias=true:hinting=true, xft:NERD_FONT:style=Roman:size=NERD_SIZE:antialias=true:hinting=true, xft:EMOJI:style=Regular:size=EMOJI_SIZE:antialias=true:hinting=true
+URxvt.boldItalicFont: xft:FONT:style=Bold Italic:size=FONT_SIZE:antialias=true:hinting=true, xft:ICON:style=Regular:size=ICON_SIZE:antialias=true:hinting=true, xft:NERD_FONT:style=Roman:size=NERD_SIZE:antialias=true:hinting=true, xft:EMOJI:style=Regular:size=EMOJI_SIZE:antialias=true:hinting=true
 
 ! Color -------------------------------------------
 
-#include "/home/josh/.urxvt/idle_toes.Xresources"
+!#include "/home/josh/.urxvt/idle_toes.Xresources"
+!#include "/home/josh/.urxvt/railscasts.Xresources"
+#include "/home/josh/.urxvt/onehalf.Xresources"
+!#include "/home/josh/.urxvt/blue.Xresources"
+!#include "/home/josh/.urxvt/purple.Xresources"
+!#include "/home/josh/.urxvt/colorschemes/base16-onedark-256.Xresources"
+!#include "/home/josh/.urxvt/colorschemes/base16-tomorrow-256.Xresources"
+!#include "/home/josh/.cache/wal/colors.Xresources"
 
-!URxvt*.foreground: #ffffff
-!URxvt*.background: #222222
-!URxvt*.cursorColor: #ffffff
-
-! idle_toes
-
-! black
-!*.color0:  #323232
-!*.color8:  #535353
-
-! red
-!*.color1:  #d25252
-!*.color9:  #f07070
-
-! green
-!*.color2:  #7fe173
-!*.color10: #9dff91
-
-! yellow
-!*.color3:  #ffc66d
-!*.color11: #ffe48b
-
-! blue
-!*.color4:  #4099ff
-!*.color12: #5eb7f7
-
-! magenta
-!*.color5:  #f680ff
-!*.color13: #ff9dff
-
-! cyan
-!*.color6:  #bed6ff
-!*.color14: #dcf4ff
-
-! white
-!*.color7:  #eeeeec
-!*.color15: #ffffff
+!URxvt.foreground: #ffffff
+!URxvt.background: #2F343F
+!URxvt.cursorColor: #ffffff
 
 ! Settings -----------------------------------
 
-URxvt*iconFile:             /usr/share/icons/Papirus/32x32/apps/Terminal.svg
-!URxvt*backgroundPixmap:     /home/josh/.urxvt/borders/blah.jpeg
-URxvt*windowName:           urxvt
-URxvt*windowTitle:          urxvt
-URxvt*termName:             rxvt-256color
-!URxvt*borderLess:           true
-!URxvt*internalBorder:       10
-!URxvt*externalBorder:       25
-!URxvt*geometry:             136x38
-URxvt*skipBuiltinGlyphs:    false
-URxvt*scrollTtyKeypress:    true
-URxvt*scrollTtyOutput:      false
-URxvt*scrollWithBuffer:     true
-URxvt*scrollstyle:          plain
-URxvt*scrollBar:            floating
-URxvt*urgentOnBell:         true
-URxvt*visualBell:           true
-URxvt*saveLines:            10000
-URxvt*mouseWheelScrollPage: false
-URxvt*cursorBlink:          true
-!URxvt*inheritPixmap:        false
-URxvt*transparent:          false
-URxvt*shading:              0
-URxvt*depth:                32
-URxvt*secondaryScreen:      1
-URxvt*secondaryScroll:      0
-URxvt*iso14755:             false
-URxvt*iso14755_52:          false
+URxvt.iconFile:             /usr/share/icons/Papirus/32x32/apps/Terminal.svg
+URxvt.backgroundPixmap:     /home/josh/.urxvt/borders/finishedplate.png
+URxvt.windowName:           urxvt
+URxvt.windowTitle:          urxvt
+URxvt.termName:             rxvt-256color
+URxvt.borderLess:           false
+!URxvt.internalBorder:       5
+!URxvt.externalBorder:       30
+!URxvt.geometry:             74x14
+URxvt.skipBuiltinGlyphs:    false
+URxvt.scrollTtyKeypress:    true
+URxvt.scrollTtyOutput:      false
+URxvt.scrollWithBuffer:     true
+URxvt.scrollstyle:          plain
+URxvt.scrollBar:            floating
+URxvt.urgentOnBell:         true
+URxvt.visualBell:           true
+URxvt.saveLines:            10000
+URxvt.mouseWheelScrollPage: false
+URxvt.cursorBlink:          true
+!URxvt.inheritPixmap:        false
+URxvt.transparent:          false
+URxvt.shading:              0
+URxvt.depth:                32
+URxvt.secondaryScreen:      1
+URxvt.secondaryScroll:      0
+URxvt.iso14755:             false
+URxvt.iso14755_52:          false
 
 ! Extensions [/usr/lib/urxvt/perl]
-URxvt*perl-ext-common: default,clipboard,keyboard-select,url-select
+URxvt.perl-ext-common: default,clipboard,keyboard-select,url-select,font-size
 
 ! Clipboard [Ctrl+Shift+C/V]
-URxvt*clipboard.copycmd:  xclip -i -selection clipboard
-URxvt*clipboard.pastecmd: xclip -o -selection clipboard
-URxvt*keysym.C-S-C:       perl:clipboard:copy
-URxvt*keysym.C-S-V:       perl:clipboard:paste
+URxvt.clipboard.copycmd:  xclip -i -selection clipboard
+URxvt.clipboard.pastecmd: xclip -o -selection clipboard
+URxvt.keysym.C-S-C:       perl:clipboard:copy
+URxvt.keysym.C-S-V:       perl:clipboard:paste
 
 ! Keyboard-select
-URxvt*keysym.C-Escape:           perl:keyboard-select:activate
-URxvt*keysym.C-S-S:              perl:keyboard-select:search
-URxvt*keyboard-select.clipboard: true
+URxvt.keysym.C-Escape:           perl:keyboard-select:activate
+URxvt.keysym.C-S-S:              perl:keyboard-select:search
+URxvt.keyboard-select.clipboard: true
 
 ! Url-select
-URxvt*keysym.C-S-N:         perl:url-select:select_next
-URxvt*url-select.autocopy:  true
-URxvt*url-select.button:    1
-URxvt*url-select.launcher:  brave-bin
-URxvt*url-select.underline: true
+URxvt.keysym.C-S-N:         perl:url-select:select_next
+URxvt.url-select.autocopy:  true
+URxvt.url-select.button:    1
+URxvt.url-select.launcher:  $BROWSER
+URxvt.url-select.underline: true
+
+! Font-size
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+URxvt.keysym.C-equal:  font-size:reset
+URxvt.keysym.C-slash:  font-size:show
 
 ! Tabbed
-!URxvt*tabbed.tabbar-fg: 7
-!URxvt*tabbed.tabbar-bg: 8
-!URxvt*tabbed.tab-fg:    7
-!URxvt*tabbed.tab-bg:    8
+!URxvt.tabbed.tabbar-fg: 7
+!URxvt.tabbed.tabbar-bg: 8
+!URxvt.tabbed.tab-fg:    7
+!URxvt.tabbed.tab-bg:    8
+
+! Rofi
+!rofi.modi:             ssh,window,drun,run
+!rofi.sidebar-mode:     false
+!rofi.terminal:         urxvt
+!rofi.ssh-client:       ssh
+!rofi.ssh-command:      {terminal} -e "{ssh-client} {host}"
+!rofi.run-command:      {cmd}
+!rofi.opacity:          100
+!rofi.width:            40
+!rofi.lines:            10
+!rofi.columns:          3
+!rofi.font:             NotoSansMono Nerd Font Mono 16
+!show-icons:            true
+!icon-theme:            Flatery
+!rofi.bw:               0
+!rofi.location:         0
+!rofi.padding:          30
+!rofi.levenshtein-sort: true
+!rofi.case-sensitive:   false
+!rofi.fuzzy:            false
+!rofi.line-margin:      5
+!rofi.separator-style:  solid
+!rofi.hide-scrollbar:   true
+!rofi.markup-rows:      false
+!rofi.scrollbar-width:  0
+!rofi.color-enabled:    false

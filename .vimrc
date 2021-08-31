@@ -245,7 +245,7 @@ set tw=500
 
 set autoindent "Auto indent
 set smartindent "Smart indent
-set nowrap "Wrap lines
+set wrap "Wrap lines
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
