@@ -9,7 +9,7 @@
     monitor = 0
     follow = none
 
-    geometry = "0x0-10+40"
+    geometry = "0x0-10+30"
     indicate_hidden = yes
     shrink = true
     transparency = 0
@@ -55,8 +55,9 @@
     icon_position = left
     max_icon_size = 64
     #icon_path = /usr/share/icons/Papirus/48x48/status/:/usr/share/icons/Papirus/48x48/devices/:/usr/share/icons/Papirus/48x48/apps/
-    icon_path = .icons/flattrcolor/status/24:.icons/flattrcolor/devices/48:.icons/flattrcolor/apps/scalable:.icons/flattrcolor/actions/scalable
-
+    #icon_path = ~/.icons/flattrcolor/status/24:.icons/flattrcolor/devices/48:.icons/flattrcolor/apps/scalable:.icons/flattrcolor/actions/scalable
+    icon_path =
+    /home/josh/.local/share/icons/Flatery-Dark/actions/24/:/home/josh/.local/share/icons/Flatery-Dark/apps/64/:/home/josh/.local/share/icons/Flatery-Dark/categories/64/:/home/josh/.local/share/icons/Flatery-Dark/devices/64/:/home/josh/.local/share/icons/Flatery-Dark/emblems/64/:/home/josh/.local/share/icons/Flatery-Dark/mimetypes/64/:/home/josh/.local/share/icons/Flatery-Dark/panel/24/:/home/josh/.local/share/icons/Flatery-Dark/places/64/:/home/josh/.local/share/icons/Flatery-Dark/status/48/
     ### History ###
     sticky_history = yes
     history_length = 20
@@ -81,15 +82,17 @@
 [urgency_low]
     background = "#2e3440"
     foreground = "#dbd3e3"
+    frame_color = "#8A7BC9"
     timeout = 10
 
 [urgency_normal]
     background = "#2e3440"
     foreground = "#dbd3e3"
+    frame_color = "#8A7BC9"
     timeout = 10
 
 [urgency_critical]
     background = "#2e3440"
     foreground = "#dbd3e3"
-    frame_color = "#48438F"
-    timeout = 0
+    frame_color = "#8A7BC9"
+    timeout = 30

@@ -799,12 +799,12 @@ interface = eth0
 
 [module/wireless-network]
 type = internal/network
-interface = wlp0s26u1u2
+interface = wlp0s26u1u1
 
 ; Normal Module
 [module/network]
 type = internal/network
-interface = wlp0s26u1u2
+interface = wlp0s26u1u1
 
 ; Seconds to sleep between updates
 ; Default: 1
@@ -1090,7 +1090,7 @@ type = internal/xworkspaces
 ; on different bars
 ;
 ; Default: false
-pin-workspaces = true
+pin-workspaces = false
 
 ; Create click handler used to focus desktop
 ; Default: true
@@ -1153,7 +1153,7 @@ label-monitor = %name%
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-active = %icon%
+label-active = %name%
 label-active-foreground = ${color.black}
 label-active-background = ${color.mb}
 ;label-active-overline = ${color.ac}
@@ -1163,7 +1163,7 @@ label-active-background = ${color.mb}
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-occupied = %icon%
+label-occupied = %name%
 label-occupied-background = ${color.mb}
 label-occupied-foreground = #383838
 ;;label-occupied-overline = ${color.fg}
@@ -1173,7 +1173,7 @@ label-occupied-foreground = #383838
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-urgent = %icon%
+label-urgent = %name%
 label-urgent-foreground = ${color.red}
 label-urgent-background = ${color.mb}
 ;;label-urgent-overline = ${color.red}
@@ -1183,7 +1183,7 @@ label-urgent-background = ${color.mb}
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-empty = %icon%
+label-empty = %name%
 label-empty-foreground = ${color.fg}
 label-empty-background = ${color.mb}
 

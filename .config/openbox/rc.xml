@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Grouch</name>
+    <name>Purple_Paradise</name>
     <cornerRadius>4</cornerRadius>
     <cornerRadius menu="yes">4</cornerRadius>
     <titleLayout>LIMC</titleLayout>

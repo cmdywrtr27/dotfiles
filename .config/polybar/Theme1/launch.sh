@@ -9,8 +9,8 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Top Bar
-polybar -c ~/.config/polybar/Theme1/config hdmi1 &
-polybar -c ~/.config/polybar/Theme1/config hdmi2 &
+polybar -c ~/.config/polybar/Theme1/config hdmi &
+polybar -c ~/.config/polybar/Theme1/config vga &
 
 # Bottom Bar
 #polybar -c ~/.config/polybar/Theme1/config bhdmi1 &

@@ -10,8 +10,8 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch Polybar
 polybar -c ~/.config/polybar/Theme2/config top1 &
-polybar -c ~/.config/polybar/Theme2/config bottom1 &
+#polybar -c ~/.config/polybar/Theme2/config bottom1 &
 
 # VGA1
 polybar -c ~/.config/polybar/Theme2/config top2 &
-polybar -c ~/.config/polybar/Theme2/config bottom2 &
+#polybar -c ~/.config/polybar/Theme2/config bottom2 &

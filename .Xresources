@@ -40,9 +40,9 @@ URxvt.boldItalicFont: xft:FONT:style=Bold Italic:size=FONT_SIZE:antialias=true:h
 
 !#include "/home/josh/.urxvt/idle_toes.Xresources"
 !#include "/home/josh/.urxvt/railscasts.Xresources"
-#include "/home/josh/.urxvt/onehalf.Xresources"
+!#include "/home/josh/.urxvt/onehalf.Xresources"
 !#include "/home/josh/.urxvt/blue.Xresources"
-!#include "/home/josh/.urxvt/purple.Xresources"
+#include "/home/josh/.urxvt/purple.Xresources"
 !#include "/home/josh/.urxvt/colorschemes/base16-onedark-256.Xresources"
 !#include "/home/josh/.urxvt/colorschemes/base16-tomorrow-256.Xresources"
 !#include "/home/josh/.cache/wal/colors.Xresources"
@@ -128,7 +128,7 @@ URxvt.keysym.C-slash:  font-size:show
 !rofi.width:            40
 !rofi.lines:            10
 !rofi.columns:          3
-!rofi.font:             NotoSansMono Nerd Font Mono 16
+!rofi.font:             Open Sans 12
 !show-icons:            true
 !icon-theme:            Flatery
 !rofi.bw:               0

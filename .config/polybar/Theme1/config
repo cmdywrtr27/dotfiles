@@ -140,7 +140,7 @@ cursor-scroll = default
 [bar/vga]
 inherit = bar/hdmi
 bottom = false
-monitor = VGA-1
+monitor = HDMI-2
 modules-left = arch xwindow
 module-center = 
 modules-right = arrow1 wireless-network vpn arrow2 memory2 arrow3 cpu2 arrow2 filesystem arrow3 pulseaudio arrow2 date
