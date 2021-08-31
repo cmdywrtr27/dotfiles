@@ -20,14 +20,12 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'edkolev/tmuxline.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-syntastic/syntastic'
 Plug 'jremmen/vim-ripgrep'
 Plug 'mbbill/undotree'
-Plug 'jacoborus/tender.vim'
-Plug 'joshdick/onedark.vim'
 Plug 'gko/vim-coloresque'
-Plug 'NovaDev94/lightline-onedark'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/unite.vim'
@@ -128,7 +126,7 @@ set hidden
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
+set whichwrap+=<,>
 
 " Ignore case when searching
 set ignorecase
@@ -182,7 +180,7 @@ syntax enable
 " Only set if terminal has 256 colors (ie. xterm-256color)
 set t_Co=256
 
-colorscheme onedark
+colorscheme bubblegum-256-dark
 "colorscheme wombat
 "colorscheme SlateDark
 set background=dark
@@ -215,8 +213,8 @@ if (empty($TMUX))
   endif
 endif
 
-highlight Comment ctermfg=3 cterm=italic
-highlight Pmenu ctermfg=15 ctermbg=8 guifg=#000000 guibg=#DAD7DA
+"highlight Comment ctermfg=3 cterm=italic
+"highlight Pmenu ctermfg=15 ctermbg=8 guifg=#000000 guibg=#DAD7DA
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -464,11 +462,11 @@ nnoremap <silent><leader>p :call ClipboardPaste()<CR>
 " => Lightline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'deus',
+      \ 'colorscheme': 'apprentice',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'absolutepath' ], [ 'readonly', 'modified', 'ctrlpmark' ] ] ,
-      \   'right': [ [ 'syntastic', 'percent', 'lineinfo' ], [ 'filetype' ] ],
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], [ 'readonly', 'modified', 'ctrlpmark' ] ] ,
+      \   'right': [ [ 'syntastic', 'lineinfo' ], [ 'filetype' ] ],
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightLineFugitive',
@@ -485,8 +483,7 @@ let g:lightline = {
       \   'readonly': '%{&filetype=="help"?"":&readonly?"":""}',
       \   'modified': '%{&filetype=="help"?"":&modified?"[+]":&modifiable?"":"[-]"}',
       \   'absolutepath': '%F',
-      \   'lineinfo': ' %l/%L:%c',
-      \   'percent': 'Ξ %P',
+      \   'lineinfo': '%P  %l/%L:%c',
       \   'paste': '%{&paste?"PASTE":""}',
       \ },
       \ 'component_expand': {
@@ -502,8 +499,8 @@ let g:lightline = {
       \   'left': [ [ 'buffers' ] ],
       \   'right': [ [ 'close' ] ],
       \ },
-      \ 'separator': { 'left': '▒░', 'right': '░▒'  },
-      \ 'subseparator': { 'left': '▒░', 'right': '░▒'  },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' },
       \ }
 
 "      \ 'separator': { 'left': '▓░', 'right': '░▓'  },
@@ -535,6 +532,20 @@ let g:lightline = {
 "    \ 0: '₀', 1: '₁', 2: '₂', 3: '₃', 4: '₄',
 "    \ 5: '₅', 6: '₆', 7: '₇', 8: '₈', 9: '₉',
 "    \ }
+
+let g:tmuxline_theme = 'lightline'
+let g:tmuxline_separators = {
+    \ 'left' : '',
+    \ 'left_alt': '',
+    \ 'right' : '',
+    \ 'right_alt' : '',
+    \ 'space' : ' '}
+
+"let g:tmuxline_preset = {
+"      \'a'    : '#H',
+"      \'win'  : ['#I', '#W'],
+"      \'y'    : [('%A'), '%e' '%B'],
+"      \'z'    : '#S'}
 
 let g:syntastic_phpcs_disable = 1
 let g:syntastic_phpmd_disable = 1
