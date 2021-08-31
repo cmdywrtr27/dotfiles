@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# ufetch-arch - tiny system info for arch
+
 ## INFO
 
 # user is already defined
@@ -71,13 +73,14 @@ c0="${reset}${blue}"                # first color
 cat <<EOF
 
 ${c0}        /\\         ${nc}${USER}${ic}@${nc}${host}${reset}
-${c0}       /  \\        ${lc}  ${ic}${os}${reset}
-${c0}      /\\   \\       ${lc}  ${ic}${kernel}${reset}
-${c0}     /  __  \\      ${lc}  ${ic}${uptime}${reset}
-${c0}    /  (  )  \\     ${lc}  ${ic}${packages}${reset}
+${c0}       /  \\        =-=-=-=-=
+${c0}      /\\   \\       ${lc}  ${ic}${os}${reset}
+${c0}     /  __  \\      ${lc}  ${ic}${kernel}${reset}
+${c0}    /  (  )  \\     ${lc}  ${ic}${uptime}${reset}
 ${c0}   / __|  |__\\\\    ${lc}  ${ic}${shell}${reset}
 ${c0}  /.\`        \`.\\   ${lc}  ${ic}${ui}${reset}
 
 EOF
 
 source $HOME/.local/bin/color_scripts/blocks
+#source $HOME/.local/bin/color_scripts/panes

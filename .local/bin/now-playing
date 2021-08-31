@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# A simple script to show playing song in mpd
+# 'now-playing -i' = with icon, 'now-playing' = text only
+# Cheers!
+# Addy
+
 exec-mpc() {
     mpc $* &> /dev/null
 }
