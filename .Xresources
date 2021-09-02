@@ -54,7 +54,7 @@ URxvt.boldItalicFont: xft:FONT:style=Bold Italic:size=FONT_SIZE:antialias=true:h
 ! Settings -----------------------------------
 
 URxvt.iconFile:             /usr/share/icons/Papirus/32x32/apps/Terminal.svg
-URxvt.backgroundPixmap:     /home/josh/.urxvt/borders/11.1.png
+URxvt.backgroundPixmap:     /home/josh/.urxvt/borders/plate3.png
 URxvt.windowName:           urxvt
 URxvt.windowTitle:          urxvt
 URxvt.termName:             rxvt-256color
