@@ -181,7 +181,8 @@ syntax enable
 " Only set if terminal has 256 colors (ie. xterm-256color)
 set t_Co=256
 
-colorscheme bubblegum-256-dark
+colorscheme pearl
+"colorscheme bubblegum-256-dark
 "colorscheme wombat
 "colorscheme SlateDark
 set background=dark
@@ -205,14 +206,7 @@ noremap <leader>h :noh<CR>
 "set termguicolors
 set nohlsearch
 
-if (empty($TMUX))
-  if (has("nvim"))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
+set termguicolors
 
 "highlight Comment ctermfg=3 cterm=italic
 "highlight Pmenu ctermfg=15 ctermbg=8 guifg=#000000 guibg=#DAD7DA
