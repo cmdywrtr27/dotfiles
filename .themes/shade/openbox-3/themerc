@@ -1,16 +1,16 @@
 # Menu settings
 menu.title.bg: raised solid
-menu.title.bg.color: #687c9c
-menu.title.text.color: #fcfcfe
+menu.title.bg.color: #2f343f
+menu.title.text.color: #ffffff
 menu.title.text.justify: center
 
 menu.items.bg: flat solid
 menu.items.bg.color: #2f343f
-menu.items.text.color: #5276a6
+menu.items.text.color: #42A5F5
 menu.items.disabled.text.color: #737573
 
 menu.items.active.bg: flat solid
-menu.items.active.bg.color: #5276a6
+menu.items.active.bg.color: #42A5F5
 menu.items.active.text.color: #ffffff
 
 #menu.overlap: -10
@@ -128,19 +128,19 @@ osd.hilight.bg.color: #fff
 osd.unhilight.bg: flat solid
 osd.unhilight.bg.color: #2f343f
 
-osd.button.unpressed.bg: flat border
+osd.button.unpressed.bg: flat solid border
 osd.button.unpressed.bg.color: #2f343f
-osd.button.unpressed.*.border.color: #2f343f
+osd.button.unpressed.*.border.color: #1E4676
 
-osd.button.pressed.bg: flat border
-osd.button.pressed.bg.color: #2f343f
-osd.button.pressed.*.border.color: #2f343f
+osd.button.pressed.bg: flat solid border
+osd.button.pressed.bg.color: #6D7078
+osd.button.pressed.*.border.color: #1E4676
 
 osd.button.focused.bg: flat solid border
 osd.button.focused.bg.color: #2f343f
-osd.button.focused.*.border.color: #2f343f
+osd.button.focused.*.border.color: #1E4676
 
-osd.button.focused.box.color: #1E4676
+osd.button.focused.box.color: #2f343f
 
 # Fonts
 window.active.label.text.font: FreeSans:style=Regular:pixelsize=10:shadow=n
