@@ -17,6 +17,7 @@ Plug 'vifm/vifm.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'frazrepo/vim-rainbow'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tmux-plugins/vim-tmux'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
@@ -181,8 +182,8 @@ syntax enable
 " Only set if terminal has 256 colors (ie. xterm-256color)
 set t_Co=256
 
-colorscheme pearl
-"colorscheme bubblegum-256-dark
+"colorscheme pearl
+colorscheme bubblegum-256-dark
 "colorscheme wombat
 "colorscheme SlateDark
 set background=dark
@@ -360,6 +361,8 @@ noremap <Leader>m mmHmt:%s/<C-V><CR>//ge<CR>'tzt'm
 " Quickly open a buffer for scribble
 map <leader>q :e ~/buffer<CR>
 
+set display+=lastline
+
 " Quickly open a markdown buffer for scribble
 map <leader>x :e ~/buffer.md<CR>
 
@@ -457,7 +460,7 @@ nnoremap <silent><leader>p :call ClipboardPaste()<CR>
 " => Lightline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'apprentice',
+      \ 'colorscheme': 'deus',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], [ 'readonly', 'modified', 'ctrlpmark' ] ] ,
@@ -528,7 +531,9 @@ let g:lightline = {
 "    \ 5: '₅', 6: '₆', 7: '₇', 8: '₈', 9: '₉',
 "    \ }
 
-let g:tmuxline_theme = 'lightline'
+let g:tmuxline_theme = {
+    \ 'lightline' }
+
 let g:tmuxline_separators = {
     \ 'left' : '',
     \ 'left_alt': '',
@@ -536,11 +541,13 @@ let g:tmuxline_separators = {
     \ 'right_alt' : '',
     \ 'space' : ' '}
 
-"let g:tmuxline_preset = {
-"      \'a'    : '#H',
-"      \'win'  : ['#I', '#W'],
-"      \'y'    : [('%A'), '%e' '%B'],
-"      \'z'    : '#S'}
+let g:tmuxline_preset = {
+    \'a'    : '#(whoami)@#H',
+    \'b'    : ['#S'],
+    \'win'  : ['#I #W'],
+    \'cwin' : ['#I #W #F'],
+    \'y'    : ['(%a.) %B %e'],
+    \'z'    : '%l:%M %P'}
 
 let g:syntastic_phpcs_disable = 1
 let g:syntastic_phpmd_disable = 1
