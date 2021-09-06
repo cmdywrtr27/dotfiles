@@ -1,9 +1,9 @@
 [bar/main]
 bottom = false
-monitor = HDMI-1
+monitor = HDMI1
 fixed-center = true
 width = 100%
-height = 19
+height = 22
 offset-x = 0
 offset-y = 0
 underline-size = 0
@@ -22,7 +22,7 @@ include-file = ~/.config/polybar/Blue/colors
 [bar/second]
 inherit = bar/main
 ;bottom = false
-monitor = HDMI-2
+monitor = HDMI2
 modules-left = sep1 launcher sep2 workspaces3 sep1 mpd2 sep2
 modules-center = title
 modules-right = sep1 pulseaudio2 sep2 sep1 filesystem sep2 sep1 wifi sep2 sep1 temperature sep2 sep1 cpu sep2 sep1 memory sep2 sep1 powermenu sep2
@@ -99,6 +99,12 @@ icon-play = 
 icon-pause = 
 icon-next = 
 
+icon-prev-foreground = ${colors.mf}
+icon-stop-foreground = ${colors.mf}
+icon-play-foreground = ${colors.mf}
+icon-pause-foreground = ${colors.mf}
+icon-next-foreground = ${colors.mf}
+
 [module/pulseaudio2]
 type = internal/pulseaudio
 use-ui-max = false
@@ -172,7 +178,7 @@ interval = 2
 
 format-connected-prefix =  
 format-connected = <label-connected>
-label-connected = " %essid%  (%signal%%)"
+label-connected = " %signal%%"
 format-connected-prefix-foreground = ${colors.mf}
 format-connected-prefix-background = ${colors.mb}
 label-connected-foreground = ${colors.white}
@@ -246,7 +252,7 @@ format-unmounted-prefix-foreground = ${colors.mf}
 format-unmounted-prefix-background = ${colors.mb}
 ;format-unmounted-prefix-padding = 1
 
-label-mounted = "  %percentage_used%%  full"
+label-mounted = "  %percentage_used%%"
 label-mounted-foreground = ${colors.white}
 label-mounted-background = ${colors.mb}
 
@@ -381,6 +387,7 @@ label-empty-padding = 1
 [module/sep1]
 type = custom/text
 content-font = 3
+#content = " "
 content = " "
 content-foreground = ${colors.mb}
 content-underline = ${colors.bg}
@@ -390,6 +397,7 @@ content-overline = ${colors.bg}
 type = custom/text
 content-foreground = ${colors.mb}
 content-font = 3
+#content = " "
 content = " "
 content-underline = ${colors.bg}
 content-overline = ${colors.bg}
@@ -397,7 +405,7 @@ content-overline = ${colors.bg}
 [module/powermenu]
 type = custom/text
 content = ""
-click-left = ~/.local/bin/powermenu-openbox
+click-left = ~/.config/rofi/powermenu/powermenu.sh
 ;click-right = ~/.local/bin/logoff
 interval = 10
 ;content-font = 3
