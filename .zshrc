@@ -5,3 +5,4 @@ plugins=(git zsh-autosuggestions z)
 source $ZSH/oh-my-zsh.sh
 export PATH="/home/josh/.cargo/bin:$PATH"
 export PATH="/home/josh/.local/bin:$PATH"
+ENABLE_CORRECTION="true"
