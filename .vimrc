@@ -21,7 +21,7 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'edkolev/tmuxline.vim'
+"Plug 'edkolev/tmuxline.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-syntastic/syntastic'
@@ -460,7 +460,7 @@ nnoremap <silent><leader>p :call ClipboardPaste()<CR>
 " => Lightline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'deus',
+      \ 'colorscheme': 'apprentice',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], [ 'readonly', 'modified', 'ctrlpmark' ] ] ,
@@ -531,23 +531,23 @@ let g:lightline = {
 "    \ 5: '₅', 6: '₆', 7: '₇', 8: '₈', 9: '₉',
 "    \ }
 
-let g:tmuxline_theme = {
-    \ 'lightline' }
+"let g:tmuxline_theme = {
+"    \ 'lightline' }
 
-let g:tmuxline_separators = {
-    \ 'left' : '',
-    \ 'left_alt': '',
-    \ 'right' : '',
-    \ 'right_alt' : '',
-    \ 'space' : ' '}
+"let g:tmuxline_separators = {
+"    \ 'left' : '',
+"    \ 'left_alt': '',
+"    \ 'right' : '',
+"    \ 'right_alt' : '',
+"    \ 'space' : ' '}
 
-let g:tmuxline_preset = {
-    \'a'    : '#(whoami)@#H',
-    \'b'    : ['#S'],
-    \'win'  : ['#I #W'],
-    \'cwin' : ['#I #W #F'],
-    \'y'    : ['(%a.) %B %e'],
-    \'z'    : '%l:%M %P'}
+"let g:tmuxline_preset = {
+"    \'a'    : '#(whoami)@#H',
+"    \'b'    : ['#S'],
+"    \'win'  : ['#I #W'],
+"    \'cwin' : ['#I #W #F'],
+"    \'y'    : ['(%a.) %B %e'],
+"    \'z'    : '%l:%M %P'}
 
 let g:syntastic_phpcs_disable = 1
 let g:syntastic_phpmd_disable = 1

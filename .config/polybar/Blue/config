@@ -14,7 +14,7 @@ foreground = ${colors.blue}
 module-margin = 0
 modules-left = sep1 launcher sep2 sep3 workspaces3 sep3 sep1 mpd2 sep2
 modules-center = title
-modules-right = sep1 pulseaudio2 sep2 sep1 filesystem sep2 sep1 wifi sep2 sep1 temperature sep2 sep1 cpu sep2 sep1 memory sep2 sep1 powermenu sep2
+modules-right = sep1 alsa sep2 sep1 filesystem sep2 sep1 wifi sep2 sep1 temperature sep2 sep1 cpu sep2 sep1 memory sep2 sep1 powermenu sep2
 locale = en_US.UTF-8
 include-file = ~/.config/polybar/Blue/font
 include-file = ~/.config/polybar/Blue/colors
@@ -25,7 +25,125 @@ inherit = bar/main
 monitor = HDMI2
 modules-left = sep1 launcher sep2 workspaces3 sep1 mpd2 sep2
 modules-center = title
-modules-right = sep1 pulseaudio2 sep2 sep1 filesystem sep2 sep1 wifi sep2 sep1 temperature sep2 sep1 cpu sep2 sep1 memory sep2 sep1 powermenu sep2
+modules-right = sep1 alsa sep2 sep1 filesystem sep2 sep1 wifi sep2 sep1 temperature sep2 sep1 cpu sep2 sep1 memory sep2 sep1 powermenu sep2
+
+[module/alsa]
+type = internal/alsa
+
+; Soundcard to be used
+; Usually in the format hw:# where # is the card number
+; You can find the different card numbers in `/proc/asound/cards`
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+
+; Name of the master, speaker and headphone mixers
+; Use the following command to list available mixer controls:
+; $ amixer scontrols | sed -nr "s/.*'([[:alnum:]]+)'.*/\1/p"
+; If master, speaker or headphone-soundcard isn't the default, 
+; use `amixer -c # scontrols` instead where # is the number 
+; of the master, speaker or headphone soundcard respectively
+;
+; Default: Master
+master-mixer = Master
+
+; Optionally define speaker and headphone mixers
+; Default: none
+;;speaker-mixer = Speaker
+; Default: none
+;;headphone-mixer = Headphone
+
+; NOTE: This is required if headphone_mixer is defined
+; Use the following command to list available device controls
+; $ amixer controls | sed -r "/CARD/\!d; s/.*=([0-9]+).*name='([^']+)'.*/printf '%3.0f: %s\n' '\1' '\2'/e" | sort
+; You may also need to use `amixer -c # controls` as above for the mixer names
+; Default: none
+;;headphone-id = 9
+
+; Use volume mapping (similar to amixer -M and alsamixer), where the increase in volume is linear to the ear
+; Default: false
+;;mapped = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
+
+format-volume = <label-volume>
+;format-volume-padding = 1
+format-volume-prefix = %{T2} %{T-}
+format-volume-prefix-foreground = ${colors.mf}
+format-volume-prefix-background = ${colors.mb}
+label-volume = %{T1}%percentage%%%{T-}
+label-volume-foreground = ${colors.white}
+label-volume-background = ${colors.mb}
+;label-volume-padding = 1
+
+format-muted = <label-muted>
+format-muted-foreground = ${colors.grey}
+;format-muted-padding = 1
+format-muted-prefix = %{T2}婢 %{T-}
+format-muted-prefix-foreground = ${colors.grey}
+format-muted-prefix-background = ${colors.mb}
+label-muted = %{T1}muted%{T-}
+label-muted-foreground = ${colors.grey}
+label-muted-background = ${colors.mb}
+;label-muted-padding = 1
+
+click-right = pavucontrol&
+
+
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-volume = <label-volume>
+;format-volume-prefix = %{T2} %{T-}
+;format-volume-prefix-foreground = ${colors.mf}
+;format-volume-prefix-background = ${colors.mb}
+;label-volume = %{T1}%percentage%%%{T-}
+;label-volume-foreground = ${colors.white}
+;label-volume-background = %{colors.mb}
+
+;format-muted = <label-muted>
+;format-muted-foreground = ${colors.grey}
+;format-muted-prefix = %{T2} %{T-}
+;format-muted-prefix-foreground = ${colors.grey}
+;format-muted-prefix-background = ${colors.mb}
+;label-muted = %{T1}muted%{T-}
+;label-muted-foreground = ${colors.grey}
+;label-muted-background = ${colors.mb}
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-muted = <label-muted>
+;format-muted-prefix = 
+;format-muted-prefix-foreground = ${colors.grey}
+;format-muted-prefix-background = ${colors.grey}
+
+; Available tokens:
+;   %percentage% (default)
+;label-volume = %percentage%%
+
+; Available tokens:
+;   %percentage% (default
+;label-muted = " Muted"
+;label-muted-foreground = ${colors.grey}
+;label-muted-background = ${colors.grey}
+
+; Only applies if <ramp-volume> is used
+;ramp-volume-0 = 
+;ramp-volume-1 = 墳
+;ramp-volume-2 = 
+;ramp-volume-foreground = ${colors.blue}
+
+; If defined, it will replace <ramp-volume> when
+; headphones are plugged in to `headphone_control_numid`
+; If undefined, <ramp-volume> will be used for both
+; Only applies if <ramp-volume> is used
+;ramp-headphones-0 = 
+;ramp-headphones-background = ${colors.blue}
 
 [module/mpd2]
 type = internal/mpd
@@ -428,3 +546,8 @@ content-font = 2
 tail = true
 content-foreground = ${colors.mf}
 content-background = ${colors.mb}
+
+[module/wallpaper]
+type = custom/script
+exec = 
+click-left = feh -z --bg-fill /home/josh/Pictures/Wallpapers
