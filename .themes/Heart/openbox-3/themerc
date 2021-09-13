@@ -24,9 +24,9 @@ menu.items.active.bg.color: #2e3440
 menu.items.active.text.color: #61afef
 
 # Active window
-window.active.border.color: #61afef
+window.active.border.color: #ffffff
 
-window.active.title.bg: raised solid bevel1
+window.active.title.bg: raised solid bevel2
 window.active.title.bg.color: #61afef
 window.active.title.separator.color: #61afef
 window.active.text.justify: left
@@ -87,7 +87,7 @@ window.active.button.toggled.image.color: #2e3440
 # Inactive window
 window.inactive.border.color: #b1d4f1
 
-window.inactive.title.bg: raised solid bevel1
+window.inactive.title.bg: raised solid bevel2
 window.inactive.title.bg.color: #b1d4f1
 window.inactive.title.separator.color: #b1d4f1
 window.inactive.text.justify: left

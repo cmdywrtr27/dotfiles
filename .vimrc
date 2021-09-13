@@ -21,10 +21,12 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
-"Plug 'edkolev/tmuxline.vim'
+Plug 'edkolev/tmuxline.vim'
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-syntastic/syntastic'
+Plug 'pacokwon/onedarkhc.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'mbbill/undotree'
 Plug 'gko/vim-coloresque'
@@ -182,14 +184,22 @@ syntax enable
 " Only set if terminal has 256 colors (ie. xterm-256color)
 set t_Co=256
 
+set background=dark
 "colorscheme pearl
-colorscheme bubblegum-256-dark
+"colorscheme bubblegum-256-dark
 "colorscheme wombat
 "colorscheme SlateDark
-set background=dark
+colorscheme onedarkhc
+"colorscheme quantum
+"colorscheme palenight
 
 let g:rainbow_active = 1
 let g:rehash256 = 1
+let g:neodark#background = '#2e3440'
+let g:neodark#solid_vertsplit = 1
+"let g:palenight_terminal_italics = 1
+"let g:quantum_black = 1
+let g:quantum_italics = 1
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -460,10 +470,10 @@ nnoremap <silent><leader>p :call ClipboardPaste()<CR>
 " => Lightline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'apprentice',
+      \ 'colorscheme': 'palenight',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], [ 'readonly', 'modified', 'ctrlpmark' ] ] ,
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'absolutepath' ], [ 'readonly', 'modified', 'ctrlpmark' ] ] ,
       \   'right': [ [ 'syntastic', 'lineinfo' ], [ 'filetype' ] ],
       \ },
       \ 'component_function': {
@@ -531,23 +541,23 @@ let g:lightline = {
 "    \ 5: '₅', 6: '₆', 7: '₇', 8: '₈', 9: '₉',
 "    \ }
 
-"let g:tmuxline_theme = {
-"    \ 'lightline' }
+let g:tmuxline_theme = {
+    \ 'lightline' }
 
-"let g:tmuxline_separators = {
-"    \ 'left' : '',
-"    \ 'left_alt': '',
-"    \ 'right' : '',
-"    \ 'right_alt' : '',
-"    \ 'space' : ' '}
+let g:tmuxline_separators = {
+    \ 'left' : '',
+    \ 'left_alt': '',
+    \ 'right' : '',
+    \ 'right_alt' : '',
+    \ 'space' : ' '}
 
-"let g:tmuxline_preset = {
-"    \'a'    : '#(whoami)@#H',
-"    \'b'    : ['#S'],
-"    \'win'  : ['#I #W'],
-"    \'cwin' : ['#I #W #F'],
-"    \'y'    : ['(%a.) %B %e'],
-"    \'z'    : '%l:%M %P'}
+let g:tmuxline_preset = {
+    \'a'    : '#(whoami)@#H',
+    \'b'    : ['#S'],
+    \'win'  : ['#I #W'],
+    \'cwin' : ['#I #W #F'],
+    \'y'    : ['%A'],
+    \'z'    : '%B %e'}
 
 let g:syntastic_phpcs_disable = 1
 let g:syntastic_phpmd_disable = 1
@@ -589,7 +599,7 @@ function! s:syntastic()
 endfunction
 
 function! LightLineModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '[+]' : &modifiable ? '' : '[-]'
 endfunction
 
 function! LightLineReadonly()

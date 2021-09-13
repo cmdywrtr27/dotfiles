@@ -14,7 +14,6 @@ visualizer_type = "spectrum"
 visualizer_look = "▋▋"
 
 jump_to_now_playing_song_at_start = "no"
-connected_message_on_startup = "yes"
 message_delay_time = "3"
 playlist_shorten_total_times = "yes"
 playlist_display_mode = "classic"
