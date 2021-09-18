@@ -19,6 +19,7 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tmux-plugins/vim-tmux'
+Plug 'gitgutter/Vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
@@ -186,12 +187,12 @@ set t_Co=256
 
 set background=dark
 "colorscheme pearl
-"colorscheme bubblegum-256-dark
+colorscheme bubblegum-256-dark
 "colorscheme wombat
 "colorscheme SlateDark
 "colorscheme onedarkhc
 "colorscheme quantum
-colorscheme palenight
+"colorscheme palenight
 
 let g:rainbow_active = 1
 let g:rehash256 = 1
