@@ -38,8 +38,8 @@ exe 'hi CursorLine  guibg='s:bg2
 exe 'hi CursorLineNr guifg='s:str' guibg='s:bg
 exe 'hi CursorColumn  guibg='s:bg2
 exe 'hi ColorColumn  guibg='s:bg2
-exe 'hi LineNr guifg='s:fg2' guibg='s:bg2
-exe 'hi VertSplit guifg='s:fg3' guibg='s:bg3
+exe 'hi LineNr guifg='s:fg4' guibg='s:bg2
+exe 'hi VertSplit guifg='s:bg2' guibg='s:bg2
 exe 'hi MatchParen guifg='s:warning2'  gui=underline'
 exe 'hi StatusLine guifg='s:fg2' guibg='s:bg3' gui=bold'
 exe 'hi Pmenu guifg='s:fg' guibg='s:bg2
@@ -81,7 +81,7 @@ exe 'hi Tag guifg='s:keyword
 exe 'hi Title guifg='s:fg'  gui=bold'
 exe 'hi Todo guifg='s:fg2'  gui=inverse,bold'
 exe 'hi Type guifg='s:type
-exe 'hi Underlined   gui=underline'
+exe 'hi Underlined  gui=underline'
 
 " Neovim Terminal Mode
 let g:terminal_color_0 = s:bg

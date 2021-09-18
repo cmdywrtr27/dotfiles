@@ -18,7 +18,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'frazrepo/vim-rainbow'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
@@ -27,7 +27,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-syntastic/syntastic'
-Plug 'pacokwon/onedarkhc.vim'
+Plug 'rakr/vim-one'
 Plug 'mbbill/undotree'
 Plug 'gko/vim-coloresque'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
@@ -92,7 +92,6 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 " Set 10 lines to the cursor - when moving vertically using j/k
 set scrolloff=10
 set sidescrolloff=5
-set signcolumn=yes
 
 " Vertical windows split to right and horizontal windows split below
 set splitright
@@ -175,6 +174,7 @@ set tm=500
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:Hexokinase_highlighters = [ 'backgroundfull' ]
+let g:one_allow_italics = 1
 
 " Enable syntax highlighting
 syntax on
@@ -186,16 +186,15 @@ syntax enable
 set t_Co=256
 
 set background=dark
-"colorscheme pearl
+colorscheme pearl
 "colorscheme bubblegum-256-dark
 "colorscheme wombat
 "colorscheme SlateDark
 "colorscheme onedarkhc
-colorscheme palenight
+"colorscheme quantum
 
 let g:rainbow_active = 1
 let g:rehash256 = 1
-let g:palenight_terminal_italics = 1
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -210,7 +209,6 @@ set noshowmode
 " Disable highlight when <leader>h is pressed
 noremap <leader>h :noh<CR>
 
-"set termguicolors
 set nohlsearch
 
 set termguicolors
@@ -466,14 +464,13 @@ nnoremap <silent><leader>p :call ClipboardPaste()<CR>
 " => Lightline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'apprentice',
+      \ 'colorscheme': 'palenight',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'absolutepath' ], [ 'readonly', 'modified', 'ctrlpmark' ] ] ,
-      \   'right': [ [ 'cocstatus', 'lineinfo' ], [ 'filetype' ] ],
+      \   'right': [ [ 'syntastic', 'lineinfo' ], [ 'filetype' ] ],
       \ },
       \ 'component_function': {
-      \   'cocstatus': 'coc#status',
       \   'fugitive': 'LightLineFugitive',
       \   'gitbranch': 'branch#name',
       \   'readonly': 'LightLineReadonly',
@@ -493,9 +490,16 @@ let g:lightline = {
       \ },
       \ 'component_expand': {
       \   'syntastic': 'SyntasticStatuslineFlag',
+      \   'buffers': 'lightline#bufferline#buffers',
       \ },
       \ 'component_type': {
       \   'syntastic': 'error',
+      \   'tabs': 'tabsel',
+      \   'buffers': 'tabsel',
+      \ },
+      \ 'tabline': {
+      \   'left': [ [ 'buffers' ] ],
+      \   'right': [ [ 'close' ] ],
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' },
@@ -547,12 +551,7 @@ let g:tmuxline_preset = {
     \'win'  : ['#I #W'],
     \'cwin' : ['#I #W #F'],
     \'y'    : ['%A'],
-    \'z'    : '%B %e'}
-
-let g:lightline.enable = {
-    \ 'statusline': 1,
-    \ 'tabline': 0
-    \ }
+    \'z'    : '%B %d'}
 
 let g:syntastic_phpcs_disable = 1
 let g:syntastic_phpmd_disable = 1
@@ -570,20 +569,18 @@ let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 let g:webdevicons_enable_lightline_statusline = 1
-"let g:lightline#bufferline#show_number = 0
-"let g:lightline#bufferline#unicode_symbols = 1
-"let g:lightline#bufferline#enable_devicons = 1
-"let g:lightline#bufferline#enable_nerdfont = 1
-"let g:lightline#bufferline#unnamed = '[No Name]'
-"let g:lightline#bufferline#number_separator = ' '
-"let g:lightline#bufferline#more_buffers = '...'
-"let g:lightline#bufferline#modified = ' [+]'
-"let g:lightline#bufferline#read_only = ' '
+let g:lightline#bufferline#show_number = 0
+let g:lightline#bufferline#unicode_symbols = 1
+let g:lightline#bufferline#enable_devicons = 1
+let g:lightline#bufferline#enable_nerdfont = 1
+let g:lightline#bufferline#unnamed = '[No Name]'
+let g:lightline#bufferline#number_separator = ' '
+let g:lightline#bufferline#more_buffers = '...'
+let g:lightline#bufferline#modified = ' [+]'
+let g:lightline#bufferline#read_only = ' '
 "let g:lightline_symbols.branch = ''
 "let g:lightline_symbols.readonly = ''
 "let g:lightline_symbols.linenr = '⭡'
-
-autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 augroup AutoSyntastic
     autocmd!
