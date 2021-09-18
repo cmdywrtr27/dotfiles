@@ -54,6 +54,7 @@ URxvt.boldItalicFont: xft:FONT:style=Bold Italic:size=FONT_SIZE:antialias=true:h
 
 ! Settings -----------------------------------
 
+URxvt.perl-lib:             /usr/lib/urxvt/perl/
 URxvt.iconFile:             /usr/share/icons/Papirus/32x32/apps/Terminal.svg
 !URxvt.backgroundPixmap:     /home/josh/.urxvt/borders/3422.jpg
 URxvt.windowName:           urxvt
@@ -112,6 +113,9 @@ URxvt.keysym.C-S-Down: font-size:decglobal
 URxvt.keysym.C-equal:  font-size:reset
 URxvt.keysym.C-slash:  font-size:show
 
+! Kuake
+!URxvt.kuake.hotkey: F10
+
 ! Tabbed
 !URxvt.tabbed.tabbar-fg: 7
 !URxvt.tabbed.tabbar-bg: 8
@@ -119,28 +123,29 @@ URxvt.keysym.C-slash:  font-size:show
 !URxvt.tabbed.tab-bg:    8
 
 ! Rofi
-!rofi.modi:             ssh,window,drun,run
-!rofi.sidebar-mode:     false
-!rofi.terminal:         urxvt
-!rofi.ssh-client:       ssh
-!rofi.ssh-command:      {terminal} -e "{ssh-client} {host}"
-!rofi.run-command:      {cmd}
-!rofi.opacity:          100
-!rofi.width:            40
-!rofi.lines:            10
-!rofi.columns:          3
-!rofi.font:             Open Sans 12
-!show-icons:            true
-!icon-theme:            Flatery
-!rofi.bw:               0
-!rofi.location:         0
-!rofi.padding:          30
-!rofi.levenshtein-sort: true
-!rofi.case-sensitive:   false
-!rofi.fuzzy:            false
-!rofi.line-margin:      5
-!rofi.separator-style:  solid
-!rofi.hide-scrollbar:   true
-!rofi.markup-rows:      false
-!rofi.scrollbar-width:  0
-!rofi.color-enabled:    false
+rofi.modi:             ssh,window,drun,run
+rofi.combi-modi:       window,run
+rofi.sidebar-mode:     false
+rofi.terminal:         urxvt
+rofi.ssh-client:       ssh
+rofi.ssh-command:      {terminal} -e "{ssh-client} {host}"
+rofi.run-command:      {cmd}
+rofi.opacity:          0
+rofi.width:            400
+rofi.lines:            10
+rofi.columns:          3
+rofi.font:             InconsolataLGC Nerd Font 12
+show-icons:            true
+icon-theme:            Flatery-Blue-Dark
+rofi.bw:               0
+rofi.location:         0
+rofi.padding:          30
+rofi.levenshtein-sort: true
+rofi.case-sensitive:   false
+rofi.fuzzy:            false
+rofi.line-margin:      5
+rofi.separator-style:  solid
+rofi.hide-scrollbar:   true
+rofi.markup-rows:      true
+rofi.scrollbar-width:  0
+rofi.color-enabled:    true

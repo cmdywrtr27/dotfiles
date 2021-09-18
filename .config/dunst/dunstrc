@@ -9,7 +9,7 @@
     monitor = 0
     follow = none
 
-    geometry = "0x0-10+40"
+    geometry = "0x0-10+35"
     indicate_hidden = yes
     shrink = true
     transparency = 0

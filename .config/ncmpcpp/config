@@ -31,7 +31,8 @@ external_editor = "nano"
 progressbar_elapsed_color = "white"
 progressbar_color = "black"
 
-progressbar_look = "▃▃▃"
+progressbar_look = "─╴─"
+#progressbar_look = "▃▃▃"
 #progressbar_look = "─⊙ "
 
 mouse_support = "yes"
