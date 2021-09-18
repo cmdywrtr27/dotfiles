@@ -40,8 +40,8 @@ URxvt.boldItalicFont: xft:FONT:style=Bold Italic:size=FONT_SIZE:antialias=true:h
 
 !#include "/home/josh/.urxvt/idle_toes.Xresources"
 !#include "/home/josh/.urxvt/railscasts.Xresources"
-#include "/home/josh/.urxvt/onehalf.Xresources"
-!#include "/home/josh/.urxvt/colorschemes/NVCode.Xresources"
+!#include "/home/josh/.urxvt/onehalf.Xresources"
+#include "/home/josh/.urxvt/purify.Xresources"
 !#include "/home/josh/.urxvt/blue.Xresources"
 !#include "/home/josh/.urxvt/purple.Xresources"
 !#include "/home/josh/.urxvt/colorschemes/base16-onedark-256.Xresources"
@@ -51,6 +51,7 @@ URxvt.boldItalicFont: xft:FONT:style=Bold Italic:size=FONT_SIZE:antialias=true:h
 !URxvt.foreground: #ffffff
 !URxvt.background: #2F343F
 !URxvt.cursorColor: #ffffff
+URxvt.highlightReverse: true
 
 ! Settings -----------------------------------
 
