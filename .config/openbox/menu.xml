@@ -8,7 +8,7 @@
 		</item>
 		<item label="Browser">
 			<action name="Execute">
-				<execute>google-chrome</execute>
+				<execute>google-chrome-stable</execute>
 			</action>
 		</item>
 		<item label="File Manager">
