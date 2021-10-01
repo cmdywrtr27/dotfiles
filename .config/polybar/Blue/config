@@ -353,7 +353,7 @@ format-background = ${colors.bg}
 
 [module/filesystem]
 type = internal/fs
-mount-0 = /
+mount-0 = /home
 interval = 10
 fixed-values = true
 spacing = 1

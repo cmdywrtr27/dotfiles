@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Arc-YY-Dark
+Comment=A flat theme with transparent elements
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Arc-YY-Dark
+MetacityTheme=Arc-YY-Dark
+IconTheme=oomox-shiki-noble-dark
+CursorTheme=DMZ-Black
+ButtonLayout=menu:minimize,maximize,close

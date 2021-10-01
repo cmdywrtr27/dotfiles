@@ -1,7 +1,7 @@
 ! idle_toes
 
 *.foreground:  #ffffff
-*.background:  #222222
+*.background:  #2e3440
 *.cursorColor: #ffffff
 
 ! Black

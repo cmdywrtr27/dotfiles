@@ -4,7 +4,16 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-plug'
-Plug 'ycm-core/YouCompleteMe'
+"Plug 'ycm-core/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/vim-gitbranch'
@@ -30,6 +39,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'rakr/vim-one'
 Plug 'mbbill/undotree'
 Plug 'gko/vim-coloresque'
+Plug 'ghifarit53/tokyonight-vim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/unite.vim'
@@ -174,7 +184,6 @@ set tm=500
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:Hexokinase_highlighters = [ 'backgroundfull' ]
-let g:one_allow_italics = 1
 
 " Enable syntax highlighting
 syntax on
@@ -185,13 +194,17 @@ syntax enable
 " Only set if terminal has 256 colors (ie. xterm-256color)
 set t_Co=256
 
-set background=dark
 colorscheme pearl
 "colorscheme bubblegum-256-dark
 "colorscheme wombat
 "colorscheme SlateDark
 "colorscheme onedarkhc
 "colorscheme quantum
+"colorscheme oomox-oomox_onedark
+"colorscheme onehalfdark
+"colorscheme tokyonight
+
+set background=dark
 
 let g:rainbow_active = 1
 let g:rehash256 = 1
@@ -464,7 +477,7 @@ nnoremap <silent><leader>p :call ClipboardPaste()<CR>
 " => Lightline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'palenight',
+      \ 'colorscheme': 'apprentice',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'absolutepath' ], [ 'readonly', 'modified', 'ctrlpmark' ] ] ,
