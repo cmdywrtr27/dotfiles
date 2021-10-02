@@ -3,7 +3,7 @@ mpd_music_dir = "/home/josh/Music/"
 mpd_host = "127.0.0.1"
 mpd_port = "6600"
 
-mouse_list_scroll_whole_page = "yes"
+mouse_list_scroll_whole_page = "no"
 lines_scrolled = "1"
 
 visualizer_in_stereo = "no"
@@ -21,18 +21,20 @@ playlist_display_mode = "classic"
 browser_display_mode = "columns"
 search_engine_display_mode = "columns"
 playlist_editor_display_mode = "columns"
+discard_colors_if_item_is_selected = "yes"
 autocenter_mode = "yes"
 centered_cursor = "yes"
 user_interface = "classic"
 follow_now_playing_lyrics = "yes"
 locked_screen_width_part = "60"
 display_bitrate = "no"
-external_editor = "nano"
+external_editor = "vim"
 
 progressbar_elapsed_color = "white"
 progressbar_color = "black"
 
-progressbar_look = "─╴─"
+progressbar_look = "  "
+#progressbar_look = "─╴─"
 #progressbar_look = "▃▃▃"
 #progressbar_look = "─⊙ "
 
@@ -46,17 +48,20 @@ header_visibility = "no"
 statusbar_visibility = "no"
 connected_message_on_startup = "no"
 statusbar_color = "white"
-visualizer_color = "white"
+visualizer_color = "magenta, blue, cyan, red"
 titles_visibility = "yes"
 enable_window_title = "yes"
 
 now_playing_prefix = "$b"
-now_playing_suffix = " $8$/b$9$6♫ $9"
+now_playing_suffix = " $8$/b$9$5 $9"
 
 #now_playing_prefix = "$u$2"
 #now_playing_suffix = "$2$/u$2"
 
-song_columns_list_format = "(6)[]{} (23)[red]{a} (26)[yellow]{t|f} (40)[green]{b} (4)[blue]{l}"
+#song_columns_list_format = "(30)[default]{t|f} (30)[red]{a} (40)[blue]{b} "
+song_columns_list_format = "(30)[white]{a} (30)[default]{t} (40)[red]{b}"
+
+#song_columns_list_format = "(6)[]{} (23)[red]{a} (26)[yellow]{t|f} (40)[green]{b} (4)[blue]{l}"
 
 color1 = "white"
 color2 = "black"
@@ -67,10 +72,14 @@ execute_on_song_change = "/home/josh/.config/ncmpcpp/cover.sh"
 #song_list_format = "                  $2%a $R$5%t "
 #song_list_format = "{{$2%a$9 - $4%t$9}|{$5%f$9}}{$3%l$9}                "
 #song_list_format = "                            $2%a$9 $5%t$9 $3$R(%l)$9"
-song_list_format = "                            $8│ $5%t$9 $7$R%a$9"
+song_list_format = "                           $6%a$9 $R$8%t$9 "
+#song_list_format = "                           $2%a$9 $R$8$9%t$8$9 "
+# $0$8$8%l$0$8 $1¦$7 $7%a$7 $1¦$7 $6%t$1 $R $1%b$1"
+
+#song_list_format = "                            $8│ $5%t$9 $7$R%a$9"
 #song_list_format = "                            $6│ $5%t$9 $7$R%a$9"
 
-song_status_format = "$b$7♫ $2%a $4⟫$3⟫ $8%t $4⟫$3⟫ $5%b "
+song_status_format = "$b$6 $8%a $6 $8%t $6 $9%b "
 song_window_title_format = " {%a} - {%t}"
 
 # %l - length

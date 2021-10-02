@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openbox_menu>
-	<menu id="root-menu" label="Menu">
+	<menu id="root-menu" label="OpenBox 3">
 		<item label="Terminal">
 			<action name="Execute">
 				<execute>tilix</execute>
@@ -23,11 +23,7 @@
 			</action>
 		</item>
 		<separator/>
-		<item label="Exit">
-			<action name="Exit"/>
-		</item>
-    </menu>
-    <menu id="40" label="Exit">
+		<menu id="40" label="Openbox">
 			<menu id="client-list-menu"/>
 			<item label="Reconfigure">
 				<action name="Reconfigure"/>
@@ -37,4 +33,5 @@
 				<action name="Exit"/>
 			</item>
 		</menu>
+	</menu>
 </openbox_menu>
