@@ -6,9 +6,9 @@ COVER=/tmp/cover.jpg
 
 function reset_background
 {
-#    printf "\e]20;;100x100+0+50\a"
+    printf "\e]20;;100x100+0+50\a"
 #    printf "\e]20;;75x75+0+5\a"
-    printf "\e]20;;100x100+1000+1000\a"
+#    printf "\e]20;;100x100+1000+1000\a"
 }
 
 {
@@ -26,8 +26,8 @@ function reset_background
         convert "$src" -resize 375x -background "#2e3440" -extent 1100x400 "$COVER"
         if [[ -f "$COVER" ]] ; then
 
-          printf "\e]20;${COVER};70x70+0+4:op=keep-aspect\a"
-          #printf "\e]20;${COVER};100x100+50+50:op=keep-aspect\a"
+          #printf "\e]20;${COVER};70x70+0+4:op=keep-aspect\a"
+          printf "\e]20;${COVER};100x100+50+50:op=keep-aspect\a"
         else
             reset_background
         fi
