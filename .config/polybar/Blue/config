@@ -286,6 +286,8 @@ ramp-foreground = ${colors.mf}
 type = internal/network
 interface = wlp0s26u1u1
 ;interface = wlp0s20u2
+;interface = wlp0s26u1u4
+;interface = wlp0s26u1u3
 interval = 2
 ;format-connected = <ramp-signal> <label-connected>
 ;format-connected = <label-connected>
@@ -310,7 +312,7 @@ label-disconnected = " No Wi-Fi"
 format-disconnected-prefix-foreground = ${colors.mf}
 format-disconnected-prefix-background = ${colors.mb}
 label-disconnected-foreground = ${colors.white}
-label-disconnected-background = ${colors.bg}
+label-disconnected-background = ${colors.mb}
 ;format-disconnected-prefix-padding = 1
 
 ;label-connected = %essid% : %downspeed%

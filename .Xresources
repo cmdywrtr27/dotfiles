@@ -22,7 +22,8 @@ URxvt.letterSpace: 0
 !#define FONT RobotoMono Nerd Font
 !#define FONT SauceCodePro Nerd Font
 #define ICON Font Awesome 5 Free Regular
-#define EMOJI Noto Color Emoji
+!#define EMOJI Noto Color Emoji
+#define EMOJI NotoEmoji Nerd Font
 !#define NERD_FONT BitstreamVeraSansMono Nerd Font Mono
 !#define NERD_FONT LiterationMono Nerd Font Mono
 !#define NERD_FONT DejaVuSansMono Nerd Font Mono
@@ -32,7 +33,7 @@ URxvt.letterSpace: 0
 #define EMOJI_SIZE 16
 #define NERD_SIZE 16
 
-URxvt.font: xft:FONT:style=Regular:size=FONT_SIZE:antialias=true:hinting=true, xft:ICON:style=Regular:size=ICON_SIZE:antialias=true:hinting=true, xft:NERD_FONT:style=Roman:size=NERD_SIZE:antialias=true:hinting=true, xft:EMOJI:style=Regular:size=EMOJI_SIZE:antialias=true:hinting=true
+URxvt.font: xft:FONT:style=Regular:size=FONT_SIZE:antialias=true:hinting=true, xft:ICON:style=Regular:size=ICON_SIZE:antialias=true:hinting=true, xft:NERD_FONT:style=Regular:size=NERD_SIZE:antialias=true:hinting=true, xft:EMOJI:style=Book:size=EMOJI_SIZE:antialias=true:hinting=true
 URxvt.boldFont: xft:FONT:style=Bold:size=FONT_SIZE:antialias=true:hinting=true, xft:ICON:style=Regular:size=ICON_SIZE:antialias=true:hinting=true, xft:NERD_FONT:style=Roman:size=NERD_SIZE:antialias=true:hinting=true, xft:EMOJI:style=Regular:size=EMOJI_SIZE:antialias=true:hinting=true
 URxvt.italicFont: xft:FONT:style=Italic:size=FONT_SIZE:antialias=true:hinting=true, xft:ICON:style=Regular:size=ICON_SIZE:antialias=true:hinting=true, xft:NERD_FONT:style=Roman:size=NERD_SIZE:antialias=true:hinting=true, xft:EMOJI:style=Regular:size=EMOJI_SIZE:antialias=true:hinting=true
 URxvt.boldItalicFont: xft:FONT:style=Bold Italic:size=FONT_SIZE:antialias=true:hinting=true, xft:ICON:style=Regular:size=ICON_SIZE:antialias=true:hinting=true, xft:NERD_FONT:style=Roman:size=NERD_SIZE:antialias=true:hinting=true, xft:EMOJI:style=Regular:size=EMOJI_SIZE:antialias=true:hinting=true
@@ -41,9 +42,9 @@ URxvt.boldItalicFont: xft:FONT:style=Bold Italic:size=FONT_SIZE:antialias=true:h
 
 !#include "/home/josh/.cache/wal/colors.Xresources"
 !#include "/home/josh/.urxvt/tokyonight.Xresources"
-#include "/home/josh/.urxvt/idle_toes.Xresources"
+!#include "/home/josh/.urxvt/idle_toes.Xresources"
 !#include "/home/josh/.urxvt/railscasts.Xresources"
-!#include "/home/josh/.urxvt/onehalf.Xresources"
+#include "/home/josh/.urxvt/onehalf.Xresources"
 !#include "/home/josh/.urxvt/purify.Xresources"
 !#include "/home/josh/.urxvt/blue.Xresources"
 !#include "/home/josh/.urxvt/purple.Xresources"

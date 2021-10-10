@@ -1,7 +1,8 @@
 [colors]
 bg = #2e3440
 mb = #3b4252
-mf = #8685F6
+;mf = #8685F6
+mf = #61afef
 red = #bf616a
 green = #a3be8c
 yellow = #ebcb8b

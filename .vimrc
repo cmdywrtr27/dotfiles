@@ -402,6 +402,9 @@ set matchpairs+=<:>
 " Set global for search/replace
 set gdefault
 
+set title
+set titlestring=%F
+
 set viminfo='100,<9999,s100
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -480,7 +483,7 @@ let g:lightline = {
       \ 'colorscheme': 'apprentice',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'absolutepath' ], [ 'readonly', 'modified', 'ctrlpmark' ] ] ,
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], [ 'readonly', 'modified', 'ctrlpmark' ] ] ,
       \   'right': [ [ 'syntastic', 'lineinfo' ], [ 'filetype' ] ],
       \ },
       \ 'component_function': {
