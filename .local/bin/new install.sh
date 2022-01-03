@@ -80,7 +80,7 @@ else
 fi
 
 echo -e "\nInstalling required packages from AUR\n" && sleep 3
-$aur -S --noconfirm --needed polybar picom-ibhagwan-git brave-bin etcher-bin noto-fonts-emoji nerd-fonts-noto-sans-regular-complete broadcom-bt-firmware-git autotiling rxvt-unicode-pixbuf-patched themix-gui-git
+$aur -S --noconfirm --needed polybar picom-ibhagwan-git brave-bin etcher-bin noto-fonts-emoji nerd-fonts-noto-sans-regular-complete broadcom-bt-firmware-git autotiling rxvt-unicode-pixbuf-patched themix-gui-git logiops-git
 
 echo -e "\nCopying dotfiles\n" && sleep 3
 git clone https://github.com/cmdywrtr27/dotfiles ~/.dotfiles
