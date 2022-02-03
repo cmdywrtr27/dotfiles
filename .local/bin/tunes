@@ -1,5 +1,0 @@
-#!/bin/bash
-
-urxvt -g 78x15 -e ncmpcpp -c ~/.config/ncmpcpp/config
-
-exit 0
