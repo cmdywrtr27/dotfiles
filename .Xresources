@@ -1,19 +1,9 @@
 ! Font ----------------------------------------------
 
-!#define FONT InconsolataLGC Nerd Font
-#define FONT NotoSansMono Nerd Font
-#define ICON InconsolataLGC Nerd Font Mono
-#define EMOJI Noto Color Emoji
-#define NERD_FONT Font Awesome 5 Brands
-#define FONT_SIZE 12
-#define ICON_SIZE 12
-#define EMOJI_SIZE 12
-#define NERD_SIZE 14
-
-URxvt.font: xft:FONT:style=Regular:size=FONT_SIZE:antialias=true, xft:ICON:size=ICON_SIZE:antialias=true, xft:NERD_FONT:size=NERD_SIZE:antialias=true, xft:EMOJI:size=EMOJI_SIZE:antialias=true
-URxvt.boldFont: xft:FONT:style=Bold:size=FONT_SIZE:antialias=true, xft:ICON:size=ICON_SIZE:antialias=true, xft:NERD_FONT:size=NERD_SIZE:antialias=true, xft:EMOJI:size=EMOJI_SIZE:antialias=true
-URxvt.italicFont: xft:FONT:style=Italic:size=FONT_SIZE:antialias=true, xft:ICON:size=ICON_SIZE:antialias=true, xft:NERD_FONT:size=NERD_SIZE:antialias=true, xft:EMOJI:size=EMOJI_SIZE:antialias=true
-URxvt.boldItalicFont: xft:FONT:style=Bold Italic:size=FONT_SIZE:antialias=true, xft:ICON:size=ICON_SIZE:antialias=true, xft:NERD_FONT:size=NERD_SIZE:antialias=true, xft:EMOJI:size=EMOJI_SIZE:antialias=true
+URxvt.font: xft:NotoSansMono Nerd Font:style=Regular:size=12, xft:Iosevka Nerd Font:style=Regular:size=14, xft:InconsolataForPowerline Nerd Font:style=Medium:size=14, xft:FontAwesome:style=Regular:size=14, xft:Noto Color Emoji:style=Regular:size=14
+URxvt.boldFont: xft:NotoSansMono Nerd Font:style=Bold:size=12, xft:Iosevka Nerd Font:style=Regular:size=14, xft:InconsolataForPowerline Nerd Font:style=Medium:size=14, xft: FontAwesome:style=Regular:size=14, xft:Noto Color Emoji:style=Regular:size=14
+URxvt.italicFont: xft:NotoSansMono Nerd Font:style=Italic:size=12, xft:Iosevka Nerd Font:style=Regular:size=14, xft:InconsolataForPowerline Nerd Font:style=Medium:size=14, xft:FontAwesome:style=Regular:size=14, xft:Noto Color Emoji:style=Regular:size=14
+URxvt.boldItalicFont: xft:NotoSans Nerd Font:style=SemiCondensed SemiBold Italic:size=14, xft:Iosevka Nerd Font:style=Regular:size=14, xft:InconsolataForPowerline Nerd Font:style=Medium:size=14, xft:FontAwesome:style=Regular:size=14, xft:Noto Color Emoji:style=Regular:size=14
 
 Xft.dpi           : 96
 Xft.antialias     : true
@@ -26,10 +16,7 @@ URxvt.letterSpace : 0
 
 ! Color -------------------------------------------
 
-#include "/home/josh/.urxvt/purify.Xresources"
-!#include "/home/josh/.urxvt/blue.Xresources"
-!#include "/home/josh/.urxvt/purple.Xresources"
-!#include "/home/josh/.urxvt/nord.Xresources"
+#include "/home/josh/.urxvt/idle_toes.Xresources"
 
 !URxvt.foreground       : #ffffff
 !URxvt.background       : #2E3440
@@ -39,11 +26,11 @@ URxvt.highlightReverse : true
 ! Settings -----------------------------------
 
 URxvt.perl-lib             : /usr/lib/urxvt/perl/
-URxvt.iconFile             : /home/josh/.icons/HALODARK/apps/scalable/terminal.svg
+URxvt.iconFile             : /home/josh/.icons/Custom/terminal1.svg
 !URxvt.backgroundPixmap     : /home/josh/.urxvt/borders/3422.jpg
 URxvt.windowName           : urxvt
 URxvt.windowTitle          : urxvt
-URxvt.termName             : rxvt-256color
+URxvt.termName             : rxvt-unicode-256color
 URxvt.borderLess           : false
 !URxvt.internalBorder       : 5
 !URxvt.externalBorder       : 30
@@ -86,7 +73,7 @@ URxvt.keyboard-select.clipboard : true
 URxvt.keysym.C-S-N         : perl:url-select:select_next
 URxvt.url-select.autocopy  : true
 URxvt.url-select.button    : 1
-URxvt.url-select.launcher  : $BROWSER
+URxvt.url-select.launcher  : brave
 URxvt.url-select.underline : true
 
 ! Font-size

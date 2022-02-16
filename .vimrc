@@ -23,7 +23,7 @@ Plug 'mengelbrecht/lightline-bufferline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'frazrepo/vim-rainbow'
 Plug 'tmux-plugins/vim-tmux'
-"Plug 'edkolev/tmuxline.vim'
+Plug 'edkolev/tmuxline.vim'
 Plug 'mbbill/undotree'
 Plug 'gko/vim-coloresque'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
