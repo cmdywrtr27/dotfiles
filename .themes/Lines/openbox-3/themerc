@@ -1,22 +1,10 @@
-#AB #61afef
-#NL #383c4a
-#AF #ffffff
-#NB #383c4a
-#AL #383c4a
-#NF #ffffff
-#B? False
-#H? False
+# Lines
 
-border.width: 1
-padding.width: 4
-padding.height: 4
-window.client.padding.width: 0
-window.client.padding.height: 0
-window.handle.width: 0
-
+# Borders
 *.active.border.color: #61afef
 *.inactive.border.color: #383c4a
 
+# Windows
 window.*.grip.bg: parentrelative
 window.*.title.bg: raised bevel1
 window.*.label.bg: parentrelative
@@ -40,6 +28,7 @@ window.inactive.button.*.hover.image.color: #2e3440
 window.inactive.button.*.pressed.image.color: #2e3440
 window.inactive.handle.bg.color: #383c4a
 
+# Menu
 menu.title.bg: raised solid border bevel2
 menu.title.text.justify: center
 menu.title.bg.color: #2e3440
@@ -52,16 +41,27 @@ menu.items.active.bg: flat solid
 menu.items.active.bg.color: #2e3440
 menu.items.active.text.color: #61afef
 menu.items.active.disabled.text.color: #6e6e6e
+
 menu.separator.color: #ffffff
 menu.separator.padding.width: 0
 menu.separator.width: 1
 menu.separator.padding.width: 30
 menu.separator.padding.height: 15
+
 menu.border.width: 10
 menu.overlap.x: -12
 menu.overlap.y: 0
 menu.border.color: #2e3440
 
+# Miscellaneous
+border.width: 1
+padding.width: 4
+padding.height: 4
+window.client.padding.width: 0
+window.client.padding.height: 0
+window.handle.width: 0
+
+# On Screen Display
 osd.border.width: 2
 osd.border.color: #61afef
 

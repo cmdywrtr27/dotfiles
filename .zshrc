@@ -3,9 +3,7 @@ ZSH_THEME="plain"
 plugins=(git zsh-autosuggestions zsh-history-substring-search)
 source $ZSH/oh-my-zsh.sh
 export PATH="/home/josh/.local/bin:$PATH"
-export TERM=xterm
-export HOME=/home/josh
-export XDG_CONFIG_HOME=/home/josh/.config
+export TERM=rxvt-unicode
 #export TERM=screen-256color
 export LANG=en_US.UTF-8
 export EDITOR=vim
