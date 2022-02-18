@@ -1,0 +1,50 @@
+[colors]
+; Main bar bg color 
+;background = #77242933
+background = #383C4A00
+; Modules bg color
+background-alt = #242933
+background-alt-2 = #2E3440
+background-alt-3 = #4C566A
+; main foreground color 
+foreground = #D8DEE9
+; accent color
+accent = #5E81AC
+empty = #00000000
+
+mauve = #DDB6F2
+black = #131020
+green = #ABE9B3
+red = #F28FAD 	
+orange = #F8BD96
+cyan = #89DCEB
+pink = #F5C2E7
+yellow = #FAE3B0
+blue = #96CDFB
+teal = #B5E8E0
+gray = #988BA2
+flamingo = #F2CDCD
+
+[nord]
+;bg     = #77242933
+;bg = #77383C4A
+bg = #33383C4A
+nord00 = #77242933
+;nord0  = #2E3440
+nord0 = #3B4252
+nord1  = #3B4252
+nord2  = #434C5E
+nord3  = #4C566A
+nord4  = #D8DEE9
+nord5  = #E5E9F0
+nord6  = #ECEFF4
+nord7  = #8FBCBB
+nord8  = #88C0D0
+nord9  = #81A1C1
+;nord10 = #5E81AC
+nord10 = #61afef
+nord11 = #FF6059
+nord12 = #D08770
+nord13 = #FFFF87
+nord14 = #A3BE8C
+nord15 = #B48EAD
