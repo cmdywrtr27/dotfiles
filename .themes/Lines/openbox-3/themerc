@@ -1,32 +1,4 @@
-# Lines
-
-# Borders
-*.active.border.color: #61afef
-*.inactive.border.color: #383c4a
-
-# Windows
-window.*.grip.bg: parentrelative
-window.*.title.bg: raised bevel1
-window.*.label.bg: parentrelative
-window.*.button.*.bg: parentrelative
-window.*.handle.bg: flat solid
-window.*.text.justify: left
-
-window.active.title.bg.color: #61afef
-window.active.label.text.color: #2e3440
-window.active.button.*.unpressed.image.color: #2e3440
-window.active.button.*.disabled.image.color: #A5CEF0
-window.active.button.*.hover.image.color: #2e3440
-window.active.button.*.pressed.image.color: #2e3440
-window.active.handle.bg.color: #383c4a
-
-window.inactive.title.bg.color: #383c4a
-window.inactive.label.text.color: #898989
-window.inactive.button.*.unpressed.image.color: #898989
-window.inactive.button.*.disabled.image.color: #6e6e6e
-window.inactive.button.*.hover.image.color: #2e3440
-window.inactive.button.*.pressed.image.color: #2e3440
-window.inactive.handle.bg.color: #383c4a
+# Lines Theme
 
 # Menu
 menu.title.bg: raised solid border bevel2
@@ -52,6 +24,34 @@ menu.border.width: 10
 menu.overlap.x: -12
 menu.overlap.y: 0
 menu.border.color: #2e3440
+
+# Windows
+window.*.grip.bg: parentrelative
+window.*.title.bg: raised bevel1
+window.*.label.bg: parentrelative
+window.*.button.*.bg: parentrelative
+window.*.handle.bg: flat solid
+window.*.text.justify: left
+
+window.active.title.bg.color: #61afef
+window.active.label.text.color: #2e3440
+window.active.button.*.unpressed.image.color: #2e3440
+window.active.button.*.disabled.image.color: #a5cef0
+window.active.button.*.hover.image.color: #2e3440
+window.active.button.*.pressed.image.color: #2e3440
+window.active.handle.bg.color: #383c4a
+
+*.active.border.color: #61afef
+
+window.inactive.title.bg.color: #383c4a
+window.inactive.label.text.color: #898989
+window.inactive.button.*.unpressed.image.color: #898989
+window.inactive.button.*.disabled.image.color: #6e6e6e
+window.inactive.button.*.hover.image.color: #2e3440
+window.inactive.button.*.pressed.image.color: #2e3440
+window.inactive.handle.bg.color: #383c4a
+
+*.inactive.border.color: #383c4a
 
 # Miscellaneous
 border.width: 1
