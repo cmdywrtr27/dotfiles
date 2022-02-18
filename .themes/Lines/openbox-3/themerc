@@ -62,7 +62,7 @@ window.client.padding.height: 0
 window.handle.width: 0
 
 # On Screen Display
-osd.border.width: 2
+osd.border.width: 1
 osd.border.color: #61afef
 
 osd.bg: flat solid
