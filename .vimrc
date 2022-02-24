@@ -21,6 +21,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'jiangmiao/auto-pairs'
+Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'RohanPoojary/pleasant.vim'
 Plug 'frazrepo/vim-rainbow'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'edkolev/tmuxline.vim'
@@ -134,10 +136,12 @@ syntax enable
 set t_Co=256
 set termguicolors
 
+colorscheme dream
 "colorscheme purify
-colorscheme bubblegum-256-dark
+"colorscheme bubblegum-256-dark
 "colorscheme pearl
 "colorscheme onehalfdark
+"colorscheme adamandeve
 "colorscheme Tomorrow-Night-Eighties
 "colorscheme snazzy
 set background=dark
@@ -171,6 +175,7 @@ set smarttab
 
 set shiftwidth=4
 set tabstop=4
+set softtabstop=4
 
 set linebreak
 set tw=500
@@ -178,6 +183,7 @@ set tw=500
 set autoindent
 set smartindent
 set wrap
+set nostartofline
 
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
@@ -252,6 +258,8 @@ endif
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>pp :setlocal paste!<CR>
+
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Use system clipboard
 let g:clipbrdDefaultReg = '+'
@@ -396,23 +404,23 @@ let g:lightline = {
 "      \ 'subseparator': { 'left': '', 'right': '' },
 "      \ }
 
-let g:tmuxline_theme = {
-    \ 'lightline' }
+"let g:tmuxline_theme = {
+"    \ 'lightline' }
 
-let g:tmuxline_separators = {
-    \ 'left' : '',
-    \ 'left_alt': '',
-    \ 'right' : '',
-    \ 'right_alt' : '',
-    \ 'space' : ' '}
+"let g:tmuxline_separators = {
+"    \ 'left' : '',
+"    \ 'left_alt': '',
+"    \ 'right' : '',
+"    \ 'right_alt' : '',
+"    \ 'space' : ' '}
 
-let g:tmuxline_preset = {
-    \'a'    : '#(whoami)@#H',
-    \'b'    : ['#S'],
-    \'win'  : ['#I #W'],
-    \'cwin' : ['#I #W #F'],
-    \'y'    : ['%A'],
-    \'z'    : '%B %d'}
+"let g:tmuxline_preset = {
+"    \'a'    : '#(whoami)@#H',
+"    \'b'    : ['#S'],
+"    \'win'  : ['#I #W'],
+"    \'cwin' : ['#I #W #F'],
+"    \'y'    : ['%A'],
+"    \'z'    : '%B %d'}
 
 let g:Powerline_symbols = 'fancy'
 let g:unite_force_overwrite_statusline = 0

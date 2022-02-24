@@ -17,28 +17,28 @@ let g:colors_name="onehalfdark"
 let colors_name="onehalfdark"
 
 
-let s:black       = { "gui": "#383c4a", "cterm": "236" }
-let s:red         = { "gui": "#e06c75", "cterm": "168" }
-let s:green       = { "gui": "#98c379", "cterm": "114" }
-let s:yellow      = { "gui": "#e5c07b", "cterm": "180" }
-let s:blue        = { "gui": "#61afef", "cterm": "75"  }
-let s:purple      = { "gui": "#c678dd", "cterm": "176" }
-let s:cyan        = { "gui": "#56b6c2", "cterm": "73"  }
-let s:white       = { "gui": "#f1f1f1", "cterm": "188" }
+let s:black       = { "gui": "#444a57", "cterm": "236" }
+let s:red         = { "gui": "#f08080", "cterm": "168" }
+let s:green       = { "gui": "#8fbc8f", "cterm": "114" }
+let s:yellow      = { "gui": "#fdfd96", "cterm": "180" }
+let s:blue        = { "gui": "#87cefa", "cterm": "75"  }
+let s:purple      = { "gui": "#cf71af", "cterm": "176" }
+let s:cyan        = { "gui": "#b0e0e6", "cterm": "73"  }
+let s:white       = { "gui": "#ffffff", "cterm": "188" }
 
 let s:fg          = s:white
 let s:bg          = s:black
 
-let s:comment_fg  = { "gui": "#5c6370", "cterm": "241" }
-let s:gutter_bg   = { "gui": "#383c4a", "cterm": "236" }
-let s:gutter_fg   = { "gui": "#919baa", "cterm": "247" }
-let s:non_text    = { "gui": "#383c4a", "cterm": "239" }
+let s:comment_fg  = { "gui": "#6d7480", "cterm": "241" }
+let s:gutter_bg   = { "gui": "#444a57", "cterm": "236" }
+let s:gutter_fg   = { "gui": "#6d7480", "cterm": "247" }
+let s:non_text    = { "gui": "#444a57", "cterm": "239" }
 
-let s:cursor_line = { "gui": "#383c4a", "cterm": "237" }
-let s:color_col   = { "gui": "#383c4a", "cterm": "237" }
+let s:cursor_line = { "gui": "#444a57", "cterm": "237" }
+let s:color_col   = { "gui": "#444a57", "cterm": "237" }
 
 let s:selection   = { "gui": "#474e5d", "cterm": "239" }
-let s:vertsplit   = { "gui": "#383c4a", "cterm": "237" }
+let s:vertsplit   = { "gui": "#444a57", "cterm": "237" }
 
 
 function! s:h(group, fg, bg, attr)

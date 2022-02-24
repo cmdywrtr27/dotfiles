@@ -13,12 +13,12 @@ let g:colors_name = "pearl"
 
 
 " Define reusable colorvariables.
-let s:bg="#383c4a"
+let s:bg="#444a57"
 let s:fg="#dadde1"
 let s:fg2="#c9cbcf"
 let s:fg3="#b7babd"
 let s:fg4="#a6a8ab"
-let s:bg2="#383c4a"
+let s:bg2="#444a57"
 let s:bg3="#4f545f"
 let s:bg4="#60656e"
 let s:keyword="#5e81ac"

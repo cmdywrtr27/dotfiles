@@ -1,0 +1,174 @@
+@theme "/dev/null"
+@import "configs/colors.rasi"
+@import "configs/mappings.rasi"
+
+configuration {
+    // modi: "drun,window,windowcd,keys,filebrowser,run,combi";
+    modi: "drun,window,filebrowser,run,Power:~/.config/rofi/scripts/power.bash";
+    font: "NotoSans Nerd Font 14";
+    drun-display-format: "{name}";
+    sidebar-mode: true;
+    matching: "fuzzy";
+    scroll-method: 0;
+    disable-history: false;
+    display-drun: "   Menu ";
+    display-Power: " ⏼  Power ";
+    display-run: "   Run ";
+    display-window: "   Window ";
+    display-windowcd: "   Window+ ";
+    display-keys: "   Keys ";
+    display-filebrowser: "   Browse ";
+    display-combi: "   Binds ";
+    window-thumbnail: true;
+    sort: true;
+    sorting-method: "normal";
+
+  timeout {
+    action: "kb-cancel";
+    delay: 0;
+  }
+
+  filebrowser {
+    directories-first: true;
+    sorting-method: "name";
+  }
+
+  inputchange {
+    action: "kb-row-first";
+  }
+}
+
+* {
+    background-color: @bg;
+    text-color: @fg;
+}
+
+element-text, element-icon, mode-switcher {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+window {
+    transparency: "real";
+    width: 60%;
+    border: 4px;
+    border-radius: 0px;
+    border-color: @color12;
+    height: 73%;
+}
+
+prompt {
+    enabled: true;
+    background-color: @bg;
+    padding: 20px 15px 5px 15px;
+    text-color: @color15;
+    border-radius: 0%;
+    expand: true;
+    font: "NotoSans Nerd Font Bold 14";
+}
+
+textbox-prompt-colon {
+    expand: false;
+	padding: 1% 2% 0% 2%;
+	margin: 0% 1% 0% 1%;
+    font: "NotoSans Nerd Font 30";
+	border-radius: 0%;
+    str: "🔍";
+    text-color: @color15;
+}
+
+entry {
+	placeholder: "Search";
+	placeholder-color: @color15;
+	text-color: @color15;
+	expand: true;
+	padding: 2.0%;
+	border-radius: 0%;
+    font: "NotoSans Nerd Font Bold 14";
+}
+
+inputbar {
+	children: [ prompt, textbox-prompt-colon, entry ];
+	background-image: url("img/bluewave.png");
+	expand: false;
+	border-radius: 0px 0px 0px 0px;
+    font: "NotoSans Nerd Font 14";
+    margin: 0px 0px 20px 0px;
+    padding: 200px 20px 20px 20px;
+}
+
+listview {
+	columns: 3;
+	lines: 2;
+	cycle: false;
+	dynamic: true;
+	layout: vertical;
+	padding: 0px 5px 0px 5px;
+    scrollbar: false;
+}
+
+mainbox { 
+    children: [ inputbar, listview, mode-switcher ];
+}
+
+element {
+	orientation: vertical;
+	padding: 2% 2% 2% 2%;
+    font: "NotoSans Nerd Font 14";
+    margin: 5px 5px 5px 5px;
+	border-radius: 0px;
+    background-color: @color0;
+    text-color: @color15;
+}
+
+element-text {
+	expand: true;
+	vertical-align: 0.5;
+    horizontal-align: 0.5;
+	margin: 0% 1% 0% 1%;
+    font: "NotoSans Nerd Font 14";
+	background-color: inherit;
+	text-color: inherit;
+}
+
+element selected {
+	background-color: @color12;
+    font: "NotoSans Nerd Font Bold 14";
+	text-color: @bg;
+	border-radius: 0px;
+}
+
+mode-switcher {
+    spacing: 0px;
+	border-radius: 0px;
+    margin: 0px 20px 20px 20px;
+}
+
+button {
+    padding: 10px;
+    margin: 0px;
+    font: "NotoSans Nerd Font Bold 14";
+    background-color: @color12;
+    text-color: @color0;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+element-icon {
+    size: 1.9em;
+	margin: 0% 1% 0% 1%;
+}
+
+button selected {
+    padding: 10px;
+    background-color: @color0;
+    text-color: @color15;
+    /*
+    border: 0px 0px 5px 0px;
+    border-color: @color12;
+    */
+}
+
+/*
+vim:ft=css:nowrap
+*/

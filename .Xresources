@@ -1,9 +1,18 @@
 ! Font ----------------------------------------------
 
-URxvt.font: xft:NotoSansMono Nerd Font:style=Regular:size=12, xft:Iosevka Nerd Font:style=Regular:size=14, xft:InconsolataForPowerline Nerd Font:style=Medium:size=14, xft:FontAwesome:style=Regular:size=14, xft:Noto Color Emoji:style=Regular:size=14
-URxvt.boldFont: xft:NotoSansMono Nerd Font:style=Bold:size=12, xft:Iosevka Nerd Font:style=Regular:size=14, xft:InconsolataForPowerline Nerd Font:style=Medium:size=14, xft: FontAwesome:style=Regular:size=14, xft:Noto Color Emoji:style=Regular:size=14
-URxvt.italicFont: xft:NotoSansMono Nerd Font:style=Italic:size=12, xft:Iosevka Nerd Font:style=Regular:size=14, xft:InconsolataForPowerline Nerd Font:style=Medium:size=14, xft:FontAwesome:style=Regular:size=14, xft:Noto Color Emoji:style=Regular:size=14
-URxvt.boldItalicFont: xft:NotoSans Nerd Font:style=SemiCondensed SemiBold Italic:size=14, xft:Iosevka Nerd Font:style=Regular:size=14, xft:InconsolataForPowerline Nerd Font:style=Medium:size=14, xft:FontAwesome:style=Regular:size=14, xft:Noto Color Emoji:style=Regular:size=14
+#define FONT InconsolataLGC Nerd Font Mono
+#define ICON Font Awesome 6 Free Regular
+#define EMOJI NotoEmoji Nerd Font
+#define NERD_FONT NotoSansMono Nerd Font
+#define FONT_SIZE 12
+#define ICON_SIZE 14
+#define EMOJI_SIZE 14
+#define NERD_SIZE 14
+
+URxvt.font           : xft:FONT:style=Regular:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Medium:size=NERD_SIZE, xft:EMOJI:style=Book:size=EMOJI_SIZE
+URxvt.boldFont       : xft:FONT:style=Bold:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Roman:size=NERD_SIZE, xft:EMOJI:style=Regular:size=EMOJI_SIZE
+URxvt.italicFont     : xft:FONT:style=Italic:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Roman:size=NERD_SIZE, xft:EMOJI:style=Regular:size=EMOJI_SIZE
+URxvt.boldItalicFont : xft:FONT:style=Bold Italic:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Roman:size=NERD_SIZE, xft:EMOJI:style=Regular:size=EMOJI_SIZE
 
 Xft.dpi           : 96
 Xft.antialias     : true
@@ -16,18 +25,18 @@ URxvt.letterSpace : 0
 
 ! Color -------------------------------------------
 
-#include "/home/josh/.urxvt/idle_toes.Xresources"
+#include "/home/josh/.urxvt/purify.Xresources"
 
 !URxvt.foreground       : #ffffff
 !URxvt.background       : #2E3440
 !URxvt.cursorColor      : #ffffff
-URxvt.highlightReverse : true
+!URxvt.highlightReverse : true
 
 ! Settings -----------------------------------
 
 URxvt.perl-lib             : /usr/lib/urxvt/perl/
 URxvt.iconFile             : /home/josh/.icons/Custom/terminal1.svg
-!URxvt.backgroundPixmap     : /home/josh/.urxvt/borders/3422.jpg
+URxvt.backgroundPixmap     : /home/josh/.urxvt/backgrounds/triangle1.png
 URxvt.windowName           : urxvt
 URxvt.windowTitle          : urxvt
 URxvt.termName             : rxvt-unicode-256color
@@ -49,7 +58,7 @@ URxvt.cursorBlink          : true
 !URxvt.inheritPixmap        : false
 URxvt.transparent          : false
 URxvt.shading              : 0
-URxvt.depth                : 32
+!URxvt.depth                : 32
 URxvt.secondaryScreen      : 1
 URxvt.secondaryScroll      : 0
 URxvt.iso14755             : false
