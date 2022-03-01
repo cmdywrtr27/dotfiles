@@ -1,0 +1,8 @@
+; fonts
+font-0 = Iosevka:style=Medium:size=10;3
+font-1 = Feather:style=Bold:size=11;3
+font-2 = JetBrainsMono Nerd Font:size=17;4
+font-3 = Iosevka Nerd Font:style=Bold:size=14;4
+font-4 = Iosevka Nerd Font:style=Regular:size=13;3
+font-5 = NotoSans Nerd Font:style=Regular:size=11;2
+font-6 = Font Awesome 5 Free Solid:style=Solid:size=10;3
