@@ -1,0 +1,133 @@
+[colors]
+	background = "#444a57"
+
+[global]
+    ### Display ###
+
+    monitor = HDMI1
+    follow = none
+
+    #width = (111, 444)
+    width = 300 
+    #height = 222
+    height = 300 
+    origin = top-right
+    offset = 30x50
+   
+    indicate_hidden = yes
+    shrink = true
+    transparency = 0
+    separator_height = 2
+    horizontal_padding = 11
+    frame_width = 2
+    corner_radius = 0
+
+    frame_color = "#61afef"
+    separator_color = auto
+    sort = yes
+    idle_threshold = 120
+
+    ### Text ###
+    font = NotoSans Nerd Font 12
+
+    line_height = 0
+
+    markup = full
+
+    # The format of the message.  Possible variables are:
+    #   %a  appname
+    #   %s  summary
+    #   %b  body
+    #   %i  iconname (including its path)
+    #   %I  iconname (without its path)
+    #   %p  progress value if set ([  0%] to [100%]) or nothing
+    #   %n  progress value if set without any extra characters
+    #   %%  Literal %
+    # Markup is allowed
+    #format = "<b>%s %b</b>"
+    format = "<b>%s</b>\n%b\n%p"
+    alignment = left
+    show_age_threshold = 60
+    word_wrap = true
+    ellipsize = middle
+    ignore_newline = false
+    stack_duplicates = true
+    hide_duplicate_count = true
+    show_indicators = true
+
+    ### Icons ###
+    icon_position = left
+    max_icon_size = 48
+    #icon_path = /home/josh/.icons/Qogir/48/apps/:/home/josh/.icons/Qogir/48/places/:/home/josh/.icons/Qogir/scalable/apps/:/home/josh/.icons/Qogir/scalable/devices/:/home/josh/.icons/Qogir/scalable/mimetypes/:/home/josh/.icons/Qogir/scalable/places/:/home/josh/.icons/Qogir/scalable/status/
+
+#    icon_path = /usr/share/icons/Papirus-Dark/48x48/status/:/usr/share/icons/Papirus-Dark/48x48/devices/:/usr/share/icons/Papirus-Dark/48x48/apps
+
+    icon_path = /home/josh/.icons/Timber/actions/32/:/home/josh/.icons/Timber/apps/scalable/:/home/josh/.icons/Timber/devices/48x48/:/home/josh/.icons/Timber/mimetypes/scalable/:/home/josh/.icons/Timber/status/48x48/
+
+    ### History ###
+    sticky_history = yes
+    history_length = 20
+
+    ### Misc/Advanced ###
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = /usr/bin/brave
+    always_run_script = false
+    title = Dunst
+    class = Dunst
+    force_xinerama = false
+
+[experimental]
+    per_monitor_dpi = false
+
+[log_notifs]
+    script = ~/.config/rofi/notification/dunst_logger.sh
+
+[dunst_icon]
+    appname = dunst
+    new_icon = /home/josh/.icons/Custom/notification3.png
+
+#[notify_send_icon]
+#    appname = notify-send
+#    new_icon = /home/josh/.icons/Custom/notification.png
+
+[pushbullet]
+    appname = pushbullet
+    new_icon = /home/josh/.icons/Custom/pushbullet.png
+
+[onenord]
+    appname = onenord
+    new_icon = /home/josh/.icons/Custom/message.png
+
+[zsh]
+    appname = zsh
+    new_icon = /home/josh/.icons/Custom/terminal.svg
+  
+[brave]
+    appname = brave
+    new_icon = /home/josh/.icons/Custom/brave.svg
+  
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+#    #context = ctrl+shift+period
+#    history = ctrl+grave
+
+[urgency_low]
+    background = colors.background
+    foreground = "#ffffff"
+    frame_color = "#61afef"
+    timeout = 5
+
+[urgency_normal]
+    background = colors.background
+    foreground = "#ffffff"
+    frame_color = "#61afef"
+    timeout = 7
+
+[urgency_critical]
+    background = colors.background
+    foreground = "#ffffff"
+    frame_color = "#61afef"
+    timeout = 0
+
+# vim: ft=conf

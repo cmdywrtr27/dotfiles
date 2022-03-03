@@ -1,0 +1,113 @@
+% egrep -v '^#' /home/josh/.config/ncmpcpp/config
+mpd_music_dir = "/home/josh/Music/"
+mpd_host = "127.0.0.1"
+mpd_port = "6600"
+
+mouse_list_scroll_whole_page = "no"
+lines_scrolled = "1"
+
+#visualizer_in_stereo = "no"
+#visualizer_fifo_path = "/tmp/mpd.fifo"
+#visualizer_output_name = "my_fifo"
+#visualizer_sync_interval = "10"
+#visualizer_type = "spectrum"
+#visualizer_look = "▋▋"
+
+cyclic_scrolling = "no"
+jump_to_now_playing_song_at_start = "yes"
+message_delay_time = "3"
+playlist_shorten_total_times = "yes"
+playlist_display_mode = "classic"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+playlist_editor_display_mode = "columns"
+discard_colors_if_item_is_selected = "yes"
+autocenter_mode = "yes"
+centered_cursor = "yes"
+user_interface = "classic"
+follow_now_playing_lyrics = "yes"
+locked_screen_width_part = "60"
+display_bitrate = "no"
+external_editor = "vim"
+
+progressbar_elapsed_color = "white"
+progressbar_color = "black"
+
+progressbar_look = "  "
+#progressbar_look = "─╴─"
+#progressbar_look = "▃▃▃"
+#progressbar_look = "─⊙ "
+
+fetch_lyrics_for_current_song_in_background = "yes"
+store_lyrics_in_song_dir = "yes"
+allow_for_physical_item_deletion = "no"
+ask_before_clearing_playlists = "yes"
+
+mouse_support = "yes"
+header_visibility = "no"
+statusbar_visibility = "no"
+connected_message_on_startup = "no"
+statusbar_color = "white"
+#visualizer_color = "magenta, blue, cyan, red"
+titles_visibility = "yes"
+enable_window_title = "yes"
+
+now_playing_prefix = "$b"
+now_playing_suffix = " $8$/b$9$5  $9"
+
+#now_playing_prefix = "$u$2"
+#now_playing_suffix = "$2$/u$2"
+
+#song_columns_list_format = "(30)[default]{t|f} (30)[red]{a} (40)[blue]{b} "
+song_columns_list_format = "(30)[white]{a} (30)[default]{t} (40)[red]{b}"
+#song_columns_list_format = "(6)[]{} (23)[red]{a} (26)[yellow]{t|f} (40)[green]{b} (4)[blue]{l}"
+
+color1 = "white"
+color2 = "black"
+
+#execute_on_song_change = "~/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp_cover_art.sh"
+execute_on_song_change = "/home/josh/.config/ncmpcpp/cover.sh"
+
+#song_list_format = " $7%l  $2%t $R$5%a "
+#song_list_format = "                  $2%a $R$5%t "
+#song_list_format = "{{$2%a$9 - $4%t$9}|{$5%f$9}}{$3%l$9}                "
+#song_list_format = "                            $2%a$9 $5%t$9 $3$R(%l)$9"
+#song_list_format = "                             $6%a$9 $R$8%t$9 "
+#song_list_format = "                           $2%a$9 $R$8$9%t$8$9 "
+# $0$8$8%l$0$8 $1¦$7 $7%a$7 $1¦$7 $6%t$1 $R $1%b$1"
+song_list_format = "                            $8│ $5%t$9 $4$R%a$9"
+#song_list_format = "                            $6│ $5%t$9 $7$R%a$9"
+
+song_status_format = "$b$6 $8%a $6 $8%t $6 $9%b "
+song_window_title_format = " {%a} - {%t}"
+
+# NOTES
+
+# %l - length
+# %f - filename
+# %D - directory
+# %a - artist
+# %A - album artist
+# %t - title
+# %b - album
+# %y - date
+# %n - track number (01/12 -> 01)
+# %N - full track info (01/12 -> 01/12)
+# %g - genre
+# %c - composer
+# %p - performer
+# %d - disc
+# %C - comment
+# %P - priority
+# $R - begin right alignment
+
+# 0 - default window color (discards all other colors)
+# 1 - black
+# 2 - red
+# 3 - green
+# 4 - yellow
+# 5 - blue
+# 6 - magenta
+# 7 - cyan
+# 8 - white
+# 9 - end of current color
