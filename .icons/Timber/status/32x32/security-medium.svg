@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="surface-left" x1="0" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD54F"/> <!-- Amber 300 -->
+      <stop offset="100%" style="stop-color:#FFC107"/> <!-- Amber 500 -->
+    </linearGradient>
+    <linearGradient id="border-left" x1="0" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8E1"/> <!-- Amber 50 -->
+      <stop offset="100%" style="stop-color:#FFE082"/> <!-- Amber 200 -->
+    </linearGradient>
+    <linearGradient id="surface-right" x1="0" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFA000"/> <!-- Amber 700 -->
+      <stop offset="100%" style="stop-color:#FF6F00"/> <!-- Amber 900 -->
+    </linearGradient>
+    <linearGradient id="border-right" x1="0" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD54F"/> <!-- Amber 300 -->
+      <stop offset="100%" style="stop-color:#FFC107"/> <!-- Amber 500 -->
+    </linearGradient>
+  </defs>
+  <path style="fill:url(#surface-left)" d="M 16,3 l -11,3.67 v 9.33 a 11,13 0 0 0 11,13"/>
+  <path style="fill:url(#surface-right)" d="M 16,3 l 11,3.67 v 9.33 a 11,13 0 0 1 -11,13"/>
+  <path style="fill:url(#border-left)" d="M 16,5 v -2 l -11,3.67 v 9.33 a 11,13 0 0 0 11,13 v -2 a 9,11 0 0 1 -9,-11 v -8"/>
+  <path style="fill:url(#border-right)" d="M 16,5 v -2 l 11,3.67 v 9.33 a 11,13 0 0 1 -11,13 v -2 a 9,11 0 0 0 9,-11 v -8"/>
+</svg>

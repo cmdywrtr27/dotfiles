@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0%" x2="0" y2="100%">
+      <stop offset="0%" style="stop-color:#F44336"/> <!-- Red 500 -->
+      <stop offset="100%" style="stop-color:#D32F2F"/> <!-- Red 700 -->
+    </linearGradient>
+    <style type="text/css">
+      .symbol { fill: white }
+    </style>
+  </defs>
+  <circle style="fill:url(#background)" cx="16" cy="16" r="13"/>
+  <g class="symbol" transform="translate(14,6.5)">
+    <path d="m 0,2 a 2,2 0 0 1 4,0 v 8 a 2,2 0 0 1 -4,0 z "/>
+    <circle cx="2" cy="17" r="2"/>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0%" x2="0" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50"/> <!-- Green 500 -->
+      <stop offset="100%" style="stop-color:#388E3C"/> <!-- Green 700 -->
+    </linearGradient>
+    <style type="text/css">
+      .symbol {
+        fill: none;
+        stroke: white;
+        stroke-width: 6;
+        stroke-linecap: round;
+        stroke-linejoin: round
+      }
+    </style>
+  </defs>
+  <g transform="translate(24,24)">
+    <circle style="fill:url(#background)" r="20"/>
+    <path class="symbol" d="M -9,0 l 6,6 12,-12"/>
+  </g>
+</svg>

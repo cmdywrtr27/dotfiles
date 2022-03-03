@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 64 64"
+   version="1.1"
+   id="svg21"
+   sodipodi:docname="folder-virtualbox.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:export-filename="/home/josh/.icons/Joyful/places/64x64/folder-blue.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview23"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="10.449584"
+     inkscape:cx="18.230391"
+     inkscape:cy="30.62323"
+     inkscape:window-width="1920"
+     inkscape:window-height="995"
+     inkscape:window-x="1920"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg21"
+     inkscape:snap-global="false" />
+  <defs
+     id="defs9">
+    <linearGradient
+       id="folder-front"
+       x1="0%"
+       y1="0%"
+       x2="0%"
+       y2="100%">
+      <stop
+         offset="0%"
+         style="stop-color:#90CAF9"
+         id="stop2" />
+      <!-- Blue 200 -->
+      <stop
+         offset="100%"
+         style="stop-color:#64B5F6"
+         id="stop4" />
+      <!-- Blue 300 -->
+    </linearGradient>
+    <style
+       type="text/css"
+       id="style7">
+      .folder-back { fill: #2196F3 /* Blue 500 */ }
+      .folder-front { fill: url(#folder-front) }
+      .lighten { fill: white; fill-opacity: 0.125 }
+      .darken { fill: black; fill-opacity: 0.125 }
+    </style>
+    <style
+       id="current-color-scheme"
+       type="text/css">.ColorScheme-Text { color:#dedede; } .ColorScheme-Text { color:#dedede; }</style>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#folder-front"
+       id="linearGradient1006"
+       x1="4.7067872"
+       y1="28.044607"
+       x2="4.7067872"
+       y2="68.836763"
+       gradientTransform="scale(1.2747549,0.78446454)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#folder-front"
+       id="linearGradient1008"
+       x1="4.7067872"
+       y1="28.044607"
+       x2="4.7067872"
+       y2="68.836763"
+       gradientTransform="scale(1.2747549,0.78446454)"
+       gradientUnits="userSpaceOnUse" />
+    <style
+       id="current-color-scheme-3"
+       type="text/css">
+   .ColorScheme-Text { color:#dfdfdf; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+    <style
+       id="current-color-scheme-6"
+       type="text/css">
+   .ColorScheme-Text { color:#eeeeee; } .ColorScheme-Highlight { color:#424242; }
+  </style>
+    <style
+       id="current-color-scheme-7"
+       type="text/css">
+   .ColorScheme-Text { color:#FFFFFF; } .ColorScheme-Highlight { color:#5294e2; }
+  </style>
+    <linearGradient
+       id="arrongin"
+       x1="0%"
+       x2="0%"
+       y1="0%"
+       y2="100%">
+      <stop
+         offset="0%"
+         style="stop-color:#dd9b44; stop-opacity:1"
+         id="stop9750" />
+      <stop
+         offset="100%"
+         style="stop-color:#ad6c16; stop-opacity:1"
+         id="stop9752" />
+    </linearGradient>
+    <linearGradient
+       id="aurora"
+       x1="0%"
+       x2="0%"
+       y1="0%"
+       y2="100%">
+      <stop
+         offset="0%"
+         style="stop-color:#09D4DF; stop-opacity:1"
+         id="stop9755" />
+      <stop
+         offset="100%"
+         style="stop-color:#9269F4; stop-opacity:1"
+         id="stop9757" />
+    </linearGradient>
+    <linearGradient
+       id="fitdance"
+       x1="0%"
+       x2="0%"
+       y1="0%"
+       y2="100%">
+      <stop
+         offset="0%"
+         style="stop-color:#1AD6AB; stop-opacity:1"
+         id="stop9760" />
+      <stop
+         offset="100%"
+         style="stop-color:#329DB6; stop-opacity:1"
+         id="stop9762" />
+    </linearGradient>
+    <linearGradient
+       id="oomox"
+       x1="0%"
+       x2="0%"
+       y1="0%"
+       y2="100%">
+      <stop
+         offset="0%"
+         style="stop-color:#efefe7; stop-opacity:1"
+         id="stop9765" />
+      <stop
+         offset="100%"
+         style="stop-color:#8f8f8b; stop-opacity:1"
+         id="stop9767" />
+    </linearGradient>
+    <linearGradient
+       id="rainblue"
+       x1="0%"
+       x2="0%"
+       y1="0%"
+       y2="100%">
+      <stop
+         offset="0%"
+         style="stop-color:#00F260; stop-opacity:1"
+         id="stop9770" />
+      <stop
+         offset="100%"
+         style="stop-color:#0575E6; stop-opacity:1"
+         id="stop9772" />
+    </linearGradient>
+    <linearGradient
+       id="sunrise"
+       x1="0%"
+       x2="0%"
+       y1="0%"
+       y2="100%">
+      <stop
+         offset="0%"
+         style="stop-color: #FF8501; stop-opacity:1"
+         id="stop9775" />
+      <stop
+         offset="100%"
+         style="stop-color: #FFCB01; stop-opacity:1"
+         id="stop9777" />
+    </linearGradient>
+    <linearGradient
+       id="telinkrin"
+       x1="0%"
+       x2="0%"
+       y1="0%"
+       y2="100%">
+      <stop
+         offset="0%"
+         style="stop-color: #b2ced6; stop-opacity:1"
+         id="stop9780" />
+      <stop
+         offset="100%"
+         style="stop-color: #6da5b7; stop-opacity:1"
+         id="stop9782" />
+    </linearGradient>
+    <linearGradient
+       id="60spsycho"
+       x1="0%"
+       x2="0%"
+       y1="0%"
+       y2="100%">
+      <stop
+         offset="0%"
+         style="stop-color: #df5940; stop-opacity:1"
+         id="stop9785" />
+      <stop
+         offset="25%"
+         style="stop-color: #d8d15f; stop-opacity:1"
+         id="stop9787" />
+      <stop
+         offset="50%"
+         style="stop-color: #e9882a; stop-opacity:1"
+         id="stop9789" />
+      <stop
+         offset="100%"
+         style="stop-color: #279362; stop-opacity:1"
+         id="stop9791" />
+    </linearGradient>
+    <linearGradient
+       id="90ssummer"
+       x1="0%"
+       x2="0%"
+       y1="0%"
+       y2="100%">
+      <stop
+         offset="0%"
+         style="stop-color: #f618c7; stop-opacity:1"
+         id="stop9794" />
+      <stop
+         offset="20%"
+         style="stop-color: #94ffab; stop-opacity:1"
+         id="stop9796" />
+      <stop
+         offset="50%"
+         style="stop-color: #fbfd54; stop-opacity:1"
+         id="stop9798" />
+      <stop
+         offset="100%"
+         style="stop-color: #0f83ae; stop-opacity:1"
+         id="stop9800" />
+    </linearGradient>
+    <style
+       id="current-color-scheme-5"
+       type="text/css">.ColorScheme-Text { color:#dedede; }</style>
+    <style
+       type="text/css"
+       id="current-color-scheme-35">
+   .ColorScheme-Text { color:#F6F6F6; } .ColorScheme-Highlight { color:#ffffff; }
+  </style>
+    <style
+       id="current-color-scheme-9"
+       type="text/css">
+   .ColorScheme-Text { color:#dfdfdf; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+    <style
+       id="current-color-scheme-1"
+       type="text/css">
+   .ColorScheme-Text { color:#dfdfdf; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+    <style
+       id="current-color-scheme-2"
+       type="text/css">.ColorScheme-Text {
+        color:#dfdfdf;
+      }</style>
+    <style
+       id="current-color-scheme-70"
+       type="text/css">
+   .ColorScheme-Text { color:#eeeeee; } .ColorScheme-Highlight { color:#424242; }
+  </style>
+    <style
+       id="current-color-scheme-93"
+       type="text/css">
+   .ColorScheme-Text { color:#dfdfdf; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+    <style
+       type="text/css"
+       id="current-color-scheme-60">
+      .ColorScheme-Text {
+        color:#eff0f1;
+      }
+      </style>
+    <style
+       id="current-color-scheme-62"
+       type="text/css">
+   .ColorScheme-Text { color:#dfdfdf; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+    <style
+       id="current-color-scheme-61"
+       type="text/css">.ColorScheme-Text {
+        color:#dfdfdf;
+      }</style>
+    <style
+       id="current-color-scheme-8"
+       type="text/css">
+   .ColorScheme-Text { color:#dfdfdf; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+    <style
+       id="current-color-scheme-79"
+       type="text/css">
+   .ColorScheme-Text { color:#d3dae3; } .ColorScheme-Highlight { color:#5294e2; }
+  </style>
+    <style
+       id="current-color-scheme-20"
+       type="text/css">
+   .ColorScheme-Text { color:#d3dae3; } .ColorScheme-Highlight { color:#5294e2; }
+  </style>
+    <style
+       id="current-color-scheme-23"
+       type="text/css">
+   .ColorScheme-Text { color:#dfdfdf; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+    <style
+       id="current-color-scheme-75"
+       type="text/css">.ColorScheme-Text {
+        color:#dfdfdf;
+      }</style>
+    <style
+       id="current-color-scheme-92"
+       type="text/css">
+   .ColorScheme-Text { color:#dfdfdf; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+    <style
+       id="current-color-scheme-67"
+       type="text/css">
+   .ColorScheme-Text { color:#dfdfdf; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+    <style
+       id="current-color-scheme-53"
+       type="text/css">
+   .ColorScheme-Text { color:#FFFFFF; } .ColorScheme-Highlight { color:#5294e2; }
+  </style>
+    <style
+       id="current-color-scheme-56"
+       type="text/css">.ColorScheme-Text {
+        color:#dfdfdf;
+      }</style>
+    <style
+       id="current-color-scheme-29"
+       type="text/css">.ColorScheme-Text { color:#dedede; }</style>
+    <style
+       type="text/css"
+       id="current-color-scheme-12">
+      .ColorScheme-Text {
+        color:#eff0f1;
+      }
+      </style>
+    <style
+       id="current-color-scheme-709"
+       type="text/css">
+   .ColorScheme-Text { color:#dfdfdf; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+    <style
+       type="text/css"
+       id="current-color-scheme-36">
+   .ColorScheme-Text { color:#F6F6F6; } .ColorScheme-Highlight { color:#ffffff; }
+  </style>
+    <style
+       id="current-color-scheme-0"
+       type="text/css">
+   .ColorScheme-Text { color:#dfdfdf; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+    <style
+       id="current-color-scheme-626"
+       type="text/css">
+   .ColorScheme-Text { color:#dfdfdf; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+    <style
+       id="current-color-scheme-18"
+       type="text/css">.ColorScheme-Text {
+        color:#dfdfdf;
+      }</style>
+    <style
+       id="current-color-scheme-792"
+       type="text/css">.ColorScheme-Text {
+        color:#dfdfdf;
+      }</style>
+    <style
+       id="current-color-scheme-02"
+       type="text/css">
+   .ColorScheme-Text { color:#d3dae3; } .ColorScheme-Highlight { color:#5294e2; }
+  </style>
+    <style
+       id="current-color-scheme-37"
+       type="text/css">.ColorScheme-Text {
+        color:#dfdfdf;
+      }</style>
+    <style
+       id="current-color-scheme-59"
+       type="text/css">.ColorScheme-Text {
+        color:#dfdfdf;
+      }</style>
+    <style
+       id="current-color-scheme-22"
+       type="text/css">.ColorScheme-Text {
+        color:#dfdfdf;
+      }</style>
+    <style
+       id="current-color-scheme-5-8"
+       type="text/css">.ColorScheme-Text {
+        color:#dfdfdf;
+      }</style>
+    <style
+       id="current-color-scheme-35-9"
+       type="text/css">.ColorScheme-Text {
+        color:#000000;
+      }</style>
+    <style
+       id="current-color-scheme-3-7"
+       type="text/css">.ColorScheme-Text {
+        color:#000000;
+      }</style>
+    <style
+       id="current-color-scheme-9-3"
+       type="text/css">.ColorScheme-Text {
+        color:#000000;
+      }</style>
+    <style
+       id="current-color-scheme-3-3"
+       type="text/css">.ColorScheme-Text {
+        color:#000000;
+      }</style>
+    <style
+       id="current-color-scheme-2-6"
+       type="text/css">.ColorScheme-Text {
+        color:#000000;
+      }</style>
+    <style
+       id="current-color-scheme-0-1"
+       type="text/css">.ColorScheme-Text { color:#5c616c; } .ColorScheme-Highlight { color:#5294e2; } .ColorScheme-ButtonBackground { color:#d3dae3; }</style>
+    <style
+       id="current-color-scheme-37-2"
+       type="text/css">.ColorScheme-Text { color:#5c616c; } .ColorScheme-Highlight { color:#5294e2; } .ColorScheme-ButtonBackground { color:#d3dae3; }</style>
+    <style
+       id="current-color-scheme-3-5"
+       type="text/css">.ColorScheme-Text { color:#5c616c; } .ColorScheme-Highlight { color:#5294e2; } .ColorScheme-ButtonBackground { color:#d3dae3; }</style>
+    <style
+       id="current-color-scheme-6-9"
+       type="text/css">.ColorScheme-Text { color:#5c616c; } .ColorScheme-Highlight { color:#5294e2; } .ColorScheme-ButtonBackground { color:#d3dae3; }</style>
+    <style
+       id="current-color-scheme-31"
+       type="text/css">.ColorScheme-Text {
+        color:#dfdfdf;
+      }</style>
+    <style
+       id="current-color-scheme-94"
+       type="text/css">.ColorScheme-Text {
+        color:#dfdfdf;
+      }</style>
+    <style
+       id="current-color-scheme-78"
+       type="text/css">.ColorScheme-Text { color:#dedede; } .ColorScheme-Text { color:#dedede; }</style>
+    <style
+       id="current-color-scheme-367"
+       type="text/css">
+   .ColorScheme-Text { color:#dfdfdf; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+    <style
+       id="current-color-scheme-535"
+       type="text/css">.ColorScheme-Text { color:#dedede; } .ColorScheme-Text { color:#dedede; }</style>
+  </defs>
+  <path
+     class="folder-back"
+     d="M 6,14.67 C 6,13.1954 7.1953997,12 8.67,12 h 11.126153 c 2,0 1.865602,0.144106 4,2 l 2.300128,2 H 55.33 c 1.4746,0 2.67,1.1954 2.67,2.67 v 6 C 58,23.1954 56.8046,22 55.33,22 H 8.67 C 7.1953997,22 6,23.1954 6,24.67"
+     id="path11"
+     sodipodi:nodetypes="cssscsscssc"
+     style="fill:#3fa1ef;fill-opacity:1" />
+  <path
+     class="darken"
+     d="M 8.67,21 A 3.67,3.67 0 0 0 6,22.15 v 2.52 A 2.67,2.67 0 0 1 8.67,22 H 55.33 A 2.67,2.67 0 0 1 58,24.67 V 22.15 A 3.67,3.67 0 0 0 55.33,21"
+     id="path13" />
+  <rect
+     class="folder-front"
+     x="6"
+     y="22"
+     width="52"
+     height="32"
+     rx="2.6700001"
+     ry="2.6700001"
+     id="rect15"
+     style="fill:url(#linearGradient1006)" />
+  <rect
+     class="folder-front"
+     x="8.6700001"
+     y="19.681915"
+     width="46.66"
+     height="33.318085"
+     id="rect27908"
+     style="fill:#f2f2f2;stroke-width:0.989921"
+     ry="1.1616622"
+     rx="1.1616622" />
+  <path
+     class="lighten"
+     d="M 8.67,22 A 2.67,2.67 0 0 0 6,24.67 2.67,1.67 0 0 1 8.67,23 H 55.33 A 2.67,1.67 0 0 1 58,24.67 2.67,2.67 0 0 0 55.33,22"
+     id="path17" />
+  <path
+     class="darken"
+     d="M 8.67,53 A 2.67,1.67 0 0 1 6,51.33 2.67,2.67 0 0 0 8.67,54 H 55.33 A 2.67,2.67 0 0 0 58,51.33 2.67,1.67 0 0 1 55.33,53"
+     id="path19" />
+  <rect
+     class="folder-front"
+     x="6"
+     y="22"
+     width="52"
+     height="32"
+     rx="2.6700001"
+     ry="2.6700001"
+     id="rect27795"
+     style="fill:url(#linearGradient1008)" />
+  <path
+     class="darken"
+     d="m 8.6700001,53 a 2.67,1.67 0 0 1 -2.67,-1.67 2.67,2.67 0 0 0 2.67,2.67 H 55.33 A 2.67,2.67 0 0 0 58,51.33 2.67,1.67 0 0 1 55.33,53"
+     id="path19-3"
+     style="fill:#000000;fill-opacity:0.125" />
+  <image
+     width="16.715029"
+     height="16.715029"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAMAAABrrFhUAAADAFBMVEX/////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+//////////////+/LkhhAAAA/3RSTlMAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAh
+IiMkJSYnKCkqKywtLi8wMTIzNDU2Nzg5Ojs8PT4/QEFCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFla
+W1xdXl9gYWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXp7fH1+f4CBgoOEhYaHiImKi4yNjo+QkZKT
+lJWWl5iZmpucnZ6foKGio6SlpqeoqaqrrK2ur7CxsrO0tba3uLm6u7y9vr/AwcLDxMXGx8jJysvM
+zc7P0NHS09TV1tfY2drb3N3e3+Dh4uPk5ebn6Onq6+zt7u/w8fLz9PX29/j5+vv8/f7rCNk1AAAY
+kUlEQVR4XuzYD0SccRzH8T3Xpe2qK9F/ZKK7KAXdWNZIOXVjaiWpwagSwg1M1baSzIxUUhRlQ21q
+uaHKaVgkqlNJOc+pk0zSdpen3dPW83yGsNm+VwW557nfC8DzwxtfX9/nxrVjGIZhGIZh4qvspwB2
+OrI1wZhveLb0C2f2Rop1QVavNfV8lfGH7/Pj2CDK15e99+Bfy01pQZKfWLvoA8Xdl6NVfT2X/YKH
+X+JYaZSq8zV5w/s418/5hhjV5seUT4u4kOx6blRlfrLVIeFyDgbvc2rLz3rjxhUIMxV6FdVHWCYE
+UMSF6dk1CaT1p7dVkh9X/0UExTdVoudC4urmj0Ha7rqj/EnQGtp5kNydhaFnAboH416QvJOWCEXn
+3yocOgDJ3Zb+93cFb70gSXN1yYrNj6yaOwLlxNVk/O846HaBdLr5yqDESeDSrA4ZlOOpRwka6kHr
+lgTSYX9+mNL6Tb1OkMRPD/2OdYp1FbQjW3Wkguqjiz4cgiLzo5bw8wLia/ythJOVxlSFTEJSg/0H
+SM72zJCLAqJKJwTQ+NcmTgFr7+UqSJKzOf1yq8M87AFtf9Qc2JOgKxjYBem7rd5Axd6jfgGE3u3i
+ZZAE+5OkwL32Kj8KIHlsJdSdf9M87v32LldLBGS0bMggycutxkCchN/M2nlUlFUfB/DfDAOyCSKL
+SCokYm64kbgriqKVZGblErkkGqZo7pq5RL2GmYUYKuorKW6llr1GiqgHUBQTEhUN5aDlhiKbgiwO
+M7/3PPch5j5n7h25U1if/5wzHOfeZ+7vd7/3jtpnIeegB4v2D2WVcOeQFPIHj/8XzJodr9nnqpFJ
+/8fmAbbw72LZew1nx6u/EBNkzRr+++f00uilOahMC2XNkOvUw2XI9vDAOCf493Acve8+Z/jn5/oA
+g/eiK2QcO/sHbCc5IGtBK1ZNeWVHIbI9Ob3IWw3/Cl7Tkjltr+LXBZ7A0CHqul6qDNv6aAAs+m0h
+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
+"
+     id="image4463"
+     x="23.642487"
+     y="29.642487"
+     style="fill:#fd02bf;fill-opacity:1" />
+</svg>

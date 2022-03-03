@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="speaker" x1="0" y1="0%" x2="0" y2="100%">
+      <stop offset="0%" style="stop-color:#E0E0E0"/> <!-- Gray 300 -->
+      <stop offset="100%" style="stop-color:#9E9E9E"/> <!-- Gray 500 -->
+    </linearGradient>
+    <linearGradient id="sound-waves" x1="0" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#64B5F6"/> <!-- Blue 300 -->
+      <stop offset="100%" style="stop-color:#90CAF9"/> <!-- Blue 200 -->
+    </linearGradient>
+    <style type="text/css">
+      .sound-waves-off { fill: #E0E0E0; fill-opacity: 0.5 }
+      .darken { fill: black; fill-opacity: 0.125 }
+    </style>
+  </defs>
+
+  <!-- Speaker -->
+  <path style="fill:url(#speaker)" d="m 16,16 v -7.635 a 1,1 0 0 0 -1.5,-0.865 l -4.5,4.5 h -4 a 2,2 0 0 0 -2,2 v 4 a 2,2 0 0 0 2,2 h 4 l 4.5,4.5 a 1,1 0 0 0 1.5,-0.865"/>
+  <path class="darken" d="m 6,12 a 2,2 0 0 0 -2,2 v 4 a 2,2 0 0 0 2,2 h 4 v -8"/>
+
+  <!-- Sound waves -->
+  <g transform="scale(1.3333)">
+    <path style="fill:url(#sound-waves)"
+          d="M 14.35,6.65 a 0.5,0.5 0 0 0 -0.7,0.7 a 6.6,6.6 0 0 1 0,9.3 a 0.5,0.5 0 0 0 0.7,0.7 a 7.6,7.6 0 0 0 0,-10.7"/>
+    <path class="sound-waves-off"
+          d="M 16.35,4.65 a 0.5,0.5 0 0 0 -0.7,0.7 a 9.4,9.4 0 0 1 0,13.3 a 0.5,0.5 0 0 0 0.7,0.7 a 10.4,10.4 0 0 0 0,-14.7
+             M 18.35,2.65 a 0.5,0.5 0 0 0 -0.7,0.7 a 12.2,12.2 0 0 1 0,17.3 a 0.5,0.5 0 0 0 0.7,0.7 a 13.2,13.2 0 0 0 0,-18.7"/>
+  </g>
+</svg>

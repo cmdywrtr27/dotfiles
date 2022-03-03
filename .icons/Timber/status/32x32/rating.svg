@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+  <defs>
+    <radialGradient id="star" cx="0" cy="0" r="9" gradientUnits="userSpaceOnUse">
+      <stop offset="0" style="stop-color:white;"/>
+      <stop offset="100%" style="stop-color:#FFF59D"/> <!-- Yellow 200 -->
+    </radialGradient>
+  </defs>
+  <g style="fill:url(#star)" transform="translate(12,12.71)">
+    <path d="M  2.69, -3.71 l -1.76, -5.40 a 1,1 0 0 0 -1.90, 0
+             L -2.69, -3.71 h -5.68        a 1,1 0 0 0 -0.59, 1.80
+             L -4.35,  1.40 l -1.76,  5.40 a 1,1 0 0 0  1.54, 1.12
+             L     0,  4.59 l  4.60,  3.33 a 1,1 0 0 0  1.54,-1.12
+             L  4.35,  1.40 l  4.60, -3.33 a 1,1 0 0 0 -0.59,-1.80"/>
+  </g>
+</svg>

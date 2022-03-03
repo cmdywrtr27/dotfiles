@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0%" x2="0" y2="100%">
+      <stop offset="0%" style="stop-color:#FFEB3B"/> <!-- Yellow 500 -->
+      <stop offset="100%" style="stop-color:#FBC02D"/> <!-- Yellow 700 -->
+    </linearGradient>
+    <style type="text/css">
+      .background { fill: url(#background) }
+      .symbol { fill: black; fill-opacity: 0.875 }
+    </style>
+  </defs>
+  <path class="background"
+    d="m 16,28 h 12
+       a 2,2 0 0 0 1.73,-3 l -12,-20.75
+       a 2,2 0 0 0 -3.46,0 l -12,20.75
+       a 2,2 0 0 0 1.73,3 z"/>
+
+  <g class="symbol" transform="translate(16,11)">
+     <path d="m 2,2 a 2,2 0 0 0 -4,0 v 5 a 2,2 0 0 0 4,0"/>
+     <circle cy="13" r="2"/>
+  </g>
+</svg>

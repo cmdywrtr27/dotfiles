@@ -7,18 +7,20 @@ configuration {
     modi: "drun,window,filebrowser,run,Power:~/.config/rofi/scripts/power.bash";
     font: "NotoSans Nerd Font 14";
     drun-display-format: "{name}";
+    show-icons: true;
+    icon-theme: "Joyful";
     sidebar-mode: true;
     matching: "fuzzy";
     scroll-method: 0;
     disable-history: false;
     display-drun: "   Menu ";
-    display-Power: " ⏼  Power ";
+    display-Power: " 襤 Power ";
     display-run: "   Run ";
     display-window: "   Window ";
     display-windowcd: "   Window+ ";
-    display-keys: "   Keys ";
-    display-filebrowser: "   Browse ";
-    display-combi: "   Binds ";
+    display-keys: "   Keys ";
+    display-filebrowser: "   Browse ";
+    display-combi: "  Binds ";
     window-thumbnail: true;
     sort: true;
     sorting-method: "normal";
@@ -53,7 +55,7 @@ window {
     width: 60%;
     border: 4px;
     border-radius: 0px;
-    border-color: @color12;
+    border-color: @bg;
     height: 73%;
 }
 
@@ -89,7 +91,7 @@ entry {
 
 inputbar {
 	children: [ prompt, textbox-prompt-colon, entry ];
-	background-image: url("img/bluewave.png");
+	background-image: url("img/wave.png");
 	expand: false;
 	border-radius: 0px 0px 0px 0px;
     font: "NotoSans Nerd Font 14";
@@ -132,9 +134,9 @@ element-text {
 }
 
 element selected {
-	background-color: @color12;
+	background-color: @color8;
     font: "NotoSans Nerd Font Bold 14";
-	text-color: @bg;
+	text-color: @fg;
 	border-radius: 0px;
 }
 

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="filter" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E0E0E0"/> <!-- Gray 300 -->
+      <stop offset="100%" style="stop-color:#9E9E9E"/> <!-- Gray 400 -->
+    </linearGradient>
+    <style type="text/css">
+      .lighten { fill: white; fill-opacity: 0.125 }
+      .darken { fill: black; fill-opacity: 0.125 }
+    </style>
+  </defs>
+  <path style="fill:url(#filter)" d="m 24,8 h -14 a 2,2 0 0 0 -1.4,3.4 l 11.4,11.4 v 13.2 a 4,4 0 0 0 8,0 v -13.2 l 11.4,-11.4 a 2,2 0 0 0 -1.4,-3.4"/>
+  <path class="lighten" d="m 10,8  a 2,2 0 0 0 -2,2 a 2,1 0 0 1 2,-1 h 28 a 2,1 0 0 1 2,1 a 2,2 0 0 0 -2,-2"/>
+  <path class="darken" d="m 20,36 a 4,4 0 0 0 8,0 a 4,3 0 0 1 -8,0"/>
+</svg>

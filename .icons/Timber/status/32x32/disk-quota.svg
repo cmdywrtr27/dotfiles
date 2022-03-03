@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="drive-top" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#9E9E9E"/> <!-- Gray 500 -->
+      <stop offset="100%" style="stop-color:#BDBDBD"/> <!-- Gray 400 -->
+    </linearGradient>
+    <linearGradient id="drive-front" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#757575"/> <!-- Gray 500 -->
+      <stop offset="100%" style="stop-color:#616161"/> <!-- Gray 600 -->
+    </linearGradient>
+    <linearGradient id="led-green" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F5E9"/> <!-- Green 50 -->
+      <stop offset="100%" style="stop-color:#A5D6A7"/> <!-- Green 200 -->
+    </linearGradient>
+    <linearGradient id="quota-background" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1565C0"/> <!-- Blue 800-->
+      <stop offset="100%" style="stop-color:#0D47A1"/> <!-- Blue 900-->
+    </linearGradient>
+    <linearGradient id="quota-foreground" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#90CAF9"/> <!-- Blue 200 -->
+      <stop offset="100%" style="stop-color:#64B5F6"/> <!-- Blue 300-->
+    </linearGradient>
+    <style type="text/css">
+      .darken { fill: black; fill-opacity: 0.125 }
+    </style>
+  </defs>
+
+  <!-- Harddisk -->
+  <path style="fill:url(#drive-top)" d="M 7.34 9 C 6.44 9 5.507 10 5.34 11 L 3.107 24.36 A 2 2 0 0 1 5 23 L 27 23 A 2 2 0 0 1 28.89 24.37 L 27.88 18.25 A 10 10 0 0 1 21 21 A 10 10 0 0 1 11 11 A 10 10 0 0 1 11.2 9 L 7.34 9 z M 28.89 24.37 L 29 25 A 2 2 0 0 0 28.89 24.37 z M 3.107 24.36 A 2 2 0 0 0 3 25 L 3.107 24.36 z "/>
+  <path style="fill:url(#drive-front)" d="m 5,23 a 2,2 0 0 0 -2,2 v 2 a 2,2 0 0 0 2,2 h 22 a 2,2 0 0 0 2,-2 v -2 a 2,2 0 0 0 -2,-2 z"/>
+  <path class="darken" d="m 5,23 a 2,2 0 0 0 -2,2 a 2,1 0 0 1 2,-1 h 22 a 2,1 0 0 1 2,1 a 2,2 0 0 0 -2,-2"/>
+  <circle style="fill:url(#led-green)" cx="7" cy="26" r="1"/>
+
+  <!-- Quota -->
+  <circle style="fill:url(#quota-background)" cx="21" cy="11" r="6"/>
+  <path style="fill:url(#quota-foreground)" d="m 21,3 a 8,8 0 0 0 0,16 a 8,8 0 0 0 0,-16 m 0,2 v 6 h 6 a 6,6 0 0 1 -6,6 a 6,6 0 0 1 0,-12"/>
+</svg>

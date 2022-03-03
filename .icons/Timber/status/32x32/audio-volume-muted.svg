@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="speaker" x1="0" y1="0%" x2="0" y2="100%">
+      <stop offset="0%" style="stop-color:#E0E0E0"/> <!-- Gray 300 -->
+      <stop offset="100%" style="stop-color:#9E9E9E"/> <!-- Gray 500 -->
+    </linearGradient>
+    <linearGradient id="sound-waves" x1="0" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#64B5F6"/> <!-- Blue 300 -->
+      <stop offset="100%" style="stop-color:#90CAF9"/> <!-- Blue 200 -->
+    </linearGradient>
+    <style type="text/css">
+      .sound-waves-off { fill: #E0E0E0; fill-opacity: 0.5 }
+      .strike-through { fill: #E0E0E0 }
+      .darken { fill: black; fill-opacity: 0.125 }
+    </style>
+  </defs>
+
+  <g style="opacity:0.5">
+    <!-- Speaker -->
+    <path style="fill:url(#speaker)"
+          d="M 16,16 l -5,-5 -1,1 h -4 a 2,2 0 0 0 -2,2 v 4 a 2,2 0 0 0 2,2 h 4 l 4.5,4.5 a 1,1 0 0 0 1.5,-0.865
+             M 16,10.5 v -2.135 a 1,1 0 0 0 -1.5,-0.865 l -0.7,0.7"/>
+
+    <path class="darken" d="m 6,12 a 2,2 0 0 0 -2,2 v 4 a 2,2 0 0 0 2,2 h 4 v -8"/>
+
+    <!-- Sound waves -->
+    <g class="sound-waves-off" transform="scale(1.3333)">
+      <path d="M 14.02 6.551 A 0.5 0.5 0 0 0 13.65 7.35 A 6.6 6.6 0 0 1 15.52 11.29 L 16.54 12.31 A 7.6 7.6 0 0 0 14.35 6.65 A 0.5 0.5 0 0 0 14.02 6.551 z M 15.29 13.88 A 6.6 6.6 0 0 1 13.65 16.65 A 0.5 0.5 0 0 0 14.35 17.35 A 7.6 7.6 0 0 0 16.07 14.66 L 15.29 13.88 z"/>
+      <path d="M 16.02 4.551 A 0.5 0.5 0 0 0 15.65 5.35 A 9.4 9.4 0 0 1 18.2 13.97 L 19.01 14.78 A 10.4 10.4 0 0 0 16.35 4.65 A 0.5 0.5 0 0 0 16.02 4.551 z M 17.47 16.06 A 9.4 9.4 0 0 1 15.65 18.65 A 0.5 0.5 0 0 0 16.35 19.35 A 10.4 10.4 0 0 0 18.21 16.8 L 17.47 16.06 z"/>
+      <path d="M 18.02 2.551 A 0.5 0.5 0 0 0 17.65 3.35 A 12.2 12.2 0 0 1 20.47 16.24 L 21.24 17.01 A 13.2 13.2 0 0 0 18.35 2.65 A 0.5 0.5 0 0 0 18.02 2.551 z M 19.57 18.16 A 12.2 12.2 0 0 1 17.65 20.65 A 0.5 0.5 0 0 0 18.35 21.35 A 13.2 13.2 0 0 0 20.28 18.88 L 19.57 18.16 z"/>
+    </g>
+  </g>
+
+  <!-- Strike-through -->
+  <path class="strike-through" transform="scale(1.3333)" d="m 4.54,3.13 a 0.5,0.5 0 0 0 -1.41,1.41 l 16.33,16.33 a 0.5,0.5 0 0 0 1.41,-1.41 z"/>
+</svg>
