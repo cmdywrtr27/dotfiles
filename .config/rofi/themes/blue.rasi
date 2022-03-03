@@ -1,0 +1,103 @@
+configuration {
+    show-icons: true;
+    icon-theme: "World";
+	modi: "drun";
+	font: "Open Sans 12";
+	display-drun: "";
+	sidebar-mode: false;
+}
+
+* {
+	bg:	#383c4a;
+	fg:	#ffffff;
+    button: #ffffff;
+    border: #69A2F5;
+	background-color: @bg;
+	text-color: @fg;
+}
+
+window { 
+    width: 45%;
+}
+
+prompt { 
+    enabled: false; 
+}
+
+pfp {
+	padding: 40px;
+	width: 120px;
+	expand:	false;
+	border:	5px;
+    border-radius: 4px;
+	border-color: @bg;
+	background-image: url("images/apps.png", height);
+}
+
+entry {
+	placeholder: "Search Applications...";
+	expand: true;
+	padding: 10px 2% 10px 2%;
+	vertical-align:	0.5;
+	background-color: @button;
+	text-color:	@bg;
+    placeholder-color: @bg;
+	margin:	29px 0 29px 0;
+	border:	5px;
+    border-radius: 0px;
+	border-color: @bg;
+}
+
+inputbar {
+	children: [ pfp, entry ];
+	text-color: @fg;
+	expand: false;
+	spacing: 64px;
+	padding: 64px 64px 0 64px;
+}
+
+listview {
+	columns: 3;
+	lines: 4;
+	cycle: false;
+	dynamic: true;
+	layout: vertical;
+	padding: 20px 40px 40px 60px;
+}
+
+mainbox {
+	children: [ inputbar, listview ];
+	spacing: 1%;
+	layout:	horizontal;
+}
+
+element {
+	orientation: vertical;
+	padding: 1.5% 0% 1.5% 0%;
+}
+
+element-text {
+	expand: true;
+	vertical-align: 0.5;
+    horizontal-align: 0.5;
+    text-color: @fg;
+    margin: 0.5% 3% 0% 3%;
+}
+
+element-text, element-icon {
+	background-color: inherit;
+	text-color:	@fg;
+}
+
+element selected {
+    	background-color: @border;
+    	border: 2px;
+        border-radius: 0px;
+        border-color: @border;
+        text-color: @fg;
+}
+
+element-icon {
+  size: 48px;
+  horizontal-align: 0.5;
+}
