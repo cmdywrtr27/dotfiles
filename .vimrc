@@ -404,23 +404,23 @@ let g:lightline = {
 "      \ 'subseparator': { 'left': '', 'right': '' },
 "      \ }
 
-"let g:tmuxline_theme = {
-"    \ 'lightline' }
+let g:tmuxline_theme = {
+    \ 'lightline' }
 
-"let g:tmuxline_separators = {
-"    \ 'left' : '',
-"    \ 'left_alt': '',
-"    \ 'right' : '',
-"    \ 'right_alt' : '',
-"    \ 'space' : ' '}
+let g:tmuxline_separators = {
+    \ 'left' : '',
+    \ 'left_alt': '',
+    \ 'right' : '',
+    \ 'right_alt' : '',
+    \ 'space' : ' '}
 
-"let g:tmuxline_preset = {
-"    \'a'    : '#(whoami)@#H',
-"    \'b'    : ['#S'],
-"    \'win'  : ['#I #W'],
-"    \'cwin' : ['#I #W #F'],
-"    \'y'    : ['%A'],
-"    \'z'    : '%B %d'}
+let g:tmuxline_preset = {
+    \'a'    : '#(whoami)@#H',
+    \'b'    : ['#S'],
+    \'win'  : ['#I #W'],
+    \'cwin' : ['#I #W #F'],
+    \'y'    : ['%A'],
+    \'z'    : '%B %d'}
 
 let g:Powerline_symbols = 'fancy'
 let g:unite_force_overwrite_statusline = 0
