@@ -22,7 +22,7 @@
     frame_width = 2
     corner_radius = 0
 
-    frame_color = "#61afef"
+    frame_color = "#848c9f"
     separator_color = auto
     sort = yes
     idle_threshold = 120
@@ -45,10 +45,10 @@
     #   %%  Literal %
     # Markup is allowed
     #format = "<b>%s %b</b>"
-    format = "<b>%s</b>\n%b\n%p"
+    format = "<b>%s</b>\n%b"
     alignment = left
     show_age_threshold = 60
-    word_wrap = true
+    word_wrap = false
     ellipsize = middle
     ignore_newline = false
     stack_duplicates = true
@@ -59,8 +59,6 @@
     icon_position = left
     max_icon_size = 48
     #icon_path = /home/josh/.icons/Qogir/48/apps/:/home/josh/.icons/Qogir/48/places/:/home/josh/.icons/Qogir/scalable/apps/:/home/josh/.icons/Qogir/scalable/devices/:/home/josh/.icons/Qogir/scalable/mimetypes/:/home/josh/.icons/Qogir/scalable/places/:/home/josh/.icons/Qogir/scalable/status/
-
-#    icon_path = /usr/share/icons/Papirus-Dark/48x48/status/:/usr/share/icons/Papirus-Dark/48x48/devices/:/usr/share/icons/Papirus-Dark/48x48/apps
 
     icon_path = /home/josh/.icons/Timber/actions/32/:/home/josh/.icons/Timber/apps/scalable/:/home/josh/.icons/Timber/devices/48x48/:/home/josh/.icons/Timber/mimetypes/scalable/:/home/josh/.icons/Timber/status/48x48/
 
@@ -113,21 +111,21 @@
 #    history = ctrl+grave
 
 [urgency_low]
-    background = colors.background
+    background = "#444a57"
     foreground = "#ffffff"
-    frame_color = "#61afef"
+    frame_color = "#848c9f"
     timeout = 5
 
 [urgency_normal]
-    background = colors.background
+    background = "#444a57"
     foreground = "#ffffff"
-    frame_color = "#61afef"
-    timeout = 7
+    frame_color = "#848c9f"
+    timeout = 5
 
 [urgency_critical]
-    background = colors.background
+    background = "#444a57"
     foreground = "#ffffff"
-    frame_color = "#61afef"
+    frame_color = "#848c9f"
     timeout = 0
 
 # vim: ft=conf
