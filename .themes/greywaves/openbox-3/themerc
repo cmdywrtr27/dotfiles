@@ -1,0 +1,94 @@
+# Greywaves
+
+# Menu
+menu.title.bg: raised solid border bevel2
+menu.title.text.justify: center
+menu.title.bg.color: #444a57
+menu.title.text.color: #ffffff
+menu.items.bg: flat solid
+menu.items.bg.color: #444a57
+menu.items.text.color: #ffffff
+menu.items.disabled.text.color: #6e6e6e
+menu.items.active.bg: flat solid
+menu.items.active.bg.color: #444a57
+menu.items.active.text.color: #2e3440
+menu.items.active.disabled.text.color: #6e6e6e
+
+menu.separator.color: #ffffff
+menu.separator.padding.width: 0
+menu.separator.width: 1
+menu.separator.padding.width: 30
+menu.separator.padding.height: 15
+
+menu.border.width: 10
+menu.overlap.x: -12
+menu.overlap.y: 0
+menu.border.color: #444a57
+
+# Windows
+window.*.grip.bg: parentrelative
+window.*.title.bg: raised bevel1
+window.*.label.bg: parentrelative
+window.*.button.*.bg: parentrelative
+window.*.handle.bg: flat solid
+window.*.text.justify: left
+
+window.active.title.bg.color: #383c4a
+window.active.label.text.color: #383c4a
+window.active.button.*.unpressed.image.color: #848c9f
+window.active.button.*.disabled.image.color: #595959
+window.active.button.*.hover.image.color: #848c9f
+window.active.button.*.pressed.image.color: #848c9a
+window.active.handle.bg.color: #383c4a
+
+*.active.border.color: #383c4a
+
+window.inactive.title.bg.color: #848c9f
+window.inactive.label.text.color: #848c9f
+window.inactive.button.*.unpressed.image.color: #383c4a
+window.inactive.button.*.disabled.image.color: #6e6e6e
+window.inactive.button.*.hover.image.color: #383c4a
+window.inactive.button.*.pressed.image.color: #383c4a
+window.inactive.handle.bg.color: #383c4a
+
+*.inactive.border.color: #848c9f
+
+# Miscellaneous
+border.width: 1
+padding.width: 0
+padding.height: 0
+window.client.padding.width: 0
+window.client.padding.height: 0
+window.handle.width: 0
+
+# On Screen Display
+osd.border.width: 1
+osd.border.color: #848c9f
+
+osd.bg: flat solid
+osd.bg.color: #3b4252
+
+osd.label.bg: flat solid
+osd.label.bg.color: #3b4252
+osd.label.text.color: #ffffff
+
+osd.hilight.bg: raised solid border bevel2
+osd.hilight.border.color: #3b4252
+osd.hilight.bg.color: #848c9f
+
+osd.unhilight.bg: flat solid
+osd.unhilight.bg.color: #3b4252
+
+osd.button.unpressed.bg: raised solid border bevel2
+osd.button.unpressed.bg.color: #3b4252
+osd.button.unpressed.*.border.color: #3b4252
+
+osd.button.pressed.bg: sunken border
+osd.button.pressed.bg.color: #444a57
+osd.button.pressed.*.border.color: #444a57
+
+osd.button.focused.bg: raised solid border bevel2
+osd.button.focused.bg.color: #3b4252
+osd.button.focused.*.border.color: #3b4252
+
+osd.button.focused.box.color: #3b4252
