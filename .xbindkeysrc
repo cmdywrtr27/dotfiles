@@ -1,0 +1,14 @@
+#"pactl set-sink-volume @DEFAULT_SINK@ -2%"
+#   b:6
+#"pactl set-sink-volume @DEFAULT_SINK@ +2%"
+#   b:7
+
+#"amixer -D pulse set Master 4000-"
+#   b:6
+#"amixer -D pulse set Master 4000+ unmute"
+#   b:7
+
+"amixer -q -D pulse sset 5%+ unmute"
+   b:6
+"amixer -q -D pulse sset 5%- unmute"
+   b:7

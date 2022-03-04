@@ -1,0 +1,14 @@
+#!/bin/bash
+
+scrot -m -d 3 -q 100 'Screenshot%m-%d-%Y-%H:%M.png' -e 'mv $f $HOME/Pictures/Screenshots' && notify-send -i ~/.icons/Custom/scrot4.png 'Screenshot captured!'
+
+# Flags
+# a - autoselect
+# c - count
+# d - delay
+# q - quality
+# m - multi-display
+# s - select
+# f - freeze (with -s)
+# u - focused screen
+# k - stack (join windows together)

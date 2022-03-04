@@ -477,7 +477,7 @@
     <!-- Keybindings for scrot -->
     <keybind key="W-s">
       <action name="Execute">
-        <command>~/.local/bin/takeshot --now</command>
+        <command>~/.local/bin/screenshot</command>
       </action>
     </keybind>
     <!-- Keybindings for menu -->
