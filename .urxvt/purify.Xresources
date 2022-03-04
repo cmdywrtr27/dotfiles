@@ -1,0 +1,35 @@
+!BLACK - Cursor
+#define _color0        #444A57
+#define _color8        #444A57
+!RED - Tag
+#define _color1        #FF6059
+#define _color9        #FF6059
+!GREEN - SpecialKey
+#define _color2        #5FFF87
+#define _color10       #5FFF87
+!YELLOW - Keyword
+#define _color3        #FFFF87
+#define _color11       #FFFF87
+!BLUE - Number
+#define _color4        #5FAFFF
+#define _color12       #5FAFFF
+!MAGENTA - Precondit
+#define _color5        #AF87FF
+#define _color13       #AF87FF
+!CYAN - Float
+#define _color6        #5FAFFF
+#define _color14       #5FAFFF
+!WHITE - Search
+#define _color7        #FFFFFF
+#define _color15       #FFFFFF
+!FMT - Include, StatusLine, ErrorMsg
+#define _colorBD       #FF875F
+#define _colorUL       #FFFF87
+#define _colorIT       #5FFF87
+!TXT - Normal, Normal, Cursor
+#define _foreground    #FFFFFF
+#define _background    #444A57
+#define _cursorColor   #FFFFFF
+!Highlight
+#define _highlightFg   #444A57
+#define _highlightBg   #FFFFFF
