@@ -1,26 +1,26 @@
 [Icon Theme]
 Name=Timber
 Comment=custom folder icons
-Inherits=Qogir-dark,breeze-dark,Adwaita,hicolor
+Inherits=BigSur-black-dark,breeze-dark,hicolor
 FollowsColorScheme=true
 Example=folder
 
 DisplayDepth=32
 
 DialogDefault=64
-DialogSizes=16,32,48,64
+DialogSizes=16,22,32,48,64
 DesktopDefault=64
-DesktopSizes=16,32,48,64
+DesktopSizes=16,22,32,48,64
 MainToolbarDefault=22
 MainToolbarSizes=16,22,32
 PanelDefault=48
-PanelSizes=16,32,48,64
+PanelSizes=16,22,32,48,64
 SmallDefault=22
 SmallSizes=16,22,32,48
 ToolbarDefault=22
 ToolbarSizes=16,22,32
 
-Directories=actions/22x22,actions/16x16,actions/32x32,apps/scalable,apps/22x22,apps/16x16,apps/48x48,apps/64x64,devices/22x22,devices/48x48,devices/32x32,devices/16x16,mimetypes/scalable,mimetypes/22x22,mimetypes/64x64,mimetypes/48x48,places/16x16,places/22x22,places/64x64,places/48x48,status/22x22,status/48x48,status/32x32,
+Directories=actions/22x22,actions/16x16,actions/32x32,apps/scalable,apps/22x22,apps/16x16,apps/48x48,apps/64x64,devices/22x22,devices/48x48,devices/32x32,devices/16x16,mimetypes/scalable,mimetypes/22x22,mimetypes/64x64,mimetypes/48x48,places/16x16,places/20x20,places/22x22,places/64x64,places/48x48,status/22x22,status/48x48,status/32x32,
 
 [actions/16x16]
 Context=Actions
@@ -118,6 +118,11 @@ Size=48
 Context=Places
 Type=Scalable
 Size=64
+
+[places/20x20]
+Context=Places
+Type=Fixed
+Size=20
 
 [places/16x16]
 Context=Places
