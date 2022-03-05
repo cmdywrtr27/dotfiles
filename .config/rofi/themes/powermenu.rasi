@@ -1,0 +1,136 @@
+@theme "/dev/null"
+@import "../configs/colors.rasi"
+@import "../configs/mappings.rasi"
+
+configuration {
+    font: "NotoSans Nerd Font 14";
+    disable-history: true;
+    sidebar-mode: false;
+}
+
+* {
+    background-color: @bg;
+    text-color: @fg;
+}
+
+window {
+    transparency: "real";
+    border: 10px;
+    border-color: @color0;
+    border-radius: 0px;
+    location: center;
+    width: 800px;
+    x-offset: 0px;
+    y-offset: 0px;
+}
+
+prompt {
+    enabled: true;
+    padding: 10px;
+    background-color: @color0;
+    text-color: @fg;
+    border: 2px 2px 3px 2px;
+    border-radius: 0px 0px 0px 0px;
+    border-color: @border;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: " System ";
+    background-color: @fg;
+    text-color: @bg;
+    padding: 12px 10px 0px 10px;
+    font: "NotoSans Nerd Font Bold 14";
+}
+
+inputbar {
+    children: [ textbox-prompt-colon, prompt ];
+    spacing: 0px;
+    background-color: @bg;
+    text-color: @fg;
+    expand: false;
+    border: 0px;
+    border-radius: 0px;
+    border-color: @border;
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    position: center;
+}
+
+listview {
+    columns: 5;
+    lines: 1;
+    spacing: 15px;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
+}
+
+mainbox {
+    background-color: @bg;
+    children: [ inputbar, listview ];
+    spacing: 15px;
+    margin: 40px;
+}
+
+element {
+    background-color: @color0;
+    text-color: @fg;
+    orientation: vertical;
+    border-radius: 0px;
+}
+
+element-text {
+    font: "NotoSans Nerd Font 30";
+    background-color: @color0;
+    expand: true;
+    horizontal-align: 0.5;
+    vertical-align: 0;
+    margin: 40px 0px 40px 0px;
+}
+
+element normal {
+    border-radius: 0px;
+}
+
+element alternate {
+    border-radius: 0px;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color: @border;
+    text-color: @fg;
+}
+
+element normal.active,
+element alternate.active {
+    background-color: @color8;
+    text-color: @fg;
+}
+
+element selected {
+    background-color: @color8;
+    text-color: @fg;
+    border: 0px;
+    border-radius: 0px;
+    border-color: @border;
+}
+
+element selected.urgent {
+    background-color: @border;
+    text-color: @fg;
+}
+
+element selected.active {
+    background-color: @color8;
+    color: @bg;
+}
+element-text selected {
+    background-color: @color8;
+    color: @fg;
+}
+
+/*
+vim:ft=css
+*/

@@ -36,7 +36,7 @@ URxvt.letterSpace : 0
 
 URxvt.perl-lib             : /usr/lib/urxvt/perl/
 URxvt.iconFile             : /home/josh/.icons/Custom/terminal1.svg
-URxvt.backgroundPixmap     : /home/josh/.urxvt/backgrounds/greywave.png
+URxvt.backgroundPixmap     : /home/josh/.urxvt/backgrounds/greywavey21.png
 URxvt.windowName           : urxvt
 URxvt.windowTitle          : urxvt
 URxvt.termName             : rxvt-unicode-256color
