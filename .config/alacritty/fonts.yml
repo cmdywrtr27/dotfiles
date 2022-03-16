@@ -1,0 +1,27 @@
+font:
+  normal:
+    family: "InconsolataLGC Nerd Font"
+    style: Regular
+
+  bold:
+    family: "InconsolataLGC Nerd Font"
+    style: Bold
+
+  italic:
+    family: "InconsolataLGC Nerd Font"
+    style: Italic
+
+  bold_italic:
+    family: "InconsolataLGC Nerd Font"
+    style: Bold Italic
+
+  # Point size
+  size: 12
+
+  #offset:
+  #  x: 0
+  #  y: 0
+
+  # glyph_offset:
+  #  x: 1
+  #  y: 0
