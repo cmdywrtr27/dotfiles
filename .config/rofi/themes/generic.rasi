@@ -1,6 +1,6 @@
 configuration {
     show-icons: true;
-    icon-theme: "World";
+    icon-theme: "Timber";
     disable-history: false;
 	hide-scrollbar:	true;
 	sidebar-mode: false;
@@ -24,7 +24,7 @@ configuration {
     padding: 0px;
     margin: 0px;
     width: 40%;
-    height: 47%;
+    height: 50%;
 }
 
 
@@ -35,7 +35,7 @@ window {
 }
 
 mainbox {
-  padding: 0px;
+    padding: 0px;
 }
 
 prompt { 
@@ -43,7 +43,7 @@ prompt {
 }
 
 entry {
-	placeholder: "Search";
+	placeholder: "Search Applications...";
 	placeholder-color: @foreground;
 	expand: true;
 	padding: 1.5%;
@@ -55,17 +55,17 @@ inputbar {
 	children: [prompt, entry ];
 	background-image: url("images/wave.png");
 	expand: false;
-	border-radius: 10px;
-	padding: 30px 30px 30px 230px;
+	border-radius: 8px;
+	padding: 30px 30px 30px 300px;
 }
 
 listview {
-    columns: 3;
+    columns: 4;
     lines: 3;
     cycle: false;
     dynamic: true;
     layout: vertical;
-    padding: 30px 100px 30px 30px;
+    padding: 15px 10px 15px 15px;
 }
 
 element, element-text, element-icon {
@@ -87,7 +87,7 @@ element-icon {
     orientation: horizontal;
     horizontal-align: 0.5;
     vertical-align: 0.5;
-    size: 34px;
+    size: 52px;
 }
 
 element-text {
