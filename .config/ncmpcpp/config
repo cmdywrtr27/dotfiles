@@ -6,12 +6,12 @@ mpd_port = "6600"
 mouse_list_scroll_whole_page = "no"
 lines_scrolled = "1"
 
-#visualizer_in_stereo = "no"
-#visualizer_fifo_path = "/tmp/mpd.fifo"
-#visualizer_output_name = "my_fifo"
-#visualizer_sync_interval = "10"
-#visualizer_type = "spectrum"
-#visualizer_look = "▋▋"
+visualizer_in_stereo = "no"
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_sync_interval = "10"
+visualizer_type = "spectrum"
+visualizer_look = "▋▋"
 
 cyclic_scrolling = "no"
 jump_to_now_playing_song_at_start = "yes"
@@ -53,7 +53,7 @@ titles_visibility = "yes"
 enable_window_title = "yes"
 
 now_playing_prefix = "$b"
-now_playing_suffix = " $8$/b$9$5  $9"
+now_playing_suffix = " $8$/b$9$5 ◀◀$9"
 
 #now_playing_prefix = "$u$2"
 #now_playing_suffix = "$2$/u$2"
@@ -67,6 +67,9 @@ color2 = "black"
 
 #execute_on_song_change = "~/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp_cover_art.sh"
 execute_on_song_change = "/home/josh/.config/ncmpcpp/cover.sh"
+#execute_on_song_change = "/home/josh/.config/ncmpcpp/bg.sh"
+
+
 
 #song_list_format = " $7%l  $2%t $R$5%a "
 #song_list_format = "                  $2%a $R$5%t "

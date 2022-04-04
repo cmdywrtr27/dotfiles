@@ -1,11 +1,10 @@
 [global/wm]
 include-file = ~/.config/polybar/azul/colors
-;include-file = ~/.config/polybar/azul/fonts
 include-directory = ~/.config/polybar/azul/modules
 
 [bar/main]
 monitor = HDMI1
-modules-left = l1 launcher r1 sep l1 bspwm workspaces r1 sep l1 mpd r1
+modules-left = l1 launcher r1 sep l1 bspwm workspaces r1
 modules-center = title 
 modules-right = l1 volume gap network r1 sep l1 filesystem gap memory gap cpu r1 sep l1 dunst sepline powermenu r1 sep
 
@@ -29,11 +28,17 @@ font-1 = Feather:style=Bold:size=11;3
 font-2 = JetBrainsMono Nerd Font:size=17;4
 font-3 = Iosevka Nerd Font:style=Bold:size=14;4
 font-4 = Iosevka Nerd Font:style=Regular:size=13;3
-font-5 = NotoSans Nerd Font:style=Regular:size=11;2
+font-5 = NotoSans Nerd Font:style=Regular:size=12;3
 font-6 = Font Awesome 5 Free Solid:style=Solid:size=10;3
+font-7 = NotoSans Nerd Font:style=Regular:size=12;3
+font-8 = Iosevka Nerd Font:style=Regular:size=28;8
 
 enable-ipc = true
 
 [bar/main2]
 inherit = bar/main
 monitor = HDMI2
+
+[bar/main3]
+inherit = bar/main
+monitor = VGA1

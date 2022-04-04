@@ -6,8 +6,8 @@ COVER=/tmp/cover.jpg
 
 function reset_background
 {
-#    printf "\e]20;;100x100+0+50\a"
-    printf "\e]20;;75x75+0+5\a"
+    printf "\e]20;;100x100+0+50\a"
+#    printf "\e]20;;75x75+0+5\a"
 #    printf "\e]20;;100x100+1000+1000\a"
 }
 
@@ -23,11 +23,11 @@ function reset_background
     rm -f "$COVER"
     if [[ -n "$src" ]] ; then
         #resize the image's height to 300px & extent it to cover the urxvt length
-        convert "$src" -resize 375x -background "#2e3440" -extent 1100x400 "$COVER"
+        convert "$src" -resize 375x -background "#444a57" -extent 1100x400 "$COVER"
         if [[ -f "$COVER" ]] ; then
 
           #printf "\e]20;${COVER};70x70+0+4:op=keep-aspect\a"
-          printf "\e]20;${COVER};100x100+50+50:op=keep-aspect\a"
+          printf "\e]20;${COVER};100x100+0+50:op=keep-aspect\a"
         else
             reset_background
         fi
@@ -38,7 +38,7 @@ function reset_background
     # For Notifications
     if [[ -n "$src" ]] ; then
         # Resize the image's width to 128px
-        convert "$src" -resize 108x "$COVER"
+        convert "$src" -resize 200x "$COVER"
         if [[ -f "$COVER" ]] ; then
             #notify-send -u low --icon=~/.config/ncmpcpp/music.png "$(mpc current)"
             notify-send -u low -i ${COVER} "  Now Playing:" "`mpc current`"

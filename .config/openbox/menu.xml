@@ -13,7 +13,7 @@
 		</item>
 		<item label="File Manager">
 			<action name="Execute">
-				<execute>pcmanfm</execute>
+				<execute>thunar</execute>
 			</action>
 		</item>
 		<separator/>

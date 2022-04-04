@@ -17,8 +17,8 @@
 #define _color5        #AF87FF
 #define _color13       #AF87FF
 !CYAN - Float
-#define _color6        #5FAFFF
-#define _color14       #5FAFFF
+#define _color6        #40E0D0
+#define _color14       #40E0D0
 !WHITE - Search
 #define _color7        #FFFFFF
 #define _color15       #FFFFFF
@@ -28,8 +28,34 @@
 #define _colorIT       #5FFF87
 !TXT - Normal, Normal, Cursor
 #define _foreground    #FFFFFF
-#define _background    #444A57
+#define _background    #2E3440
 #define _cursorColor   #FFFFFF
 !Highlight
-#define _highlightFg   #444A57
+#define _highlightFg   #2E3440
 #define _highlightBg   #FFFFFF
+
+URxvt.color0 : _color0
+URxvt.color1 : _color1
+URxvt.color2 : _color2
+URxvt.color3 : _color3
+URxvt.color4 : _color4
+URxvt.color5 : _color5
+URxvt.color6 : _color6
+URxvt.color7 : _color7
+URxvt.color8 : _color8
+URxvt.color9 : _color9
+URxvt.color10 : _color10
+URxvt.color11 : _color11
+URxvt.color12 : _color12
+URxvt.color13 : _color13
+URxvt.color14 : _color14
+URxvt.color15 : _color15
+URxvt.colorBD : _colorBD
+URxvt.colorIT : _colorIT
+URxvt.colorUL : _colorUL
+URxvt.foreground : _foreground
+URxvt.background : _background
+URxvt.cursorColor : _cursorColor
+URxvt.highlightColor : _highlightBg
+URxvt.highlightTextColor : _highlightFg
+URxvt.highlightReverse : true

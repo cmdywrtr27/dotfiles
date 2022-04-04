@@ -1,7 +1,11 @@
 #!/bin/bash
 
-POWER=""
-RESTART=""
+#POWER=""
+#RESTART=""
+#LOGOUT="﫻"
+
+POWER="襤"
+RESTART="敏"
 LOGOUT="﫻"
 RES=`echo "$POWER|$RESTART|$LOGOUT" | rofi -dmenu -p "Power" -sep "|" -theme $HOME/.config/rofi/themes/powermenu.rasi`
 [ "$RES" = "$POWER" ] && systemctl poweroff

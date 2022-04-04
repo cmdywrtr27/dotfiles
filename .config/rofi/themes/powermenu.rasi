@@ -15,8 +15,8 @@ configuration {
 
 window {
     transparency: "real";
-    border: 10px;
-    border-color: @color0;
+    border: 2px;
+    border-color: @color8;
     border-radius: 0px;
     location: center;
     width: 800px;
@@ -40,7 +40,7 @@ textbox-prompt-colon {
     background-color: @fg;
     text-color: @bg;
     padding: 12px 10px 0px 10px;
-    font: "NotoSans Nerd Font Bold 14";
+    font: "NotoSans Nerd Font 14";
 }
 
 inputbar {
@@ -81,7 +81,7 @@ element {
 }
 
 element-text {
-    font: "NotoSans Nerd Font 30";
+    font: "NotoSans Nerd Font 48";
     background-color: @color0;
     expand: true;
     horizontal-align: 0.5;

@@ -1,18 +1,17 @@
 ! Font ----------------------------------------------
 
 #define FONT InconsolataLGC Nerd Font Mono
-#define ICON Font Awesome 6 Free Regular
-#define EMOJI NotoEmoji Nerd Font
-#define NERD_FONT NotoSansMono Nerd Font
+#define ICON Font Awesome 5 Free Regular
+#define GLYPH Material Icons
+#define EMOJI Noto Color Emoji
+#define NERD_FONT Iosevka Nerd Font
 #define FONT_SIZE 12
 #define ICON_SIZE 14
-#define EMOJI_SIZE 14
-#define NERD_SIZE 14
 
-URxvt.font           : xft:FONT:style=Regular:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Medium:size=NERD_SIZE, xft:EMOJI:style=Book:size=EMOJI_SIZE
-URxvt.boldFont       : xft:FONT:style=Bold:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Roman:size=NERD_SIZE, xft:EMOJI:style=Regular:size=EMOJI_SIZE
-URxvt.italicFont     : xft:FONT:style=Italic:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Roman:size=NERD_SIZE, xft:EMOJI:style=Regular:size=EMOJI_SIZE
-URxvt.boldItalicFont : xft:FONT:style=Bold Italic:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Roman:size=NERD_SIZE, xft:EMOJI:style=Regular:size=EMOJI_SIZE
+URxvt.font           : xft:FONT:style=Medium:size=FONT_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Regular:size=ICON_SIZE
+URxvt.boldFont       : xft:FONT:style=Medium:size=FONT_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Regular:size=ICON_SIZE
+URxvt.italicFont     : xft:FONT:style=Medium:size=FONT_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Regular:size=ICON_SIZE
+URxvt.boldItalicFont : xft:FONT:style=Medium:size=FONT_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Regular:size=ICON_SIZE
 
 Xft.dpi           : 96
 Xft.antialias     : true
@@ -28,7 +27,7 @@ URxvt.letterSpace : 0
 #include "/home/josh/.urxvt/purify.Xresources"
 
 !URxvt.foreground       : #ffffff
-!URxvt.background       : #2E3440
+!URxvt.background       : #2e3440
 !URxvt.cursorColor      : #ffffff
 !URxvt.highlightReverse : true
 
@@ -36,7 +35,7 @@ URxvt.letterSpace : 0
 
 URxvt.perl-lib             : /usr/lib/urxvt/perl/
 URxvt.iconFile             : /home/josh/.icons/Custom/terminal1.svg
-URxvt.backgroundPixmap     : /home/josh/.urxvt/backgrounds/greywavey21.png
+URxvt.backgroundPixmap     : /home/josh/.urxvt/backgrounds/scratch.png
 URxvt.windowName           : urxvt
 URxvt.windowTitle          : urxvt
 URxvt.termName             : rxvt-unicode-256color
@@ -57,7 +56,7 @@ URxvt.mouseWheelScrollPage : false
 URxvt.cursorBlink          : true
 !URxvt.inheritPixmap        : false
 URxvt.transparent          : false
-URxvt.shading              : 0
+!URxvt.shading              : 0
 !URxvt.depth                : 32
 URxvt.secondaryScreen      : 1
 URxvt.secondaryScroll      : 0

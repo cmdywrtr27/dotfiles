@@ -133,18 +133,18 @@ let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 syntax on
 syntax enable
 
-set t_Co=256
-set termguicolors
-
 colorscheme dream
 "colorscheme purify
 "colorscheme bubblegum-256-dark
 "colorscheme pearl
 "colorscheme onehalfdark
-"colorscheme adamandeve
+"colorscheme nord
 "colorscheme Tomorrow-Night-Eighties
 "colorscheme snazzy
 set background=dark
+
+set t_Co=256
+set termguicolors
 
 let g:rainbow_active = 1
 let g:rehash256 = 1
@@ -223,6 +223,13 @@ endtry
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" Because tmux is actually spelled T.W.A.T
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 """"""""""""""""""""""""""""""
 " => Status line
@@ -363,10 +370,11 @@ let g:lightline = {
       \   'fugitive': 'LightLineFugitive',
       \   'gitbranch': 'branch#name',
       \   'readonly': 'LightLineReadonly',
+      \   'modified': 'LightLineModified',
       \   'filename': 'LightLineFilename',
-      \   'fileformat': 'MyFileformat',
+      \   'fileformat': 'LightLineFileformat',
       \   'filetype': 'MyFiletype',
-      \   'fileencoding': 'MyFileencoding',
+      \   'fileencoding': 'LightLineFileencoding',
       \   'mode': 'LightLineMode',
       \ },
       \ 'component': {
@@ -375,6 +383,7 @@ let g:lightline = {
       \   'absolutepath': '%f',
       \   'lineinfo': '%P  %l/%L:%c',
       \   'paste': '%{&paste?"PASTE":""}',
+      \   'filename': '%F',
       \ },
       \ 'component_expand': {
       \   'buffers': 'lightline#bufferline#buffers',
@@ -444,15 +453,6 @@ endfunction
 function! LightLineReadonly()
   return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
 endfunction
-
-"function! LightLineFilename()
-"  return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-"        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-"        \  &ft == 'unite' ? unite#get_status_string() :
-"        \  &ft == 'vimshell' ? vimshell#get_status_string() :
-"        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-"    	\ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
-"endfunction
 
 function! LightLineFugitive()
   try

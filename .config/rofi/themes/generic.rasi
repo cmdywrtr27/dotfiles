@@ -53,7 +53,7 @@ entry {
 
 inputbar {
 	children: [prompt, entry ];
-	background-image: url("images/wave.png");
+	background-image: url("images/vine.png");
 	expand: false;
 	border-radius: 8px;
 	padding: 30px 30px 30px 300px;

@@ -1,17 +1,17 @@
 configuration {
     show-icons: true;
-    icon-theme: "World";
+    icon-theme: "Timber";
 	modi: "drun";
-	font: "Open Sans 12";
-	display-drun: "";
+	font: "NotoSans Nerd Font 12";
+	drun-display-format: "{name}";
 	sidebar-mode: false;
 }
 
 * {
-	bg:	#383c4a;
+	bg:	#2e3440;
 	fg:	#ffffff;
     button: #ffffff;
-    border: #69A2F5;
+    border: #69a2f5;
 	background-color: @bg;
 	text-color: @fg;
 }
@@ -57,12 +57,12 @@ inputbar {
 }
 
 listview {
-	columns: 3;
-	lines: 4;
+	columns: 4;
+	lines: 3;
 	cycle: false;
 	dynamic: true;
 	layout: vertical;
-	padding: 20px 40px 40px 60px;
+	padding: 10px 20px 20px 30px;
 }
 
 mainbox {
@@ -90,14 +90,14 @@ element-text, element-icon {
 }
 
 element selected {
-    	background-color: @border;
-    	border: 2px;
-        border-radius: 0px;
-        border-color: @border;
-        text-color: @fg;
+    background-color: @border;
+    border: 2px;
+    border-radius: 0px;
+    border-color: @border;
+    text-color: @fg;
 }
 
 element-icon {
-  size: 48px;
-  horizontal-align: 0.5;
+    size: 48px;
+    horizontal-align: 0.5;
 }

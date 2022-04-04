@@ -3,13 +3,13 @@
 @import "configs/mappings.rasi"
 
 configuration {
-    // modi: "drun,window,windowcd,keys,filebrowser,run,combi";
-    modi: "drun,window,filebrowser,run,Power:~/.config/rofi/scripts/power.bash";
+    modi: "drun,window,windowcd,keys,filebrowser,run,combi";
+    /* modi: "drun,window,filebrowser,run,Power:~/.config/rofi/scripts/power.bash"; */
     font: "NotoSans Nerd Font 14";
     drun-display-format: "{name}";
     show-icons: true;
-    icon-theme: "Joyful";
-    sidebar-mode: true;
+    icon-theme: "Timber";
+    sidebar-mode: false;
     matching: "fuzzy";
     scroll-method: 0;
     disable-history: false;
@@ -21,7 +21,7 @@ configuration {
     display-keys: "   Keys ";
     display-filebrowser: "   Browse ";
     display-combi: "  Binds ";
-    window-thumbnail: true;
+    window-thumbnail: false;
     sort: true;
     sorting-method: "normal";
 
