@@ -42,7 +42,7 @@ configuration {
 
 * {
     background-color: @bg;
-    text-color: @fg;
+    text-color: @color15;
 }
 
 element-text, element-icon, mode-switcher {
@@ -136,7 +136,7 @@ element-text {
 element selected {
 	background-color: @color8;
     font: "NotoSans Nerd Font Bold 14";
-	text-color: @fg;
+	text-color: @color15;
 	border-radius: 0px;
 }
 
@@ -150,8 +150,8 @@ button {
     padding: 10px;
     margin: 0px;
     font: "NotoSans Nerd Font Bold 14";
-    background-color: @color12;
-    text-color: @color0;
+    background-color: @color0;
+    text-color: @color15;
     vertical-align: 0.5;
     horizontal-align: 0.5;
 }
@@ -163,7 +163,7 @@ element-icon {
 
 button selected {
     padding: 10px;
-    background-color: @color0;
+    background-color: @color8;
     text-color: @color15;
     /*
     border: 0px 0px 5px 0px;

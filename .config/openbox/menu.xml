@@ -3,7 +3,7 @@
 	<menu id="root-menu" label="OpenBox 3">
 		<item label="Terminal">
 			<action name="Execute">
-				<execute>xfce4-terminal</execute>
+				<execute>alacritty</execute>
 			</action>
 		</item>
 		<item label="Browser">

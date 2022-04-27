@@ -75,13 +75,13 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 15
+    padding = 20
 
     # Horizontal padding.
-    horizontal_padding = 15
+    horizontal_padding = 20
 
     # Padding between text and icon.
-    text_icon_padding = 15
+    text_icon_padding = 20
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
@@ -174,13 +174,13 @@
     ignore_newline = false
 
     # Stack together notifications with the same content
-    stack_duplicates = true
+    stack_duplicates = false
 
     # Hide the count of stacked notifications with the same content
     hide_duplicate_count = false
 
     # Display indicators for URLs (U) and actions (A).
-    show_indicators = no
+    show_indicators = yes
 
     ### Icons ###
 
@@ -196,7 +196,7 @@
     max_icon_size = 62
 
     # Paths to default icons.
-    icon_path = /home/josh/.icons/Timber/actions/32/:/home/josh/.icons/Timber/apps/scalable/:/home/josh/.icons/Timber/devices/48x48/:/home/josh/.icons/Timber/mimetypes/scalable/:/home/josh/.icons/Timber/status/48x48/
+    icon_path = /home/josh/.icons/Born/actions/32/:/home/josh/.icons/Born/apps/scalable/:/home/josh/.icons/Born/devices/scalable/:/home/josh/.icons/Born/mimes/scalable/:/home/josh/.icons/Born/places/scalable/:/home/josh/.icons/Born/status/32/
 
     #icon_path = /home/josh/.icons/Qogir/48/apps/:/home/josh/.icons/Qogir/48/places/:/home/josh/.icons/Qogir/scalable/apps/:/home/josh/.icons/Qogir/scalable/devices/:/home/josh/.icons/Qogir/scalable/mimetypes/:/home/josh/.icons/Qogir/scalable/places/:/home/josh/.icons/Qogir/scalable/status/
 

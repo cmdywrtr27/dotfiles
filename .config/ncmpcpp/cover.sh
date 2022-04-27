@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MUSIC_DIR=/home/josh/Music/
+MUSIC_DIR=$HOME/Music
 
 COVER=/tmp/cover.jpg
 
@@ -23,7 +23,7 @@ function reset_background
     rm -f "$COVER"
     if [[ -n "$src" ]] ; then
         #resize the image's height to 300px & extent it to cover the urxvt length
-        convert "$src" -resize 375x -background "#444a57" -extent 1100x400 "$COVER"
+        convert "$src" -resize 375x -background "#2e3440" -extent 1100x400 "$COVER"
         if [[ -f "$COVER" ]] ; then
 
           #printf "\e]20;${COVER};70x70+0+4:op=keep-aspect\a"
@@ -38,7 +38,7 @@ function reset_background
     # For Notifications
     if [[ -n "$src" ]] ; then
         # Resize the image's width to 128px
-        convert "$src" -resize 200x "$COVER"
+        convert "$src" -resize 400x "$COVER"
         if [[ -f "$COVER" ]] ; then
             #notify-send -u low --icon=~/.config/ncmpcpp/music.png "$(mpc current)"
             notify-send -u low -i ${COVER} "  Now Playing:" "`mpc current`"
