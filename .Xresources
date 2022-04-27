@@ -1,17 +1,18 @@
 ! Font ----------------------------------------------
 
-#define FONT InconsolataLGC Nerd Font Mono
+#define FONT Input
+#define FONT2 InconsolataLGC Nerd Font Mono
 #define ICON Font Awesome 5 Free Regular
 #define GLYPH Material Icons
-#define EMOJI Noto Color Emoji
 #define NERD_FONT Iosevka Nerd Font
+#define EMOJI Noto Color Emoji
 #define FONT_SIZE 12
 #define ICON_SIZE 14
 
-URxvt.font           : xft:FONT:style=Medium:size=FONT_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Regular:size=ICON_SIZE
-URxvt.boldFont       : xft:FONT:style=Medium:size=FONT_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Regular:size=ICON_SIZE
-URxvt.italicFont     : xft:FONT:style=Medium:size=FONT_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Regular:size=ICON_SIZE
-URxvt.boldItalicFont : xft:FONT:style=Medium:size=FONT_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Regular:size=ICON_SIZE
+URxvt.font           : xft:FONT:style=Regular:size=FONT_SIZE, xft:FONT2:style=Medium:size=ICON_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Regular:size=ICON_SIZE
+URxvt.boldFont       : xft:FONT:style=Medium:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Regular:size=ICON_SIZE
+URxvt.italicFont     : xft:FONT:style=Medium:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Regular:size=ICON_SIZE
+URxvt.boldItalicFont : xft:FONT:style=Medium:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Regular:size=ICON_SIZE
 
 Xft.dpi           : 96
 Xft.antialias     : true
@@ -35,12 +36,12 @@ URxvt.letterSpace : 0
 
 URxvt.perl-lib             : /usr/lib/urxvt/perl/
 URxvt.iconFile             : /home/josh/.icons/Custom/terminal1.svg
-URxvt.backgroundPixmap     : /home/josh/.urxvt/backgrounds/scratch.png
+!URxvt.backgroundPixmap     : /home/josh/.urxvt/backgrounds/rope32.png
 URxvt.windowName           : urxvt
 URxvt.windowTitle          : urxvt
 URxvt.termName             : rxvt-unicode-256color
 URxvt.borderLess           : false
-!URxvt.internalBorder       : 5
+!URxvt.internalBorder       : 30
 !URxvt.externalBorder       : 30
 !URxvt.geometry             : 74x14
 URxvt.skipBuiltinGlyphs    : false
@@ -64,7 +65,7 @@ URxvt.iso14755             : false
 URxvt.iso14755_52          : false
 
 ! Extensions [/usr/lib/urxvt/perl]
-URxvt.perl-ext-common: default,clipboard,keyboard-select,url-select,font-size
+URxvt.perl-ext-common: default,clipboard,keyboard-select,url-select,font-size,selection-to-clipboard
 
 ! Clipboard [Ctrl+Shift+C/V]
 URxvt.clipboard.copycmd  : xclip -i -selection clipboard
@@ -93,7 +94,7 @@ URxvt.keysym.C-equal  : font-size:reset
 URxvt.keysym.C-slash  : font-size:show
 
 ! Kuake
-!URxvt.kuake.hotkey: F10
+!URxvt.kuake.hotkey: grave
 
 ! Tabbed
 !URxvt.tabbed.tabbar-fg : 7

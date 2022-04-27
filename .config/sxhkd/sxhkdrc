@@ -1,61 +1,38 @@
-#################################################
-#	███████╗██╗  ██╗██╗  ██╗██╗  ██╗██████╗		#
-#	██╔════╝╚██╗██╔╝██║  ██║██║ ██╔╝██╔══██╗	#
-#	███████╗ ╚███╔╝ ███████║█████╔╝ ██║  ██║	#
-#	╚════██║ ██╔██╗ ██╔══██║██╔═██╗ ██║  ██║	#
-#	███████║██╔╝ ██╗██║  ██║██║  ██╗██████╔╝	#
-#	╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝		#
-####################By: rxyhn####################
-
-##---------- Keybindings for bspwm ----------##
-
 # Terminal
 super + Return
-	xfce4-terminal
+	alacritty
 
 # Terminal (floating)
 super + shift + Return
 	bspc rule -a urxvt -o state=floating follow=on center=true rectangle=490x310+0+0 && urxvt
 
-# Open Music Player
+# Music Player
 super + shift + m
 	bspc rule -a urxvt -o state=floating follow=on center=true rectangle=590x260+0+0 && urxvt -e tunes
 
-# Open application menu
+# Rofi menu
 super + d
     sh $HOME/.local/bin/rofi.sh
 
-# Toggle eww dashboard
-super + shift + D
-    sh $HOME/.local/bin/appmenu
-
-# Toggle eww sidebar
-super + s
-    sh $HOME/.local/bin/sidebar
-
-# Toggle powermenu
+# Power menu
 super + shift + Q
     sh $HOME/.local/bin/powermenu
 
-# Toggle network menu
+# Network Manager
 super + n
     sh $HOME/.local/bin/networkmanager
 
-# Toggle notification center
+# Notification Center
 super + o
     sh $HOME/.local/bin/notificationcenter
 
 # File Manager
 super + p
-	pcmanfm
+	thunar
 
 # Browser
 super + w
 	brave
-
-# Lockscreen
-ctrl + alt + l
-    sh $HOME/.local/bin/lockscreen
 
 ##---------- Applications ----------##
 
@@ -65,31 +42,15 @@ super + shift + {f,w,e}
 
 ##---------- System Keys ----------##
 
-# Take a screenshot
-Print
-	sh $HOME/.local/bin/takeshot --now
+# Screenshot
+super + s
+	sh $HOME/.local/bin/screenshot
 	
-# Take screenshot in 5 second
-alt + Print	
-	sh $HOME/.local/bin/takeshot --in5
-
-# Take screenshot in 10 second
-shift + Print	
-	sh $HOME/.local/bin/takeshot --in10
-
-# Take screenshot of active window
-ctrl + Print
-	sh $HOME/.local/bin/takeshot --win
-
-# Take screenshot of area
-ctrl + alt + Print
-	sh $HOME/.local/bin/takeshot --area
-
-# Manage brightness
+# Brightness Control
 XF86MonBrightness{Up,Down}
     sh $HOME/.local/bin/brightness {up,down}
 
-# Manage Volume
+# Volume Control
 Manage volume
 XF86Audio{Raise,Lower}Volume
     sh $HOME/.local/bin/volume {up,down}
@@ -97,7 +58,7 @@ XF86Audio{Raise,Lower}Volume
 XF86AudioMute
     sh $HOME/.local/bin/volume mute
 
-# Music control
+# Music Control
 XF86Audio{Next,Prev,Play,Stop}
 	mpc {next,prev,toggle,stop}
 
@@ -114,7 +75,7 @@ super + q
 super + Escape
 	pkill -USR1 -x sxhkd
 
-# kill window
+# Kill Window
 ctrl + alt + Escape
     xkill
 
@@ -135,11 +96,11 @@ super + f
 #	bspc desktop -l next
     bspc node -t "~"fullscreen
 
-# Toggle beetwen floating & tiled
+# Toggle floating/tiled
 super + space
     bspc node -t "~"{floating,tiled}
 
-# Pseudo Tiled & tiled mode
+# Pseudo Tiled & Tiled Mode
 super + shift + space
 #super + {p,t}
     bspc node -t "~"{pseudo_tiled,tiled}
@@ -172,12 +133,10 @@ super + {_,shift + }{1-8}
 super + control + {Left,Right,Up,Down}
 	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
 	
-## Shrinking windows
+# Shrinking windows
 super + alt + {Left,Right,Up,Down}
 	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
 	
-## Move floating windows
+# Move floating windows
 alt + shift + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}	
-
-##---------- EOF ----------##
