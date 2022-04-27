@@ -1,6 +1,7 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Lightline
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set laststatus=2
+set showtabline=2
+set guioptions-=e
+
 let g:lightline = {
       \ 'colorscheme': 'apprentice',
       \ 'mode_map': { 'c': 'NORMAL' },
@@ -36,8 +37,8 @@ let g:lightline = {
       \   'left': [ [ 'buffers' ] ],
       \   'right': [ [ 'close' ] ],
       \ },
-      \ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
-      \ 'subseparator': { 'left': '▒', 'right': '░' },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' },
       \ }
 
 "      \   'readonly': '%{&filetype=="help"?"":&readonly?"":""}',
