@@ -1,0 +1,84 @@
+TERM: alacritty-256color
+
+window:
+  padding:
+    x: 5
+    y: 5
+
+  dynamic_padding: true
+  title: Alacritty
+  dynamic_title: true
+  class:
+    instance: Alacritty
+    general: Alacritty
+
+font:
+  normal:
+    family: InconsolataLGC Nerd Font
+    style: Medium
+  bold:
+    family: InconsolataLGC Nerd Font
+    style: Bold
+  italic:
+    family: InconsolataLGC Nerd Font
+    style: Italic
+  bold_italic:
+    family: InconsolataLGC Nerd Font
+    style: Bold Italic
+  size: 12.0
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+
+colors:
+  primary:
+    background: '#2E3440'
+    foreground: '#FFFFFF'
+  normal:
+    black: '#2E3440'
+    red: '#FF6059'
+    green: '#5FFF87'
+    yellow: '#FFFF87'
+    blue: '#5FAFFF'
+    magenta: '#AF87FF'
+    cyan: '#5FAFFF'
+    white: '#FFFFFF'
+  bright:
+    black: '#2E3440'
+    red: '#FF6059'
+    green: '#5FFF87'
+    yellow: '#FFFF87'
+    blue: '#5FAFFF'
+    magenta: '#AF87FF'
+    cyan: '#5FAFFF'
+    white: '#FFFFFF'
+
+bell:
+  animation: EaseOutExpo
+  duration: 100
+  color: "#FFFFFF"
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+decorations: full
+startup_mode: Windowed
+window.opacity: 1.00
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  save_to_clipboard: true
+
+cursor:
+  style:
+    shape: Block
+    blinking: Always
+working_directory: None
+
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
