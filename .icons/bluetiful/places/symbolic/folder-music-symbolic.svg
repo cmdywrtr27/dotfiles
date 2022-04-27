@@ -4,7 +4,7 @@
    version="1.1"
    id="svg6"
    sodipodi:docname="folder-music.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
    width="16"
    height="16"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -34,16 +34,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="992"
+     inkscape:window-width="1655"
+     inkscape:window-height="932"
      id="namedview8"
      showgrid="false"
-     inkscape:zoom="14.75"
-     inkscape:cx="19.254237"
-     inkscape:cy="16.644068"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
+     inkscape:zoom="31.079628"
+     inkscape:cx="16.731217"
+     inkscape:cy="9.1217308"
+     inkscape:window-x="2011"
+     inkscape:window-y="98"
+     inkscape:window-maximized="0"
      inkscape:current-layer="svg6"
      inkscape:pagecheckerboard="0" />
   <defs
@@ -57,9 +57,10 @@
       </style>
   </defs>
   <path
-     style="color:#4d4d4d;fill:#ff8833;fill-opacity:1;stroke:none;stroke-width:1"
+     style="color:#4d4d4d;fill:#ffa844;fill-opacity:1;stroke:none;stroke-width:1"
      class="ColorScheme-Text"
-     d="M 13.374347,1.8875294e-7 5.9968117,1.905772 C 5.4425432,2.0541532 4.9953646,2.6440748 4.9953646,3.2173564 V 12.307033 C 4.4333215,12.01301 3.7114349,11.89417 2.9630786,12.088436 1.6126589,12.438985 0.76728513,13.571581 1.0567604,14.618203 1.3462363,15.664826 2.6770921,16.248549 4.0275096,15.897991 5.1048653,15.618327 5.8468788,14.82863 5.9653195,13.994208 L 5.9968117,5.4033299 13.000641,3.5293545 v 6.7785065 c -0.56205,-0.294024 -1.283933,-0.4128658 -2.032286,-0.218599 -1.350419,0.350552 -2.1978916,1.483139 -1.9084167,2.529768 0.289475,1.046623 1.6203337,1.630347 2.9707497,1.279789 1.077357,-0.279666 1.819369,-1.069357 1.937808,-1.903785 L 14,0.81278509 C 14,0.38282469 13.733687,0.06047969 13.374359,1.8875294e-7 Z"
+     d="M 13.674365,0.20010546 6.6967982,2.5061025 C 6.1425297,2.6544837 5.6953511,3.2444053 5.6953511,3.8176869 V 12.106928 C 5.133308,11.812905 4.4114214,11.694065 3.6630651,11.888331 2.3126454,12.23888 1.4672716,13.371476 1.7567469,14.418098 2.0462228,15.464721 3.3770786,16.048444 4.7274961,15.697886 5.8048518,15.418222 6.5468653,14.628525 6.665306,13.794103 L 6.6967982,6.0036604 13.300659,3.7294598 v 5.5782436 c -0.56205,-0.294024 -1.283933,-0.4128657 -2.032286,-0.218599 -1.3504196,0.350552 -2.1978922,1.4831396 -1.9084173,2.5297686 0.289475,1.046623 1.6203343,1.630347 2.9707503,1.279789 1.077357,-0.279666 1.819369,-1.069357 1.937808,-1.903785 l 0.0315,-9.9819867 c 0,-0.42996034 -0.08478,-0.88168578 -0.44624,-0.83563959 z"
      id="path4"
-     inkscape:connector-curvature="0" />
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccsccsccccccscccsc" />
 </svg>
