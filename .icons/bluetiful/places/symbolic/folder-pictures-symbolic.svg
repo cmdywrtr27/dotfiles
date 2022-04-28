@@ -5,7 +5,7 @@
    width="16"
    version="1.1"
    id="svg6"
-   sodipodi:docname="folder-camera.svg"
+   sodipodi:docname="folder-pictures-symbolic.svg"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -40,9 +40,9 @@
      id="namedview8"
      showgrid="false"
      inkscape:zoom="33.66663"
-     inkscape:cx="8.5544647"
+     inkscape:cx="8.5396133"
      inkscape:cy="10.648526"
-     inkscape:window-x="1360"
+     inkscape:window-x="3280"
      inkscape:window-y="30"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg6"
@@ -88,7 +88,7 @@
      sodipodi:nodetypes="sssss" />
   <g
      id="g922"
-     transform="matrix(2.5161907,0,0,1.8897637,-2.651874,3.0662968e-7)">
+     transform="matrix(-2.5161907,0,0,1.8897637,18.651874,3.0662968e-7)">
     <rect
        style="opacity:1;fill:url(#linearGradient877);fill-opacity:1;stroke:none;stroke-width:2.1234"
        id="rect833-9"
