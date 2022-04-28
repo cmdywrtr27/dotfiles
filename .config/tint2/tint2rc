@@ -206,7 +206,7 @@ ac_disconnected_cmd =
 #-------------------------------------
 # Executor 1
 execp = new
-execp_command = ~/.local/bin/weather -i
+execp_command = ~/.local/bin/weather1 -i
 execp_interval = 1800
 execp_has_icon = 0
 execp_cache_icon = 1

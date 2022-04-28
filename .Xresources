@@ -1,18 +1,18 @@
 ! Font ----------------------------------------------
 
-#define FONT Input
+#define FONT Inconsolata Nerd Font Mono
 #define FONT2 InconsolataLGC Nerd Font Mono
 #define ICON Font Awesome 5 Free Regular
 #define GLYPH Material Icons
-#define NERD_FONT Iosevka Nerd Font
+#define NERD_FONT NotoSans Nerd Font Mono
 #define EMOJI Noto Color Emoji
-#define FONT_SIZE 12
+#define FONT_SIZE 14
 #define ICON_SIZE 14
 
-URxvt.font           : xft:FONT:style=Regular:size=FONT_SIZE, xft:FONT2:style=Medium:size=ICON_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Regular:size=ICON_SIZE
-URxvt.boldFont       : xft:FONT:style=Medium:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Regular:size=ICON_SIZE
-URxvt.italicFont     : xft:FONT:style=Medium:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Regular:size=ICON_SIZE
-URxvt.boldItalicFont : xft:FONT:style=Medium:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Regular:size=ICON_SIZE
+URxvt.font           : xft:FONT:style=Medium:size=FONT_SIZE, xft:FONT2:style=Medium:size=ICON_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Book:size=ICON_SIZE
+URxvt.boldFont       : xft:FONT:style=Medium:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Book:size=ICON_SIZE
+URxvt.italicFont     : xft:FONT:style=Medium:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Book:size=ICON_SIZE
+URxvt.boldItalicFont : xft:FONT:style=Medium:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Book:size=ICON_SIZE
 
 Xft.dpi           : 96
 Xft.antialias     : true
@@ -41,7 +41,7 @@ URxvt.windowName           : urxvt
 URxvt.windowTitle          : urxvt
 URxvt.termName             : rxvt-unicode-256color
 URxvt.borderLess           : false
-!URxvt.internalBorder       : 30
+URxvt.internalBorder       : 5
 !URxvt.externalBorder       : 30
 !URxvt.geometry             : 74x14
 URxvt.skipBuiltinGlyphs    : false

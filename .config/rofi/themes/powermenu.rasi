@@ -10,7 +10,7 @@ configuration {
 
 * {
     background-color: @bg;
-    text-color: @shade8;
+    text-color: @fg;
 }
 
 window {

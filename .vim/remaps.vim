@@ -1,3 +1,5 @@
+let mapleader = " "
+
 vnoremap <silent><leader>y y:call ClipboardYank()<CR>
 vnoremap <silent><leader>d d:call ClipboardYank()<CR>
 nnoremap <silent><leader>p :call ClipboardPaste()<CR>
@@ -46,4 +48,3 @@ noremap <C-q> :confirm qall<CR>
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-u> :UndotreeToggle<CR>
-

@@ -62,7 +62,7 @@ bell:
   color: "#FFFFFF"
 
 scrolling:
-  history: 10000
+  history: 100000
   multiplier: 3
 
 decorations: full

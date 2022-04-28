@@ -8,16 +8,10 @@ source $HOME/.vim/remaps.vim
 source $HOME/.vim/colors.vim
 
 filetype plugin indent on
-
-let mapleader = " "
-
-set modifiable
-
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-
 syntax on
 syntax enable
+
+set modifiable
 
 source $HOME/.vim/functions.vim
 source $HOME/.vim/lightline.vim
