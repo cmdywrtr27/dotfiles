@@ -47,10 +47,6 @@
   box-shadow: none;
 }
 
-.tilix {
-padding: 20px;
-}
-
 /**********
  * Thunar *
  **********/
@@ -81,8 +77,7 @@ padding: 20px;
   border-top: 1px solid rgba(0,0,0,0);
 }
 
-
-  notebook {
+.notebook {
     > stack {
       background-image: -gtk-scaled(url("../gtk-assets/bg.png"));
       background-repeat: no-repeat;
@@ -124,36 +119,4 @@ padding: 20px;
     background-color: #D8D8D8;
     border-color: darken(#D8D8D8, 20%);
   }
-}
-
-
-
-/***********
- * Pcmanfm *
- ***********/
-.pcmanfm #location-toolbar {
-  border-bottom: 1px solid rgba(0,0,0,0);
-}
-
-.pcmanfm .standard-view.frame {
-  border-style: none;
-}
-
-.pcmanfm .sidebar {
-    background-image:url("../gtk-assets/pcmanfm-sidebar.png");
-}
-
-.pcmanfm .sidebar .view {
-    color: #F9F9F9;
-    background: transparent;
-}
-
-.pcmanfm .sidebar .view:not(:selected) {
-  background-color: transparent;
-}
-
-.pcmanfm statusbar {
-  margin: 0 -10px;
-  padding: 0 4px;
-  border-top: 1px solid rgba(0,0,0,0);
 }
