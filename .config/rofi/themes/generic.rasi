@@ -1,6 +1,6 @@
 configuration {
     show-icons: true;
-    icon-theme: "Timber";
+    icon-theme: "bluetiful";
     disable-history: false;
 	hide-scrollbar:	true;
 	sidebar-mode: false;

@@ -1,7 +1,7 @@
 configuration {
 	font: "NotoSans Nerd Font 12";
     show-icons: true;
-	icon-theme:	"Timber";
+	icon-theme:	"bluetiful";
     display-drun: "";
     drun-display-format: "{name}";
     disable-history: false;

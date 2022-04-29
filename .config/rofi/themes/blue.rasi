@@ -1,6 +1,6 @@
 configuration {
     show-icons: true;
-    icon-theme: "Timber";
+    icon-theme: "bluetiful";
 	modi: "drun";
 	font: "NotoSans Nerd Font 12";
 	drun-display-format: "{name}";

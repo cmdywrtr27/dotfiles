@@ -15,8 +15,8 @@ bash $HOME/.screenlayout/triple.sh &
 xfce4-power-manager &
 bash ~/.local/bin/gofaster &
 bash ~/.config/polybar/bluetiful/launch.sh &
-tint2 -c ~/.config/tint2/tint2rc &
-#plank &
+#tint2 -c ~/.config/tint2/tint2rc &
+plank &
 
 session=${1:-openbox-session}
 

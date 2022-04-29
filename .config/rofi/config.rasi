@@ -8,7 +8,7 @@ configuration {
     font: "NotoSans Nerd Font 14";
     drun-display-format: "{name}";
     show-icons: true;
-    icon-theme: "Timber";
+    icon-theme: "bluetiful";
     sidebar-mode: false;
     matching: "fuzzy";
     scroll-method: 0;

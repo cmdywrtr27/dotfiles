@@ -102,7 +102,7 @@ element-text {
     background-color: @al;
     text-color:	inherit;
     expand: true;
-    horizontal-align 0;
+    horizontal-align: 0;
     vertical-align: 0.5;
     margin: 0% 0.25% 0% 0.25%;
 }

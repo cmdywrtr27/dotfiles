@@ -23,13 +23,16 @@ dunst --config "${HOME}/.config/dunst/dunstrc" &
 
 picom --experimental-backends --config $HOME/.config/picom/picom.conf &
 
-#[ -n "$(pidof xfce-polkit)" ] || /usr/lib/xfce-polkit/xfce-polkit &
 [ -n "$(pidof polkit-gnome)" ] || /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 sh $HOME/.screenlayout/triple.sh &
 #sh $HOME/.screenlayout/double.sh &
 
 sh $HOME/.local/bin/gofaster &
+
+tint2 -c $HOME/.config/tint2/tint2rc &
+
+plank &
 
 xfce4-power-manager &
 

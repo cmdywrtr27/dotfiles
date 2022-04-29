@@ -44,32 +44,32 @@ window.active.grip.bg.color: #2196f3
 window.active.button.unpressed.bg: parentrelative
 window.active.button.unpressed.bg.color: #ffffff
 
-window.active.button.iconify.unpressed.image.color: #ffffff
-window.active.button.iconify.pressed.image.color: #d2d2d2
+window.active.button.iconify.unpressed.image.color: #d6d6d6
+window.active.button.iconify.pressed.image.color: #64b5f6
 window.active.button.iconify.hover.image.color: #ffffff
 
-window.active.button.max.unpressed.image.color: #ffffff
-window.active.button.max.pressed.image.color: #d2d2d2
+window.active.button.max.unpressed.image.color: #d6d6d6
+window.active.button.max.pressed.image.color: #64b5f6
 window.active.button.max.hover.image.color: #ffffff
 
-window.active.button.max.toggled.unpressed.image.color: #ffffff
-window.active.button.max.toggled.pressed.image.color: #d2d2d2
+window.active.button.max.toggled.unpressed.image.color: #d6d6d6
+window.active.button.max.toggled.pressed.image.color: #64b5f6
 window.active.button.max.toggled.hover.image.color: #ffffff
 
-window.active.button.max.disabled.unpressed.image.color: #ffffff
-window.active.button.max.disabled.pressed.image.color: #d2d2d2
+window.active.button.max.disabled.unpressed.image.color: #d6d6d6
+window.active.button.max.disabled.pressed.image.color: #64b5f6
 window.active.button.max.disabled.hover.image.color: #ffffff
 
-window.active.button.close.unpressed.image.color: #ffffff
-window.active.button.close.pressed.image.color: #d2d2d2
+window.active.button.close.unpressed.image.color: #d6d6d6
+window.active.button.close.pressed.image.color: #64b5f6
 window.active.button.close.hover.image.color: #ffffff
 
-window.active.button.shade.unpressed.image.color: #ffffff
-window.active.button.shade.pressed.image.color: #d2d2d2
+window.active.button.shade.unpressed.image.color: #d6d6d6
+window.active.button.shade.pressed.image.color: #64b5f6
 window.active.button.shade.hover.image.color: #ffffff
 
-window.active.button.desk.unpressed.image.color: #ffffff
-window.active.button.desk.pressed.image.color: #d2d2d2
+window.active.button.desk.unpressed.image.color: #d6d6d6
+window.active.button.desk.pressed.image.color: #64b5f6
 window.active.button.desk.hover.image.color: #ffffff
 
 window.active.button.pressed.bg: sunken flat

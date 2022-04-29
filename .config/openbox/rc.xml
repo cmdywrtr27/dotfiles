@@ -60,7 +60,7 @@
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>GE Inspira</name>
-      <size>14</size>
+      <size>16</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -69,7 +69,7 @@
     </font>
     <font place="InactiveWindow">
       <name>GE Inspira</name>
-      <size>14</size>
+      <size>16</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
