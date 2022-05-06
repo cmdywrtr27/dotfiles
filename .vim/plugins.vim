@@ -19,13 +19,16 @@ Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
-Plug 'RohanPoojary/pleasant.vim'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'SiddharthShyniben/pitch'
+Plug 'sainnhe/edge'
+Plug 'ivanlhz/vim-electron'
 Plug 'frazrepo/vim-rainbow'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'edkolev/tmuxline.vim'
 Plug 'mbbill/undotree'
 Plug 'gko/vim-coloresque'
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+"Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()

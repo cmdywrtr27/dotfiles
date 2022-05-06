@@ -8,5 +8,3 @@ autocmd BufReadPost *
      \ endif
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-
