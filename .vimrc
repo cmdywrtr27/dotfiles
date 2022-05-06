@@ -11,7 +11,5 @@ filetype plugin indent on
 syntax on
 syntax enable
 
-set modifiable
-
 source $HOME/.vim/functions.vim
 source $HOME/.vim/lightline.vim

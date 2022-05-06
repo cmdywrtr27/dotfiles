@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>bluetiful</name>
+    <name>Bluetiful</name>
     <cornerRadius>4</cornerRadius>
     <cornerRadius menu="yes">4</cornerRadius>
     <titleLayout>IMC</titleLayout>
@@ -60,7 +60,7 @@
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>GE Inspira</name>
-      <size>16</size>
+      <size>14</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -69,7 +69,7 @@
     </font>
     <font place="InactiveWindow">
       <name>GE Inspira</name>
-      <size>16</size>
+      <size>14</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->

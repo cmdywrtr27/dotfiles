@@ -17,28 +17,28 @@ let g:colors_name="onehalfdark"
 let colors_name="onehalfdark"
 
 
-let s:black       = { "gui": "#444a57", "cterm": "236" }
-let s:red         = { "gui": "#f08080", "cterm": "168" }
-let s:green       = { "gui": "#8fbc8f", "cterm": "114" }
-let s:yellow      = { "gui": "#fdfd96", "cterm": "180" }
-let s:blue        = { "gui": "#87cefa", "cterm": "75"  }
-let s:purple      = { "gui": "#cf71af", "cterm": "176" }
-let s:cyan        = { "gui": "#b0e0e6", "cterm": "73"  }
-let s:white       = { "gui": "#ffffff", "cterm": "188" }
+let s:black       = { "gui": "#2e3440", "cterm": "236" }
+let s:red         = { "gui": "#e06c75", "cterm": "168" }
+let s:green       = { "gui": "#98c379", "cterm": "114" }
+let s:yellow      = { "gui": "#e5c07b", "cterm": "180" }
+let s:blue        = { "gui": "#61afef", "cterm": "75"  }
+let s:purple      = { "gui": "#c678dd", "cterm": "176" }
+let s:cyan        = { "gui": "#56b6c2", "cterm": "73"  }
+let s:white       = { "gui": "#dcdfe4", "cterm": "188" }
 
 let s:fg          = s:white
 let s:bg          = s:black
 
-let s:comment_fg  = { "gui": "#6d7480", "cterm": "241" }
-let s:gutter_bg   = { "gui": "#444a57", "cterm": "236" }
-let s:gutter_fg   = { "gui": "#6d7480", "cterm": "247" }
-let s:non_text    = { "gui": "#444a57", "cterm": "239" }
+let s:comment_fg  = { "gui": "#5c6370", "cterm": "241" }
+let s:gutter_bg   = { "gui": "#282c34", "cterm": "236" }
+let s:gutter_fg   = { "gui": "#919baa", "cterm": "247" }
+let s:non_text    = { "gui": "#373C45", "cterm": "239" }
 
-let s:cursor_line = { "gui": "#444a57", "cterm": "237" }
-let s:color_col   = { "gui": "#444a57", "cterm": "237" }
+let s:cursor_line = { "gui": "#313640", "cterm": "237" }
+let s:color_col   = { "gui": "#313640", "cterm": "237" }
 
 let s:selection   = { "gui": "#474e5d", "cterm": "239" }
-let s:vertsplit   = { "gui": "#444a57", "cterm": "237" }
+let s:vertsplit   = { "gui": "#313640", "cterm": "237" }
 
 
 function! s:h(group, fg, bg, attr)
@@ -111,7 +111,7 @@ call s:h("Folded", s:fg, "", "")
 call s:h("FoldColumn", s:fg, "", "")
 call s:h("SignColumn", s:fg, "", "")
 
-call s:h("MatchParen", s:blue, "", "bold")
+call s:h("MatchParen", s:blue, "", "underline")
 call s:h("SpecialKey", s:fg, "", "")
 call s:h("Title", s:green, "", "")
 call s:h("WildMenu", s:fg, "", "")
@@ -123,7 +123,7 @@ call s:h("WildMenu", s:fg, "", "")
 " See :help hl-Whitespace and :help hl-SpecialKey
 call s:h("Whitespace", s:non_text, "", "")
 call s:h("NonText", s:non_text, "", "")
-call s:h("Comment", s:comment_fg, "", "")
+call s:h("Comment", s:comment_fg, "", "italic")
 call s:h("Constant", s:cyan, "", "")
 call s:h("String", s:green, "", "")
 call s:h("Character", s:green, "", "")

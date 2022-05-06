@@ -25,6 +25,7 @@ font:
   bold_italic:
     family: InconsolataLGC Nerd Font
     style: Bold Italic
+
   size: 12.0
   offset:
     x: 0

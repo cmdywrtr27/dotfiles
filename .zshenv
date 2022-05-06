@@ -53,7 +53,11 @@ path=("$HOME/.local/bin" "$path[@]")
 export PATH
 
 export LF_ICONS="\
+tw=ﱮ:\
+st=ﱮ:\
+ow=ﱮ:\
 di=ﱮ:\
+dt=ﱮ:\
 fi=:\
 ln=:\
 or=:\
