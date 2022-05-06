@@ -1,0 +1,187 @@
+# Menu
+menu.border.width: 5
+menu.overlap.x: -8
+menu.overlap.y: 0
+
+menu.border.color: #2e3440
+menu.separator.color: #ffffff
+menu.separator.padding.width: 40
+menu.separator.padding.height: 20
+
+menu.title.bg: raised solid
+menu.title.bg.color: #2e3440
+menu.title.text.color: #ffffff
+menu.title.text.justify: center
+
+menu.items.bg: flat solid
+menu.items.bg.color: #2e3440
+
+menu.items.text.color: #ffffff
+menu.items.disabled.text.color: #2e3440
+
+menu.items.active.bg: flat solid
+menu.items.active.bg.color: #2e3440
+menu.items.active.text.color: #4084D6
+
+# Active window
+window.active.border.color: #2196f3
+
+window.active.title.bg: flat solid
+window.active.title.bg.color: #2196f3
+window.active.title.separator.color: #2196f3
+window.active.text.justify: left
+
+window.active.label.bg: flat solid
+window.active.label.bg.color: #2196f3
+window.active.label.text.color: #ffffff
+
+window.active.handle.bg: flat solid
+window.active.handle.bg.color: #2196f3
+
+window.active.grip.bg: flat solid
+window.active.grip.bg.color: #2196f3
+
+window.active.button.unpressed.bg: raised border
+window.active.button.unpressed.border.color: #2e3440
+window.active.button.unpressed.bg.color: #2196f3
+
+window.active.button.iconify.unpressed.image.color: #2196f3
+window.active.button.iconify.pressed.image.color: #2196f3
+window.active.button.iconify.hover.image.color: #ffffff
+
+window.active.button.max.unpressed.image.color: #2196f3
+window.active.button.max.pressed.image.color: #2196f3
+window.active.button.max.hover.image.color: #ffffff
+
+window.active.button.max.toggled.unpressed.image.color: #2196f3
+window.active.button.max.toggled.pressed.image.color: #2196f3
+window.active.button.max.toggled.hover.image.color: #ffffff
+
+window.active.button.max.disabled.unpressed.image.color: #2196f3
+window.active.button.max.disabled.pressed.image.color: #2196f3
+window.active.button.max.disabled.hover.image.color: #ffffff
+
+window.active.button.close.unpressed.image.color: #2196f3
+window.active.button.close.pressed.image.color: #2196f3
+window.active.button.close.hover.image.color: #ffffff
+
+window.active.button.shade.unpressed.image.color: #2196f3
+window.active.button.shade.pressed.image.color: #2196f3
+window.active.button.shade.hover.image.color: #ffffff
+
+window.active.button.desk.unpressed.image.color: #2196f3
+window.active.button.desk.pressed.image.color: #2196f3
+window.active.button.desk.hover.image.color: #ffffff
+
+window.active.button.pressed.bg: sunken border
+window.active.button.pressed.bg.color: #2196f3
+window.active.button.pressed.image.color: #2196f3
+
+window.active.button.disabled.bg: raised border
+window.active.button.disabled.bg.color: #61afef
+window.active.button.disabled.image.color: #61afef
+
+window.active.button.toggled.bg: raised border
+window.active.button.toggled.bg.color: #2196f3
+window.active.button.toggled.image.color: #2196f3
+
+# Inactive window
+window.inactive.border.color: #838f8f
+
+window.inactive.title.bg: flat solid
+window.inactive.title.bg.color: #838f8f
+window.inactive.title.separator.color: #838f8f
+window.inactive.text.justify: left
+
+window.inactive.label.bg: flat solid
+window.inactive.label.bg.color: #838f8f
+window.inactive.label.text.color: #ffffff
+
+window.inactive.handle.bg: flat solid
+window.inactive.handle.bg.color: #838f8f
+
+window.inactive.grip.bg: flat solid
+window.inactive.grip.bg.color: #838f8f
+
+window.inactive.button.unpressed.bg: raised border
+window.inactive.button.unpressed.border.color: #2e3440
+window.inactive.button.unpressed.bg.color: #838f8f
+
+window.inactive.button.iconify.unpressed.image.color: #838f8f
+window.inactive.button.iconify.pressed.image.color: #838f8f
+window.inactive.button.iconify.hover.image.color: #ffffff
+
+window.inactive.button.max.unpressed.image.color: #838f8f
+window.inactive.button.max.pressed.image.color: #838f8f
+window.inactive.button.max.hover.image.color: #ffffff
+
+window.inactive.button.max.toggled.unpressed.image.color: #838f8f
+window.inactive.button.max.toggled.pressed.image.color: #838f8f
+window.inactive.button.max.toggled.hover.image.color: #ffffff
+
+window.inactive.button.max.disabled.unpressed.image.color: #838f8f
+window.inactive.button.max.disabled.pressed.image.color: #838f8f
+window.inactive.button.max.disabled.hover.image.color: #ffffff
+
+window.inactive.button.close.unpressed.image.color: #838f8f
+window.inactive.button.close.pressed.image.color: #838f8f
+window.inactive.button.close.hover.image.color: #ffffff
+
+window.inactive.button.shade.unpressed.image.color: #838f8f
+window.inactive.button.shade.pressed.image.color: #838f8f
+window.inactive.button.shade.hover.image.color: #ffffff
+
+window.inactive.button.desk.unpressed.image.color: #838f8f
+window.inactive.button.desk.pressed.image.color: #838f8f
+window.inactive.button.desk.hover.image.color: #ffffff
+
+window.inactive.button.pressed.bg: sunken border
+window.inactive.button.pressed.bg.color: #838f8f
+window.inactive.button.pressed.image.color: #838f8f
+
+window.inactive.button.disabled.bg: raised border
+window.inactive.button.disabled.bg.color: #838f8f
+window.inactive.button.disabled.image.color: #838f8f
+
+window.inactive.button.toggled.bg: raised border
+window.inactive.button.toggled.bg.color: #838f8f
+window.inactive.button.toggled.image.color: #838f8f
+
+# OSD
+osd.border.width: 1
+osd.border.color: #5a606d
+
+osd.bg: flat solid
+osd.bg.color: #2e3440
+
+osd.label.bg: flat solid
+osd.label.bg.color: #2e3440
+osd.label.text.color: #ffffff
+
+osd.hilight.bg: raised border bevel2
+osd.hilight.bg.color: #2196f3
+
+osd.unhilight.bg: flat solid
+osd.unhilight.bg.color: #2e3440
+
+osd.button.unpressed.bg: raised border bevel2
+osd.button.unpressed.bg.color: #2e3440
+osd.button.unpressed.*.border.color: #2e3440
+
+osd.button.pressed.bg: sunken border
+osd.button.pressed.bg.color: #5a606d
+osd.button.pressed.*.border.color: #5a606d
+
+osd.button.focused.bg: raised border bevel2
+osd.button.focused.bg.color: #2e3440
+osd.button.focused.*.border.color: #2e3440
+
+osd.button.focused.box.color: #2e3440
+
+# Everything else
+border.width: 2
+padding.width: 2
+padding.height: 0
+window.handle.width: 0
+window.client.padding.width: 0
+window.label.text.justify: left

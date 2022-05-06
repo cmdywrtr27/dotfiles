@@ -1,0 +1,122 @@
+/* Custom Settings */
+.text-button {
+  margin-left: 3px;
+  margin-right: 3px;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.text-button:checked {
+  background: #373E4D;
+  border-radius: 6px;
+}
+
+.text-button:hover {
+  color: #2e3440;
+  transition: 0.3s;
+}
+
+.image-button {
+  color: #61afef;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 1px;
+  padding-right: 1px;
+  transition: 0.3s;
+  border-radius: 99px;
+}
+
+.image-button:hover {
+  background: #2e3440;
+  transition: 0.3s;
+}
+
+.image-button:checked {
+  color: #FFFFFF;
+  background: #373E4D;
+}
+
+.image-button:disabled {
+  color: #777777;
+}
+
+.titlebar {
+  min-height: 48px;
+  box-shadow: none;
+}
+
+/**********
+ * Thunar *
+ **********/
+.thunar #location-toolbar {
+  border-bottom: 1px solid rgba(0,0,0,0);
+}
+
+.thunar .standard-view.frame {
+  border-style: none;
+}
+
+.thunar .sidebar {
+    background-image:url("../gtk-assets/thunar-sidebar.png");
+}
+
+.thunar .sidebar .view {
+    color: #F9F9F9;
+    background: transparent;
+}
+
+.thunar .sidebar .view:not(:selected) {
+  background-color: transparent;
+}
+
+.thunar statusbar {
+  margin: 0 -10px;
+  padding: 0 4px;
+  border-top: 1px solid rgba(0,0,0,0);
+}
+
+.notebook {
+    > stack {
+      background-image: -gtk-scaled(url("../gtk-assets/bg.png"));
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      &:backdrop {
+        background-color: transparent;
+      }
+    }
+  }
+
+  searchbar {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+  }
+  
+ .searchbar-container {
+    margin-top: -1px;
+  }
+}
+
+.nautilus-circular-button {
+  border-radius: 20px;
+  -gtk-outline-radius: 20px;
+}
+
+.disk-space-display {
+  border: 2px solid;
+
+  .unknown {
+    background-color: #888a85;
+    border-color: darken(#888a85, 20%);
+  }
+
+  .used {
+    background-color: #9FB0B9;
+    border-color: darken(#9FB0B9, 20%);
+  }
+
+  .free {
+    background-color: #D8D8D8;
+    border-color: darken(#D8D8D8, 20%);
+  }
+}
