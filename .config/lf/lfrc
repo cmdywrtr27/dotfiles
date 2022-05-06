@@ -1,201 +1,110 @@
-# Basic Settings
-set previewer $HOME/.config/lf/preview
-set preview true
-set hidden true
-set drawbox true
-set icons true
-set ignorecase true
+set shellopts '-eu'
+set ifs "\n"
+set scrolloff 10
+set icons
+set period 1
+set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
+set cleaner '~/.config/lf/cleaner'
+set previewer '~/.config/lf/scope'
 
-# Custom Functions
+# cmds/functions
 cmd open ${{
-    case $(file --mime-type "$f" -bL) in
-        text/*|application/json) $EDITOR "$f";;
-        *) xdg-open "$f" ;;
+    case $(file --mime-type "$(readlink -f $f)" -b) in
+	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) localc $fx ;;
+	image/vnd.djvu|application/pdf|application/octet-stream|application/postscript) setsid -f zathura $fx >/dev/null 2>&1 ;;
+        text/*|application/json|inode/x-empty) $EDITOR $fx;;
+	image/x-xcf) setsid -f gimp $f >/dev/null 2>&1 ;;
+	image/svg+xml) display -- $f ;;
+	image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$" |
+		setsid -f sxiv -aio 2>/dev/null | while read -r file; do
+			[ -z "$file" ] && continue
+			lf -remote "send select \"$file\""
+			lf -remote "send toggle"
+		done &
+		;;
+	audio/*) mpv --audio-display=no $f ;;
+	video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
+	application/pdf|application/vnd*|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
+	application/pgp-encrypted) $EDITOR $fx ;;
+        *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
     esac
 }}
 
-cmd mkdir ${{
-  printf "Directory Name: "
-  read ans
-  mkdir $ans
+cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
+
+cmd extract ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "extract?[y/N]"
+	read ans
+	[ $ans = "y" ] && aunpack $fx
 }}
 
-cmd mkfile ${{
-  printf "File Name: "
-  read ans
-  $EDITOR $ans
+cmd delete ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "delete?[y/N]"
+	read ans
+	[ $ans = "y" ] && rm -rf -- $fx
 }}
 
-cmd chmod ${{
-  printf "Mode Bits: "
-  read ans
-
-  for file in "$fx"
-  do
-    chmod $ans $file
-  done
-
-  lf -remote 'send reload'
+cmd moveto ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	clear; echo "Move to where?"
+	dest="$(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' ${XDG_CONFIG_HOME:-$HOME/.config}/shell/bm-dirs | fzf | sed 's|~|$HOME|')" &&
+	for x in $fx; do
+		eval mv -iv \"$x\" \"$dest\"
+	done &&
+	notify-send "🚚 File(s) moved." "File(s) moved to $dest."
 }}
 
-cmd sudomkfile ${{
-  printf "File Name: "
-  read ans
-  sudo $EDITOR $ans
+cmd copyto ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	clear; echo "Copy to where?"
+	dest="$(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' ${XDG_CONFIG_HOME:-$HOME/.config}/shell/bm-dirs | fzf | sed 's|~|$HOME|')" &&
+	for x in $fx; do
+		eval cp -ivr \"$x\" \"$dest\"
+	done &&
+	notify-send "📋 File(s) copied." "File(s) copied to $dest."
 }}
 
-cmd setwallpaper %cp "$f" $HOME/Pictures/New\ Wallpapers && feh --bg-scale polyblue.jpg "$f"
-
-cmd fzf_jump ${{
-  res="$(find . -maxdepth 3 | fzf --reverse --header='Jump to location')"
-  if [ -f "$res" ]; then
-    cmd="select"
-  elif [ -d "$res" ]; then
-    cmd="cd"
-  fi
-  lf -remote "send $id $cmd \"$res\""
-}}
-
-cmd broot_jump ${{
-  f=$(mktemp)
-  res="$(broot --outcmd $f && cat $f | sed 's/cd //')"
-  rm -f "$f"
-  if [ -f "$res" ]; then
-    cmd="select"
-  elif [ -d "$res" ]; then
-    cmd="cd"
-  fi
-  lf -remote "send $id $cmd \"$res\""
-}}
-
-cmd dragon %dragon-drag-and-drop -a -x $fx
-cmd dragon-stay %dragon-drag-and-drop -a $fx
-cmd dragon-individual %dragon-drag-and-drop $fx
-cmd cpdragon %cpdragon
-cmd mvdragon %mvdragon
-cmd dlfile %dlfile
-
-# Archive bindings
-cmd unarchive ${{
-  case "$f" in
-      *.zip) unzip "$f" ;;
-      *.tar.gz) tar -xzvf "$f" ;;
-      *.tar.bz2) tar -xjvf "$f" ;;
-      *.tar) tar -xvf "$f" ;;
-      *) echo "Unsupported format" ;;
-  esac
-}}
-
-cmd zip %zip -r "$f" "$f"
-cmd tar %tar cvf "$f.tar" "$f"
-cmd targz %tar cvzf "$f.tar.gz" "$f"
-cmd tarbz2 %tar cjvf "$f.tar.bz2" "$f"
-
-# Trash cli bindings
-cmd trash ${{
-  files=$(printf "$fx" | tr '\n' ';')
-  while [ "$files" ]; do
-    # extract the substring from start of string up to delimiter.
-    # this is the first "element" of the string.
-    file=${files%%;*}
-
-    trash-put "$(basename "$file")"
-    # if there's only one element left, set `files` to an empty string.
-    # this causes us to exit this `while` loop.
-    # else, we delete the first "element" of the string from files, and move onto the next.
-    if [ "$files" = "$file" ]; then
-      files=''
-    else
-      files="${files#*;}"
-    fi
-  done
-}}
-
-cmd clear_trash %trash-empty
-
-cmd restore_trash ${{
-  trash-restore
-}}
-
-cmd stripspace %stripspace "$f"
+cmd setbg "$1"
+cmd bulkrename $vidir
 
 # Bindings
-# Remove some defaults
-map m
-map o
-map n
-map "'"
-map '"'
-map d
-map c
-map e
-map f
-
-# File Openers
-map ee $$EDITOR "$f"
-map u $view "$f"
-
-# Archive Mappings
-map az zip
-map at tar
-map ag targz
-map ab targz
-map au unarchive
-
-# Trash Mappings
-map dd trash
-map tc clear_trash
-map tr restore_trash
-
-# Broot Mapping
-map f broot_jump
-
-# Dragon Mapping
-map dr dragon
-map ds dragon-stay
-map di dragon-individual
-map dm mvdragon
-map dc cpdragon
-map dl dlfile
-
-map ss stripspace
-
-# Basic Functions
+map <c-f> $lf -remote "send $id select '$(fzf)'"
+map J $lf -remote "send $id cd $(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' ${XDG_CONFIG_HOME:-$HOME/.config}/shell/bm-dirs | fzf)"
+map gh
+map g top
+map D delete
+map E extract
+map C copyto
+map M moveto
+map <c-n> push :mkdir<space>
+map <c-r> reload
 map . set hidden!
-map DD delete
-map p paste
-map x cut
-map y copy
-map <enter> open
-map mf mkfile
-map mr sudomkfile
-map md mkdir
-map ms $mkscript
-map ch chmod
-map bg setwallpaper
-map o open_config
-map br $vimv $fx
-map r rename
-map H top
-map L bottom
-map R reload
-map C clear
-map U unselect
+map <enter> shell
+map x $$f
+map X !$f
+map o &mimeopen $f
+map O $mimeopen --ask $f
 
-# Movement
-map ge cd ~/Desktop
-map gt. cd ~/Documents
-map gD cd ~/Downloads
+map A rename # at the very end
+map c push A<c-u> # new rename
+map I push A<c-a> # at the very beginning
+map i push A<a-b><a-b><a-f> # before extension
+map a push A<a-b> # after extension
+map B bulkrename
+map b $setbg $f
 
-map gp. cd ~/Pictures
-map gps cd ~/Pictures/Screenshots
-map gpw cd ~/Pictures/Wallpapers
+map <c-e> down
+map <c-y> up
+map V push :!nvim<space>
 
-map gv. cd ~/Videos
+map W $setsid -f $TERMINAL >/dev/null 2>&1
 
-map gc cd ~/.config
-map gl cd ~/.local/bin
-map gE cd /etc
-map gUs cd /usr/share
-
-map \;j cd ~
+map Y $printf "%s" "$fx" | xclip -selection clipboard
