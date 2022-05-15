@@ -60,7 +60,6 @@ colorscheme purify
 set background=dark
 
 let g:edge_enable_italic = 1
-
 let g:rainbow_active = 1
 let g:rehash256 = 1
 let g:Hexokinase_highlighters = [ 'backgroundfull'  ]
@@ -68,7 +67,7 @@ let g:Hexokinase_highlighters = [ 'backgroundfull'  ]
 " Lightline
 
 let g:lightline = {
-      \ 'colorscheme': 'edge',
+      \ 'colorscheme': 'apprentice',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'absolutepath' ], [ 'readonly', 'modified' ] ],
@@ -95,8 +94,8 @@ let g:lightline = {
       \   'buffers': 'lightline#bufferline#buffers',
       \ },
       \ 'component_type': {
-      \   'tabs': 'tabsel',
-      \   'buffers': 'tabsel',
+      \   'tabs': 'tabs',
+      \   'buffers': 'tabs',
       \ },
       \ 'tabline': {
       \   'left': [ [ 'buffers' ] ],
@@ -161,6 +160,8 @@ let g:lightline#bufferline#number_separator = ' '
 let g:lightline#bufferline#more_buffers = '...'
 let g:lightline#bufferline#modified = ' [+]'
 let g:lightline#bufferline#read_only = ' '
+let g:lightline#bufferline#clickable = 1
+let g:lightline#bufferline#shorten_path = 0
 
 function! LMod()
   return &ft =~ 'help\|vimfiler' ? '' : &modified ? '[+] ' : &modifiable ? '' : ''
