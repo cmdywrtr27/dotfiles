@@ -36,7 +36,7 @@ URxvt.letterSpace : 0
 
 URxvt.perl-lib             : /usr/lib/urxvt/perl/
 URxvt.iconFile             : /home/josh/.icons/Custom/terminal1.svg
-!URxvt.backgroundPixmap     : /home/josh/.urxvt/backgrounds/rope32.png
+URxvt.backgroundPixmap     : /home/josh/.urxvt/backgrounds/scratch.png
 URxvt.windowName           : urxvt
 URxvt.windowTitle          : urxvt
 URxvt.termName             : rxvt-unicode-256color
@@ -55,6 +55,7 @@ URxvt.visualBell           : true
 URxvt.saveLines            : 10000
 URxvt.mouseWheelScrollPage : false
 URxvt.cursorBlink          : true
+URxvt.cursorBlock          : true
 !URxvt.inheritPixmap        : false
 URxvt.transparent          : false
 !URxvt.shading              : 0

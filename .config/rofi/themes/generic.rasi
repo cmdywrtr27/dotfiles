@@ -1,24 +1,22 @@
 configuration {
     show-icons: true;
-    icon-theme: "bluetiful";
+    icon-theme: "Bluetiful";
     disable-history: false;
 	hide-scrollbar:	true;
 	sidebar-mode: false;
 }
 
 * {
-    font:                           "NotoSans Nerd Font 12";
-    red:                            #BF616A;
-    green  :                        #A3BE8C;
-    yellow:                         #EBCB8B;
-    blue:                           #5E81AC;
-    purple:                         #B48EAD;
-    cyan:                           #88C0D0;
-
-    foreground:                     #D8DEE9;
-    background:                     #2E3440;
-    border:                         #434C5E;
-
+    font: "NotoSans Nerd Font 12";
+    red: #BF616A;
+    green: #A3BE8C;
+    yellow: #EBCB8B;
+    blue: #5E81AC;
+    purple: #B48EAD;
+    cyan: #88C0D0;
+    foreground: #D8DEE9;
+    background: #2E3440;
+    border: #434C5E;
     background-color: transparent;
     text-color: @foreground;
     padding: 0px;

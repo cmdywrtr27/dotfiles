@@ -180,7 +180,7 @@ osd.button.focused.box.color: #2e3440
 
 # Everything else
 border.width: 2
-padding.width: 2
+padding.width: 0
 padding.height: 0
 window.handle.width: 0
 window.client.padding.width: 0

@@ -1,9 +1,9 @@
-TERM: alacritty-256color
+TERM: xterm-256color
 
 window:
   padding:
-    x: 5
-    y: 5
+    x: 0
+    y: 0
 
   dynamic_padding: true
   title: Alacritty
@@ -25,7 +25,6 @@ font:
   bold_italic:
     family: InconsolataLGC Nerd Font
     style: Bold Italic
-
   size: 12.0
   offset:
     x: 0
@@ -60,7 +59,7 @@ colors:
 bell:
   animation: EaseOutExpo
   duration: 100
-  color: "#FFFFFF"
+  color: "#000000"
 
 scrolling:
   history: 100000
@@ -83,3 +82,7 @@ working_directory: None
 mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
+
+key_bindings:
+  - { key: C, mods: Control|Shift, mode: ~Vi, action: Copy }
+  - { key: V, mods: Control|Shift, mode: ~Vi, action: Paste }

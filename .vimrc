@@ -24,11 +24,11 @@ Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kyoz/purify', { 'rtp': 'vim'  }
-Plug 'sonph/onehalf', { 'rtp': 'vim'  }
-Plug 'SiddharthShyniben/pitch'
-Plug 'sainnhe/edge'
-Plug 'ivanlhz/vim-electron'
 Plug 'frazrepo/vim-rainbow'
+Plug 'xolox/vim-misc'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'roxma/vim-paste-easy'
+Plug 'ervandew/supertab'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'edkolev/tmuxline.vim'
 Plug 'mbbill/undotree'
@@ -37,12 +37,7 @@ Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
-filetype on
-filetype plugin on
-filetype indent on
-
-syntax on
-syntax enable
+filetype plugin indent on
 
 " Colors
 
@@ -63,6 +58,9 @@ let g:edge_enable_italic = 1
 let g:rainbow_active = 1
 let g:rehash256 = 1
 let g:Hexokinase_highlighters = [ 'backgroundfull'  ]
+
+syntax on
+syntax enable
 
 " Lightline
 
@@ -304,7 +302,6 @@ set guioptions-=e
 
 set viminfo='100,<9999,s100
 
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 set expandtab
 set smarttab
@@ -332,7 +329,7 @@ set fileencoding=utf8
 
 set ffs=unix,dos,mac
 
-set noshowmode
+"set noshowmode
 
 set t_Co=256
 set termguicolors
@@ -361,7 +358,7 @@ else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 
-set noruler
+set ruler
 set showcmd
 set cmdheight=1
 
