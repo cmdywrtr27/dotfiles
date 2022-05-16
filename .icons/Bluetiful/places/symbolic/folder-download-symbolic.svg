@@ -35,14 +35,14 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1024"
+     inkscape:window-height="1030"
      id="namedview8"
      showgrid="false"
-     inkscape:zoom="30.007778"
-     inkscape:cx="9.2975894"
-     inkscape:cy="8.8477061"
+     inkscape:zoom="17.602985"
+     inkscape:cx="19.286502"
+     inkscape:cy="11.560539"
      inkscape:window-x="1920"
-     inkscape:window-y="32"
+     inkscape:window-y="26"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg6"
      inkscape:pagecheckerboard="0" />
@@ -62,9 +62,9 @@
   </style>
   </defs>
   <path
-     style="fill:#48c000;fill-opacity:1;stroke-width:1.18062"
+     style="color:#dfdfdf;fill:#48c000;fill-opacity:1;stroke-width:0.999842"
      class="ColorScheme-Text"
-     d="M 10.161,0.32596604 V 8.31 h 3.151793 L 7.9999999,15.674034 2.6872069,8.31 H 5.839 V 0.32596604 Z"
-     id="path917"
-     sodipodi:nodetypes="cccccccc" />
+     d="M 9.9996867,0.00125215 V 7.4640599 H 13.74374 L 7.9999991,13.731298 2.25626,7.4640599 H 6.0003129 V 0.00125215 Z M 2.0009396,13.99906 H 13.99906 v 1.999688 H 2.0009396 Z"
+     id="path5"
+     sodipodi:nodetypes="ccccccccccccc" />
 </svg>

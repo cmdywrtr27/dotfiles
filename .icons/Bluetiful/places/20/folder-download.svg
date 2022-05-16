@@ -20,12 +20,12 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="22.954545"
-     inkscape:cx="8.8217824"
+     inkscape:cx="8.8653467"
      inkscape:cy="10.651485"
      inkscape:window-width="1920"
-     inkscape:window-height="1026"
+     inkscape:window-height="1030"
      inkscape:window-x="1920"
-     inkscape:window-y="30"
+     inkscape:window-y="26"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg7" />
   <defs
@@ -54,9 +54,9 @@
   </style>
   </defs>
   <path
-     style="fill:#48c000;fill-opacity:1;stroke-width:1.59384"
+     style="color:#dfdfdf;fill:#48c000;fill-opacity:1;stroke-width:1.36614"
      class="ColorScheme-Text"
-     d="M 13.917351,0.64005405 V 11.4185 h 4.25492 L 11,21.359946 3.8277295,11.4185 H 8.0826501 V 0.64005405 Z"
-     id="path917"
-     sodipodi:nodetypes="cccccccc" />
+     d="M 13.732286,0.07085517 V 10.267714 H 18.848 L 10.999999,18.831 3.152,10.267714 H 8.2677135 V 0.07085517 Z M 2.8031417,19.196858 H 19.196858 v 2.732287 H 2.8031417 Z"
+     id="path5"
+     sodipodi:nodetypes="ccccccccccccc" />
 </svg>
