@@ -37,7 +37,9 @@ Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
-filetype plugin indent on
+filetype plugin on 
+filetype indent on
+set modifiable
 
 " Colors
 
@@ -268,9 +270,7 @@ noremap <leader>h :noh<CR>
 
 :imap jj <Esc>
 
-noremap <C-w> :w!<CR>
-noremap <C-r> :source ~/.vimrc<CR>
-noremap <C-q> :confirm qall<CR>
+map <leader>ww :wq!<CR>
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-u> :UndotreeToggle<CR>
@@ -324,12 +324,12 @@ set noswapfile
 set undodir=~/.vim/undodir
 set undofile
 
-set encoding=utf8
-set fileencoding=utf8
+set encoding=utf-8
+set fileencoding=utf-8
 
 set ffs=unix,dos,mac
 
-"set noshowmode
+set noshowmode
 
 set t_Co=256
 set termguicolors
