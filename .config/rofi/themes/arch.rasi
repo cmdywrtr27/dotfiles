@@ -1,7 +1,7 @@
 configuration {
 	font: "GE Inspira 14";
     show-icons: true;
-	icon-theme:	"bluetiful";
+	icon-theme:	"Bluetiful";
     display-drun: "";
     drun-display-format: "{name}";
     disable-history: false;
@@ -31,20 +31,21 @@ window {
 
 prompt {
     enabled: true;
-	padding: -0.25% 1% 0% -0.5%;
+	padding: -0.25% 0.75% 0% -0.25%;
 	background-color: @al;
 	text-color:	@fg;
-	font: "NotoSans Nerd Font 18";
+	font: "NotoSans Nerd Font 32";
 }
 
 entry {
-    background-color: @al;
+    background-color: @se;
     text-color: @fg;
     placeholder-color: @fg;
     expand: true;
-    horizontal-align: 0;
+    font: "GE Inspira 14";
     placeholder: "Search Applications...";
-    padding: 0.25% 0% 0% 0%;
+    padding: 1.5% -0.5% -0.5% 0.75%;
+    border-radius: 8px;
     blink: true;
 }
 
@@ -111,6 +112,6 @@ element selected {
     background-color: @ac;
     text-color: @bg;
 	border:	0% 0% 0% 0%;
-    border-radius: 12px;
+    border-radius: 8px;
     border-color: @bg;
 }

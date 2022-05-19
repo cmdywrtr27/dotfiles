@@ -4,6 +4,7 @@ configuration {
     disable-history: false;
 	hide-scrollbar:	true;
 	sidebar-mode: false;
+    drun-display-format: "{name}";
 }
 
 * {
@@ -22,7 +23,7 @@ configuration {
     padding: 0px;
     margin: 0px;
     width: 40%;
-    height: 50%;
+    height: 49%;
 }
 
 
@@ -51,19 +52,19 @@ entry {
 
 inputbar {
 	children: [prompt, entry ];
-	background-image: url("images/vine.png");
+	background-image: url("images/wave21.png");
 	expand: false;
 	border-radius: 8px;
 	padding: 30px 30px 30px 300px;
 }
 
 listview {
-    columns: 4;
+    columns: 3;
     lines: 3;
     cycle: false;
     dynamic: true;
     layout: vertical;
-    padding: 15px 10px 15px 15px;
+    padding: 20px 5px 10px 10px;
 }
 
 element, element-text, element-icon {
