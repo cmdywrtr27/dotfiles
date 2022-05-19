@@ -76,8 +76,8 @@ let g:lightline = {
       \ 'component_function': {
       \   'fugitive': 'LightLineFugitive',
       \   'gitbranch': 'branch#name',
-      \   'readonly': 'LRO',
-      \   'modified': 'LMod',
+      \   'readonly': 'RO',
+      \   'modified': 'Mod',
       \   'filename': 'LightLineFilename',
       \   'fileformat': 'LightLineFileformat',
       \   'filetype': 'MyFiletype',
@@ -105,11 +105,6 @@ let g:lightline = {
       \ 'subseparator': { 'left': '', 'right': '' },
       \ }
 
-"      \   'readonly': '%{&filetype=="help"?"":&readonly?"":""}',
-"      \   'modified': '%{&filetype=="help"?"":&modified?"[+]":&modifiable?"":"[-]"}',
-
-"      \ 'separator': { 'left': '▊▋▌▍▎', 'right': '▎▍▌▋▊' },
-
 "      \ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
 "      \ 'subseparator': { 'left': '▒', 'right': '░' },
 
@@ -125,18 +120,15 @@ let g:lightline = {
 "      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2"  },
 "      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3"  },
 
-"      \ 'separator': { 'left': '', 'right': '' },
-"      \ 'subseparator': { 'left': '', 'right': '' },
-
 let g:tmuxline_theme = {
     \ 'lightline' }
 
 let g:tmuxline_separators = {
-    \ 'left' : '',
-    \ 'left_alt': '',
-    \ 'right' : '',
+    \ 'left'      : '',
+    \ 'left_alt'  : '',
+    \ 'right'     : '',
     \ 'right_alt' : '',
-    \ 'space' : ' '}
+    \ 'space'     : ' ' }
 
 let g:tmuxline_preset = {
     \'a'    : '#(whoami)@#H',
@@ -144,7 +136,7 @@ let g:tmuxline_preset = {
     \'win'  : ['#I #W'],
     \'cwin' : ['#I #W #F'],
     \'y'    : ['%A'],
-    \'z'    : '%B %d'}
+    \'z'    : '%B %d' }
 
 let g:Powerline_symbols = 'fancy'
 let g:unite_force_overwrite_statusline = 0
@@ -163,21 +155,12 @@ let g:lightline#bufferline#read_only = ' '
 let g:lightline#bufferline#clickable = 1
 let g:lightline#bufferline#shorten_path = 0
 
-function! LMod()
+function! Mod()
   return &ft =~ 'help\|vimfiler' ? '' : &modified ? '[+] ' : &modifiable ? '' : ''
 endfunction
 
-function! LRO()
-  " ×   
+function! RO()
   return &ft !~? 'help\|vimfiler' && &readonly ? ' ' : ''
-endfunction
-
-function! LightLineModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '[+]' : &modifiable ? '' : '[-]'
-endfunction
-
-function! LightLineReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
 endfunction
 
 function! LightLineFugitive()
@@ -196,28 +179,12 @@ function! MyFileformat()
   return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
 
-function! LightLineFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
-endfunction
-
-function! LType()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? ' ' . WebDevIconsGetFileTypeSymbol() . ' ' . &filetype : '') : ''
-endfunction
-
 function! MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
 endfunction
 
-function! LightLineFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
-endfunction
-
 function! MyFileencoding()
   return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc . ' ' . WebDevIconsGetFileEncodingSymbol()) : ''
-endfunction
-
-function! LightLineFileencoding()
-  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
 endfunction
 
 function! LightLineMode()
@@ -302,7 +269,6 @@ set guioptions-=e
 
 set viminfo='100,<9999,s100
 
-
 set expandtab
 set smarttab
 
@@ -321,8 +287,8 @@ set nostartofline
 set nobackup
 set nowb
 set noswapfile
-set undodir=~/.vim/undodir
 set undofile
+set undodir=~/.vim/undodir
 
 set encoding=utf-8
 set fileencoding=utf-8
@@ -358,9 +324,9 @@ else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 
-set ruler
-set showcmd
-set cmdheight=1
+"set noruler
+"set noshowcmd
+"set cmdheight=1
 
 set hidden
 

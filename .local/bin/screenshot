@@ -1,6 +1,6 @@
 #!/bin/bash
 
-scrot -m -d 3 -q 100 'Screenshot_%m-%d-%Y_%H:%M:%S.png' -e 'mv $f /home/josh/Pictures/Screenshots' && notify-send -i ~/.icons/Custom/scrot.svg 'Screenshot sent to ~/Pictures/Screenshots'
+scrot -p -d 3 'Screenshot_%m-%d-%Y_%H:%M:%S.png' -e 'mv $f /home/josh/Pictures/Screenshots' && notify-send -i ~/.icons/Custom/scrot.svg 'Screenshot sent to ~/Pictures/Screenshots'
 
 # Flags
 # a - autoselect

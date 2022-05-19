@@ -284,7 +284,7 @@
     </keybind>
     <keybind key="W-d">
       <action name="Execute">
-        <command>/home/josh/.local/bin/rofi2.sh</command>
+        <command>/home/josh/.local/bin/rofi9.sh</command>
       </action>
     </keybind>
     <keybind key="W-S-d">

@@ -15,11 +15,11 @@ URxvt.italicFont     : xft:FONT:style=Medium:size=FONT_SIZE, xft:ICON:style=Regu
 URxvt.boldItalicFont : xft:FONT:style=Medium:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Book:size=ICON_SIZE
 
 Xft.dpi           : 96
-Xft.antialias     : true
+Xft.antialias     : 1
 Xft.rgba          : rgb
-Xft.autohint      : true
+Xft.autohint      : 1
 Xft.lcdfilter     : lcddefault
-Xft.hinting       : true
+Xft.hinting       : 1
 Xft.hintstyle     : hintslight
 URxvt.letterSpace : 0
 
@@ -36,7 +36,7 @@ URxvt.letterSpace : 0
 
 URxvt.perl-lib             : /usr/lib/urxvt/perl/
 URxvt.iconFile             : /home/josh/.icons/Custom/terminal1.svg
-URxvt.backgroundPixmap     : /home/josh/.urxvt/backgrounds/scratch.png
+!URxvt.backgroundPixmap     : /home/josh/.urxvt/backgrounds/scratch.png
 URxvt.windowName           : urxvt
 URxvt.windowTitle          : urxvt
 URxvt.termName             : rxvt-unicode-256color
@@ -82,8 +82,8 @@ URxvt.keyboard-select.clipboard : true
 ! Url-select
 URxvt.keysym.C-S-N         : perl:url-select:select_next
 URxvt.url-select.autocopy  : true
-URxvt.url-select.button    : 1
-URxvt.url-select.launcher  : brave
+URxvt.url-select.button    : 2
+URxvt.url-select.launcher  : xdg-open
 URxvt.url-select.underline : true
 
 ! Font-size
