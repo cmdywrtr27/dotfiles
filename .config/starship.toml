@@ -1,65 +1,35 @@
 format = """
 [](#9A348E)\
 $status\
-[](fg:#9A348E bg:#9A348E)\
+[](bg:#9A348E fg:#9A348E)\
 ${custom.arch}\
 [](bg:#2E3440 fg:#9A348E)\
 [](bg:#DA627D fg:#2E3440)\
 ${custom.icon}\
 $directory\
 [](bg:#2E3440 fg:#DA627D)\
-[](bg:#86BBD8 fg:#2E3440)\
+[](bg:#FCA17D fg:#2E3440)\
 $git_branch\
 $git_status\
-[](bg:#2E3440 fg:#86BBD8)\
-[](bg:#FCA17D fg:#2E3440)\
-${custom.docker}\
 [](bg:#2E3440 fg:#FCA17D)\
-[](bg:#33658A fg:#2E3440)\
-$docker_context\
-[](bg:#2E3440 fg:#33658A)\
+[](bg:#86BBD8 fg:#2E3440)\
+${custom.docker}\
+[](bg:#2E3440 fg:#86BBD8)\
 [](bg:#06969A fg:#2E3440)\
+$cmd_duration\
+[](bg:#2E3440 fg:#06969A)\
+[](bg:#33658A fg:#2E3440)\
 $time\
-[ ](fg:#06969A)\
+[ ](fg:#33658A)\
 """
 
-[custom.icon]
-description = "Display icon for each home folder"
-command = """
-if [ "$PWD" = "$HOME" ]; then
-    echo ""
-elif [ "$PWD" = "$HOME/Documents" ]; then
-    echo ""
-elif [ "$PWD" = "$HOME/Downloads" ]; then
-    echo "ﲐ"
-elif [ "$PWD" = "$HOME/Music" ]; then
-    echo ""
-elif [ "$PWD" = "$HOME/Pictures" ]; then
-    echo ""
-elif [ "$PWD" = "$HOME/Videos" ]; then
-    echo ""
-elif [ "$PWD" = "$HOME/.local/bin" ]; then
-    echo ""
-else
-    echo ""
-fi
-"""
-when = "true"
-style = "bg:#DA627D"
-format = '[ $output ]($style)'
-
-[custom.docker]
-description = "Shows the docker symbol if the current directory has Dockerfile or docker-compose.yml files"
-style = "bg:#FCA17D"
+[status]
+style = "bg:#9A348E"
+symbol = " "
+success_symbol = ""
 format = '[$symbol]($style)'
-symbol = " 🐳 "
-files = ["Dockerfile", "docker-compose.yml", "docker-compose.yaml"]
-when = """ command -v docker &> /dev/null; exit (echo $?); """
-
-[cmd_duration]
-min_time = 5000
-style = "bg:#86BBD8"
-format = 'took[$duration]($style)'
+map_symbol = false
+disabled = false
 
 [username]
 show_always = false
@@ -73,12 +43,6 @@ format = "[@$hostname ](bg:#9A348E)"
 trim_at = "."
 disabled = true
 
-[directory]
-style = "bold bg:#DA627D"
-format = '[ $path ]($style)'
-truncation_length = 6
-truncation_symbol = "…/"
-
 [custom.arch]
 description = "Display arch logo"
 when = "true"
@@ -86,30 +50,75 @@ style = "bg:#9A348E"
 format = '[$symbol (bg:#9A348E)]($style)'
 symbol = " "
 
-[docker_context]
-symbol = " "
-style = "bg:#06969A"
-format = '[[ $symbol $context ](bg:#06969A)]($style) $path'
+[custom.icon]
+description = "Display icon for each home folder"
+command = """
+if [ "$PWD" = "$HOME" ]; then
+    echo " "
+elif [ "$PWD" = "$HOME/Documents" ]; then
+    echo " "
+elif [ "$PWD" = "$HOME/Downloads" ]; then
+    echo "ﰬ "
+elif [ "$PWD" = "$HOME/Music" ]; then
+    echo " "
+elif [ "$PWD" = "$HOME/Pictures" ]; then
+    echo " "
+elif [ "$PWD" = "$HOME/Videos" ]; then
+    echo " "
+elif [ "$PWD" = "$PATH" ]; then
+    echo " "
+else
+    echo "ﱮ "
+fi
+"""
+when = "true"
+style = "bg:#DA627D"
+format = '[ $output ]($style)'
+
+[directory]
+style = "bg:#DA627D"
+format = '[$path ]($style)'
+truncation_length = 6
+truncation_symbol = ".../"
 
 [git_branch]
 symbol = ""
-style = "bg:#86BBD8"
-format = '[[ $symbol $branch ](bg:#86BBD8)]($style)'
+style = "bg:#FCA17D"
+format = '[[ $symbol $branch ](bg:#FCA17D)]($style)'
 
 [git_status]
+style = "bg:#FCA17D"
+format = '[[ ($all_status) ](bg:#FCA17D)]($style)'
+
+[custom.docker]
+description = "Shows the docker symbol if the current directory has Dockerfile or docker-compose.yml files"
 style = "bg:#86BBD8"
-format = '[[ ($all_status) ](bg:#86BBD8)]($style)'
+format = '[$symbol]($style)'
+symbol = " 🐳 "
+files = ["Dockerfile", "docker-compose.yml", "docker-compose.yaml"]
+when = """ command -v docker &> /dev/null; exit (echo $?); """
+
+[cmd_duration]
+min_time = 500
+style = "bg:#33658A"
+format = "[ $duration ]($style)"
+disabled = true
+
+[custom.duration]
+description = "Display how long last edit took"
+when = "true"
+style = "bg:#33658A"
+format = '[$symbol($duration)]($style)'
+symbol = " took "
+
+[docker_context]
+symbol = " "
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+style = "bg:#06969A"
+format = '[[ $symbol $context ](bg:#06969A)]($style) $path'
 
 [time]
 disabled = true
 time_format = "%l:%M %P"
 style = "bg:#33658A"
 format = '[[  $time ](bg:#33658A)]($style)'
-
-[status]
-style = "bg:#9A348E"
-symbol = " "
-success_symbol = ""
-format = '[$symbol]($style)'
-map_symbol = false
-disabled = false
