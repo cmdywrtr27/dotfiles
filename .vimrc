@@ -23,29 +23,25 @@ Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'jiangmiao/auto-pairs'
-Plug 'kyoz/purify', { 'rtp': 'vim'  }
+Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'frazrepo/vim-rainbow'
-Plug 'xolox/vim-misc'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'roxma/vim-paste-easy'
-Plug 'ervandew/supertab'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'edkolev/tmuxline.vim'
 Plug 'mbbill/undotree'
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase'  }
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
-filetype plugin on 
+filetype plugin on
 filetype indent on
 set modifiable
 
 " Colors
 
 "colorscheme pitch
-"colorscheme electron
-"colorscheme edge
+"colorscheme electron1
 colorscheme purify
 "colorscheme dream
 "colorscheme bubblegum-256-dark
@@ -56,10 +52,9 @@ colorscheme purify
 "colorscheme snazzy
 set background=dark
 
-let g:edge_enable_italic = 1
 let g:rainbow_active = 1
 let g:rehash256 = 1
-let g:Hexokinase_highlighters = [ 'backgroundfull'  ]
+let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 
 syntax on
 syntax enable
@@ -105,6 +100,9 @@ let g:lightline = {
       \ 'subseparator': { 'left': '', 'right': '' },
       \ }
 
+"      \ 'separator': { 'left': '', 'right': '' },
+"      \ 'subseparator': { 'left': '', 'right': '' },
+
 "      \ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
 "      \ 'subseparator': { 'left': '▒', 'right': '░' },
 
@@ -124,10 +122,10 @@ let g:tmuxline_theme = {
     \ 'lightline' }
 
 let g:tmuxline_separators = {
-    \ 'left'      : '',
-    \ 'left_alt'  : '',
-    \ 'right'     : '',
-    \ 'right_alt' : '',
+    \ 'left'      : '',
+    \ 'left_alt'  : '',
+    \ 'right'     : '',
+    \ 'right_alt' : '',
     \ 'space'     : ' ' }
 
 let g:tmuxline_preset = {
@@ -166,7 +164,7 @@ endfunction
 function! LightLineFugitive()
   try
 	if expand('%:t') !~? 'Tagbar\|Gundo\|NERD' && &ft !~? 'vimfiler' && exists('*FugitiveHead')
-	  let mark = '  '  " 
+	  let mark = '  ' " 
 	  let branch = FugitiveHead()
 	  return branch !=# '' ? mark.branch : ''
 	endif

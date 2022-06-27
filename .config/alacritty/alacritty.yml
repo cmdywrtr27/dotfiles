@@ -14,16 +14,16 @@ window:
 
 font:
   normal:
-    family: InconsolataLGC Nerd Font
-    style: Medium
+    family: MesloLGL Nerd Font
+    style: Regular
   bold:
-    family: InconsolataLGC Nerd Font
+    family: MesloLGL Nerd Font
     style: Bold
   italic:
-    family: InconsolataLGC Nerd Font
+    family: MesloLGL Nerd Font
     style: Italic
   bold_italic:
-    family: InconsolataLGC Nerd Font
+    family: MesloLGL Nerd Font
     style: Bold Italic
   size: 12.0
   offset:
@@ -35,7 +35,7 @@ font:
 
 colors:
   primary:
-    background: '#2E3440'
+    background: '#212837'
     foreground: '#FFFFFF'
   normal:
     black: '#2E3440'
@@ -44,7 +44,7 @@ colors:
     yellow: '#FFFF87'
     blue: '#5FAFFF'
     magenta: '#AF87FF'
-    cyan: '#5FAFFF'
+    cyan: '#40E0D0'
     white: '#FFFFFF'
   bright:
     black: '#2E3440'
@@ -53,8 +53,30 @@ colors:
     yellow: '#FFFF87'
     blue: '#5FAFFF'
     magenta: '#AF87FF'
-    cyan: '#5FAFFF'
+    cyan: '#40E0D0'
     white: '#FFFFFF'
+#colors:
+#  primary:
+#    background: '#2e3440'
+#    foreground: '#ffffff'
+#  normal:
+#    black: '#021b2e'
+#    red: '#05406a'
+#    green: '#0865a7'
+#    yellow: '#0b89e4'
+#    blue: '#3aa7f5'
+#    magenta: '#76c2f8'
+#    cyan: '#b3ddfb'
+#    white: '#f0f8fe'
+#  bright:
+#    black: '#042e4c'
+#    red: '#075289'
+#    green: '#0a77c5'
+#    yellow: '#1b99f4'
+#    blue: '#58b4f7'
+#    magenta: '#95cffa'
+#    cyan: '#d1ebfd'
+#    white: '#ffffff'
 
 bell:
   animation: EaseOutExpo

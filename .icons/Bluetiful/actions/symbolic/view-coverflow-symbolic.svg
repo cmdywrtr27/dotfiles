@@ -1,1 +1,14 @@
-<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m2 3.7140714v8.5714286h.8571429v-8.5714286zm11.142857 0v8.5714286h.857143v-8.5714286zm-9.4285713.8571429v6.8571427h.8571429v-6.8571427zm7.7142853 0v6.8571427h.857143v-6.8571427zm-5.9999996.8571428v5.1428569h5.1428576v-5.1428569z" fill="#bebebe"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text {
+        color:#dedede;
+      }
+      </style>
+  </defs>
+ <path 
+       style="fill:currentColor;fill-opacity:1;stroke:none"
+	 class="ColorScheme-Text"
+        d="M 1,3 1,13 2,13 2,3 1,3 Z m 13,0 0,10 1,0 0,-10 -1,0 z M 3,4 3,12 4,12 4,4 3,4 Z m 9,0 0,8 1,0 0,-8 -1,0 z m -7,1 0,6 6,0 0,-6 -6,0 z"
+     />
+</svg>

@@ -1,158 +1,194 @@
 configuration {
     location: 0;
-    font: "JetBrainsMonoMedium Nerd Font 10";
-    display-run: " ";
+    fixed-num-lines: true;
+    font: "NotoSans Nerd Font 12";
+    show-icons: true;
+    icon-theme: "World";
+    drun-display-format: "{icon} {name}";
+    click-to-exit: true;
+    combi-hide-mode-prefix: false;
+    display-drun: "";
 }
 
 * {
-    red: #BF616A;
-    darkred: #BF616A;
-    green: #A3BE8C;
-    darkgreen: #A3BE8C;
-    yellow: #EBCB8B;
-    darkyellow: #EBCB8B;
-    blue: #5E81AC;
-    darkblue: #5E81AC;
-    purple: #B48EAD;
-    darkpurple: #B48EAD;
-    cyan: #88C0D0;
-    darkcyan: #88C0D0;
-    foreground:#D8DEE9;
-    background: #2E3440;
-    border: #434C5E;
-}
-window {
-    border:	0px;
-    border-color: @red;
-    border-radius: 0px;
-    padding: 30;
-    width: 40%;
-    height:	30%;
-    border-color: @border;
-}
-mainbox {
-    border: 0;
-    padding: 0;
-}
-message {
-    border: 0px 0px 0px;
-    border-color: @separatorcolor;
-    padding: 1px;
-}
-textbox {
-    text-color: @foreground;
-}
-listview {
-    lines: 15;
-    columns: 1;
-    fixed-height: 0;
-    border: 0px 0px 0px ;
-    border-color: @separatorcolor;
-    spacing: 0px;
-    scrollbar: false;
-    padding: 2px 0px 0px ;
-    background: @background;
-}
-element {
-    border: 0;
-    padding: 10px; 
-}
-element normal.normal {
+    background: #2e3440;
+    foreground: #dcdcdc;
+    selected:	#5fafff;
+    highlight: #ffff87;
+    urgent: #ff6059;
+    on: #5fff87;
+    off: #40e0d0;
     background-color: @background;
-    text-color: @foreground;
-}
-element normal.urgent {
-    background-color: @red;
-    text-color: @background;
-}
-element normal.active {
-    background-color: @green;
-    text-color: @background;
-}
-element selected.normal {
-    background-color: @blue;
-    border-radius: 10px;
-    text-color: @background;
-}
-element selected.urgent {
-    background-color: @red;
-    text-color: @background;
-}
-element selected.active {
-    background-color: @yellow;
-    text-color: @background;
-}
-element alternate.normal {
-    background-color: @background;
-    text-color: @foreground;
-}
-element alternate.urgent {
-    background-color: @green;
-    text-color: @background;
-}
-element alternate.active {
-    background-color: @green;
-    text-color: @background;
-}
-element-text {
-    cursor: inherit;
-    highlight: inherit;
-    text-color: inherit;
-}
-element-icon {
-    size: 1.0000em;
-    cursor: inherit;
-    text-color: inherit;
 }
 
-scrollbar {
-    width: 0px;
-    border: 0;
-    handle-color: @yellow;
-    handle-width: 8px;
-    padding: 0;
+window {
+    width: 500px;
+    height: 0px;
 }
-sidebar {
-    border: 0px 0px 0px;
-    padding: 5px 0 0;
-    border-color: @separatorcolor;
-}
-button {
-    spacing: 0;
-    background: @background;
-    text-color: @foreground;
-}
-button.selected {
-    background-color: @border;
-    border-radius: 50px;
-    text-color: @background;
-}
-case-indicator {
-    spacing: 0;
-    text-color: @foreground;
-}
-entry {
-    spacing: 10px;
-    padding: 10px;
-    text-color: @foreground;
-}
+
 prompt {
-    spacing: 10px;
-    padding: 10px;
-    text-color: @foreground;
-}
-inputbar {
-    background-color: @background;
-    margin: 0px 0px 10px;
-    border: 10px;
-    border-radius: 0px;
-    border-color: @background;
-    children: [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    spacing: 0;
+    border: 0;
+    background-color: @highlight;
+    text-color: @background;
+    padding: 6px 10px 6px 10px;
 }
 
 textbox-prompt-colon {
     expand: false;
-    str: ":";
-    margin: 10px 0.3em 0em 0em;
+    str: "";
+    padding: 6px 4px 6px 4px;
+    text-color: inherit;
+}
+
+entry {
+    spacing: 0;
+    expand: true;
+    horizontal-align: 0;
+    text-color: @foreground;
+    placeholder-color: @foreground;
+    placeholder: "Search...";
+    padding: 6px 2px 6px 2px;
+    border: 0px 0px 1px 0px;
+    border-color: @selected;
+    border-radius: 0px;
+}
+
+case-indicator {
+    spacing: 0;
+    text-color: @foreground;
+}
+
+inputbar {
+    spacing: 0px;
+    text-color: @foreground;
+    border: 0px;
+    border-color: @selected;
+    border-radius: 0px;
+    children: [ textbox-prompt-colon, entry ];
+}
+
+mainbox {
+    border: 0px;
+    border-color: @selected;
+    spacing: 6px;
+    padding: 10px;
+}
+
+listview {
+    lines: 5;
+    columns: 1;
+    fixed-height: 0;
+    border: 0px;
+    border-color: @foreground;
+    spacing: 2px;
+    scrollbar: false;
+    padding: 4px 0px 0px;
+}
+
+element-text,
+element-icon {
+    background-color: inherit;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+element-icon {
+    size: 36px;
+    margin: 0px 5px 0px 0px;
+}
+
+element {
+    border: 0px;
+    padding: 7px;
+}
+
+element normal.normal {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+element normal.urgent {
+    background-color: @background;
+    text-color: @off;
+}
+
+element normal.active {
+    background-color: @background;
+    text-color: @on;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color: @background;
+    border: 0px;
+    border-color: @selected;
+}
+
+element selected.urgent {
+    background-color: @background;
+    text-color: @off;
+}
+
+element selected.active {
+    background-color: @background;
+    text-color: @selected;
+}
+
+element alternate.normal {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+element alternate.urgent {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+element alternate.active {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+sidebar {
+    border: 0px;
+    border-color: @selected;
+    border-radius: 0px;
+}
+
+button {
+    margin: 5px 0px 0px 0px;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    padding: 7px;
+    text-color: @foreground;
+    border: 0px;
+    border-radius: 0px;
+    border-color: @selected;
+}
+
+button selected {
+    background-color: @selected;
+    text-color: @background;
+    border: 0px;
+    border-radius: 0px;
+    border-color: @selected;
+}
+
+scrollbar {
+    width: 4px;
+    border: 0px;
+    handle-color: @foreground;
+    handle-width: 8px;
+    padding: 0;
+}
+
+message {
+    border: 0px;
+    border-color: @selected;
+    padding: 1px;
+}
+
+textbox {
     text-color: @foreground;
 }

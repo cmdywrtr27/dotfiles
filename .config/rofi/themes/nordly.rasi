@@ -1,0 +1,162 @@
+configuration {
+	modi: "drun";
+	font: "NotoSans Nerd Font 12";
+	show-icons: true;
+	icon-theme:	"Bluetiful";
+	display-drun: "";
+	drun-display-format: "{name}";
+	sidebar-mode: false;
+}
+
+@theme "/dev/null"
+
+* {
+	foreground: #eceff4;
+	background-color: #2e3440;
+	active-background: #81a1c1;
+	urgent-background: #d08770;
+	selected-background: @active-background;
+	selected-urgent-background: @urgent-background;
+	selected-active-background: @active-background;
+	separatorcolor: @active-background;
+	bordercolor: @active-background;
+}
+
+#window {
+	background-color: @background;
+	border: 2px;
+	border-radius: 0px;
+	border-color: @bordercolor;
+	padding: 0px;
+}
+
+#mainbox {
+	border: 0px;
+	padding: 0px;
+}
+
+#message {
+	border: 2px 0px;
+	border-color: @separatorcolor;
+	padding: 8px;
+}
+
+#textbox {
+	text-color: @foreground;
+}
+
+#listview {
+	fixed-height: 0;
+	spacing: 0;
+	scrollbar: false;
+	padding: 0;
+    lines: 4;
+    columns: 2;
+}
+
+#element {
+	border: 0;
+	padding: 8px;
+}
+
+#element.normal.normal {
+	background-color: @background;
+	text-color: @foreground;
+}
+
+#element.normal.urgent {
+	background-color: @urgent-background;
+	text-color: @urgent-foreground;
+}
+
+#element.normal.active {
+	background-color: @active-background;
+	text-color: @foreground;
+}
+
+#element.selected.normal {
+	background-color: @selected-background;
+	text-color: @foreground;
+}
+
+#element.selected.urgent {
+	background-color: @selected-urgent-background;
+	text-color: @foreground;
+}
+
+#element.selected.active {
+	background-color: @selected-active-background;
+	text-color: @foreground;
+}
+
+#element.alternate.normal {
+	background-color: @background;
+	text-color: @foreground;
+}
+
+#element.alternate.urgent {
+	background-color: @urgent-background;
+	text-color: @foreground;
+}
+
+#element.alternate.active {
+	background-color: @active-background;
+	text-color: @foreground;
+}
+
+#element-icon {
+	size: 42px ;
+	padding: 0px 4px 0px 0px;
+    background-color: inherit;
+    align-horizontal: 0.5;
+}
+
+/*#scrollbar {
+	width: 2px;
+	border: 0px;
+	handle-width: 4px;
+	handle-color: @active-background;
+	padding: 0px;
+}*/
+
+#sidebar {
+	border: 2px dash 0px 0px;
+	border-color: @separatorcolor;
+}
+
+#button.selected {
+	background-color: @active-background;
+	text-color: @foreground;
+}
+
+#inputbar {
+	spacing: 0px;
+	text-color: @foreground;
+	padding: 8px;
+}
+
+#case-indicator {
+	spacing: 0;
+	text-color: @foreground;
+}
+
+#entry {
+	spacing: 0;
+	text-color: @foreground;
+}
+
+#prompt {
+	spacing: 0;
+	text-color: @foreground;
+}
+
+#inputbar {
+	children: [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+#textbox-prompt-colon {
+    columns: 2;
+	expand: false;
+	str: "Applications: ";
+	text-color: @foreground;
+}

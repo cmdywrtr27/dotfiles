@@ -1,29 +1,32 @@
-! Font ----------------------------------------------
+! Font ---------------------------------------
 
-#define FONT InconsolataLGC Nerd Font Mono
+!#define FONT InconsolataLGC Nerd Font Mono
+#define FONT MesloLGS Nerd Font Mono
+!#define FONT NotoSans Mono Nerd Font
 #define FONT2 Inconsolata Nerd Font Mono
 #define ICON Font Awesome 5 Free Regular
 #define GLYPH Material Icons
-#define NERD_FONT NotoSans Nerd Font Mono
+!#define NERD_FONT NotoSans Mono Nerd Font
+#define NERD_FONT Iosevka Nerd Font
 #define EMOJI Noto Color Emoji
 #define FONT_SIZE 12
 #define ICON_SIZE 14
 
 URxvt.font           : xft:FONT:style=Regular:size=FONT_SIZE, xft:FONT2:style=Regular:size=ICON_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Book:size=ICON_SIZE
-URxvt.boldFont       : xft:FONT:style=Medium:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Book:size=ICON_SIZE
-URxvt.italicFont     : xft:FONT:style=Medium:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Book:size=ICON_SIZE
-URxvt.boldItalicFont : xft:FONT:style=Medium:size=FONT_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Book:size=ICON_SIZE
+URxvt.boldFont       : xft:FONT:style=Bold:size=FONT_SIZE, xft:FONT2:style=Bold:size=ICON_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Book:size=ICON_SIZE
+URxvt.italicFont     : xft:FONT:style=Italic:size=FONT_SIZE, xft:FONT2:style=Italic:size=ICON_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Book:size=ICON_SIZE
+URxvt.boldItalicFont : xft:FONT:style=BoldItalic:size=FONT_SIZE, xft:FONT2:style=BoldItalic:size=ICON_SIZE, xft:ICON:style=Regular:size=ICON_SIZE, xft:GLYPH:style=Regular:size=ICON_SIZE, xft:NERD_FONT:style=Regular:size=ICON_SIZE, xft:EMOJI:style=Book:size=ICON_SIZE
 
 Xft.dpi           : 96
-Xft.antialias     : 1
+Xft.antialias     : true
 Xft.rgba          : rgb
-Xft.autohint      : 1
+Xft.autohint      : true
 Xft.lcdfilter     : lcddefault
-Xft.hinting       : 1
-Xft.hintstyle     : hintslight
+Xft.hinting       : true
+Xft.hintstyle     : hintfull
 URxvt.letterSpace : 0
 
-! Color -------------------------------------------
+! Color -------------------------------------
 
 #include "/home/josh/.urxvt/purify.Xresources"
 
@@ -32,18 +35,18 @@ URxvt.letterSpace : 0
 !URxvt.cursorColor      : #ffffff
 !URxvt.highlightReverse : true
 
-! Settings -----------------------------------
+! Settings ----------------------------------
 
 URxvt.perl-lib             : /usr/lib/urxvt/perl/
 URxvt.iconFile             : /home/josh/.icons/Custom/terminal1.svg
 !URxvt.backgroundPixmap     : /home/josh/.urxvt/backgrounds/scratch.png
 URxvt.windowName           : urxvt
 URxvt.windowTitle          : urxvt
-URxvt.termName             : rxvt-unicode-256color
+URxvt.termName             : xterm-256color
 URxvt.borderLess           : false
-URxvt.internalBorder       : 5
+!URxvt.internalBorder       : 5
 !URxvt.externalBorder       : 30
-!URxvt.geometry             : 74x14
+URxvt.geometry             : 79x28
 URxvt.skipBuiltinGlyphs    : false
 URxvt.scrollTtyKeypress    : true
 URxvt.scrollTtyOutput      : false
@@ -64,9 +67,11 @@ URxvt.secondaryScreen      : 1
 URxvt.secondaryScroll      : 0
 URxvt.iso14755             : false
 URxvt.iso14755_52          : false
+Xcursor.theme              : Bibata-Original-Ice
 
-! Extensions [/usr/lib/urxvt/perl]
-URxvt.perl-ext-common: default,clipboard,keyboard-select,url-select,font-size,selection-to-clipboard
+! Extensions --------------------------------
+
+URxvt.perl-ext-common: default,clipboard,keyboard-select,matcher,url-select,font-size,selection-to-clipboard
 
 ! Clipboard [Ctrl+Shift+C/V]
 URxvt.clipboard.copycmd  : xclip -i -selection clipboard
@@ -93,12 +98,3 @@ URxvt.keysym.C-S-Up   : font-size:incglobal
 URxvt.keysym.C-S-Down : font-size:decglobal
 URxvt.keysym.C-equal  : font-size:reset
 URxvt.keysym.C-slash  : font-size:show
-
-! Kuake
-!URxvt.kuake.hotkey: grave
-
-! Tabbed
-!URxvt.tabbed.tabbar-fg : 7
-!URxvt.tabbed.tabbar-bg : 8
-!URxvt.tabbed.tab-fg    : 7
-!URxvt.tabbed.tab-bg    : 8

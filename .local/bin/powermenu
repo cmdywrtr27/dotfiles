@@ -4,7 +4,7 @@ POWER="⏻"
 RESTART=""
 LOGOUT=""
 
-RES=`echo "$POWER|$RESTART|$LOGOUT" | rofi -dmenu -p "Power" -sep "|" -theme $HOME/.config/rofi/configs/powermenu.rasi`
+RES=`echo "$POWER|$RESTART|$LOGOUT" | rofi -dmenu -p "Power" -sep "|" -theme $HOME/.config/rofi/powermenu2.rasi`
 [ "$RES" = "$POWER" ] && systemctl poweroff
 [ "$RES" = "$RESTART" ] && systemctl reboot
 [ "$RES" = "$LOGOUT" ] && openbox --exit

@@ -10,13 +10,13 @@ configuration {
 
 * {
     background-color: @bg;
-    text-color: @color12;
+    text-color: @fg;
 }
 
 window {
     transparency: "real";
     border: 0px;
-    border-color: @color12;
+    border-color: @fg;
     border-radius: 0px;
     location: center;
     width: 800px;
@@ -28,16 +28,16 @@ prompt {
     enabled: true;
     padding: 10px;
     background-color: @color0;
-    text-color: @color12;
+    text-color: @fg;
     border: 2px 2px 2px 2px;
     border-radius: 0px 0px 0px 0px;
-    border-color: @color12;
+    border-color: @fg;
 }
 
 textbox-prompt-colon {
     expand: false;
-    str: " System ";
-    background-color: @color12;
+    str: " Power ";
+    background-color: @fg;
     text-color: @bg;
     padding: 12px 10px 0px 10px;
     font: "NotoSans Nerd Font Bold 14";
@@ -47,11 +47,11 @@ inputbar {
     children: [ textbox-prompt-colon, prompt ];
     spacing: 0px;
     background-color: @bg;
-    text-color: @color12;
+    text-color: @fg;
     expand: false;
     border: 0px;
     border-radius: 0px;
-    border-color: @color12;
+    border-color: @fg;
     margin: 0px 0px 0px 0px;
     padding: 0px;
     position: center;
@@ -75,7 +75,7 @@ mainbox {
 
 element {
     background-color: @color0;
-    text-color: @color12;
+    text-color: @fg;
     orientation: vertical;
     border-radius: 0px;
 }
@@ -99,36 +99,36 @@ element alternate {
 
 element normal.urgent,
 element alternate.urgent {
-    background-color: @color12;
-    text-color: @color12;
+    background-color: @bg;
+    text-color: @fg;
 }
 
 element normal.active,
 element alternate.active {
-    background-color: @color2;
-    text-color: @color12;
+    background-color: @bg;
+    text-color: @fg;
 }
 
 element selected {
-    background-color: @color12;
-    text-color: @bg;
-    border: 0px;
+    background-color: @bg;
+    text-color: @fg;
+    border: 1px;
     border-radius: 0px;
     border-color: @border;
 }
 
 element selected.urgent {
-    background-color: @color2;
-    text-color: @color12;
+    background-color: @bg;
+    text-color: @fg;
 }
 
 element selected.active {
-    background-color: @color12;
-    color: @bg;
+    background-color: @bg;
+    color: @fg;
 }
 element-text selected {
-    background-color: @color12;
-    color: @bg;
+    background-color: @bg;
+    color: @fg;
 }
 
 /*

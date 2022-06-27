@@ -28,7 +28,7 @@
 #define _colorIT       #5FFF87
 !TXT - Normal, Normal, Cursor
 #define _foreground    #FFFFFF
-#define _background    #2E3440
+#define _background    #212837
 #define _cursorColor   #FFFFFF
 !Highlight
 #define _highlightFg   #2E3440

@@ -45,3 +45,4 @@ feh --bg-scale $HOME/Pictures/New\ Wallpapers/polyblue.jpg &
 sh $HOME/.config/polybar/bspwm/launch.sh &
 
 xsetroot -cursor_name left_ptr 
+bash /home/josh/.config/bspwm/bspwm_colors.sh &

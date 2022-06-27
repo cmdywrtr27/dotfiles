@@ -1,7 +1,7 @@
 * {
     fg:      #DFDFDF;
-    bg:      #2E3440;
-    border:  #444A57;
+    bg:      #1E1E28;
+    border:  #4C566A;
 
     shade1:  #0D47A1;
     shade2:  #1565C0;
