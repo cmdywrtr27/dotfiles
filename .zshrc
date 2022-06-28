@@ -10,11 +10,8 @@ export TERM=xterm-256color
 export EDITOR=vim
 export BROWSER=firefox
 export MANPAGER='/bin/zsh -c "vim -Rn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
-#export IN_API_KEY="aaabd8de8d644d3d90f679d504b6f264"
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
-#autoload -U colors && colors
-#autoload -Uz compinit && compinit
 eval "$(starship init zsh)"
 #eval "$(oh-my-posh init zsh --config $HOME/.powerlevel10k_modern.omp.json)"
 #export NVM_DIR="$HOME/.config/nvm"
