@@ -27,7 +27,6 @@ set nobackup
 set undodir=~/.config/nvim/undodir
 set undofile
 set incsearch
-set nohlsearch
 set ignorecase
 set smartcase
 set wrap
@@ -74,18 +73,18 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 call plug#end()
 
 set background=dark
-colorscheme onedark
+colorscheme purify
 let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 
 " --- Remaps
 
-nnoremap <leader>h :wincmd h<Cr>
-nnoremap <leader>j :wincmd j<Cr>
-nnoremap <leader>k :wincmd k<Cr>
-nnoremap <leader>l :wincmd l<Cr>
-nnoremap <silent><leader>[ :BufferLineCyclePrev<Cr>
-nnoremap <silent><leader>] :BufferLineCycleNext<Cr>
-nnoremap <silent><leader>q :bdelete<Cr>
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
+nnoremap <silent><leader>[ :BufferLineCyclePrev<CR>
+nnoremap <silent><leader>] :BufferLineCycleNext<CR>
+nnoremap <silent><leader>q :bdelete<CR>
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
@@ -94,11 +93,14 @@ nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
+nnoremap <C-u> :UndotreeToggle<CR>
 
 nmap <F8> :TagbarToggle<CR>
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+"                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 " --- Autocommands
 
@@ -109,6 +111,12 @@ set fillchars=vert:\  "
 augroup RemoveVertSplit
     autocmd!
     autocmd BufEnter,ColorScheme * highlight VertSplit ctermfg=1 ctermbg=None cterm=None
+augroup END
+
+augroup vimrc-incsearch-highlight
+    autocmd!
+    autocmd CmdlineEnter /,\? :set hlsearch
+    autocmd CmdlineLeave /,\? :set nohlsearch
 augroup END
 
 function! CmdLine(str)
@@ -142,7 +150,7 @@ endfun
 
 autocmd BufWritePre,FileWritePre,FileAppendPre,FilterWritePre * :call <SID>StripTrailingWhitespaces()
 
-function! CleanExtraSpaces()
+function! RestorePositionofCursor()
     let save_cursor = getpos(".")
     let old_query = getreg('/')
     silent! %s/\s\+$//e
@@ -150,9 +158,7 @@ function! CleanExtraSpaces()
     call setreg('/', old_query)
 endfun
 
-if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
-endif
+autocmd BufWritePre,FileWritePre,FileAppendPre,FilterWritePre * :call <SID>StripTrailingWhitespaces()
 
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -178,7 +184,7 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='onedark'
+let g:airline_theme='apprentice'
 
 " --- Lightline
 

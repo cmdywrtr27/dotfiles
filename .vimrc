@@ -1,6 +1,12 @@
 set nocompatible
 filetype off
 
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " Plugins
 
 call plug#begin('~/.vim/plugged')
@@ -122,10 +128,10 @@ let g:tmuxline_theme = {
     \ 'lightline' }
 
 let g:tmuxline_separators = {
-    \ 'left'      : '',
-    \ 'left_alt'  : '',
-    \ 'right'     : '',
-    \ 'right_alt' : '',
+    \ 'left'      : '',
+    \ 'left_alt'  : '',
+    \ 'right'     : '',
+    \ 'right_alt' : '',
     \ 'space'     : ' ' }
 
 let g:tmuxline_preset = {
@@ -231,9 +237,7 @@ map <leader>te :tabedit <C-r>=expand("%:p:h")<CR>/
 
 map <leader>cd :cd %:p:h<cr>:pwd<CR>
 
-noremap <leader>h :noh<CR>
-
-:imap jj <Esc>
+imap jj <Esc>
 
 map <leader>ww :wq!<CR>
 
@@ -251,6 +255,8 @@ set number
 set relativenumber
 
 set display+=lastline
+set modeline
+set modelines=5
 
 set confirm
 
@@ -322,9 +328,9 @@ else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 
-"set noruler
-"set noshowcmd
-"set cmdheight=1
+set noruler
+set noshowcmd
+set cmdheight=1
 
 set hidden
 
@@ -335,7 +341,7 @@ set ignorecase
 set smartcase
 
 set incsearch
-set hlsearch
+
 augroup vimrc-incsearch-highlight
       autocmd!
       autocmd CmdlineEnter /,\? :set hlsearch
@@ -364,7 +370,7 @@ let g:NERDTreeWinSize = 25
 let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
 
-:set formatoptions-=cro
+set formatoptions-=cro
 
 set history=1000
 

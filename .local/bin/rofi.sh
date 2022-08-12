@@ -2,4 +2,4 @@
 
 rofi -show drun \
 -modi drun \
--show-icons -drun-icon-theme "World"
+-show-icons -drun-icon-theme "Mars"

@@ -1,6 +1,6 @@
 export ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="myprompt"
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search zsh-completions)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search zsh-completions vi-mode)
 fpath+=$HOME/.oh-my-zsh/custom/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zshenv

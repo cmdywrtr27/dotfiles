@@ -23,7 +23,7 @@ Xft.rgba          : rgb
 Xft.autohint      : true
 Xft.lcdfilter     : lcddefault
 Xft.hinting       : true
-Xft.hintstyle     : hintfull
+Xft.hintstyle     : hintslight
 URxvt.letterSpace : 0
 
 ! Color -------------------------------------
@@ -39,7 +39,7 @@ URxvt.letterSpace : 0
 
 URxvt.perl-lib             : /usr/lib/urxvt/perl/
 URxvt.iconFile             : /home/josh/.icons/Custom/terminal1.svg
-!URxvt.backgroundPixmap     : /home/josh/.urxvt/backgrounds/scratch.png
+!URxvt.backgroundPixmap     : /home/josh/.urxvt/backgrounds/plate0.png
 URxvt.windowName           : urxvt
 URxvt.windowTitle          : urxvt
 URxvt.termName             : xterm-256color
@@ -51,11 +51,11 @@ URxvt.skipBuiltinGlyphs    : false
 URxvt.scrollTtyKeypress    : true
 URxvt.scrollTtyOutput      : false
 URxvt.scrollWithBuffer     : true
-URxvt.scrollstyle          : plain
+URxvt.scrollstyle          : rxvt
 URxvt.scrollBar            : floating
 URxvt.urgentOnBell         : true
 URxvt.visualBell           : true
-URxvt.saveLines            : 10000
+URxvt.saveLines            : 100000
 URxvt.mouseWheelScrollPage : false
 URxvt.cursorBlink          : true
 URxvt.cursorBlock          : true
@@ -67,11 +67,11 @@ URxvt.secondaryScreen      : 1
 URxvt.secondaryScroll      : 0
 URxvt.iso14755             : false
 URxvt.iso14755_52          : false
-Xcursor.theme              : Bibata-Original-Ice
+Xcursor.theme              : Bibata-Modern-Ice
 
 ! Extensions --------------------------------
 
-URxvt.perl-ext-common: default,clipboard,keyboard-select,matcher,url-select,font-size,selection-to-clipboard
+URxvt.perl-ext-common: default,clipboard,keyboard-select,matcher,font-size,selection-to-clipboard
 
 ! Clipboard [Ctrl+Shift+C/V]
 URxvt.clipboard.copycmd  : xclip -i -selection clipboard
@@ -84,12 +84,12 @@ URxvt.keysym.C-Escape           : perl:keyboard-select:activate
 URxvt.keysym.C-S-S              : perl:keyboard-select:search
 URxvt.keyboard-select.clipboard : true
 
-! Url-select
-URxvt.keysym.C-S-N         : perl:url-select:select_next
-URxvt.url-select.autocopy  : true
-URxvt.url-select.button    : 2
-URxvt.url-select.launcher  : xdg-open
-URxvt.url-select.underline : true
+! Kuake
+!URxvt.kuake.hotkey : grave
+
+! Matcher
+URxvt.url-launcher    : xdg-open
+URxvt.matcher.button  : 1
 
 ! Font-size
 URxvt.keysym.C-Up     : font-size:increase

@@ -1,9 +1,11 @@
 configuration {
-    location: 0;
+    location: 7;
+	x-offset: 5;
+	y-offset: 40;
     fixed-num-lines: true;
-    font: "NotoSans Nerd Font 12";
+    font: "Muli 14";
     show-icons: true;
-    icon-theme: "World";
+    icon-theme: "Mars";
     drun-display-format: "{icon} {name}";
     click-to-exit: true;
     combi-hide-mode-prefix: false;
@@ -76,7 +78,7 @@ mainbox {
 }
 
 listview {
-    lines: 5;
+    lines: 7;
     columns: 1;
     fixed-height: 0;
     border: 0px;
@@ -94,7 +96,7 @@ element-icon {
 }
 
 element-icon {
-    size: 36px;
+    size: 32px;
     margin: 0px 5px 0px 0px;
 }
 

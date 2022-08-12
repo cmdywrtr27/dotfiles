@@ -45,7 +45,7 @@ super + shift + {f,w,e}
 # Screenshot
 super + s
 	sh $HOME/.local/bin/screenshot
-	
+
 # Brightness Control
 XF86MonBrightness{Up,Down}
     sh $HOME/.local/bin/brightness {up,down}
@@ -68,8 +68,11 @@ XF86Audio{Next,Prev,Play,Stop}
 #super + {_,shift + }c
 #	bspc node -{c,k}
 
+#super + q
+#	worm {quit,wm -r}
+
 super + q
-    bspc node -{c,k}
+    bspc node -k
 
 # Reload Keybindings
 super + Escape
@@ -82,7 +85,7 @@ ctrl + alt + Escape
 # Quit/Restart bspwm
 ctrl + shift + {q,r}
 	bspc {quit,wm -r}
-	
+
 # Split horizontal, vertical or cancel
 super + {h,v,q}
 	bspc node -p {east,south,cancel}
@@ -132,11 +135,11 @@ super + {_,shift + }{1-8}
 # Expanding windows
 super + control + {Left,Right,Up,Down}
 	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
-	
+
 # Shrinking windows
 super + alt + {Left,Right,Up,Down}
 	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
-	
+
 # Move floating windows
 alt + shift + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}	
+	bspc node -v {-20 0,0 20,0 -20,20 0}
