@@ -23,7 +23,7 @@ Xft.rgba          : rgb
 Xft.autohint      : true
 Xft.lcdfilter     : lcddefault
 Xft.hinting       : true
-Xft.hintstyle     : hintslight
+Xft.hintstyle     : hintfull
 URxvt.letterSpace : 0
 
 ! Color -------------------------------------
@@ -67,7 +67,7 @@ URxvt.secondaryScreen      : 1
 URxvt.secondaryScroll      : 0
 URxvt.iso14755             : false
 URxvt.iso14755_52          : false
-Xcursor.theme              : Bibata-Modern-Ice
+Xcursor.theme              : Bibata-Original-Ice
 
 ! Extensions --------------------------------
 

@@ -28,10 +28,10 @@
 #define _colorIT       #5FFF87
 !TXT - Normal, Normal, Cursor
 #define _foreground    #FFFFFF
-#define _background    #24273A
+#define _background    #2F343F
 #define _cursorColor   #A1A8B9
 !Highlight
-#define _highlightFg   #24273A
+#define _highlightFg   #2F343F
 #define _highlightBg   #FFFFFF
 
 URxvt.color0 : _color0

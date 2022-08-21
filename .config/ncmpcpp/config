@@ -1,17 +1,17 @@
 % egrep -v '^#' /home/josh/.config/ncmpcpp/config
-mpd_music_dir = "$HOME/Music/"
+mpd_music_dir = $HOME/Music
 mpd_host = "127.0.0.1"
 mpd_port = "6600"
 
 mouse_list_scroll_whole_page = "no"
 lines_scrolled = "1"
 
-#visualizer_in_stereo = "no"
-#visualizer_fifo_path = "/tmp/mpd.fifo"
-#visualizer_output_name = "my_fifo"
-#visualizer_sync_interval = "10"
-#visualizer_type = "spectrum"
-#visualizer_look = "▋▋"
+visualizer_in_stereo = "yes"
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "Visualizer Feed"
+visualizer_sync_interval = "10"
+visualizer_type = "spectrum"
+visualizer_look = "▋▋"
 
 cyclic_scrolling = "no"
 jump_to_now_playing_song_at_start = "yes"
@@ -30,13 +30,14 @@ locked_screen_width_part = "60"
 display_bitrate = "no"
 external_editor = "vim"
 
-progressbar_elapsed_color = "black"
+progressbar_elapsed_color = "white"
 progressbar_color = "black"
 
-progressbar_look = "─╴─"
+progressbar_look = "─=─"
 
 fetch_lyrics_for_current_song_in_background = "yes"
 store_lyrics_in_song_dir = "yes"
+lyrics_fetchers = "azlyrics,genius"
 allow_for_physical_item_deletion = "no"
 ask_before_clearing_playlists = "yes"
 
