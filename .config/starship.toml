@@ -1,26 +1,25 @@
 format = """
 $status\
-[](bg:#355070 fg:#212837)\
 ${custom.icon}\
-[](bg:#212837 fg:#355070)\
-[](bg:#6d597a fg:#212837)\
+[](bg:#2F343F fg:#6d597a)\
+[](bg:#3d5a80 fg:#2F343F)\
 $directory\
-[](bg:#212837 fg:#6d597a)\
-[](bg:#eaac8b fg:#212837)\
+[](bg:#2F343F fg:#3d5a80)\
+[](bg:#f4a259 fg:#2F343F)\
+$time\
+[](bg:#2F343F fg:#f4a259)\
+[](bg:#5b8e7d fg:#2F343F)\
+$cmd_duration\
+[](bg:#2F343F fg:#5b8e7d)\
+[](bg:#bc4b51 fg:#2F343F)\
 $git_branch\
 $git_status\
-[](bg:#212837 fg:#eaac8b)\
-[](bg:#e56b6f fg:#212837)\
-$cmd_duration\
-[](bg:#212837 fg:#e56b6f)\
-[](bg:#b56576 fg:#212837)\
-$time\
-[ ](fg:#b56576)\
+[ ](fg:#bc4b51)\
 """
 
 [status]
-style = "fg:#ffffff bg:#212837"
-symbol = " "
+style = "fg:#ffffff bg:#6d597a"
+symbol = ""
 success_symbol = ""
 format = '[ $symbol ]($style)'
 map_symbol = false
@@ -28,21 +27,21 @@ disabled = false
 
 [username]
 show_always = false
-style_user = "bg:#355070"
-style_root = "bg:#355070"
+style_user = "bg:#6d597a"
+style_root = "bg:#6d597a"
 format = '[$user]($style)'
 
 [hostname]
 ssh_only = false
-format = "[@$hostname ](bg:#355070)"
+format = "[@$hostname ](bg:#6d597a)"
 trim_at = "."
 disabled = true
 
 [custom.arch]
 description = "Display arch logo"
 when = "true"
-style = "fg:#ffffff bg:#355070"
-format = '[$symbol(bg:#355070)]($style) '
+style = "fg:#ffffff bg:#6d597a"
+format = '[$symbol(bg:#6d597a)]($style) '
 symbol = " "
 
 [custom.icon]
@@ -60,29 +59,27 @@ elif [ "$PWD" = "$HOME/Pictures" ]; then
     echo ""
 elif [ "$PWD" = "$HOME/Videos" ]; then
     echo ""
-elif [ "$PWD" = "$PATH" ]; then
-    echo ""
 else
-    echo ""
+    echo "ﱮ"
 fi
 """
 when = "true"
-style = "fg:#ffffff bg:#355070"
+style = "fg:#ffffff bg:#6d597a"
 format = '[ $output ]($style)'
 
 [directory]
-style = "fg:#ffffff bg:#6d597a"
+style = "fg:#ffffff bg:#3d5a80"
 format = '[ $path ]($style)'
 truncation_length = 2
 truncation_symbol = "~/"
 
 [git_branch]
 symbol = " "
-style = "fg:#ffffff bg:#eaac8b"
+style = "fg:#ffffff bg:#bc4b51"
 format = '[ $symbol $branch]($style)'
 
 [git_status]
-style = "fg:#ffffff bg:#eaac8b"
+style = "fg:#ffffff bg:#bc4b51"
 format = '[ ($all_status) ]($style)'
 
 [custom.docker]
@@ -96,12 +93,12 @@ disabled = true
 
 [cmd_duration]
 min_time = 500
-style = "fg:#ffffff bg:#e56b6f"
-format = "[ $duration ]($style)"
-disabled = true
+style = "fg:#ffffff bg:#5b8e7d"
+format = "[ 󰔛 $duration ]($style)"
+disabled = false
 
 [time]
-disabled = true
+disabled = false
 time_format = "%l:%M %P"
-style = "fg:#ffffff bg:#b56576"
-format = '[  $time ]($style)'
+style = "fg:#ffffff bg:#f4a259"
+format = '[ $time ]($style)'
